@@ -37,7 +37,13 @@ class RCTools {
         
         var currentWindow: UIWindow?
         var maskView: UIView?
+        var maskLayer: CALayer?
         var maskColor: UIColor? = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.3)
+        // index of maskView/maskLayer
+        //        var maskViewIndex: Int?
+        //        var maskLayerIndex: Int?
+        // mask type, 0 represents view mask, 1 represents layer mask
+        var maskType: Int?
         
         init() {
             self.currentWindow = self.keyWindow()
@@ -48,33 +54,45 @@ class RCTools {
         }
         
         func mask() {
+            println("views before mask: \(self.currentWindow!.subviews.count)")
             let maskView = UIView(frame: UIScreen.mainScreen().bounds)
             maskView.backgroundColor = self.maskColor
-            self.currentWindow!.insertSubview(maskView, aboveSubview: (self.currentWindow?.subviews[self.currentWindow!.subviews.count - 1] as! UIView))
+            self.currentWindow!.addSubview(maskView)
+            //            self.currentWindow!.insertSubview(maskView, aboveSubview: (self.currentWindow?.subviews[self.currentWindow!.subviews.count - 1] as! UIView))
             self.maskView = maskView
+            //            self.maskViewIndex = self.currentWindow!.subviews.count - 1
+            self.maskType = 0
             
-            println("views of current window: \(currentWindow!.subviews.count)")
+            println("views after mask: \(self.currentWindow!.subviews.count)")
         }
         
         func maskInteraction() {
+            println("layers before mask: \(currentWindow!.layer.sublayers.count)")
+            
             let maskLayer = CALayer()
             maskLayer.frame = UIScreen.mainScreen().bounds
             maskLayer.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.7).CGColor
             self.currentWindow!.layer.addSublayer(maskLayer)
+            self.maskLayer = maskLayer
+            //            self.maskLayerIndex = self.currentWindow!.layer.sublayers.count - 1
+            self.maskType = 1
             
-            println("layers of current window: \(currentWindow!.layer.sublayers.count)")
+            println("layers after mask: \(currentWindow!.layer.sublayers.count)")
         }
         
         func revokeMask() {
-            if self.currentWindow?.subviews.count > 1 {
-                (self.currentWindow?.subviews[self.currentWindow!.subviews.count - 1] as! UIView).removeFromSuperview()
-                self.maskView = nil
-                println("views of current window: \(self.currentWindow!.subviews.count)")
+            println("views before remove: \(self.currentWindow!.subviews.count)")
+            println("layers before remove: \(self.currentWindow!.layer.sublayers.count)")
+            if self.maskType == 0 {
+                //                (self.currentWindow?.subviews[self.maskViewIndex!] as! UIView).removeFromSuperview()
+                //                self.maskViewIndex = nil
+                self.maskView?.removeFromSuperview()
+                println("views after remove: \(self.currentWindow!.subviews.count)")
             } else {
-                if (self.currentWindow?.subviews[self.currentWindow!.subviews.count - 1] as! UIView).layer.sublayers.count > 1 {
-                    ((self.currentWindow?.subviews[self.currentWindow!.subviews.count - 1] as! UIView).layer.sublayers[1] as! CALayer).removeFromSuperlayer()
-                    println("layers of current window: \(currentWindow!.layer.sublayers.count)")
-                }
+                //                (self.currentWindow?.layer.sublayers[self.maskLayerIndex!] as! CALayer).removeFromSuperlayer()
+                //                self.maskLayerIndex = nil
+                self.maskLayer?.removeFromSuperlayer()
+                println("layers after remove: \(currentWindow!.layer.sublayers.count)")
             }
         }
     }

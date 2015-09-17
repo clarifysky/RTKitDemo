@@ -25,6 +25,7 @@ class MaskViewController: UIViewController {
     @IBAction func createMask(sender: UIBarButtonItem) {
         
         self.windowTools = RCTools.Window()
+        println("-MaskVC: before mask, view number is: \(self.windowTools?.keyWindow()?.subviews.count)")
         self.windowTools!.mask()
         
         let popViewSize = CGSizeMake(200, 150)
