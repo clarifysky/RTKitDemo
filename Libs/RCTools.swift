@@ -1,15 +1,16 @@
 //
 //  RCTools.swift
-//  RCToolsDemo
+//  RCTools
 //
-//  Created by Rex Cao on 17/9/15.
-//  Copyright (c) 2015 rexcao. All rights reserved.
+//  Created by Rex Cao on 16/9/15.
+//  Copyright (c) 2015 clwm01. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
 class RCTools {
+    
     // computation with math
     class Math {
         

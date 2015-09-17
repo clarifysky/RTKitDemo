@@ -13,6 +13,8 @@
 		CD4BB23E1BAA6D2300072773 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD4BB23D1BAA6D2300072773 /* Images.xcassets */; };
 		CD4BB2411BAA6D2300072773 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD4BB23F1BAA6D2300072773 /* LaunchScreen.xib */; };
 		CD4BB24D1BAA6D2400072773 /* RCToolsDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BB24C1BAA6D2400072773 /* RCToolsDemoTests.swift */; };
+		CD4BB2591BAA70B000072773 /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BB2581BAA70B000072773 /* MaskViewController.swift */; };
+		CD4BB25B1BAA70F000072773 /* RCTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BB25A1BAA70F000072773 /* RCTools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		CD4BB2461BAA6D2400072773 /* RCToolsDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCToolsDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD4BB24B1BAA6D2400072773 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD4BB24C1BAA6D2400072773 /* RCToolsDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCToolsDemoTests.swift; sourceTree = "<group>"; };
+		CD4BB2581BAA70B000072773 /* MaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
+		CD4BB25A1BAA70F000072773 /* RCTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 		CD4BB2281BAA6D2300072773 = {
 			isa = PBXGroup;
 			children = (
+				CD4BB2561BAA6D4100072773 /* RCTools */,
 				CD4BB2331BAA6D2300072773 /* RCToolsDemo */,
 				CD4BB2491BAA6D2400072773 /* RCToolsDemoTests */,
 				CD4BB2321BAA6D2300072773 /* Products */,
@@ -77,11 +82,8 @@
 		CD4BB2331BAA6D2300072773 /* RCToolsDemo */ = {
 			isa = PBXGroup;
 			children = (
-				CD4BB2361BAA6D2300072773 /* AppDelegate.swift */,
-				CD4BB2381BAA6D2300072773 /* ViewController.swift */,
+				CD4BB2571BAA6D9800072773 /* Controllers */,
 				CD4BB23A1BAA6D2300072773 /* Main.storyboard */,
-				CD4BB23D1BAA6D2300072773 /* Images.xcassets */,
-				CD4BB23F1BAA6D2300072773 /* LaunchScreen.xib */,
 				CD4BB2341BAA6D2300072773 /* Supporting Files */,
 			);
 			path = RCToolsDemo;
@@ -90,6 +92,9 @@
 		CD4BB2341BAA6D2300072773 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CD4BB2361BAA6D2300072773 /* AppDelegate.swift */,
+				CD4BB23D1BAA6D2300072773 /* Images.xcassets */,
+				CD4BB23F1BAA6D2300072773 /* LaunchScreen.xib */,
 				CD4BB2351BAA6D2300072773 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +115,23 @@
 				CD4BB24B1BAA6D2400072773 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CD4BB2561BAA6D4100072773 /* RCTools */ = {
+			isa = PBXGroup;
+			children = (
+				CD4BB25A1BAA70F000072773 /* RCTools.swift */,
+			);
+			name = RCTools;
+			sourceTree = "<group>";
+		};
+		CD4BB2571BAA6D9800072773 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CD4BB2381BAA6D2300072773 /* ViewController.swift */,
+				CD4BB2581BAA70B000072773 /* MaskViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +235,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD4BB2391BAA6D2300072773 /* ViewController.swift in Sources */,
+				CD4BB2591BAA70B000072773 /* MaskViewController.swift in Sources */,
+				CD4BB25B1BAA70F000072773 /* RCTools.swift in Sources */,
 				CD4BB2371BAA6D2300072773 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
