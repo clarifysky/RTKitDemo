@@ -1,9 +1,9 @@
 //
 //  RCTools.swift
-//  NoSmoking
+//  RCTools
 //
 //  Created by Rex Cao on 16/9/15.
-//  Copyright (c) 2015 Breadth. All rights reserved.
+//  Copyright (c) 2015 clwm01. All rights reserved.
 //
 
 import Foundation
