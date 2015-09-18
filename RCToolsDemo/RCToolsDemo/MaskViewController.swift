@@ -43,6 +43,18 @@ class MaskViewController: UIViewController {
         
         popView.addSubview(closeButton)
         self.windowTools?.maskView?.addSubview(popView)
+        
+        // add TapGetsture to maskView
+        let tapMaskView = UITapGestureRecognizer(target: self, action: "tapMaskView:")
+        self.windowTools?.maskView?.addGestureRecognizer(tapMaskView)
+    }
+    
+    func tapMaskView(recognizer: UITapGestureRecognizer) {
+        switch recognizer.state {
+        case .Ended:
+            println("tapped the maskView ")
+        default:break
+        }
     }
     
     func revokeMask() {
