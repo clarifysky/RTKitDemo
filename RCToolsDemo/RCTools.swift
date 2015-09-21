@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class RCTools {
+    
     // computation with math
     class Math {
         
@@ -34,66 +35,75 @@ class RCTools {
     
     // window tools
     class Window {
-        
-        var currentWindow: UIWindow?
-        var maskView: UIView?
-        var maskLayer: CALayer?
         var maskColor: UIColor? = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.3)
-        // index of maskView/maskLayer
-        //        var maskViewIndex: Int?
-        //        var maskLayerIndex: Int?
-        // mask type, 0 represents view mask, 1 represents layer mask
-        var maskType: Int?
         
+        // This window used to handle all the mask.
+        // You must specify a VC(UIViewController) for rootViewController of this window.
+        // Every view you used for mask should be add to this window's rootViewController's view
+        var sharedWindow: UIWindow?
+        
+        // MARK: The instance of this class should only have one in the life cycle of one app.
         init() {
-            self.currentWindow = self.keyWindow()
+            self.createWindow()
         }
         
         func keyWindow() -> UIWindow? {
             return UIApplication.sharedApplication().keyWindow
         }
         
-        func mask() {
-            println("views before mask: \(self.currentWindow!.subviews.count)")
-            let maskView = UIView(frame: UIScreen.mainScreen().bounds)
-            maskView.backgroundColor = self.maskColor
-            self.currentWindow!.addSubview(maskView)
-            //            self.currentWindow!.insertSubview(maskView, aboveSubview: (self.currentWindow?.subviews[self.currentWindow!.subviews.count - 1] as! UIView))
-            self.maskView = maskView
-            //            self.maskViewIndex = self.currentWindow!.subviews.count - 1
-            self.maskType = 0
-            
-            println("views after mask: \(self.currentWindow!.subviews.count)")
-        }
-        
-        func maskInteraction() {
-            println("layers before mask: \(currentWindow!.layer.sublayers.count)")
-            
-            let maskLayer = CALayer()
-            maskLayer.frame = UIScreen.mainScreen().bounds
-            maskLayer.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.7).CGColor
-            self.currentWindow!.layer.addSublayer(maskLayer)
-            self.maskLayer = maskLayer
-            //            self.maskLayerIndex = self.currentWindow!.layer.sublayers.count - 1
-            self.maskType = 1
-            
-            println("layers after mask: \(currentWindow!.layer.sublayers.count)")
-        }
-        
-        func revokeMask() {
-            println("views before remove: \(self.currentWindow!.subviews.count)")
-            println("layers before remove: \(self.currentWindow!.layer.sublayers.count)")
-            if self.maskType == 0 {
-                //                (self.currentWindow?.subviews[self.maskViewIndex!] as! UIView).removeFromSuperview()
-                //                self.maskViewIndex = nil
-                self.maskView?.removeFromSuperview()
-                println("views after remove: \(self.currentWindow!.subviews.count)")
-            } else {
-                //                (self.currentWindow?.layer.sublayers[self.maskLayerIndex!] as! CALayer).removeFromSuperlayer()
-                //                self.maskLayerIndex = nil
-                self.maskLayer?.removeFromSuperlayer()
-                println("layers after remove: \(currentWindow!.layer.sublayers.count)")
+        func createWindow() {
+            if self.sharedWindow == nil {
+                self.sharedWindow = UIWindow(frame: UIScreen.mainScreen().bounds)
+                self.sharedWindow?.windowLevel = UIWindowLevelAlert
+                self.sharedWindow?.hidden = false
+                // This makes background of window is transparent
+                self.sharedWindow?.backgroundColor = UIColor.clearColor()
+                // You should create a UIViewController in storyboard for the rootViewController of this window
+                // Change the viewController in storyboard to yours.
+                let popVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "MaskViewController") as! MaskViewController
+                popVC.view.backgroundColor = self.maskColor
+                popVC.windowTools = self
+                self.sharedWindow?.rootViewController = popVC
             }
         }
+        
+        // All the mask
+        func mask() {
+            self.createWindow()
+            println(":RCTools: views before mask: \(self.sharedWindow!.rootViewController?.view.subviews.count)")
+            self.sharedWindow?.windowLevel = UIWindowLevelAlert
+            
+            println(":RCTools: views after mask: \(self.sharedWindow!.rootViewController?.view.subviews.count)")
+        }
+        
+        /**
+        * view: The view you want to remove
+        */
+        func revokeMask(view: UIView?) {
+            println(":RCTools: views before remove: \(self.sharedWindow!.rootViewController?.view.subviews.count)")
+            if let removeView = view {
+                removeView.removeFromSuperview()
+            }
+            println(":RCTools: views after remove: \(self.sharedWindow!.rootViewController?.view.subviews.count)")
+            
+            // MARK: Why a empty havs two views?
+            if self.sharedWindow!.rootViewController?.view.subviews.count == 2 {
+                // There is no any view for mask, revoke the window
+                self.sharedWindow?.windowLevel = UIWindowLevelNormal - 1
+                self.sharedWindow = nil
+            }
+            
+        }
+    }
+}
+
+// Storyboard
+extension UIStoryboard {
+    class func VCWithSpecificSBAndSBID(#SBName: String, SBID: String) -> UIViewController {
+        return UIStoryboard(name: SBName, bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier(SBID) as! UIViewController
+    }
+    
+    class func NWithSpecificSBAndSBID(#SBName: String, SBID: String) -> UINavigationController {
+        return UIStoryboard(name: SBName, bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier(SBID) as! UINavigationController
     }
 }
