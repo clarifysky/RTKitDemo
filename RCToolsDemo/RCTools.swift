@@ -115,15 +115,8 @@ extension UIViewController {
         let finalToFrame: CGRect = screenBounds
         let finalFromFrame: CGRect = CGRectOffset(finalToFrame, -screenBounds.size.width, 0)
         
-        toVC!.view.frame = CGRectOffset(finalToFrame, screenBounds.size.width, 0)
-        
-        // From Apple:
-        // This method adds the second view controller's view to the view hierarchy and then performs the animations defined in your animations block. After the animation completes, it removes the first view controller's view from the view hierarchy.
-        self.transitionFromViewController(fromVC!, toViewController: toVC!, duration: duration, options: options, animations: {
-            toVC!.view.frame = finalToFrame
-            fromVC!.view.frame = finalFromFrame
-            },
-            completion: completion)
+        let beginToFrame = CGRectOffset(finalToFrame, screenBounds.size.width, 0)
+        self.doAnimation(toVC, fromVC: fromVC, duration: duration, options: options, completion: completion, beginToFrame: beginToFrame, finalToFrame: finalToFrame, finalFromFrame: finalFromFrame)
     }
     
     func pushBack(toVC: UIViewController?, fromVC: UIViewController?, duration: NSTimeInterval, options: UIViewAnimationOptions, completion: ((Bool) -> Void)? ) {
@@ -131,12 +124,36 @@ extension UIViewController {
         let finalToFrame: CGRect = screenBounds
         let finalFromFrame: CGRect = CGRectOffset(finalToFrame, screenBounds.size.width, 0)
         
-        toVC!.view.frame = CGRectOffset(finalToFrame, -screenBounds.size.width, 0)
+        let beginToFrame = CGRectOffset(finalToFrame, -screenBounds.size.width, 0)
+        self.doAnimation(toVC, fromVC: fromVC, duration: duration, options: options, completion: completion, beginToFrame: beginToFrame, finalToFrame: finalToFrame, finalFromFrame: finalFromFrame)
+    }
+    
+    // imitate Apple's presentViewController:
+    func modal(toVC: UIViewController?, fromVC: UIViewController?, duration: NSTimeInterval, options: UIViewAnimationOptions, completion: ((Bool) -> Void)? ) {
+        let screenBounds: CGRect = UIScreen.mainScreen().bounds
+        let finalToFrame: CGRect = screenBounds
+        let finalFromFrame: CGRect = CGRectOffset(screenBounds, 0, -screenBounds.size.height)
         
+        let beginToFrame = CGRectOffset(screenBounds, 0, screenBounds.size.height)
+        self.doAnimation(toVC, fromVC: fromVC, duration: duration, options: options, completion: completion, beginToFrame: beginToFrame, finalToFrame: finalToFrame, finalFromFrame: finalFromFrame)
+    }
+    
+    func modalDismiss(toVC: UIViewController?, fromVC: UIViewController?, duration: NSTimeInterval, options: UIViewAnimationOptions, completion: ((Bool) -> Void)?) {
+        let screenBounds: CGRect = UIScreen.mainScreen().bounds
+        let finalToFrame: CGRect = screenBounds
+        let finalFromFrame: CGRect = CGRectOffset(screenBounds, 0, screenBounds.size.height)
+        
+        let beginToFrame = CGRectOffset(screenBounds, 0, -screenBounds.size.height)
+        self.doAnimation(toVC, fromVC: fromVC, duration: duration, options: options, completion: completion, beginToFrame: beginToFrame, finalToFrame: finalToFrame, finalFromFrame: finalFromFrame)
+    }
+    
+    // From Apple:
+    // This method adds the second view controller's view to the view hierarchy and then performs the animations defined in your animations block. After the animation completes, it removes the first view controller's view from the view hierarchy.
+    private func doAnimation(toVC: UIViewController?, fromVC: UIViewController?, duration: NSTimeInterval, options: UIViewAnimationOptions, completion: ((Bool) -> Void)?, beginToFrame: CGRect?, finalToFrame: CGRect?, finalFromFrame: CGRect? ) {
+        toVC?.view.frame = beginToFrame!
         self.transitionFromViewController(fromVC!, toViewController: toVC!, duration: duration, options: options, animations: {
-            toVC!.view.frame = finalToFrame
-            fromVC!.view.frame = finalFromFrame
-            },
-            completion: completion)
+            toVC!.view.frame = finalToFrame!
+            fromVC!.view.frame = finalFromFrame!
+        }, completion: completion)
     }
 }

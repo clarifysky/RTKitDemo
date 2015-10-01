@@ -12,7 +12,7 @@ class ContainerViewController: UIViewController {
     
     var currentVC: UIViewController?
     var firstVC: FirstViewController?
-    var secondVC: UIViewController?
+    var secondVC: SecondViewController?
     var thirdVC: UIViewController?
     @IBOutlet weak var contentView: UIView!
 
@@ -21,7 +21,7 @@ class ContainerViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.firstVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "FirstViewController") as? FirstViewController
-        self.secondVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "SecondViewController")
+        self.secondVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "SecondViewController") as? SecondViewController
         self.thirdVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "ThirdViewController")
         
         self.addChildViewController(self.firstVC!)
@@ -68,39 +68,14 @@ class ContainerViewController: UIViewController {
                 }
             })
             
-//            self.push(self.firstVC!, fromVC: self.currentVC!, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, animations: nil, completion: {
-//                finished in
-//                if finished {
-//                    self.currentVC = self.firstVC
-//                }
-//            })
-            
-//            let screenBounds: CGRect = UIScreen.mainScreen().bounds
-//            let finalToFrame: CGRect = screenBounds
-//            let finalFromFrame: CGRect = CGRectOffset(finalToFrame, -screenBounds.size.width, 0)
-//            
-//            self.firstVC!.view.frame = CGRectOffset(finalToFrame, screenBounds.size.width, 0)
-//            println("views in container view: \(self.view.subviews.count)")
-//            
-//            // From Apple:
-//            // This method adds the second view controller's view to the view hierarchy and then performs the animations defined in your animations block. After the animation completes, it removes the first view controller's view from the view hierarchy.
-//            self.transitionFromViewController(self.currentVC!, toViewController: self.firstVC!, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-//                    self.firstVC?.view.frame = finalToFrame
-//                    self.currentVC?.view.frame = finalFromFrame
-//                },
-//                completion: {
-//                    finished in
-//                    if finished {
-//                        self.currentVC = self.firstVC!
-//                        println("views in container view: \(self.view.subviews.count)")
-//                    }
-//            })
             break
         case 2:
-            self.transitionFromViewController(self.currentVC!, toViewController: self.secondVC!, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, animations: nil, completion: {
+            self.modal(self.secondVC!, fromVC: self.currentVC!, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
                 finished in
                 if finished {
-                    self.currentVC = self.secondVC!
+                    self.currentVC = self.secondVC
+                    self.secondVC?.dismissButton.addTarget(self, action: "dismissSecondVC", forControlEvents: UIControlEvents.TouchUpInside)
+                    println("subViewControllers of containerViewController: \(self.childViewControllers.count)")
                 }
             })
         case 3:
@@ -121,8 +96,18 @@ class ContainerViewController: UIViewController {
     func toThirdVC() {
         println("subViewControllers of containerViewController: \(self.childViewControllers.count)")
         let duration = NSTimeInterval(0.5)
-//        self.thirdVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "ThirdViewController")
-        self.pushBack(self.thirdVC!, fromVC: self.firstVC, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
+        self.pushBack(self.thirdVC!, fromVC: self.currentVC!, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
+            finished in
+            if finished {
+                self.currentVC = self.thirdVC!
+            }
+        })
+    }
+    
+    func dismissSecondVC() {
+        println("subViewControllers of containerViewController: \(self.childViewControllers.count)")
+        let duration = NSTimeInterval(0.5)
+        self.modalDismiss(self.thirdVC!, fromVC: self.currentVC!, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
             finished in
             if finished {
                 self.currentVC = self.thirdVC!

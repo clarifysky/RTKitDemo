@@ -225,18 +225,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="secondVC" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yX7-tl-WaX">
-                                <rect key="frame" x="120" y="28" width="80" height="21"/>
+                                <rect key="frame" x="120" y="28" width="79.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRT-CB-iMr">
+                                <rect key="frame" x="16" y="28" width="52" height="30"/>
+                                <state key="normal" title="dismiss">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="yX7-tl-WaX" secondAttribute="centerX" id="H4e-6w-y4X"/>
+                            <constraint firstItem="gRT-CB-iMr" firstAttribute="leading" secondItem="Fk6-Ry-Qbb" secondAttribute="leadingMargin" id="UJ6-xa-n9b"/>
+                            <constraint firstItem="gRT-CB-iMr" firstAttribute="top" secondItem="bKv-Zu-SaV" secondAttribute="bottom" constant="8" id="VKn-ml-kTk"/>
                             <constraint firstItem="yX7-tl-WaX" firstAttribute="top" secondItem="bKv-Zu-SaV" secondAttribute="bottom" constant="8" id="W4M-JP-DJg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dismissButton" destination="gRT-CB-iMr" id="Sr2-4O-123"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgK-QW-hIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
