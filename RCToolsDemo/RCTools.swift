@@ -44,7 +44,7 @@ class RCTools {
         
         // MARK: The instance of this class should only have one in the life cycle of one app.
         init() {
-            self.createWindow()
+//            self.createWindow()
         }
         
         func keyWindow() -> UIWindow? {
@@ -105,5 +105,38 @@ extension UIStoryboard {
     
     class func NWithSpecificSBAndSBID(#SBName: String, SBID: String) -> UINavigationController {
         return UIStoryboard(name: SBName, bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier(SBID) as! UINavigationController
+    }
+}
+
+// UIViewController
+extension UIViewController {
+    func push(toVC: UIViewController?, fromVC: UIViewController?, duration: NSTimeInterval, options: UIViewAnimationOptions, completion: ((Bool) -> Void)? ) {
+        let screenBounds: CGRect = UIScreen.mainScreen().bounds
+        let finalToFrame: CGRect = screenBounds
+        let finalFromFrame: CGRect = CGRectOffset(finalToFrame, -screenBounds.size.width, 0)
+        
+        toVC!.view.frame = CGRectOffset(finalToFrame, screenBounds.size.width, 0)
+        
+        // From Apple:
+        // This method adds the second view controller's view to the view hierarchy and then performs the animations defined in your animations block. After the animation completes, it removes the first view controller's view from the view hierarchy.
+        self.transitionFromViewController(fromVC!, toViewController: toVC!, duration: duration, options: options, animations: {
+            toVC!.view.frame = finalToFrame
+            fromVC!.view.frame = finalFromFrame
+            },
+            completion: completion)
+    }
+    
+    func pushBack(toVC: UIViewController?, fromVC: UIViewController?, duration: NSTimeInterval, options: UIViewAnimationOptions, completion: ((Bool) -> Void)? ) {
+        let screenBounds: CGRect = UIScreen.mainScreen().bounds
+        let finalToFrame: CGRect = screenBounds
+        let finalFromFrame: CGRect = CGRectOffset(finalToFrame, screenBounds.size.width, 0)
+        
+        toVC!.view.frame = CGRectOffset(finalToFrame, -screenBounds.size.width, 0)
+        
+        self.transitionFromViewController(fromVC!, toViewController: toVC!, duration: duration, options: options, animations: {
+            toVC!.view.frame = finalToFrame
+            fromVC!.view.frame = finalFromFrame
+            },
+            completion: completion)
     }
 }
