@@ -13,7 +13,7 @@ class ContainerViewController: UIViewController {
     var currentVC: UIViewController?
     var firstVC: FirstViewController?
     var secondVC: SecondViewController?
-    var thirdVC: UIViewController?
+    var thirdVC: ThirdViewController?
     @IBOutlet weak var contentView: UIView!
 
     override func viewDidLoad() {
@@ -22,13 +22,14 @@ class ContainerViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.firstVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "FirstViewController") as? FirstViewController
         self.secondVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "SecondViewController") as? SecondViewController
-        self.thirdVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "ThirdViewController")
+        self.thirdVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "ThirdViewController") as? ThirdViewController
         
         self.addChildViewController(self.firstVC!)
         self.addChildViewController(self.secondVC!)
         self.addChildViewController(self.thirdVC!)
         
         self.contentView.addSubview(self.thirdVC!.view)
+        self.thirdVC!.didMoveToParentViewController(self)
         self.currentVC = self.thirdVC
         
         println("subiews of window: \(RCTools.Window().keyWindow()?.subviews.count)")
@@ -59,7 +60,7 @@ class ContainerViewController: UIViewController {
         let duration = NSTimeInterval(0.5)
         switch sender.tag {
         case 1:
-            self.push(self.firstVC!, fromVC: self.currentVC!, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
+            self.swipeLeft(self.firstVC!, fromVC: self.currentVC!, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
                 finished in
                 if finished {
                     self.currentVC = self.firstVC
@@ -70,7 +71,7 @@ class ContainerViewController: UIViewController {
             
             break
         case 2:
-            self.modal(self.secondVC!, fromVC: self.currentVC!, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
+            self.swipeUp(self.secondVC!, fromVC: self.currentVC!, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
                 finished in
                 if finished {
                     self.currentVC = self.secondVC
@@ -79,10 +80,11 @@ class ContainerViewController: UIViewController {
                 }
             })
         case 3:
-            self.transitionFromViewController(self.currentVC!, toViewController: self.thirdVC!, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, animations: nil, completion: {
+            self.show(self.thirdVC, fromVC: self.currentVC, completion: {
                 finished in
                 if finished {
                     self.currentVC = self.thirdVC!
+                    println("subViewControllers of containerViewController: \(self.childViewControllers.count)")
                 }
             })
         default: break
@@ -96,7 +98,7 @@ class ContainerViewController: UIViewController {
     func toThirdVC() {
         println("subViewControllers of containerViewController: \(self.childViewControllers.count)")
         let duration = NSTimeInterval(0.5)
-        self.pushBack(self.thirdVC!, fromVC: self.currentVC!, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
+        self.swipeRight(self.thirdVC!, fromVC: self.currentVC!, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
             finished in
             if finished {
                 self.currentVC = self.thirdVC!
@@ -107,7 +109,7 @@ class ContainerViewController: UIViewController {
     func dismissSecondVC() {
         println("subViewControllers of containerViewController: \(self.childViewControllers.count)")
         let duration = NSTimeInterval(0.5)
-        self.modalDismiss(self.thirdVC!, fromVC: self.currentVC!, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
+        self.swipeDown(self.thirdVC!, fromVC: self.currentVC!, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
             finished in
             if finished {
                 self.currentVC = self.thirdVC!

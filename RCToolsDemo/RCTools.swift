@@ -110,7 +110,16 @@ extension UIStoryboard {
 
 // UIViewController
 extension UIViewController {
-    func push(toVC: UIViewController?, fromVC: UIViewController?, duration: NSTimeInterval, options: UIViewAnimationOptions, completion: ((Bool) -> Void)? ) {
+    func show(toVC: UIViewController?, fromVC: UIViewController?, completion: ((Bool) -> Void)? ) {
+        let screenBounds: CGRect = UIScreen.mainScreen().bounds
+        let finalToFrame: CGRect = screenBounds
+        let finalFromFrame: CGRect = CGRectOffset(finalToFrame, -screenBounds.size.width, 0)
+        self.transitionFromViewController(fromVC!, toViewController: toVC!, duration: 0, options: nil, animations: {
+            toVC!.view.frame = finalToFrame
+            }, completion: completion)
+    }
+    
+    func swipeLeft(toVC: UIViewController?, fromVC: UIViewController?, duration: NSTimeInterval, options: UIViewAnimationOptions, completion: ((Bool) -> Void)? ) {
         let screenBounds: CGRect = UIScreen.mainScreen().bounds
         let finalToFrame: CGRect = screenBounds
         let finalFromFrame: CGRect = CGRectOffset(finalToFrame, -screenBounds.size.width, 0)
@@ -119,7 +128,7 @@ extension UIViewController {
         self.doAnimation(toVC, fromVC: fromVC, duration: duration, options: options, completion: completion, beginToFrame: beginToFrame, finalToFrame: finalToFrame, finalFromFrame: finalFromFrame)
     }
     
-    func pushBack(toVC: UIViewController?, fromVC: UIViewController?, duration: NSTimeInterval, options: UIViewAnimationOptions, completion: ((Bool) -> Void)? ) {
+    func swipeRight(toVC: UIViewController?, fromVC: UIViewController?, duration: NSTimeInterval, options: UIViewAnimationOptions, completion: ((Bool) -> Void)? ) {
         let screenBounds: CGRect = UIScreen.mainScreen().bounds
         let finalToFrame: CGRect = screenBounds
         let finalFromFrame: CGRect = CGRectOffset(finalToFrame, screenBounds.size.width, 0)
@@ -129,7 +138,7 @@ extension UIViewController {
     }
     
     // imitate Apple's presentViewController:
-    func modal(toVC: UIViewController?, fromVC: UIViewController?, duration: NSTimeInterval, options: UIViewAnimationOptions, completion: ((Bool) -> Void)? ) {
+    func swipeUp(toVC: UIViewController?, fromVC: UIViewController?, duration: NSTimeInterval, options: UIViewAnimationOptions, completion: ((Bool) -> Void)? ) {
         let screenBounds: CGRect = UIScreen.mainScreen().bounds
         let finalToFrame: CGRect = screenBounds
         let finalFromFrame: CGRect = CGRectOffset(screenBounds, 0, -screenBounds.size.height)
@@ -138,7 +147,7 @@ extension UIViewController {
         self.doAnimation(toVC, fromVC: fromVC, duration: duration, options: options, completion: completion, beginToFrame: beginToFrame, finalToFrame: finalToFrame, finalFromFrame: finalFromFrame)
     }
     
-    func modalDismiss(toVC: UIViewController?, fromVC: UIViewController?, duration: NSTimeInterval, options: UIViewAnimationOptions, completion: ((Bool) -> Void)?) {
+    func swipeDown(toVC: UIViewController?, fromVC: UIViewController?, duration: NSTimeInterval, options: UIViewAnimationOptions, completion: ((Bool) -> Void)?) {
         let screenBounds: CGRect = UIScreen.mainScreen().bounds
         let finalToFrame: CGRect = screenBounds
         let finalFromFrame: CGRect = CGRectOffset(screenBounds, 0, screenBounds.size.height)
