@@ -14,6 +14,7 @@ class ContainerViewController: UIViewController {
     var firstVC: FirstViewController?
     var secondVC: SecondViewController?
     var thirdVC: ThirdViewController?
+    var fourthVC: UIViewController?
     @IBOutlet weak var contentView: UIView!
 
     override func viewDidLoad() {
@@ -23,10 +24,12 @@ class ContainerViewController: UIViewController {
         self.firstVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "FirstViewController") as? FirstViewController
         self.secondVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "SecondViewController") as? SecondViewController
         self.thirdVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "ThirdViewController") as? ThirdViewController
+        self.fourthVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "FourthNav") as? UINavigationController
         
         self.addChildViewController(self.firstVC!)
         self.addChildViewController(self.secondVC!)
         self.addChildViewController(self.thirdVC!)
+        self.addChildViewController(self.fourthVC!)
         
         self.contentView.addSubview(self.thirdVC!.view)
         self.thirdVC!.didMoveToParentViewController(self)
@@ -57,6 +60,10 @@ class ContainerViewController: UIViewController {
             return
         }
         
+        if self.currentVC == self.fourthVC && sender.tag == 4 {
+            return
+        }
+        
         let duration = NSTimeInterval(0.5)
         switch sender.tag {
         case 1:
@@ -83,10 +90,24 @@ class ContainerViewController: UIViewController {
             self.show(self.thirdVC, fromVC: self.currentVC, completion: {
                 finished in
                 if finished {
+                    println("transition from currentVC to thirdVC is finished")
                     self.currentVC = self.thirdVC!
                     println("subViewControllers of containerViewController: \(self.childViewControllers.count)")
                 }
             })
+        case 4:
+            println("will show fouthVC")
+            self.show(self.fourthVC, fromVC: self.currentVC, completion: {
+                finished in
+                if finished {
+                    // Because code below is not executed, so I can't contiue to transit viewControllers.
+                    println("transition from currentVC to fourthVC completed")
+                    self.currentVC = self.thirdVC!
+                } else {
+                    println("transition from currentVC to fourthVC is not finished")
+                }
+            })
+            
         default: break
         }
     }
