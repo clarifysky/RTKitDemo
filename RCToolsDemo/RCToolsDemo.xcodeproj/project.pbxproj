@@ -22,6 +22,8 @@
 		CD4BB24D1BAA6D2400072773 /* RCToolsDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BB24C1BAA6D2400072773 /* RCToolsDemoTests.swift */; };
 		CD4BB2591BAA70B000072773 /* WindowMaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BB2581BAA70B000072773 /* WindowMaskViewController.swift */; };
 		CD4BB25B1BAA70F000072773 /* RCTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BB25A1BAA70F000072773 /* RCTools.swift */; };
+		CD6582EF1BC7C9610053BD0E /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6582EE1BC7C9610053BD0E /* FifthViewController.swift */; };
+		CD6582F11BC7C9710053BD0E /* PresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6582F01BC7C9710053BD0E /* PresentedViewController.swift */; };
 		CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7C96AB1BB4E311001754A1 /* ScenesTransitionViewController.swift */; };
 		CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7FCDE91BC6433200A126A6 /* FourthViewController.swift */; };
 		CD8816C41BBB959F0052EA45 /* SegueTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8816C31BBB959F0052EA45 /* SegueTools.swift */; };
@@ -59,6 +61,8 @@
 		CD4BB24C1BAA6D2400072773 /* RCToolsDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCToolsDemoTests.swift; sourceTree = "<group>"; };
 		CD4BB2581BAA70B000072773 /* WindowMaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowMaskViewController.swift; sourceTree = "<group>"; };
 		CD4BB25A1BAA70F000072773 /* RCTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTools.swift; sourceTree = "<group>"; };
+		CD6582EE1BC7C9610053BD0E /* FifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
+		CD6582F01BC7C9710053BD0E /* PresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedViewController.swift; sourceTree = "<group>"; };
 		CD7C96AB1BB4E311001754A1 /* ScenesTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenesTransitionViewController.swift; sourceTree = "<group>"; };
 		CD7FCDE91BC6433200A126A6 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		CD8816C31BBB959F0052EA45 /* SegueTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueTools.swift; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 				CD4661DB1BBA101600FDFBDC /* SecondViewController.swift */,
 				CD4661DD1BBA102000FDFBDC /* ThirdViewController.swift */,
 				CD7FCDE91BC6433200A126A6 /* FourthViewController.swift */,
+				CD6582EE1BC7C9610053BD0E /* FifthViewController.swift */,
+				CD6582F01BC7C9710053BD0E /* PresentedViewController.swift */,
 			);
 			name = Transition;
 			sourceTree = "<group>";
@@ -295,9 +301,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD8816C41BBB959F0052EA45 /* SegueTools.swift in Sources */,
+				CD6582EF1BC7C9610053BD0E /* FifthViewController.swift in Sources */,
 				CD2B4D9A1BABC5FA003FFF19 /* TestWindowMask.swift in Sources */,
 				CD13C91A1BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift in Sources */,
 				CD2B4D941BABB7D7003FFF19 /* BeenPresentedViewController.swift in Sources */,
+				CD6582F11BC7C9710053BD0E /* PresentedViewController.swift in Sources */,
 				CD4661DA1BBA100B00FDFBDC /* FirstViewController.swift in Sources */,
 				CD4BB2391BAA6D2300072773 /* ViewController.swift in Sources */,
 				CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */,
