@@ -5,6 +5,31 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--ShadowViews-->
+        <scene sceneID="ABf-ua-AI4">
+            <objects>
+                <viewController storyboardIdentifier="ShadowViewController" id="HPy-ZG-8Ge" customClass="ShadowViewController" customModule="RCToolsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zOx-FE-zFZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="4LA-hY-AGe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="St1-tt-GsV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="ShadowViews" id="pmf-tS-zh9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="USu-WS-nd4">
+                            <connections>
+                                <action selector="addShadow:" destination="HPy-ZG-8Ge" id="60s-JV-zuC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g6d-vB-hju" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="696" y="-290"/>
+        </scene>
         <!--RCTools-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -39,6 +64,7 @@
                         <outlet property="tableView" destination="0HE-id-VQQ" id="P7t-jL-D3V"/>
                         <segue destination="gd6-my-qLR" kind="push" identifier="windowMask" id="Ji5-tr-la5"/>
                         <segue destination="1yv-sa-Fcg" kind="push" identifier="scenesTransition" id="Ttm-Az-f95"/>
+                        <segue destination="HPy-ZG-8Ge" kind="push" identifier="shadowView" id="uOO-CO-1oN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

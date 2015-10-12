@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    let actions = ["windowMask", "scenesTransition"]
+    let actions = ["windowMask", "scenesTransition", "shadowView"]
     let cellIdentifier = "tools"
     override func viewDidLoad() {
         super.viewDidLoad()

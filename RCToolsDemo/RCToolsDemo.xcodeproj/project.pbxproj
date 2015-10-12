@@ -24,6 +24,8 @@
 		CD4BB25B1BAA70F000072773 /* RCTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BB25A1BAA70F000072773 /* RCTools.swift */; };
 		CD6582EF1BC7C9610053BD0E /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6582EE1BC7C9610053BD0E /* FifthViewController.swift */; };
 		CD6582F11BC7C9710053BD0E /* PresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6582F01BC7C9710053BD0E /* PresentedViewController.swift */; };
+		CD6DD93D1BCBD9280092F561 /* CurveShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6DD93C1BCBD9280092F561 /* CurveShadowView.swift */; };
+		CD6DD9401BCBDC3A0092F561 /* ShadowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6DD93F1BCBDC3A0092F561 /* ShadowViewController.swift */; };
 		CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7C96AB1BB4E311001754A1 /* ScenesTransitionViewController.swift */; };
 		CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7FCDE91BC6433200A126A6 /* FourthViewController.swift */; };
 		CD8816C41BBB959F0052EA45 /* SegueTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8816C31BBB959F0052EA45 /* SegueTools.swift */; };
@@ -63,6 +65,8 @@
 		CD4BB25A1BAA70F000072773 /* RCTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTools.swift; sourceTree = "<group>"; };
 		CD6582EE1BC7C9610053BD0E /* FifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 		CD6582F01BC7C9710053BD0E /* PresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedViewController.swift; sourceTree = "<group>"; };
+		CD6DD93C1BCBD9280092F561 /* CurveShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveShadowView.swift; sourceTree = "<group>"; };
+		CD6DD93F1BCBDC3A0092F561 /* ShadowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowViewController.swift; sourceTree = "<group>"; };
 		CD7C96AB1BB4E311001754A1 /* ScenesTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenesTransitionViewController.swift; sourceTree = "<group>"; };
 		CD7FCDE91BC6433200A126A6 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		CD8816C31BBB959F0052EA45 /* SegueTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueTools.swift; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 			children = (
 				CD4BB25A1BAA70F000072773 /* RCTools.swift */,
 				CD8816C31BBB959F0052EA45 /* SegueTools.swift */,
+				CD6DD93C1BCBD9280092F561 /* CurveShadowView.swift */,
 			);
 			name = RCTools;
 			sourceTree = "<group>";
@@ -177,12 +182,21 @@
 		CD4BB2571BAA6D9800072773 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CD6DD93E1BCBDC170092F561 /* Graphics */,
 				CD7C96AA1BB4E2FE001754A1 /* Transition */,
 				CD2B4D981BABC5DD003FFF19 /* Classes */,
 				CD2B4D951BABC1A4003FFF19 /* Mask */,
 				CD4BB2381BAA6D2300072773 /* ViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		CD6DD93E1BCBDC170092F561 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				CD6DD93F1BCBDC3A0092F561 /* ShadowViewController.swift */,
+			);
+			name = Graphics;
 			sourceTree = "<group>";
 		};
 		CD7C96AA1BB4E2FE001754A1 /* Transition */ = {
@@ -307,6 +321,7 @@
 				CD2B4D941BABB7D7003FFF19 /* BeenPresentedViewController.swift in Sources */,
 				CD6582F11BC7C9710053BD0E /* PresentedViewController.swift in Sources */,
 				CD4661DA1BBA100B00FDFBDC /* FirstViewController.swift in Sources */,
+				CD6DD93D1BCBD9280092F561 /* CurveShadowView.swift in Sources */,
 				CD4BB2391BAA6D2300072773 /* ViewController.swift in Sources */,
 				CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */,
 				CD4661DC1BBA101600FDFBDC /* SecondViewController.swift in Sources */,
@@ -314,6 +329,7 @@
 				CD4BB25B1BAA70F000072773 /* RCTools.swift in Sources */,
 				CD4BB2371BAA6D2300072773 /* AppDelegate.swift in Sources */,
 				CD4661DE1BBA102000FDFBDC /* ThirdViewController.swift in Sources */,
+				CD6DD9401BCBDC3A0092F561 /* ShadowViewController.swift in Sources */,
 				CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */,
 				CDE315831BAD3F8100D2C6AF /* MaskViewController.swift in Sources */,
 				CDBAC6E01BB5328200ADB568 /* ContainerViewController.swift in Sources */,
