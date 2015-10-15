@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		189B6DA11BCF32A70083C02B /* Components.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189B6DA01BCF32A70083C02B /* Components.storyboard */; };
+		189B6DA41BCF32D50083C02B /* ParagraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B6DA31BCF32D50083C02B /* ParagraphViewController.swift */; };
 		CD13C91A1BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD13C9191BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift */; };
 		CD2B4D941BABB7D7003FFF19 /* BeenPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B4D931BABB7D7003FFF19 /* BeenPresentedViewController.swift */; };
 		CD2B4D971BABC263003FFF19 /* WithNavBeenPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B4D961BABC263003FFF19 /* WithNavBeenPresentedViewController.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		189B6DA01BCF32A70083C02B /* Components.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Components.storyboard; sourceTree = "<group>"; };
+		189B6DA31BCF32D50083C02B /* ParagraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParagraphViewController.swift; sourceTree = "<group>"; };
 		CD13C9191BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondBeenPresentedViewController.swift; sourceTree = "<group>"; };
 		CD2B4D931BABB7D7003FFF19 /* BeenPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeenPresentedViewController.swift; sourceTree = "<group>"; };
 		CD2B4D961BABC263003FFF19 /* WithNavBeenPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithNavBeenPresentedViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +96,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		189B6D9F1BCF32920083C02B /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CD4BB23A1BAA6D2300072773 /* Main.storyboard */,
+				189B6DA01BCF32A70083C02B /* Components.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		189B6DA21BCF32C30083C02B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				189B6DA31BCF32D50083C02B /* ParagraphViewController.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
 		CD2B4D951BABC1A4003FFF19 /* Mask */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,8 +155,8 @@
 		CD4BB2331BAA6D2300072773 /* RCToolsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				189B6D9F1BCF32920083C02B /* Storyboard */,
 				CD4BB2571BAA6D9800072773 /* Controllers */,
-				CD4BB23A1BAA6D2300072773 /* Main.storyboard */,
 				CD4BB2341BAA6D2300072773 /* Supporting Files */,
 			);
 			path = RCToolsDemo;
@@ -182,6 +203,7 @@
 		CD4BB2571BAA6D9800072773 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				189B6DA21BCF32C30083C02B /* Components */,
 				CD6DD93E1BCBDC170092F561 /* Graphics */,
 				CD7C96AA1BB4E2FE001754A1 /* Transition */,
 				CD2B4D981BABC5DD003FFF19 /* Classes */,
@@ -296,6 +318,7 @@
 			files = (
 				CD4BB23C1BAA6D2300072773 /* Main.storyboard in Resources */,
 				CD4BB2411BAA6D2300072773 /* LaunchScreen.xib in Resources */,
+				189B6DA11BCF32A70083C02B /* Components.storyboard in Resources */,
 				CD4BB23E1BAA6D2300072773 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD8816C41BBB959F0052EA45 /* SegueTools.swift in Sources */,
+				189B6DA41BCF32D50083C02B /* ParagraphViewController.swift in Sources */,
 				CD6582EF1BC7C9610053BD0E /* FifthViewController.swift in Sources */,
 				CD2B4D9A1BABC5FA003FFF19 /* TestWindowMask.swift in Sources */,
 				CD13C91A1BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift in Sources */,
