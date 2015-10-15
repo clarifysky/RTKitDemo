@@ -28,6 +28,7 @@
 		CD6582F11BC7C9710053BD0E /* PresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6582F01BC7C9710053BD0E /* PresentedViewController.swift */; };
 		CD6DD93D1BCBD9280092F561 /* CurveShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6DD93C1BCBD9280092F561 /* CurveShadowView.swift */; };
 		CD6DD9401BCBDC3A0092F561 /* ShadowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6DD93F1BCBDC3A0092F561 /* ShadowViewController.swift */; };
+		CD6DFAF81BCFD39F0015E6CF /* MyUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6DFAF71BCFD39F0015E6CF /* MyUILabel.swift */; };
 		CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7C96AB1BB4E311001754A1 /* ScenesTransitionViewController.swift */; };
 		CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7FCDE91BC6433200A126A6 /* FourthViewController.swift */; };
 		CD8816C41BBB959F0052EA45 /* SegueTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8816C31BBB959F0052EA45 /* SegueTools.swift */; };
@@ -71,6 +72,7 @@
 		CD6582F01BC7C9710053BD0E /* PresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedViewController.swift; sourceTree = "<group>"; };
 		CD6DD93C1BCBD9280092F561 /* CurveShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveShadowView.swift; sourceTree = "<group>"; };
 		CD6DD93F1BCBDC3A0092F561 /* ShadowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowViewController.swift; sourceTree = "<group>"; };
+		CD6DFAF71BCFD39F0015E6CF /* MyUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUILabel.swift; sourceTree = "<group>"; };
 		CD7C96AB1BB4E311001754A1 /* ScenesTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenesTransitionViewController.swift; sourceTree = "<group>"; };
 		CD7FCDE91BC6433200A126A6 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		CD8816C31BBB959F0052EA45 /* SegueTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueTools.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				CD4BB25A1BAA70F000072773 /* RCTools.swift */,
 				CD8816C31BBB959F0052EA45 /* SegueTools.swift */,
 				CD6DD93C1BCBD9280092F561 /* CurveShadowView.swift */,
+				CD6DFAF71BCFD39F0015E6CF /* MyUILabel.swift */,
 			);
 			name = RCTools;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				189B6DA41BCF32D50083C02B /* ParagraphViewController.swift in Sources */,
 				CD6582EF1BC7C9610053BD0E /* FifthViewController.swift in Sources */,
 				CD2B4D9A1BABC5FA003FFF19 /* TestWindowMask.swift in Sources */,
+				CD6DFAF81BCFD39F0015E6CF /* MyUILabel.swift in Sources */,
 				CD13C91A1BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift in Sources */,
 				CD2B4D941BABB7D7003FFF19 /* BeenPresentedViewController.swift in Sources */,
 				CD6582F11BC7C9710053BD0E /* PresentedViewController.swift in Sources */,
