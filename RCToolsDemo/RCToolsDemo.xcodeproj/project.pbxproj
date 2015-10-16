@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		189B6DA11BCF32A70083C02B /* Components.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189B6DA01BCF32A70083C02B /* Components.storyboard */; };
 		189B6DA41BCF32D50083C02B /* ParagraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B6DA31BCF32D50083C02B /* ParagraphViewController.swift */; };
+		18E03B081BD08FDB0080FA72 /* UIVerticalLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E03B071BD08FDB0080FA72 /* UIVerticalLabel.swift */; };
 		CD13C91A1BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD13C9191BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift */; };
 		CD2B4D941BABB7D7003FFF19 /* BeenPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B4D931BABB7D7003FFF19 /* BeenPresentedViewController.swift */; };
 		CD2B4D971BABC263003FFF19 /* WithNavBeenPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B4D961BABC263003FFF19 /* WithNavBeenPresentedViewController.swift */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		189B6DA01BCF32A70083C02B /* Components.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Components.storyboard; sourceTree = "<group>"; };
 		189B6DA31BCF32D50083C02B /* ParagraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParagraphViewController.swift; sourceTree = "<group>"; };
+		18E03B071BD08FDB0080FA72 /* UIVerticalLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVerticalLabel.swift; sourceTree = "<group>"; };
 		CD13C9191BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondBeenPresentedViewController.swift; sourceTree = "<group>"; };
 		CD2B4D931BABB7D7003FFF19 /* BeenPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeenPresentedViewController.swift; sourceTree = "<group>"; };
 		CD2B4D961BABC263003FFF19 /* WithNavBeenPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithNavBeenPresentedViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				CD8816C31BBB959F0052EA45 /* SegueTools.swift */,
 				CD6DD93C1BCBD9280092F561 /* CurveShadowView.swift */,
 				CD6DFAF71BCFD39F0015E6CF /* MyUILabel.swift */,
+				18E03B071BD08FDB0080FA72 /* UIVerticalLabel.swift */,
 			);
 			name = RCTools;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				CD4BB25B1BAA70F000072773 /* RCTools.swift in Sources */,
 				CD4BB2371BAA6D2300072773 /* AppDelegate.swift in Sources */,
 				CD4661DE1BBA102000FDFBDC /* ThirdViewController.swift in Sources */,
+				18E03B081BD08FDB0080FA72 /* UIVerticalLabel.swift in Sources */,
 				CD6DD9401BCBDC3A0092F561 /* ShadowViewController.swift in Sources */,
 				CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */,
 				CDE315831BAD3F8100D2C6AF /* MaskViewController.swift in Sources */,
