@@ -10,6 +10,7 @@ import UIKit
 
 class FifthViewController: UIViewController {
 
+    @IBOutlet weak var vcLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +20,13 @@ class FifthViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+//        UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.Autoreverse, animations: {
+//            self.vcLabel.frame.origin.x = 0
+//        }, completion: nil)
+        self.vcLabel.reverseXAnimation(0.5, startX: self.vcLabel.frame.origin.x, endX: 0)
     }
     
 

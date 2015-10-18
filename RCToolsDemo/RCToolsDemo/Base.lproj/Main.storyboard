@@ -255,6 +255,9 @@
                             <constraint firstItem="VVr-J4-zF2" firstAttribute="top" secondItem="vO5-aF-D3E" secondAttribute="bottom" constant="8" id="d8q-Hd-tkX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="vcLabel" destination="VVr-J4-zF2" id="Lxm-2X-3s9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZQ-y8-H92" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -166,3 +166,19 @@ extension UIViewController {
         }, completion: completion)
     }
 }
+
+extension UIView {
+    var animationOptions: UIViewAnimationOptions { return UIViewAnimationOptions.CurveLinear }
+    
+    func reverseXAnimation(duration: NSTimeInterval, startX: CGFloat, endX: CGFloat) {
+        UIView.animateWithDuration(duration, delay: 0, options: self.animationOptions, animations: {
+            self.frame.origin.x = endX
+            }, completion: {
+                finished in
+                println("finished")
+                if finished {
+                    self.reverseXAnimation(duration, startX: endX, endX: startX)
+                }
+        })
+    }
+}
