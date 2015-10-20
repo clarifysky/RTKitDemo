@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		189B6DA11BCF32A70083C02B /* Components.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189B6DA01BCF32A70083C02B /* Components.storyboard */; };
 		189B6DA41BCF32D50083C02B /* ParagraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B6DA31BCF32D50083C02B /* ParagraphViewController.swift */; };
+		18A9BB691BD5D93C00532575 /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9BB681BD5D93C00532575 /* DictionaryViewController.swift */; };
+		18A9BB6B1BD5D9D900532575 /* ComponentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9BB6A1BD5D9D900532575 /* ComponentsTableViewController.swift */; };
 		18E03B081BD08FDB0080FA72 /* UIVerticalLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E03B071BD08FDB0080FA72 /* UIVerticalLabel.swift */; };
 		CD13C91A1BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD13C9191BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift */; };
 		CD2B4D941BABB7D7003FFF19 /* BeenPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B4D931BABB7D7003FFF19 /* BeenPresentedViewController.swift */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		189B6DA01BCF32A70083C02B /* Components.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Components.storyboard; sourceTree = "<group>"; };
 		189B6DA31BCF32D50083C02B /* ParagraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParagraphViewController.swift; sourceTree = "<group>"; };
+		18A9BB681BD5D93C00532575 /* DictionaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
+		18A9BB6A1BD5D9D900532575 /* ComponentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentsTableViewController.swift; sourceTree = "<group>"; };
 		18E03B071BD08FDB0080FA72 /* UIVerticalLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVerticalLabel.swift; sourceTree = "<group>"; };
 		CD13C9191BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondBeenPresentedViewController.swift; sourceTree = "<group>"; };
 		CD2B4D931BABB7D7003FFF19 /* BeenPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeenPresentedViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				189B6DA31BCF32D50083C02B /* ParagraphViewController.swift */,
+				18A9BB681BD5D93C00532575 /* DictionaryViewController.swift */,
+				18A9BB6A1BD5D9D900532575 /* ComponentsTableViewController.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -349,9 +355,11 @@
 				CD2B4D9A1BABC5FA003FFF19 /* TestWindowMask.swift in Sources */,
 				CD6DFAF81BCFD39F0015E6CF /* MyUILabel.swift in Sources */,
 				CD13C91A1BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift in Sources */,
+				18A9BB691BD5D93C00532575 /* DictionaryViewController.swift in Sources */,
 				CD2B4D941BABB7D7003FFF19 /* BeenPresentedViewController.swift in Sources */,
 				CD6582F11BC7C9710053BD0E /* PresentedViewController.swift in Sources */,
 				CD4661DA1BBA100B00FDFBDC /* FirstViewController.swift in Sources */,
+				18A9BB6B1BD5D9D900532575 /* ComponentsTableViewController.swift in Sources */,
 				CD6DD93D1BCBD9280092F561 /* CurveShadowView.swift in Sources */,
 				CD4BB2391BAA6D2300072773 /* ViewController.swift in Sources */,
 				CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */,

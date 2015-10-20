@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    let actions = ["windowMask", "scenesTransition", "shadowView", "paragraph"]
+    let actions = ["windowMask", "scenesTransition", "shadowView", "components"]
     let cellIdentifier = "tools"
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +48,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if self.actions[indexPath.row] == "paragraph" {
-            let destinationVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Components", SBID: "ParagraphViewController") as! ParagraphViewController
+        if self.actions[indexPath.row] == "components" {
+            let destinationVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Components", SBID: "ComponentsTableViewController") as! ComponentsTableViewController
             self.navigationController?.pushViewController(destinationVC, animated: true)
         } else {
             performSegueWithIdentifier(self.actions[indexPath.row], sender: self)   
