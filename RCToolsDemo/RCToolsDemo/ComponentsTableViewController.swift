@@ -10,7 +10,7 @@ import UIKit
 
 class ComponentsTableViewController: UITableViewController {
 
-    let actions = ["paragraph", "dictionary"]
+    let actions = ["paragraph", "dictionary", "shimmer"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +33,9 @@ class ComponentsTableViewController: UITableViewController {
             self.navigationController?.pushViewController(destVC, animated: true)
         } else if row == 1 {
             let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Components", SBID: "DictionaryViewController") as! DictionaryViewController
+            self.navigationController?.pushViewController(destVC, animated: true)
+        } else if row == 2 {
+            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Components", SBID: "ShimmerViewController") as! ShimmerViewController
             self.navigationController?.pushViewController(destVC, animated: true)
         }
     }

@@ -127,6 +127,24 @@
             </objects>
             <point key="canvasLocation" x="724" y="286"/>
         </scene>
+        <!--Shimmer View Controller-->
+        <scene sceneID="biD-H0-5Be">
+            <objects>
+                <viewController storyboardIdentifier="ShimmerViewController" id="086-JU-DKJ" customClass="ShimmerViewController" customModule="RCToolsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AFz-3b-hk5"/>
+                        <viewControllerLayoutGuide type="bottom" id="tDN-V4-xmf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G1s-ys-adJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HnD-At-HnK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1146" y="286"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
