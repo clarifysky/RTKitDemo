@@ -127,10 +127,10 @@
             </objects>
             <point key="canvasLocation" x="724" y="286"/>
         </scene>
-        <!--Shimmer View Controller-->
+        <!--Glimmer View Controller-->
         <scene sceneID="biD-H0-5Be">
             <objects>
-                <viewController storyboardIdentifier="ShimmerViewController" id="086-JU-DKJ" customClass="ShimmerViewController" customModule="RCToolsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GlimmerViewController" id="086-JU-DKJ" customClass="GlimmerViewController" customModule="RCToolsDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AFz-3b-hk5"/>
                         <viewControllerLayoutGuide type="bottom" id="tDN-V4-xmf"/>
