@@ -13,6 +13,9 @@ class GlimmerViewController: UIViewController {
     var testLabel: UILabel?
     var gradientMask: CAGradientLayer?
     var glimmerView: RCGlimmer?
+    
+    var glimmerButton: UIButton?
+    var glimmerButtonAnimationing: Bool?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +36,7 @@ class GlimmerViewController: UIViewController {
         self.attachAnimations()
         
         self.attachFlexibleGlimmer()
+        self.attachExtensionGlimmer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,5 +94,19 @@ class GlimmerViewController: UIViewController {
     
     func toggleGlimmer() {
         self.glimmerView!.glimmer = !self.glimmerView!.glimmer
+    }
+    
+    func attachExtensionGlimmer() {
+        self.glimmerButton = UIButton(frame: CGRectMake(10, 115, 150, 30))
+        self.glimmerButton!.setTitle("extension Glimmer", forState: .Normal)
+        self.glimmerButton!.addTarget(self, action: "toggleExtensionGlimmer", forControlEvents: .TouchUpInside)
+        self.glimmerButton!.RCGlimmer()
+        self.view.addSubview(self.glimmerButton!)
+        self.glimmerButtonAnimationing = true
+    }
+    
+    func toggleExtensionGlimmer() {
+        self.glimmerButton?.RCGlimmerToggle(!self.glimmerButtonAnimationing!)
+        self.glimmerButtonAnimationing = !self.glimmerButtonAnimationing!
     }
 }

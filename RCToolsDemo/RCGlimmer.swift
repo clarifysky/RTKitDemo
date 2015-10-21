@@ -98,3 +98,63 @@ class RCGlimmer: UIView {
         }
     }
 }
+
+extension UIView {
+    var RCkTextAnimationKey: String { return "gradientAnimation" }
+    
+    func RCGlimmer(
+        RCGradientColors: [AnyObject] = [UIColor(white: 1.0, alpha: 0.3).CGColor, UIColor.greenColor().CGColor, UIColor(white: 1.0, alpha: 0.3).CGColor],
+        RCGradientLocations: [AnyObject] = [0, 0.15, 0.3],
+        RCAnimationDuration: CFTimeInterval = 1.0) {
+            
+            if self.layer.mask == nil {
+                let gradientMask = CAGradientLayer()
+                // 让渐变层向左边多延伸一点，这样，动画就需要运行左边的部分，而这些是不可见的，这样，就造成了
+                // 运行一点后暂歇一下的现象?
+                // Make mask more width at left, this will make a pause animation
+                //        gradientMask.frame = CGRectMake(-100, 0, self.testLabel!.bounds.width+100, self.testLabel!.bounds.height)
+                gradientMask.frame = self.bounds
+                gradientMask.colors = RCGradientColors
+                
+                // In order to make animations start from left edge to right edge,
+                // you should set correct startPoint and endPoint
+                // Section for locations is from 0 to 1.
+                // Point for startPoint and endPoint is not same to normal, it's the coordinate of layer.
+                // (0.5, 0.5) is the center point of layer.
+                gradientMask.startPoint = CGPointMake(-0.3, 0.5)
+                gradientMask.endPoint = CGPointMake(1.3, 0.5)
+                gradientMask.locations = RCGradientLocations
+                self.layer.mask = gradientMask
+            }
+            
+            if self.layer.mask.animationForKey(self.RCkTextAnimationKey) == nil {
+                // This animation will be applied on the locations of gradient.
+                // So its keyPath is locations?
+                let gradientAnimation = CABasicAnimation(keyPath: "locations")
+                gradientAnimation.fromValue = [0, 0.15, 0.3]
+                gradientAnimation.toValue = [1-0.3, 1-0.15, 1]
+                gradientAnimation.repeatCount = Float.infinity
+                gradientAnimation.duration = RCAnimationDuration
+                gradientAnimation.delegate = self
+                self.layer.mask.addAnimation(gradientAnimation, forKey:
+                    RCkTextAnimationKey)
+            }
+    }
+    
+    func RCGlimmerRemove() {
+        if self.layer.mask.animationForKey(self.RCkTextAnimationKey) != nil {
+            self.layer.mask.removeAnimationForKey(self.RCkTextAnimationKey)
+        }
+        if self.layer.mask != nil {
+            self.layer.mask = nil
+        }
+    }
+    
+    func RCGlimmerToggle(launch: Bool) {
+        if launch {
+            self.RCGlimmer()
+        } else {
+            self.RCGlimmerRemove()
+        }
+    }
+}
