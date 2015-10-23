@@ -31,6 +31,42 @@ class RCTools {
             let height = sizeOfParentView.height - insetsOfParentView.top - insetsOfParentView.bottom
             return CGSizeMake(width, height)
         }
+        
+        class func sizeFitContainer(#ContainerSize: CGSize, contentSize: CGSize) -> CGSize {
+            var width = contentSize.width
+            var height = contentSize.height
+            if width > ContainerSize.width {
+                width = ContainerSize.width
+                height = ContainerSize.width * (contentSize.height / contentSize.width)
+                
+                if height > ContainerSize.height {
+                    height = ContainerSize.height
+                    width = (contentSize.width / contentSize.height) * ContainerSize.height
+                }
+            } else if height > ContainerSize.height {
+                height = ContainerSize.height
+                width = (contentSize.width / contentSize.height) * ContainerSize.height
+                
+                if width > ContainerSize.width {
+                    width = ContainerSize.width
+                    height = ContainerSize.width * (contentSize.height / contentSize.width)
+                }
+            }
+            
+            return CGSizeMake(width, height)
+        }
+    }
+    
+    // characters
+    class Characters {
+        class func encodeUrl(url: String) -> String {
+            let customAllowedSet = NSCharacterSet(charactersInString: "#%<>@\\^`{|}").invertedSet
+            return url.stringByAddingPercentEncodingWithAllowedCharacters(customAllowedSet)!
+        }
+        
+        class func decodeUrl(url: String) -> String {
+            return url.stringByRemovingPercentEncoding!
+        }
     }
     
     // window tools

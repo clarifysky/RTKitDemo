@@ -10,7 +10,7 @@ import UIKit
 
 class ComponentsTableViewController: UITableViewController {
 
-    let actions = ["paragraph", "dictionary", "glimmer"]
+    let actions = ["paragraph", "dictionary", "glimmer", "gallery"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,6 +36,9 @@ class ComponentsTableViewController: UITableViewController {
             self.navigationController?.pushViewController(destVC, animated: true)
         } else if row == 2 {
             let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Components", SBID: "GlimmerViewController") as! GlimmerViewController
+            self.navigationController?.pushViewController(destVC, animated: true)
+        } else if row == 3 {
+            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Components", SBID: "GalleryBrowserViewController") as! GalleryBrowserViewController
             self.navigationController?.pushViewController(destVC, animated: true)
         }
     }

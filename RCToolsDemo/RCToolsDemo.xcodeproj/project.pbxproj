@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1838BEED1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838BEEC1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift */; };
+		1838BEEF1BDA0570005D7D8B /* JSProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838BEEE1BDA0570005D7D8B /* JSProcess.swift */; };
+		1838BEF11BDA204F005D7D8B /* GalleryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838BEF01BDA204F005D7D8B /* GalleryDetailViewController.swift */; };
 		189B6DA11BCF32A70083C02B /* Components.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189B6DA01BCF32A70083C02B /* Components.storyboard */; };
 		189B6DA41BCF32D50083C02B /* ParagraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B6DA31BCF32D50083C02B /* ParagraphViewController.swift */; };
 		18A9BB691BD5D93C00532575 /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9BB681BD5D93C00532575 /* DictionaryViewController.swift */; };
@@ -52,6 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1838BEEC1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryBrowserViewController.swift; sourceTree = "<group>"; };
+		1838BEEE1BDA0570005D7D8B /* JSProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSProcess.swift; sourceTree = "<group>"; };
+		1838BEF01BDA204F005D7D8B /* GalleryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryDetailViewController.swift; sourceTree = "<group>"; };
 		189B6DA01BCF32A70083C02B /* Components.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Components.storyboard; sourceTree = "<group>"; };
 		189B6DA31BCF32D50083C02B /* ParagraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParagraphViewController.swift; sourceTree = "<group>"; };
 		18A9BB681BD5D93C00532575 /* DictionaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +131,8 @@
 				189B6DA31BCF32D50083C02B /* ParagraphViewController.swift */,
 				18A9BB681BD5D93C00532575 /* DictionaryViewController.swift */,
 				18A9BB6A1BD5D9D900532575 /* ComponentsTableViewController.swift */,
+				1838BEEC1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift */,
+				1838BEF01BDA204F005D7D8B /* GalleryDetailViewController.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -233,6 +241,7 @@
 				CD6DD93C1BCBD9280092F561 /* CurveShadowView.swift */,
 				CD6DFAF71BCFD39F0015E6CF /* MyUILabel.swift */,
 				18E03B071BD08FDB0080FA72 /* UIVerticalLabel.swift */,
+				1838BEEE1BDA0570005D7D8B /* JSProcess.swift */,
 			);
 			name = RCTools;
 			sourceTree = "<group>";
@@ -391,7 +400,9 @@
 				18E5C7481BD740430095D216 /* RCGlimmer.swift in Sources */,
 				CD4BB2391BAA6D2300072773 /* ViewController.swift in Sources */,
 				CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */,
+				1838BEF11BDA204F005D7D8B /* GalleryDetailViewController.swift in Sources */,
 				CD4661DC1BBA101600FDFBDC /* SecondViewController.swift in Sources */,
+				1838BEEF1BDA0570005D7D8B /* JSProcess.swift in Sources */,
 				CD4BB2591BAA70B000072773 /* WindowMaskViewController.swift in Sources */,
 				CD4BB25B1BAA70F000072773 /* RCTools.swift in Sources */,
 				CD4BB2371BAA6D2300072773 /* AppDelegate.swift in Sources */,
@@ -399,6 +410,7 @@
 				18E03B081BD08FDB0080FA72 /* UIVerticalLabel.swift in Sources */,
 				CD6DD9401BCBDC3A0092F561 /* ShadowViewController.swift in Sources */,
 				CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */,
+				1838BEED1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift in Sources */,
 				CDE315831BAD3F8100D2C6AF /* MaskViewController.swift in Sources */,
 				CDBAC6E01BB5328200ADB568 /* ContainerViewController.swift in Sources */,
 				CD2B4D971BABC263003FFF19 /* WithNavBeenPresentedViewController.swift in Sources */,

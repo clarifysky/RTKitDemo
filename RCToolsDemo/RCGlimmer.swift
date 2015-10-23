@@ -9,7 +9,7 @@
 import UIKit
 
 class RCGlimmer: UIView {
-
+    
     private var gradientMask: CAGradientLayer?
     private var gradientAnimation: CABasicAnimation?
     private let kTextAnimationKey = "gradientAnimation"
@@ -41,7 +41,7 @@ class RCGlimmer: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -121,8 +121,8 @@ extension UIView {
                 // Section for locations is from 0 to 1.
                 // Point for startPoint and endPoint is not same to normal, it's the coordinate of layer.
                 // (0.5, 0.5) is the center point of layer.
-                gradientMask.startPoint = CGPointMake(-0.3, 0.5)
-                gradientMask.endPoint = CGPointMake(1.3, 0.5)
+                gradientMask.startPoint = CGPointMake(-(RCGradientLocations[2] as! CGFloat), 0.5)
+                gradientMask.endPoint = CGPointMake(1+(RCGradientLocations[2] as! CGFloat), 0.5)
                 gradientMask.locations = RCGradientLocations
                 self.layer.mask = gradientMask
             }
@@ -131,8 +131,8 @@ extension UIView {
                 // This animation will be applied on the locations of gradient.
                 // So its keyPath is locations?
                 let gradientAnimation = CABasicAnimation(keyPath: "locations")
-                gradientAnimation.fromValue = [0, 0.15, 0.3]
-                gradientAnimation.toValue = [1-0.3, 1-0.15, 1]
+                gradientAnimation.fromValue = RCGradientLocations
+                gradientAnimation.toValue = [1-(RCGradientLocations[2] as! CGFloat), 1-(RCGradientLocations[1] as! CGFloat), 1]
                 gradientAnimation.repeatCount = Float.infinity
                 gradientAnimation.duration = RCAnimationDuration
                 gradientAnimation.delegate = self
