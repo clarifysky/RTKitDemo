@@ -73,7 +73,13 @@ class GalleryBrowserViewController: UIViewController {
         let galleryDetailVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Components", SBID: "GalleryDetailViewController") as! GalleryDetailViewController
         galleryDetailVC.imageCurrentIndex = imageCurrentIndex
         galleryDetailVC.images = images
-        self.swipeLeft(galleryDetailVC, fromVC: self, duration: 0.5, options: .CurveLinear, completion: nil)
+        var testArr = [Bool]()
+        for var i = 0; i < images.count; i++ {
+            testArr.append(false)
+        }
+        galleryDetailVC.imageViewsLoaded = testArr
+        
+        presentViewController(galleryDetailVC, animated: true, completion: nil)
     }
 }
 
@@ -96,7 +102,7 @@ extension GalleryBrowserViewController: WKScriptMessageHandler {
 //        println(sentData)
         
         let sentData = message.body as? Dictionary<String, AnyObject>
-        println(sentData)
+        println("sentData: \(sentData)")
         
         if let type = sentData!["type"] as? String {
             if type == "index" {
