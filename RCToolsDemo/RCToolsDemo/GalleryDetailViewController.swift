@@ -106,8 +106,12 @@ class GalleryDetailViewController: UIViewController {
         self.imagesCollection?.scrollToItemAtIndexPath(NSIndexPath(forRow: self.imageCurrentIndex, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: true)
     }
     
-    func imageDidFinishSaving() {
-        println("saved")
+    func image(image: UIImage, didFinishSavingWithError: NSError?, contextInfo: AnyObject) {
+        if didFinishSavingWithError != nil {
+            println("something goes wrong")
+        }
+//        println("saved")
+        self.showPop("saved")
     }
 }
 
@@ -144,7 +148,7 @@ extension GalleryDetailViewController: GalleryDataDelegate {
             println("began")
             let imageView = recognizer.view as! UIImageView
             let image = imageView.image
-            UIImageWriteToSavedPhotosAlbum(image, self, "imageDidFinishSaving", nil)
+            UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo:", nil)
             break
         case .Changed:
             println("changed")

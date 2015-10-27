@@ -32,6 +32,7 @@ class RCTools {
             return CGSizeMake(width, height)
         }
         
+        // appropriate size in specific container
         class func sizeFitContainer(#ContainerSize: CGSize, contentSize: CGSize) -> CGSize {
             var width = contentSize.width
             var height = contentSize.height
@@ -200,6 +201,16 @@ extension UIViewController {
             toVC!.view.frame = finalToFrame!
             fromVC!.view.frame = finalFromFrame!
         }, completion: completion)
+    }
+    
+    func showPop(message: String?) {
+        let popWidth = UIScreen.mainScreen().bounds.width / 2
+        let popHeight: CGFloat = 100
+        let popOrigin = RCTools.Math.originInParentView(sizeOfParentView: UIScreen.mainScreen().bounds.size, sizeOfSelf: CGSizeMake(popWidth, popHeight))
+        let popFrame = CGRectMake(popOrigin.x, popOrigin.y, popWidth, popHeight)
+        let rcpop = RCPop(frame: popFrame, message: message)
+        
+        self.view.addSubview(rcpop)
     }
 }
 

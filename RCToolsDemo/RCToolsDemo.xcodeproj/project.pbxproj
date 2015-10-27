@@ -10,6 +10,7 @@
 		1838BEED1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838BEEC1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift */; };
 		1838BEEF1BDA0570005D7D8B /* JSProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838BEEE1BDA0570005D7D8B /* JSProcess.swift */; };
 		1838BEF11BDA204F005D7D8B /* GalleryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838BEF01BDA204F005D7D8B /* GalleryDetailViewController.swift */; };
+		1892CEC21BDF0FCF006CBA03 /* RCPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1892CEC11BDF0FCF006CBA03 /* RCPop.swift */; };
 		189830A51BDDD60E00FFE854 /* ImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189830A41BDDD60E00FFE854 /* ImagesCell.swift */; };
 		189B6DA11BCF32A70083C02B /* Components.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189B6DA01BCF32A70083C02B /* Components.storyboard */; };
 		189B6DA41BCF32D50083C02B /* ParagraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B6DA31BCF32D50083C02B /* ParagraphViewController.swift */; };
@@ -59,6 +60,7 @@
 		1838BEEC1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryBrowserViewController.swift; sourceTree = "<group>"; };
 		1838BEEE1BDA0570005D7D8B /* JSProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSProcess.swift; sourceTree = "<group>"; };
 		1838BEF01BDA204F005D7D8B /* GalleryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryDetailViewController.swift; sourceTree = "<group>"; };
+		1892CEC11BDF0FCF006CBA03 /* RCPop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCPop.swift; sourceTree = "<group>"; };
 		189830A41BDDD60E00FFE854 /* ImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesCell.swift; sourceTree = "<group>"; };
 		189B6DA01BCF32A70083C02B /* Components.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Components.storyboard; sourceTree = "<group>"; };
 		189B6DA31BCF32D50083C02B /* ParagraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParagraphViewController.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				CD6DFAF71BCFD39F0015E6CF /* MyUILabel.swift */,
 				18E03B071BD08FDB0080FA72 /* UIVerticalLabel.swift */,
 				1838BEEE1BDA0570005D7D8B /* JSProcess.swift */,
+				1892CEC11BDF0FCF006CBA03 /* RCPop.swift */,
 			);
 			name = RCTools;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				18A9BB691BD5D93C00532575 /* DictionaryViewController.swift in Sources */,
 				CD2B4D941BABB7D7003FFF19 /* BeenPresentedViewController.swift in Sources */,
 				CD6582F11BC7C9710053BD0E /* PresentedViewController.swift in Sources */,
+				1892CEC21BDF0FCF006CBA03 /* RCPop.swift in Sources */,
 				189830A51BDDD60E00FFE854 /* ImagesCell.swift in Sources */,
 				CD4661DA1BBA100B00FDFBDC /* FirstViewController.swift in Sources */,
 				18A9BB6B1BD5D9D900532575 /* ComponentsTableViewController.swift in Sources */,

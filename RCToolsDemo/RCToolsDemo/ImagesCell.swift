@@ -37,10 +37,6 @@ class ImagesCell: UICollectionViewCell {
         let spinner = UIActivityIndicatorView(frame: CGRectMake(spinnerOrigin.x, spinnerOrigin.y, 30, 30))
         self.spinner = spinner
         self.addSubview(self.spinner!)
-        
-//        let longPressGesture = UILongPressGestureRecognizer(target: self, action: "longPress:")
-//        longPressGesture.minimumPressDuration = 0.6
-//        self.imageView?.addGestureRecognizer(longPressGesture)
     }
     
     private func loadImage(imageURL: String) {
@@ -60,12 +56,18 @@ class ImagesCell: UICollectionViewCell {
                 self.imageView!.image = image
                 
                 self.dataDelegate?.saveImage(self.row!, image: image!, frame: newFrame)
+                
+                // Gesture
+                self.imageView?.userInteractionEnabled = true
+                let longPressGesture = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
+                longPressGesture.minimumPressDuration = 0.6
+                self.imageView?.addGestureRecognizer(longPressGesture)
             })
         })
     }
     
-//    func longPress(recognizer: UILongPressGestureRecognizer) {
-//        println("imagesCell long press")
-//        self.dataDelegate?.handleLongPress(recognizer)
-//    }
+    func handleLongPress(recognizer: UILongPressGestureRecognizer) {
+        println("imagesCell long press")
+        self.dataDelegate?.handleLongPress(recognizer)
+    }
 }
