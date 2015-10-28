@@ -107,6 +107,7 @@ extension GalleryBrowserViewController: WKScriptMessageHandler {
         if let type = sentData!["type"] as? String {
             if type == "index" {
                 let cid = sentData!["data"] as! Int
+                println("index: \(cid)")
                 self.presentGalleryDetail(cid, images: self.images!)
             } else {
                 self.images = sentData!["data"] as? [String]
