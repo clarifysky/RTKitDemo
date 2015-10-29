@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1813E37A1BE1EDB100B2514F /* SnapshotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813E3791BE1EDB000B2514F /* SnapshotViewController.swift */; };
 		1838BEED1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838BEEC1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift */; };
 		1838BEEF1BDA0570005D7D8B /* JSProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838BEEE1BDA0570005D7D8B /* JSProcess.swift */; };
 		1838BEF11BDA204F005D7D8B /* GalleryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838BEF01BDA204F005D7D8B /* GalleryDetailViewController.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1813E3791BE1EDB000B2514F /* SnapshotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotViewController.swift; sourceTree = "<group>"; };
 		1838BEEC1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryBrowserViewController.swift; sourceTree = "<group>"; };
 		1838BEEE1BDA0570005D7D8B /* JSProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSProcess.swift; sourceTree = "<group>"; };
 		1838BEF01BDA204F005D7D8B /* GalleryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryDetailViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				18E5C7491BD740AB0095D216 /* GlimmerViewController.swift */,
 				18B5ED061BE0AE4400B29BCC /* GraphicTableViewController.swift */,
 				18B5ED081BE0AEA900B29BCC /* CarMovingViewController.swift */,
+				1813E3791BE1EDB000B2514F /* SnapshotViewController.swift */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1813E37A1BE1EDB100B2514F /* SnapshotViewController.swift in Sources */,
 				CD8816C41BBB959F0052EA45 /* SegueTools.swift in Sources */,
 				189B6DA41BCF32D50083C02B /* ParagraphViewController.swift in Sources */,
 				CD6582EF1BC7C9610053BD0E /* FifthViewController.swift in Sources */,

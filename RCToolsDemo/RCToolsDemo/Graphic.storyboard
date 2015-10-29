@@ -76,6 +76,85 @@
             </objects>
             <point key="canvasLocation" x="787" y="409"/>
         </scene>
+        <!--Snapshot View Controller-->
+        <scene sceneID="SGA-Yk-AR0">
+            <objects>
+                <viewController storyboardIdentifier="SnapshotViewController" id="NwT-Zs-6Fm" customClass="SnapshotViewController" customModule="RCToolsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bMd-nu-FUC"/>
+                        <viewControllerLayoutGuide type="bottom" id="F7G-KF-S96"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pYD-0n-7ho">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfg-Ig-9tv">
+                                <rect key="frame" x="16" y="28" width="176" height="88"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brown" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WkZ-NC-WIq">
+                                        <rect key="frame" x="67" y="33" width="50" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="PTw-Fe-Wj3"/>
+                                    <constraint firstAttribute="centerY" secondItem="WkZ-NC-WIq" secondAttribute="centerY" constant="0.5" id="VfZ-g8-LhQ"/>
+                                    <constraint firstAttribute="centerX" secondItem="WkZ-NC-WIq" secondAttribute="centerX" constant="-4" id="YjT-R6-u3R"/>
+                                    <constraint firstAttribute="width" constant="176" id="vzv-7B-9b9"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSs-W1-h0Z">
+                                <rect key="frame" x="16" y="518" width="64" height="30"/>
+                                <state key="normal" title="snapshot">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takeSnapshot:" destination="NwT-Zs-6Fm" eventType="touchUpInside" id="ZlZ-8f-GZU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oD8-uQ-E3r">
+                                <rect key="frame" x="88" y="518" width="76" height="30"/>
+                                <state key="normal" title="screenshot">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takeScreenshot:" destination="NwT-Zs-6Fm" eventType="touchUpInside" id="28n-Ha-4Wx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="screenshot will be saved at Albums in Photos App" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHi-zq-7Sc">
+                                <rect key="frame" x="16" y="478" width="288" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="PuM-yn-9G5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
+                        <constraints>
+                            <constraint firstItem="LSs-W1-h0Z" firstAttribute="top" secondItem="QHi-zq-7Sc" secondAttribute="bottom" constant="-1" id="44H-ua-IrW"/>
+                            <constraint firstItem="LSs-W1-h0Z" firstAttribute="leading" secondItem="pYD-0n-7ho" secondAttribute="leadingMargin" id="8mX-yq-UY4"/>
+                            <constraint firstItem="hfg-Ig-9tv" firstAttribute="leading" secondItem="pYD-0n-7ho" secondAttribute="leadingMargin" id="9IE-HA-vly"/>
+                            <constraint firstItem="oD8-uQ-E3r" firstAttribute="top" secondItem="LSs-W1-h0Z" secondAttribute="top" id="IFe-Ho-Xj5"/>
+                            <constraint firstItem="F7G-KF-S96" firstAttribute="top" secondItem="LSs-W1-h0Z" secondAttribute="bottom" constant="20" id="SX7-tM-LWV"/>
+                            <constraint firstItem="QHi-zq-7Sc" firstAttribute="leading" secondItem="pYD-0n-7ho" secondAttribute="leadingMargin" id="vc2-tW-PA6"/>
+                            <constraint firstItem="hfg-Ig-9tv" firstAttribute="top" secondItem="bMd-nu-FUC" secondAttribute="bottom" constant="8" id="wdk-Gs-gnZ"/>
+                            <constraint firstItem="oD8-uQ-E3r" firstAttribute="leading" secondItem="LSs-W1-h0Z" secondAttribute="trailing" constant="8" id="x8r-ju-tXd"/>
+                            <constraint firstItem="oD8-uQ-E3r" firstAttribute="height" secondItem="LSs-W1-h0Z" secondAttribute="height" id="xaT-xU-R9O"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="brownView" destination="hfg-Ig-9tv" id="Duz-vl-OFV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qTR-a9-Grh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1226" y="409"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

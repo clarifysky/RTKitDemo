@@ -228,4 +228,16 @@ extension UIView {
                 }
         })
     }
+    
+    func snapshot() -> UIImage {
+        if(UIGraphicsGetCurrentContext() == nil) {
+            UIGraphicsBeginImageContextWithOptions(self.frame.size, false, 0.0)
+        } else {
+            UIGraphicsBeginImageContext(self.frame.size)
+        }
+        self.layer.renderInContext(UIGraphicsGetCurrentContext())
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
 }
