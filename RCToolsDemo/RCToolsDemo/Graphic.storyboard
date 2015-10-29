@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Graphic Table View Controller-->
@@ -41,7 +42,34 @@
                     <view key="view" contentMode="scaleToFill" id="jMh-xk-D2h">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gW-38-qIS">
+                                <rect key="frame" x="16" y="518" width="43" height="30"/>
+                                <state key="normal" title="Pause">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseCar:" destination="eVI-3w-ECh" eventType="touchUpInside" id="BBI-iz-eBA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4L-dA-bTH">
+                                <rect key="frame" x="67" y="518" width="62" height="30"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="carContinue:" destination="eVI-3w-ECh" eventType="touchUpInside" id="jWe-yu-OXy"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1gW-38-qIS" firstAttribute="leading" secondItem="jMh-xk-D2h" secondAttribute="leadingMargin" id="2id-jR-AY9"/>
+                            <constraint firstItem="1gW-38-qIS" firstAttribute="top" secondItem="R4L-dA-bTH" secondAttribute="top" id="M5x-4E-59E"/>
+                            <constraint firstItem="aEA-J4-zMP" firstAttribute="top" secondItem="1gW-38-qIS" secondAttribute="bottom" constant="20" id="Msa-BM-GLr"/>
+                            <constraint firstItem="1gW-38-qIS" firstAttribute="height" secondItem="R4L-dA-bTH" secondAttribute="height" id="oAs-hO-22c"/>
+                            <constraint firstItem="R4L-dA-bTH" firstAttribute="leading" secondItem="1gW-38-qIS" secondAttribute="trailing" constant="8" id="w1l-y0-S6A"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fem-Jp-H8g" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -342,6 +342,7 @@
 		CD4BB2291BAA6D2300072773 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = rexcao;
 				TargetAttributes = {
