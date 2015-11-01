@@ -47,6 +47,10 @@
 		CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7FCDE91BC6433200A126A6 /* FourthViewController.swift */; };
 		CD8816C41BBB959F0052EA45 /* SegueTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8816C31BBB959F0052EA45 /* SegueTools.swift */; };
 		CDBAC6E01BB5328200ADB568 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAC6DF1BB5328200ADB568 /* ContainerViewController.swift */; };
+		CDD515A01BE306F200C5765C /* ZeroGapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD5159F1BE306F200C5765C /* ZeroGapViewController.swift */; };
+		CDD515A31BE3074200C5765C /* Controls.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD515A21BE3074200C5765C /* Controls.storyboard */; };
+		CDD515A51BE307CF00C5765C /* ControlsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD515A41BE307CF00C5765C /* ControlsTableViewController.swift */; };
+		CDD515A81BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */; };
 		CDE315831BAD3F8100D2C6AF /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE315821BAD3F8100D2C6AF /* MaskViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +111,10 @@
 		CD7FCDE91BC6433200A126A6 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		CD8816C31BBB959F0052EA45 /* SegueTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueTools.swift; sourceTree = "<group>"; };
 		CDBAC6DF1BB5328200ADB568 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		CDD5159F1BE306F200C5765C /* ZeroGapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZeroGapViewController.swift; sourceTree = "<group>"; };
+		CDD515A21BE3074200C5765C /* Controls.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Controls.storyboard; sourceTree = "<group>"; };
+		CDD515A41BE307CF00C5765C /* ControlsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsTableViewController.swift; sourceTree = "<group>"; };
+		CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZeriGapCollectionViewLayout.swift; sourceTree = "<group>"; };
 		CDE315821BAD3F8100D2C6AF /* MaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +142,7 @@
 				CD4BB23A1BAA6D2300072773 /* Main.storyboard */,
 				189B6DA01BCF32A70083C02B /* Components.storyboard */,
 				18B5ED041BE0ADC700B29BCC /* Graphic.storyboard */,
+				CDD515A21BE3074200C5765C /* Controls.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -264,6 +273,7 @@
 		CD4BB2571BAA6D9800072773 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CDD515A11BE3072C00C5765C /* Controls */,
 				189B6DA21BCF32C30083C02B /* Components */,
 				CD6DD93E1BCBDC170092F561 /* Graphics */,
 				CD7C96AA1BB4E2FE001754A1 /* Transition */,
@@ -299,6 +309,24 @@
 				CD6582F01BC7C9710053BD0E /* PresentedViewController.swift */,
 			);
 			name = Transition;
+			sourceTree = "<group>";
+		};
+		CDD515A11BE3072C00C5765C /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				CDD515A61BE30E5F00C5765C /* Views */,
+				CDD5159F1BE306F200C5765C /* ZeroGapViewController.swift */,
+				CDD515A41BE307CF00C5765C /* ControlsTableViewController.swift */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
+		CDD515A61BE30E5F00C5765C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +410,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDD515A31BE3074200C5765C /* Controls.storyboard in Resources */,
 				CD4BB23C1BAA6D2300072773 /* Main.storyboard in Resources */,
 				CD4BB2411BAA6D2300072773 /* LaunchScreen.xib in Resources */,
 				189B6DA11BCF32A70083C02B /* Components.storyboard in Resources */,
@@ -409,6 +438,7 @@
 				189B6DA41BCF32D50083C02B /* ParagraphViewController.swift in Sources */,
 				CD6582EF1BC7C9610053BD0E /* FifthViewController.swift in Sources */,
 				CD2B4D9A1BABC5FA003FFF19 /* TestWindowMask.swift in Sources */,
+				CDD515A01BE306F200C5765C /* ZeroGapViewController.swift in Sources */,
 				CD6DFAF81BCFD39F0015E6CF /* MyUILabel.swift in Sources */,
 				18B5ED071BE0AE4400B29BCC /* GraphicTableViewController.swift in Sources */,
 				CD13C91A1BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift in Sources */,
@@ -433,6 +463,8 @@
 				CD4BB2371BAA6D2300072773 /* AppDelegate.swift in Sources */,
 				CD4661DE1BBA102000FDFBDC /* ThirdViewController.swift in Sources */,
 				18E03B081BD08FDB0080FA72 /* UIVerticalLabel.swift in Sources */,
+				CDD515A51BE307CF00C5765C /* ControlsTableViewController.swift in Sources */,
+				CDD515A81BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift in Sources */,
 				CD6DD9401BCBDC3A0092F561 /* ShadowViewController.swift in Sources */,
 				CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */,
 				1838BEED1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift in Sources */,

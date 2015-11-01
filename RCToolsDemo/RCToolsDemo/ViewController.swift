@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    let actions = ["windowMask", "scenesTransition", "shadowView", "components", "graphic"]
+    let actions = ["windowMask", "scenesTransition", "shadowView", "components", "graphic", "controls"]
     let cellIdentifier = "tools"
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +53,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             self.navigationController?.pushViewController(destinationVC, animated: true)
         } else if self.actions[indexPath.row] == "graphic" {
             let destinationVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Graphic", SBID: "GraphicTableViewController") as! GraphicTableViewController
+            self.navigationController?.pushViewController(destinationVC, animated: true)
+        } else if self.actions[indexPath.row] == "controls" {
+            let destinationVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Controls", SBID: "ControlsTableViewController") as! ControlsTableViewController
             self.navigationController?.pushViewController(destinationVC, animated: true)
         } else {
             performSegueWithIdentifier(self.actions[indexPath.row], sender: self)   
