@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Controls Table View Controller-->
@@ -30,6 +31,43 @@
             </objects>
             <point key="canvasLocation" x="285.33333333333331" y="304.82666666666665"/>
         </scene>
+        <!--testNavigation-->
+        <scene sceneID="BZe-Nb-Ab0">
+            <objects>
+                <viewController storyboardIdentifier="TestNavigationController" id="z7n-e4-6EM" customClass="TestNavigationController" customModule="RCToolsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M1r-XC-V1q"/>
+                        <viewControllerLayoutGuide type="bottom" id="avF-Gi-23t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IGN-vi-FlN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="testNavgationController" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTr-gc-VAU">
+                                <rect key="frame" x="16" y="72" width="182" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XTr-gc-VAU" firstAttribute="leading" secondItem="IGN-vi-FlN" secondAttribute="leadingMargin" id="oMh-G5-En0"/>
+                            <constraint firstItem="XTr-gc-VAU" firstAttribute="top" secondItem="M1r-XC-V1q" secondAttribute="bottom" constant="8" id="yld-dx-PdR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="testNavigation" id="adJ-6e-Isg">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8hK-t4-G2U">
+                            <connections>
+                                <action selector="dismissVC:" destination="z7n-e4-6EM" id="9aX-uI-vYw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v3B-8a-0bu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="817" y="994"/>
+        </scene>
         <!--Zero Gap View Controller-->
         <scene sceneID="2Xe-MU-7dV">
             <objects>
@@ -47,6 +85,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xLI-x7-drH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="734" y="304"/>
+        </scene>
+        <!--Customized Navigation Controller-->
+        <scene sceneID="FYj-IV-wff">
+            <objects>
+                <navigationController storyboardIdentifier="CustomizedNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="2gX-MY-0zt" customClass="CustomizedNavigationController" customModule="RCToolsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yw2-aK-CeK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="z7n-e4-6EM" kind="relationship" relationship="rootViewController" id="Cw0-p6-NfE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zD4-Xa-LQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="285" y="994"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

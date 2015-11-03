@@ -10,7 +10,7 @@ import UIKit
 
 class ControlsTableViewController: UITableViewController {
     
-    let actions = ["UICollectionView"]
+    let actions = ["UICollectionView", "CustomizedNavigation"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +26,9 @@ class ControlsTableViewController: UITableViewController {
         if row == 0 {
             let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Controls", SBID: "ZeroGapViewController") as! ZeroGapViewController
             self.navigationController?.pushViewController(destVC, animated: true)
+        } else if row == 1 {
+            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Controls", SBID: "CustomizedNavigationController") as! CustomizedNavigationController
+            self.presentViewController(destVC, animated: true, completion: nil)
         }
     }
 

@@ -11,6 +11,8 @@
 		1838BEED1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838BEEC1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift */; };
 		1838BEEF1BDA0570005D7D8B /* JSProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838BEEE1BDA0570005D7D8B /* JSProcess.swift */; };
 		1838BEF11BDA204F005D7D8B /* GalleryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838BEF01BDA204F005D7D8B /* GalleryDetailViewController.swift */; };
+		1868A3731BE87E8D007D5F47 /* CustomizedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868A3721BE87E8D007D5F47 /* CustomizedNavigationController.swift */; };
+		1868A3751BE883A9007D5F47 /* TestNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868A3741BE883A9007D5F47 /* TestNavigationController.swift */; };
 		1892CEC21BDF0FCF006CBA03 /* RCPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1892CEC11BDF0FCF006CBA03 /* RCPop.swift */; };
 		189830A51BDDD60E00FFE854 /* ImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189830A41BDDD60E00FFE854 /* ImagesCell.swift */; };
 		189B6DA11BCF32A70083C02B /* Components.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189B6DA01BCF32A70083C02B /* Components.storyboard */; };
@@ -69,6 +71,8 @@
 		1838BEEC1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryBrowserViewController.swift; sourceTree = "<group>"; };
 		1838BEEE1BDA0570005D7D8B /* JSProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSProcess.swift; sourceTree = "<group>"; };
 		1838BEF01BDA204F005D7D8B /* GalleryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryDetailViewController.swift; sourceTree = "<group>"; };
+		1868A3721BE87E8D007D5F47 /* CustomizedNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedNavigationController.swift; sourceTree = "<group>"; };
+		1868A3741BE883A9007D5F47 /* TestNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNavigationController.swift; sourceTree = "<group>"; };
 		1892CEC11BDF0FCF006CBA03 /* RCPop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCPop.swift; sourceTree = "<group>"; };
 		189830A41BDDD60E00FFE854 /* ImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesCell.swift; sourceTree = "<group>"; };
 		189B6DA01BCF32A70083C02B /* Components.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Components.storyboard; sourceTree = "<group>"; };
@@ -317,6 +321,8 @@
 				CDD515A61BE30E5F00C5765C /* Views */,
 				CDD5159F1BE306F200C5765C /* ZeroGapViewController.swift */,
 				CDD515A41BE307CF00C5765C /* ControlsTableViewController.swift */,
+				1868A3721BE87E8D007D5F47 /* CustomizedNavigationController.swift */,
+				1868A3741BE883A9007D5F47 /* TestNavigationController.swift */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -454,6 +460,7 @@
 				18E5C7481BD740430095D216 /* RCGlimmer.swift in Sources */,
 				CD4BB2391BAA6D2300072773 /* ViewController.swift in Sources */,
 				CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */,
+				1868A3751BE883A9007D5F47 /* TestNavigationController.swift in Sources */,
 				1838BEF11BDA204F005D7D8B /* GalleryDetailViewController.swift in Sources */,
 				CD4661DC1BBA101600FDFBDC /* SecondViewController.swift in Sources */,
 				1838BEEF1BDA0570005D7D8B /* JSProcess.swift in Sources */,
@@ -466,6 +473,7 @@
 				CDD515A51BE307CF00C5765C /* ControlsTableViewController.swift in Sources */,
 				CDD515A81BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift in Sources */,
 				CD6DD9401BCBDC3A0092F561 /* ShadowViewController.swift in Sources */,
+				1868A3731BE87E8D007D5F47 /* CustomizedNavigationController.swift in Sources */,
 				CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */,
 				1838BEED1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift in Sources */,
 				CDE315831BAD3F8100D2C6AF /* MaskViewController.swift in Sources */,

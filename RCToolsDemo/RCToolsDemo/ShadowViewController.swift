@@ -10,6 +10,8 @@ import UIKit
 
 class ShadowViewController: UIViewController {
 
+    @IBOutlet weak var needShadowView: UIView!
+    private var curveShadowShowed: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,4 +27,17 @@ class ShadowViewController: UIViewController {
         let curveShadow = CurveShadowView(alignment: .horizontal, length: 300, anchor: CGPointMake(10, 100))
         self.view.addSubview(curveShadow)
     }
+    
+    @IBAction func toggleShadow(sender: UIButton) {
+        if !self.curveShadowShowed {
+            self.needShadowView.layer.RCCurveShadow(CurveShadowDirection.Left)
+            self.curveShadowShowed = true
+        } else {
+            self.needShadowView.layer.shadowOpacity = 0.0
+            self.needShadowView.layer.shadowOffset = CGSizeMake(0, 0)
+            self.needShadowView.layer.shadowPath = nil
+            self.curveShadowShowed = false
+        }
+    }
+    
 }
