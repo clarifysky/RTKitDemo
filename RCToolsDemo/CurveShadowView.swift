@@ -99,4 +99,8 @@ extension CALayer {
         
         self.shadowPath = path.CGPath
     }
+    
+    func RCMultiCurveShadow(alignments: [CurveShadowDirection],  color: UIColor? = nil, shadowOpacity: Float = 1.0, archHeight: CGFloat = 5) {
+        var points: [[CGPoint]], controlPoints: [CGPoint], shadowOffset: CGSize
+    }
 }

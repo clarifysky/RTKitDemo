@@ -24,6 +24,8 @@ class GalleryDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+        self.view.tag = 0
         
         for var i = 0; i < self.images!.count; i++ {
             self.imageViewsLoaded?.append(false)
@@ -77,6 +79,7 @@ class GalleryDetailViewController: UIViewController {
 //    }
     
     func viewTapped(recognizer: UITapGestureRecognizer) {
+        println(recognizer.view?.tag)
         switch recognizer.state {
         case .Ended:
             dismissViewControllerAnimated(true, completion: nil)
@@ -95,6 +98,8 @@ class GalleryDetailViewController: UIViewController {
         self.imagesCollection?.registerClass(ImagesCell.self, forCellWithReuseIdentifier: "images")
         self.imagesCollection?.delegate = self
         self.imagesCollection?.dataSource = self
+        self.imagesCollection?.backgroundColor = UIColor.clearColor()
+        self.imagesCollection?.tag = 1
         
         self.imagesCollection?.showsHorizontalScrollIndicator = false
         // Set this to true to tell UISCollView that scroll its width while every scrolling.
