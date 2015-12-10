@@ -274,16 +274,27 @@
                                     <action selector="presentAnother:" destination="0kD-Hy-y7C" eventType="touchUpInside" id="m84-p8-lLA"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="meZ-OJ-qgK">
+                                <rect key="frame" x="16" y="94" width="40" height="40"/>
+                                <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="96K-fL-Iyo"/>
+                                    <constraint firstAttribute="width" constant="40" id="a8o-w8-rUu"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="B8o-sL-N5D" firstAttribute="top" secondItem="VVr-J4-zF2" secondAttribute="bottom" constant="7.5" id="3Pr-hf-zwZ"/>
                             <constraint firstAttribute="centerX" secondItem="VVr-J4-zF2" secondAttribute="centerX" constant="-0.5" id="CZi-uz-4Ly"/>
                             <constraint firstAttribute="centerX" secondItem="B8o-sL-N5D" secondAttribute="centerX" constant="-0.5" id="OMv-ZA-Hzl"/>
+                            <constraint firstItem="meZ-OJ-qgK" firstAttribute="top" secondItem="B8o-sL-N5D" secondAttribute="bottom" constant="8" id="bVV-yg-hxU"/>
                             <constraint firstItem="VVr-J4-zF2" firstAttribute="top" secondItem="vO5-aF-D3E" secondAttribute="bottom" constant="8" id="d8q-Hd-tkX"/>
+                            <constraint firstItem="meZ-OJ-qgK" firstAttribute="leading" secondItem="ZqI-z9-cny" secondAttribute="leadingMargin" id="vrX-eF-TOR"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="movingView" destination="meZ-OJ-qgK" id="0SR-v1-yGf"/>
                         <outlet property="vcLabel" destination="VVr-J4-zF2" id="Lxm-2X-3s9"/>
                     </connections>
                 </viewController>

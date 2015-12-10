@@ -46,6 +46,7 @@ class GalleryBrowserViewController: UIViewController {
 
     func attachBrowser() {
         let config = WKWebViewConfiguration()
+        config.userContentController.addScriptMessageHandler(self, name: "share")
         config.userContentController.addScriptMessageHandler(self, name: "test")
         
         // WebView
@@ -98,19 +99,20 @@ extension GalleryBrowserViewController: WKNavigationDelegate {
 
 extension GalleryBrowserViewController: WKScriptMessageHandler {
     func userContentController(userContentController: WKUserContentController, didReceiveScriptMessage message: WKScriptMessage) {
-//        let sentData = message.body as! NSDictionary
-//        println(sentData)
-        
-        let sentData = message.body as? Dictionary<String, AnyObject>
-        println("sentData: \(sentData)")
-        
-        if let type = sentData!["type"] as? String {
-            if type == "index" {
-                let cid = sentData!["data"] as! Int
-                println("index: \(cid)")
-                self.presentGalleryDetail(cid, images: self.images!)
-            } else {
-                self.images = sentData!["data"] as? [String]
+        if message.name == "share" {
+            println("You triggered sharing")
+        } else {
+            let sentData = message.body as? Dictionary<String, AnyObject>
+            println("sentData: \(sentData)")
+            
+            if let type = sentData!["type"] as? String {
+                if type == "index" {
+                    let cid = sentData!["data"] as! Int
+                    println("index: \(cid)")
+                    self.presentGalleryDetail(cid, images: self.images!)
+                } else {
+                    self.images = sentData!["data"] as? [String]
+                }
             }
         }
     }

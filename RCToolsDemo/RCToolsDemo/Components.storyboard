@@ -85,6 +85,39 @@
             </objects>
             <point key="canvasLocation" x="237" y="964"/>
         </scene>
+        <!--Audio View Controller-->
+        <scene sceneID="uRe-Rh-toi">
+            <objects>
+                <viewController storyboardIdentifier="AudioViewController" id="GZf-3o-dBi" customClass="AudioViewController" customModule="RCToolsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aMJ-4A-xbG"/>
+                        <viewControllerLayoutGuide type="bottom" id="yhs-Po-MGx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qXn-DC-LBA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04k-GD-t2z">
+                                <rect key="frame" x="16" y="64" width="85" height="30"/>
+                                <state key="normal" title="AudioQuene">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="remotePlay:" destination="GZf-3o-dBi" eventType="touchUpInside" id="Z9x-OX-gQA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="04k-GD-t2z" firstAttribute="top" secondItem="aMJ-4A-xbG" secondAttribute="bottom" constant="44" id="2k7-Xk-7Ij"/>
+                            <constraint firstItem="04k-GD-t2z" firstAttribute="leading" secondItem="qXn-DC-LBA" secondAttribute="leadingMargin" id="gqo-ma-Fhy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="31t-Ad-9v6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724" y="964"/>
+        </scene>
         <!--Dictionary View Controller-->
         <scene sceneID="7gM-ga-HNt">
             <objects>
@@ -113,25 +146,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="object before convert:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9b-56-iWl">
-                                <rect key="frame" x="0.0" y="186" width="169" height="21"/>
+                                <rect key="frame" x="0.0" y="186" width="168.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="res1" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMu-fN-gUp">
-                                <rect key="frame" x="0.0" y="215" width="33" height="21"/>
+                                <rect key="frame" x="0.0" y="214" width="33" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="object after convert:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCB-YM-NdD">
-                                <rect key="frame" x="0.0" y="246" width="155" height="21"/>
+                                <rect key="frame" x="0.0" y="245" width="154.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="res2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myH-Da-4gg">
-                                <rect key="frame" x="5" y="275" width="33" height="21"/>
+                                <rect key="frame" x="5" y="273.5" width="33" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

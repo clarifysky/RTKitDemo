@@ -11,10 +11,15 @@ import UIKit
 class FifthViewController: UIViewController {
 
     @IBOutlet weak var vcLabel: UILabel!
+    @IBOutlet weak var movingView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        println("fifth view did load")
+        UIView.animateWithDuration(0.25, animations: {
+            self.movingView.frame.origin.x = self.view.bounds.width - self.movingView.frame.width
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +31,14 @@ class FifthViewController: UIViewController {
 //        UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.Autoreverse, animations: {
 //            self.vcLabel.frame.origin.x = 0
 //        }, completion: nil)
-        self.vcLabel.reverseXAnimation(0.5, startX: self.vcLabel.frame.origin.x, endX: 0)
+//        self.vcLabel.reverseXAnimation(0.5, startX: self.vcLabel.frame.origin.x, endX: 0)
+        
+        
+//        println("fifth view did appear")
+//        UIView.animateWithDuration(0.25, animations: {
+//            self.movingView.frame.origin.x = self.view.bounds.width - self.movingView.frame.width
+//        })
+        println("fifth view did appear")
     }
     
 

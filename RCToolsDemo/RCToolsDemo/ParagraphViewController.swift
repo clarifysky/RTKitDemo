@@ -24,10 +24,11 @@ class ParagraphViewController: UIViewController {
     }
 
     func buildRichLabel() {
-        let richLabel = MyUILabel(frame: CGRectMake(140, 100, 120, 500))
-        richLabel.verticalAlignment = VerticalAlignment.Bottom
+//        let richLabel = MyUILabel(frame: CGRectMake(140, 100, 120, 500))
+//        richLabel.verticalAlignment = VerticalAlignment.Bottom
+        let richLabel = UILabel(frame: CGRectMake(140, 100, 120, 500))
         richLabel.numberOfLines = 0
-        let text = "战火为何而燃，秋叶为何而落？天性不可夺，吾辈心中亦有惑。怒拳为谁握？护国安邦惩奸恶，道法自然除心魔。战无休而惑不息，吾辈何以为战？"
+        let text = "战火\n为何而燃，秋叶为何而落？天性不可夺，吾辈心中亦有惑。怒拳为谁握？护国安邦惩奸恶，道法自然除心魔。战无休而惑不息，吾辈何以为战？"
 //        let text = "This is my code used to build a non-smoking app."
         
         let ps = NSMutableParagraphStyle()

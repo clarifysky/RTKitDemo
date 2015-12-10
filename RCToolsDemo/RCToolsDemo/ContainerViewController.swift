@@ -17,6 +17,7 @@ class ContainerViewController: UIViewController {
     var fourthVC: UIViewController?
     var fifthVC: FifthViewController?
     @IBOutlet weak var contentView: UIView!
+    private var currentVCStr: String = "thirdVC"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,20 +27,17 @@ class ContainerViewController: UIViewController {
         self.secondVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "SecondViewController") as? SecondViewController
         self.thirdVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "ThirdViewController") as? ThirdViewController
         self.fourthVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "FourthNav") as? UINavigationController
-        self.fifthVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "FifthViewController") as? FifthViewController
+//        self.fifthVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "FifthViewController") as? FifthViewController
         
         self.addChildViewController(self.firstVC!)
         self.addChildViewController(self.secondVC!)
         self.addChildViewController(self.thirdVC!)
         self.addChildViewController(self.fourthVC!)
-        self.addChildViewController(self.fifthVC!)
+//        self.addChildViewController(self.fifthVC!)
         
         self.contentView.addSubview(self.thirdVC!.view)
         self.thirdVC!.didMoveToParentViewController(self)
         self.currentVC = self.thirdVC
-        
-        println("subiews of window: \(RCTools.Window().keyWindow()?.subviews.count)")
-        println("subViewControllers of containerViewController: \(self.childViewControllers.count)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,26 +46,25 @@ class ContainerViewController: UIViewController {
     }
     
     @IBAction func buttonClick(sender: UIButton) {
-        println("views in container view: \(self.view.subviews.count)")
         
         // When currentVC is presented, the button which used to present the VC can't been clicked.
-        if self.currentVC == self.firstVC && sender.tag == 1 {
+        if self.currentVCStr == "firstVC" && sender.tag == 1 {
             return
         }
         
-        if self.currentVC == self.secondVC && sender.tag == 2 {
+        if self.currentVC == "secondVC" && sender.tag == 2 {
             return
         }
         
-        if self.currentVC == self.thirdVC && sender.tag == 3 {
+        if self.currentVC == "thirdVC" && sender.tag == 3 {
             return
         }
         
-        if self.currentVC == self.fourthVC && sender.tag == 4 {
+        if self.currentVC == "fourthVC" && sender.tag == 4 {
             return
         }
         
-        if self.currentVC == self.fifthVC && sender.tag == 5 {
+        if self.currentVC == "fifthVC" && sender.tag == 5 {
             return
         }
         
@@ -78,6 +75,7 @@ class ContainerViewController: UIViewController {
                 finished in
                 if finished {
                     self.currentVC = self.firstVC
+                    self.currentVCStr = "firstVC"
                     self.firstVC?.backButton.addTarget(self, action: "toThirdVC", forControlEvents: UIControlEvents.TouchUpInside)
                     println("subViewControllers of containerViewController: \(self.childViewControllers.count)")
                 }
@@ -89,6 +87,7 @@ class ContainerViewController: UIViewController {
                 finished in
                 if finished {
                     self.currentVC = self.secondVC
+                    self.currentVCStr = "secondVC"
                     self.secondVC?.dismissButton.addTarget(self, action: "dismissSecondVC", forControlEvents: UIControlEvents.TouchUpInside)
                     println("subViewControllers of containerViewController: \(self.childViewControllers.count)")
                 }
@@ -100,6 +99,7 @@ class ContainerViewController: UIViewController {
                 if finished {
                     println("transition from currentVC to thirdVC is finished")
                     self.currentVC = self.thirdVC!
+                    self.currentVCStr = "thirdVC"
                     println("subViewControllers of containerViewController: \(self.childViewControllers.count)")
                 }
             })
@@ -111,7 +111,8 @@ class ContainerViewController: UIViewController {
                 if finished {
                     // Because code below is not executed, so I can't contiue to transit viewControllers.
                     println("transition from currentVC to fourthVC completed")
-                    self.currentVC = self.thirdVC!
+                    self.currentVC = self.fourthVC!
+                    self.currentVCStr = "fourthVC"
                 } else {
                     println("transition from currentVC to fourthVC is not finished")
                 }
@@ -119,14 +120,27 @@ class ContainerViewController: UIViewController {
             break
         case 5:
             println("will show fifthVC")
-            self.show(self.fifthVC, fromVC: self.currentVC, completion: {
+            let fifthVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "FifthViewController") as! FifthViewController
+            self.addChildViewController(fifthVC)
+            self.show(fifthVC, fromVC: self.currentVC, completion: {
                 finished in
                 if finished {
                     // Because code below is not executed, so I can't contiue to transit viewControllers.
                     println("transition from currentVC to fifthVC completed")
-                    self.currentVC = self.fifthVC!
+                    self.currentVC = fifthVC
+                    self.currentVCStr = "fifthVC"
                 }
             })
+            
+//            self.show(self.fifthVC, fromVC: self.currentVC, completion: {
+//                finished in
+//                if finished {
+//                    // Because code below is not executed, so I can't contiue to transit viewControllers.
+//                    println("transition from currentVC to fifthVC completed")
+//                    self.currentVC = self.fifthVC!
+//                    self.currentVCStr = "fifthVC"
+//                }
+//            })
             break
             
         default: break

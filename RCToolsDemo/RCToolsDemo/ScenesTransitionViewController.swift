@@ -19,8 +19,6 @@ class ScenesTransitionViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: self.cellIdentifier)
-        
-        println("\(RCTools.Window().keyWindow()?.subviews.count)")
     }
 
     override func didReceiveMemoryWarning() {

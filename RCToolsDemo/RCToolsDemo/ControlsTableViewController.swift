@@ -10,7 +10,7 @@ import UIKit
 
 class ControlsTableViewController: UITableViewController {
     
-    let actions = ["UICollectionView", "CustomizedNavigation"]
+    let actions = ["UICollectionView", "CustomizedNavigation", "RedLayer"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +28,9 @@ class ControlsTableViewController: UITableViewController {
             self.navigationController?.pushViewController(destVC, animated: true)
         } else if row == 1 {
             let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Controls", SBID: "CustomizedNavigationController") as! CustomizedNavigationController
+            self.presentViewController(destVC, animated: true, completion: nil)
+        } else if row == 2 {
+            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Controls", SBID: "BadgeViewController") as! BadgeViewController
             self.presentViewController(destVC, animated: true, completion: nil)
         }
     }

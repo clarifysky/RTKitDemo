@@ -43,6 +43,10 @@ class ZeroGapViewController: UIViewController {
         self.collectionView?.dataSource = self
         self.collectionView?.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "colors")
         self.collectionView?.pagingEnabled = true
+        
+        self.collectionView?.layer.shadowOpacity = 1.0
+        self.collectionView?.layer.shadowOffset = CGSizeZero
+        
         self.view.addSubview(self.collectionView!)
     }
     

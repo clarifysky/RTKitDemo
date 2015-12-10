@@ -10,7 +10,7 @@ import UIKit
 
 class GraphicTableViewController: UITableViewController {
     
-    let actions = ["carMoving", "snapshot"]
+    let actions = ["carMoving", "snapshot", "bezierpath"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +28,9 @@ class GraphicTableViewController: UITableViewController {
             self.navigationController?.pushViewController(destVC, animated: true)
         } else if row == 1 {
             let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Graphic", SBID: "SnapshotViewController") as! SnapshotViewController
+            self.navigationController?.pushViewController(destVC, animated: true)
+        } else if row == 2 {
+            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Graphic", SBID: "BezierPathViewController") as! BezierPathViewController
             self.navigationController?.pushViewController(destVC, animated: true)
         }
     }

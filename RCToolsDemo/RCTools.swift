@@ -32,6 +32,18 @@ class RCTools {
             return CGSizeMake(width, height)
         }
         
+        class func pointAtCircle(center: CGPoint, angle: CGFloat, radius: CGFloat) -> CGPoint {
+            var x2: CGFloat, y2: CGFloat
+            
+            x2 = radius * CGFloat(cosf(Float(angle)))
+            y2 = radius * CGFloat(sinf(Float(angle)))
+            println("angle: \(angle), x2: \(x2), y2: \(y2)")
+            x2 = center.x + x2
+            y2 = center.y + y2
+            
+            return CGPointMake(x2, y2)
+        }
+        
         // appropriate size in specific container
         class func sizeFitContainer(#ContainerSize: CGSize, contentSize: CGSize) -> CGSize {
             var width = contentSize.width
@@ -239,5 +251,38 @@ extension UIView {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image
+    }
+    
+    func RCCurveShadowSide(alignment: CurveShadowDirection, color: UIColor? = nil, shadowOpacity: Float = 1.0, archHeight: CGFloat = 5) {
+        let slayer = CALayer()
+        slayer.frame = self.layer.bounds
+        slayer.RCCurveShadow(alignment)
+        self.layer.addSublayer(slayer)
+    }
+    
+    func attachBadge(size: CGSize = CGSizeMake(25, 25)) {
+        let anchorFrame = CGPointMake(self.frame.width - size.width / 2, -size.width / 2)
+        let badge = RedCircleLayer()
+        badge.frame = CGRect(origin: anchorFrame, size: size)
+        self.layer.addSublayer(badge)
+    }
+    
+    func attachBadge(number: Int, size: CGSize = CGSizeMake(25, 25)) {
+        if number > 0 {
+            let anchorFrame = CGPointMake(self.frame.width - size.width / 2, -size.width / 2)
+            let badge = UILabel(frame: CGRect(origin: anchorFrame, size: size))
+            badge.textAlignment = .Center
+            badge.textColor = UIColor.whiteColor()
+            badge.backgroundColor = UIColor.redColor()
+            badge.layer.cornerRadius = size.width / 2
+            badge.font = UIFont.systemFontOfSize(12)
+            badge.text = String(number)
+            if number > 999 {
+                badge.text = "∙∙∙"
+            }
+            badge.clipsToBounds = true
+            badge.frame = CGRect(origin: anchorFrame, size: size)
+            self.addSubview(badge)
+        }
     }
 }

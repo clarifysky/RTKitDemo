@@ -15,6 +15,20 @@ class SnapshotViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.brownView.RCCurveShadowSide(.Top)
+        self.brownView.RCCurveShadowSide(.Bottom)
+        self.brownView.opaque = false
+        
+        let testView = UIView(frame: self.brownView.frame)
+        let testLabel = UILabel()
+        testLabel.text = "I am inserted above"
+        testLabel.sizeToFit()
+        testLabel.frame = CGRectMake(0, 0, testLabel.bounds.width, testLabel.bounds.height)
+        testView.addSubview(testLabel)
+        
+        testView.backgroundColor = UIColor.blueColor()
+        self.view.insertSubview(testView, belowSubview: self.brownView)
+        self.brownView.backgroundColor = UIColor(red: 40/255, green: 240/255, blue: 144/255, alpha: 0.7)
     }
 
     override func didReceiveMemoryWarning() {

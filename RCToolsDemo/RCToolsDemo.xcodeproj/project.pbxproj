@@ -48,6 +48,10 @@
 		CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7C96AB1BB4E311001754A1 /* ScenesTransitionViewController.swift */; };
 		CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7FCDE91BC6433200A126A6 /* FourthViewController.swift */; };
 		CD8816C41BBB959F0052EA45 /* SegueTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8816C31BBB959F0052EA45 /* SegueTools.swift */; };
+		CD8E90F11C103D6E00BF50EA /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E90F01C103D6E00BF50EA /* BadgeViewController.swift */; };
+		CD8E90F31C1045E500BF50EA /* RedCircleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E90F21C1045E500BF50EA /* RedCircleLayer.swift */; };
+		CD9229E81BF4662B004BF267 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9229E61BF4662B004BF267 /* AudioViewController.swift */; };
+		CDB90D051BEC35D10090D802 /* BezierPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB90D041BEC35D10090D802 /* BezierPathViewController.swift */; };
 		CDBAC6E01BB5328200ADB568 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAC6DF1BB5328200ADB568 /* ContainerViewController.swift */; };
 		CDD515A01BE306F200C5765C /* ZeroGapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD5159F1BE306F200C5765C /* ZeroGapViewController.swift */; };
 		CDD515A31BE3074200C5765C /* Controls.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD515A21BE3074200C5765C /* Controls.storyboard */; };
@@ -114,6 +118,10 @@
 		CD7C96AB1BB4E311001754A1 /* ScenesTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenesTransitionViewController.swift; sourceTree = "<group>"; };
 		CD7FCDE91BC6433200A126A6 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		CD8816C31BBB959F0052EA45 /* SegueTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueTools.swift; sourceTree = "<group>"; };
+		CD8E90F01C103D6E00BF50EA /* BadgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
+		CD8E90F21C1045E500BF50EA /* RedCircleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedCircleLayer.swift; sourceTree = "<group>"; };
+		CD9229E61BF4662B004BF267 /* AudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
+		CDB90D041BEC35D10090D802 /* BezierPathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathViewController.swift; sourceTree = "<group>"; };
 		CDBAC6DF1BB5328200ADB568 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		CDD5159F1BE306F200C5765C /* ZeroGapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZeroGapViewController.swift; sourceTree = "<group>"; };
 		CDD515A21BE3074200C5765C /* Controls.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Controls.storyboard; sourceTree = "<group>"; };
@@ -160,6 +168,7 @@
 				1838BEEC1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift */,
 				1838BEF01BDA204F005D7D8B /* GalleryDetailViewController.swift */,
 				189830A41BDDD60E00FFE854 /* ImagesCell.swift */,
+				CD9229E61BF4662B004BF267 /* AudioViewController.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -270,6 +279,7 @@
 				18E03B071BD08FDB0080FA72 /* UIVerticalLabel.swift */,
 				1838BEEE1BDA0570005D7D8B /* JSProcess.swift */,
 				1892CEC11BDF0FCF006CBA03 /* RCPop.swift */,
+				CD8E90F21C1045E500BF50EA /* RedCircleLayer.swift */,
 			);
 			name = RCTools;
 			sourceTree = "<group>";
@@ -296,6 +306,7 @@
 				18B5ED061BE0AE4400B29BCC /* GraphicTableViewController.swift */,
 				18B5ED081BE0AEA900B29BCC /* CarMovingViewController.swift */,
 				1813E3791BE1EDB000B2514F /* SnapshotViewController.swift */,
+				CDB90D041BEC35D10090D802 /* BezierPathViewController.swift */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -323,6 +334,7 @@
 				CDD515A41BE307CF00C5765C /* ControlsTableViewController.swift */,
 				1868A3721BE87E8D007D5F47 /* CustomizedNavigationController.swift */,
 				1868A3741BE883A9007D5F47 /* TestNavigationController.swift */,
+				CD8E90F01C103D6E00BF50EA /* BadgeViewController.swift */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -444,6 +456,8 @@
 				189B6DA41BCF32D50083C02B /* ParagraphViewController.swift in Sources */,
 				CD6582EF1BC7C9610053BD0E /* FifthViewController.swift in Sources */,
 				CD2B4D9A1BABC5FA003FFF19 /* TestWindowMask.swift in Sources */,
+				CD8E90F31C1045E500BF50EA /* RedCircleLayer.swift in Sources */,
+				CD9229E81BF4662B004BF267 /* AudioViewController.swift in Sources */,
 				CDD515A01BE306F200C5765C /* ZeroGapViewController.swift in Sources */,
 				CD6DFAF81BCFD39F0015E6CF /* MyUILabel.swift in Sources */,
 				18B5ED071BE0AE4400B29BCC /* GraphicTableViewController.swift in Sources */,
@@ -457,6 +471,8 @@
 				18A9BB6B1BD5D9D900532575 /* ComponentsTableViewController.swift in Sources */,
 				CD6DD93D1BCBD9280092F561 /* CurveShadowView.swift in Sources */,
 				18E5C74A1BD740AB0095D216 /* GlimmerViewController.swift in Sources */,
+				CD8E90F11C103D6E00BF50EA /* BadgeViewController.swift in Sources */,
+				CDB90D051BEC35D10090D802 /* BezierPathViewController.swift in Sources */,
 				18E5C7481BD740430095D216 /* RCGlimmer.swift in Sources */,
 				CD4BB2391BAA6D2300072773 /* ViewController.swift in Sources */,
 				CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */,
@@ -608,9 +624,12 @@
 			baseConfigurationReference = B0704147E1EBE1FADCB45EA6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RCToolsDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -619,9 +638,11 @@
 			baseConfigurationReference = B955DFDD506B0E9E45209427 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RCToolsDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
