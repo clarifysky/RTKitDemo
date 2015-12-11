@@ -119,6 +119,51 @@
             </objects>
             <point key="canvasLocation" x="1194" y="304"/>
         </scene>
+        <!--Label View Controller-->
+        <scene sceneID="Lvd-su-nW7">
+            <objects>
+                <viewController storyboardIdentifier="LabelViewController" id="nBN-YQ-NfI" customClass="LabelViewController" customModule="RCToolsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hSq-CQ-8wG"/>
+                        <viewControllerLayoutGuide type="bottom" id="La6-fN-Dl9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hoR-if-5RA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这是一段测试文字" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1p-Vg-b6C">
+                                <rect key="frame" x="16" y="28" width="136" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Urh-lD-s3Y">
+                                <rect key="frame" x="65" y="518" width="191" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="187" id="nzP-de-dQx"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderChange:" destination="nBN-YQ-NfI" eventType="valueChanged" id="6js-du-TUs"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="c1p-Vg-b6C" firstAttribute="top" secondItem="hSq-CQ-8wG" secondAttribute="bottom" constant="8" id="W7C-9j-ap3"/>
+                            <constraint firstItem="c1p-Vg-b6C" firstAttribute="leading" secondItem="hoR-if-5RA" secondAttribute="leadingMargin" id="pqP-z5-xIc"/>
+                            <constraint firstItem="La6-fN-Dl9" firstAttribute="top" secondItem="Urh-lD-s3Y" secondAttribute="bottom" constant="20" id="qAo-yl-0m0"/>
+                            <constraint firstAttribute="centerX" secondItem="Urh-lD-s3Y" secondAttribute="centerX" constant="-0.5" id="uSf-QW-5wL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="labelText" destination="c1p-Vg-b6C" id="7aZ-LX-b1c"/>
+                        <outlet property="slider" destination="Urh-lD-s3Y" id="6ef-A9-Jcu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pkx-lU-l13" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1258" y="994"/>
+        </scene>
         <!--Customized Navigation Controller-->
         <scene sceneID="FYj-IV-wff">
             <objects>

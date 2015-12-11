@@ -29,6 +29,7 @@
 		CD2B4D941BABB7D7003FFF19 /* BeenPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B4D931BABB7D7003FFF19 /* BeenPresentedViewController.swift */; };
 		CD2B4D971BABC263003FFF19 /* WithNavBeenPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B4D961BABC263003FFF19 /* WithNavBeenPresentedViewController.swift */; };
 		CD2B4D9A1BABC5FA003FFF19 /* TestWindowMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B4D991BABC5FA003FFF19 /* TestWindowMask.swift */; };
+		CD2D80741C1A75A300E49AED /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2D80731C1A75A300E49AED /* LabelViewController.swift */; };
 		CD4661DA1BBA100B00FDFBDC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4661D91BBA100B00FDFBDC /* FirstViewController.swift */; };
 		CD4661DC1BBA101600FDFBDC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4661DB1BBA101600FDFBDC /* SecondViewController.swift */; };
 		CD4661DE1BBA102000FDFBDC /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4661DD1BBA102000FDFBDC /* ThirdViewController.swift */; };
@@ -95,6 +96,7 @@
 		CD2B4D931BABB7D7003FFF19 /* BeenPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeenPresentedViewController.swift; sourceTree = "<group>"; };
 		CD2B4D961BABC263003FFF19 /* WithNavBeenPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithNavBeenPresentedViewController.swift; sourceTree = "<group>"; };
 		CD2B4D991BABC5FA003FFF19 /* TestWindowMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestWindowMask.swift; sourceTree = "<group>"; };
+		CD2D80731C1A75A300E49AED /* LabelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
 		CD4661D91BBA100B00FDFBDC /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		CD4661DB1BBA101600FDFBDC /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		CD4661DD1BBA102000FDFBDC /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				1868A3721BE87E8D007D5F47 /* CustomizedNavigationController.swift */,
 				1868A3741BE883A9007D5F47 /* TestNavigationController.swift */,
 				CD8E90F01C103D6E00BF50EA /* BadgeViewController.swift */,
+				CD2D80731C1A75A300E49AED /* LabelViewController.swift */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				1868A3731BE87E8D007D5F47 /* CustomizedNavigationController.swift in Sources */,
 				CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */,
 				1838BEED1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift in Sources */,
+				CD2D80741C1A75A300E49AED /* LabelViewController.swift in Sources */,
 				CDE315831BAD3F8100D2C6AF /* MaskViewController.swift in Sources */,
 				CDBAC6E01BB5328200ADB568 /* ContainerViewController.swift in Sources */,
 				CD2B4D971BABC263003FFF19 /* WithNavBeenPresentedViewController.swift in Sources */,
