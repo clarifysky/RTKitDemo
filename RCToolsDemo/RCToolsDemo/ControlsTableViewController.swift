@@ -10,7 +10,7 @@ import UIKit
 
 class ControlsTableViewController: UITableViewController {
     
-    let actions = ["UICollectionView", "CustomizedNavigation", "RedLayer", "UILabel"]
+    let actions = ["UICollectionView", "CustomizedNavigation", "RedLayer", "UILabel", "UIImage"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +34,9 @@ class ControlsTableViewController: UITableViewController {
             self.presentViewController(destVC, animated: true, completion: nil)
         } else if row == 3 {
             let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Controls", SBID: "LabelViewController") as! LabelViewController
+            self.presentViewController(destVC, animated: true, completion: nil)
+        } else if row == 4 {
+            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Controls", SBID: "ImageViewController") as! ImageViewController
             self.presentViewController(destVC, animated: true, completion: nil)
         }
     }

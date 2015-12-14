@@ -59,6 +59,9 @@
 		CDD515A51BE307CF00C5765C /* ControlsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD515A41BE307CF00C5765C /* ControlsTableViewController.swift */; };
 		CDD515A81BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */; };
 		CDE315831BAD3F8100D2C6AF /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE315821BAD3F8100D2C6AF /* MaskViewController.swift */; };
+		E6D1ECBB1C1EABA400995844 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1ECBA1C1EABA400995844 /* ImageViewController.swift */; };
+		E6D1ECBE1C1EAE2D00995844 /* 496.gif in Resources */ = {isa = PBXBuildFile; fileRef = E6D1ECBD1C1EAE2D00995844 /* 496.gif */; };
+		E6D1ECC31C1EAF4100995844 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D1ECC21C1EAF4100995844 /* UIImage+animatedGIF.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +133,11 @@
 		CDD515A41BE307CF00C5765C /* ControlsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsTableViewController.swift; sourceTree = "<group>"; };
 		CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZeriGapCollectionViewLayout.swift; sourceTree = "<group>"; };
 		CDE315821BAD3F8100D2C6AF /* MaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
+		E6D1ECBA1C1EABA400995844 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		E6D1ECBD1C1EAE2D00995844 /* 496.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 496.gif; sourceTree = "<group>"; };
+		E6D1ECC01C1EAF4000995844 /* RCToolsDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCToolsDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		E6D1ECC11C1EAF4100995844 /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
+		E6D1ECC21C1EAF4100995844 /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +243,9 @@
 		CD4BB2331BAA6D2300072773 /* RCToolsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E6D1ECC01C1EAF4000995844 /* RCToolsDemo-Bridging-Header.h */,
+				E6D1ECBF1C1EAF1A00995844 /* Utilities */,
+				E6D1ECBC1C1EAE1A00995844 /* Resources */,
 				189B6D9F1BCF32920083C02B /* Storyboard */,
 				CD4BB2571BAA6D9800072773 /* Controllers */,
 				CD4BB2341BAA6D2300072773 /* Supporting Files */,
@@ -331,6 +342,7 @@
 		CDD515A11BE3072C00C5765C /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				E6D1ECBA1C1EABA400995844 /* ImageViewController.swift */,
 				CDD515A61BE30E5F00C5765C /* Views */,
 				CDD5159F1BE306F200C5765C /* ZeroGapViewController.swift */,
 				CDD515A41BE307CF00C5765C /* ControlsTableViewController.swift */,
@@ -348,6 +360,31 @@
 				CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		E6D1ECBC1C1EAE1A00995844 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E6D1ECBD1C1EAE2D00995844 /* 496.gif */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E6D1ECBF1C1EAF1A00995844 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E6D1ECC41C1EAF6500995844 /* AnimatedGIF */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		E6D1ECC41C1EAF6500995844 /* AnimatedGIF */ = {
+			isa = PBXGroup;
+			children = (
+				E6D1ECC11C1EAF4100995844 /* UIImage+animatedGIF.h */,
+				E6D1ECC21C1EAF4100995844 /* UIImage+animatedGIF.m */,
+			);
+			name = AnimatedGIF;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,6 +471,7 @@
 				CDD515A31BE3074200C5765C /* Controls.storyboard in Resources */,
 				CD4BB23C1BAA6D2300072773 /* Main.storyboard in Resources */,
 				CD4BB2411BAA6D2300072773 /* LaunchScreen.xib in Resources */,
+				E6D1ECBE1C1EAE2D00995844 /* 496.gif in Resources */,
 				189B6DA11BCF32A70083C02B /* Components.storyboard in Resources */,
 				18B5ED051BE0ADC700B29BCC /* Graphic.storyboard in Resources */,
 				CD4BB23E1BAA6D2300072773 /* Images.xcassets in Resources */,
@@ -460,6 +498,7 @@
 				CD6582EF1BC7C9610053BD0E /* FifthViewController.swift in Sources */,
 				CD2B4D9A1BABC5FA003FFF19 /* TestWindowMask.swift in Sources */,
 				CD8E90F31C1045E500BF50EA /* RedCircleLayer.swift in Sources */,
+				E6D1ECBB1C1EABA400995844 /* ImageViewController.swift in Sources */,
 				CD9229E81BF4662B004BF267 /* AudioViewController.swift in Sources */,
 				CDD515A01BE306F200C5765C /* ZeroGapViewController.swift in Sources */,
 				CD6DFAF81BCFD39F0015E6CF /* MyUILabel.swift in Sources */,
@@ -491,6 +530,7 @@
 				18E03B081BD08FDB0080FA72 /* UIVerticalLabel.swift in Sources */,
 				CDD515A51BE307CF00C5765C /* ControlsTableViewController.swift in Sources */,
 				CDD515A81BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift in Sources */,
+				E6D1ECC31C1EAF4100995844 /* UIImage+animatedGIF.m in Sources */,
 				CD6DD9401BCBDC3A0092F561 /* ShadowViewController.swift in Sources */,
 				1868A3731BE87E8D007D5F47 /* CustomizedNavigationController.swift in Sources */,
 				CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */,
@@ -625,28 +665,26 @@
 		};
 		CD4BB2511BAA6D2400072773 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0704147E1EBE1FADCB45EA6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RCToolsDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "RCToolsDemo/RCToolsDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		CD4BB2521BAA6D2400072773 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B955DFDD506B0E9E45209427 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = RCToolsDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "RCToolsDemo/RCToolsDemo-Bridging-Header.h";
 			};
 			name = Release;
 		};
