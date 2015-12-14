@@ -195,16 +195,33 @@
                                     <constraint firstAttribute="height" constant="64" id="bvs-9s-rLn"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNs-P4-olm">
+                                <rect key="frame" x="128" y="145" width="64" height="64"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="spk-rb-GU3"/>
+                                    <constraint firstAttribute="height" constant="64" id="uyW-cp-yBM"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startAnimating:" destination="f9S-ju-hFH" eventType="touchUpInside" id="MLY-m0-Kh9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="hEg-uQ-iyK" secondAttribute="centerX" id="DyX-dc-lNs"/>
+                            <constraint firstItem="TNs-P4-olm" firstAttribute="top" secondItem="hEg-uQ-iyK" secondAttribute="bottom" constant="53" id="MZ7-kW-aBe"/>
                             <constraint firstItem="hEg-uQ-iyK" firstAttribute="top" secondItem="GfV-9m-mb1" secondAttribute="bottom" constant="8" id="UEZ-3R-4AR"/>
+                            <constraint firstAttribute="centerX" secondItem="TNs-P4-olm" secondAttribute="centerX" id="Ume-W1-f0h"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="gifImageView" destination="hEg-uQ-iyK" id="FgH-73-gar"/>
+                        <outlet property="imageButton" destination="TNs-P4-olm" id="tZ3-T7-31L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WcY-Nw-jbR" userLabel="First Responder" sceneMemberID="firstResponder"/>

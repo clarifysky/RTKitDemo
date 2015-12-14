@@ -10,7 +10,10 @@ import UIKit
 
 class ImageViewController: UIViewController {
 
+    @IBOutlet weak var imageButton: UIButton!
     @IBOutlet weak var gifImageView: UIImageView!
+    private var animating = false
+    private var animatedImageData: NSData?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,4 +28,20 @@ class ImageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func startAnimating(sender: UIButton) {
+        if self.animatedImageData == nil {
+            let gifPath = NSBundle.mainBundle().pathForResource("496", ofType: "gif")
+            self.animatedImageData = NSData(contentsOfFile: gifPath!)
+        }
+        
+        if self.animating == false {
+            self.imageButton.setImage(UIImage.animatedImageWithAnimatedGIFData(self.animatedImageData), forState: .Normal)
+            self.animating = true
+        } else {
+            self.imageButton.setImage(nil, forState: .Normal)
+            self.animating = false
+        }
+    }
+    
+    
 }
