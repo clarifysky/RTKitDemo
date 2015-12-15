@@ -24,7 +24,6 @@ class GalleryDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
         self.view.tag = 0
         
         for var i = 0; i < self.images!.count; i++ {
@@ -47,36 +46,6 @@ class GalleryDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-//    private func loadImage(index: Int, imageURL: String) {
-//        println(self.imageViewsLoaded![index])
-//        println(imageURL)
-//        if self.imageViewsLoaded![index] == false {
-//            let spinnerOriginal = RCTools.Math.originInParentView(sizeOfParentView: self.view.bounds.size, sizeOfSelf: CGSizeMake(30, 30))
-//            let spinner = UIActivityIndicatorView(frame: CGRectMake(self.view.bounds.width * CGFloat(index) + spinnerOriginal.x, spinnerOriginal.y, 30, 30))
-//            self.view.addSubview(spinner)
-//            spinner.startAnimating()
-//            
-//            let qos = Int(QOS_CLASS_USER_INITIATED.value)
-//            dispatch_async(dispatch_get_global_queue(qos, 0), {
-//                let imageData = NSData(contentsOfURL: NSURL(string: imageURL)!)
-//                dispatch_async(dispatch_get_main_queue(), {
-//                    spinner.stopAnimating()
-//                    spinner.removeFromSuperview()
-//                    
-//                    let image = UIImage(data: imageData!)
-//                    let newSize = RCTools.Math.sizeFitContainer(ContainerSize: self.view.bounds.size, contentSize: image!.size)
-//                    let imageOriginal = RCTools.Math.originInParentView(sizeOfParentView: self.view.bounds.size, sizeOfSelf: newSize)
-//                    let imageView = UIImageView()
-//                    imageView.frame = CGRectMake(self.view.bounds.width * CGFloat(index) + imageOriginal.x, imageOriginal.y, newSize.width, newSize.height)
-//                    imageView.image = image
-//                    self.view.addSubview(imageView)
-//                    
-//                    self.imageViewsLoaded![index] = true
-//                })
-//            })
-//        }
-//    }
     
     func viewTapped(recognizer: UITapGestureRecognizer) {
         println(recognizer.view?.tag)

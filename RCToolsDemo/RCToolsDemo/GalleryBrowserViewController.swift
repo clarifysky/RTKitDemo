@@ -74,12 +74,14 @@ class GalleryBrowserViewController: UIViewController {
         let galleryDetailVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Components", SBID: "GalleryDetailViewController") as! GalleryDetailViewController
         galleryDetailVC.imageCurrentIndex = imageCurrentIndex
         galleryDetailVC.images = images
+        galleryDetailVC.view.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5)
         var testArr = [Bool]()
         for var i = 0; i < images.count; i++ {
             testArr.append(false)
         }
         galleryDetailVC.imageViewsLoaded = testArr
-        
+        // Set modalPresentationStyle to this to make vc which will be presented to be transparent.
+        self.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
         presentViewController(galleryDetailVC, animated: true, completion: nil)
     }
 }
