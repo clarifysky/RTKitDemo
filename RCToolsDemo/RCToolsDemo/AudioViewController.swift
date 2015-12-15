@@ -49,11 +49,13 @@ class AudioViewController: UIViewController {
      */
     @IBAction func switchRoutes(sender: UIButton) {
         
+        // Important: Not all the devices support proximityMonitoring.!!
         // Enable proximity monitoring.
         UIDevice.currentDevice().proximityMonitoringEnabled = true
-        
-        // Add observer.
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "sensorStateChanged:", name: "UIDeviceProximityStateDidChangeNotification", object: nil)
+        // If currentDevice support proximityMonitoring, add observer.
+        if UIDevice.currentDevice().proximityMonitoringEnabled == true {
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "sensorStateChanged:", name: "UIDeviceProximityStateDidChangeNotification", object: nil)
+        }
         
         
         var completionHandler: (() -> Void)?
@@ -137,5 +139,7 @@ class AudioViewController: UIViewController {
 extension AudioViewController: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
         self.switchButton.setTitle("SwitchRoutes", forState: .Normal)
+        // Close proximityMonitoring when playing finished.
+        UIDevice.currentDevice().proximityMonitoringEnabled = false
     }
 }
