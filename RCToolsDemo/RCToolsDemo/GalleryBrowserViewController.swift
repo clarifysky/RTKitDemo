@@ -13,8 +13,8 @@ class GalleryBrowserViewController: UIViewController {
     
     var webView: WKWebView?
     var spinner: UIActivityIndicatorView?
-    private let url = "http://www.rexcao.net/test/gallery.html"
-    private var images: [String]?
+    private let url = "http://120.24.165.30/gallery.html"
+    private var imageURLs: [String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +73,7 @@ class GalleryBrowserViewController: UIViewController {
     func presentGalleryDetail(imageCurrentIndex: Int, images: [String]) {
         let galleryDetailVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Components", SBID: "GalleryDetailViewController") as! GalleryDetailViewController
         galleryDetailVC.imageCurrentIndex = imageCurrentIndex
-        galleryDetailVC.images = images
+        galleryDetailVC.imageURLs = images
         galleryDetailVC.view.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5)
         var testArr = [Bool]()
         for var i = 0; i < images.count; i++ {
@@ -111,9 +111,9 @@ extension GalleryBrowserViewController: WKScriptMessageHandler {
                 if type == "index" {
                     let cid = sentData!["data"] as! Int
                     println("index: \(cid)")
-                    self.presentGalleryDetail(cid, images: self.images!)
+                    self.presentGalleryDetail(cid, images: self.imageURLs!)
                 } else {
-                    self.images = sentData!["data"] as? [String]
+                    self.imageURLs = sentData!["data"] as? [String]
                 }
             }
         }

@@ -9,27 +9,28 @@
 import UIKit
 
 protocol GalleryDataDelegate {
-    func saveImage(index: Int, image: UIImage, frame: CGRect)
     func handleLongPress(recognizer: UILongPressGestureRecognizer)
 }
 
 class GalleryDetailViewController: UIViewController {
-    var images: [String]?
+    var imageURLs: [String]?
     var imageCurrentIndex: Int = 0
     // Because image is loaded asynchronously, so you should not append nsdata to an array.
     var imageViewsLoaded: [Bool]?
     private var imagesCollection: UICollectionView?
-    var image: [UIImage?] = [UIImage?]()
-    var frames: [CGRect?] = [CGRect?]()
+    private var imageDatas: [NSData?] = [NSData?]()
+    private var uiimages: [UIImage?] = [UIImage?]()
+    private var imageFrames: [CGRect?] = [CGRect?]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.tag = 0
         
-        for var i = 0; i < self.images!.count; i++ {
+        for var i = 0; i < self.imageURLs!.count; i++ {
             self.imageViewsLoaded?.append(false)
-            self.image.append(nil)
-            self.frames.append(nil)
+            self.imageDatas.append(nil)
+            self.uiimages.append(nil)
+            self.imageFrames.append(nil)
         }
         // CollectionView
         self.attachCollection()
@@ -38,8 +39,7 @@ class GalleryDetailViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: "viewTapped:")
         self.view.addGestureRecognizer(tapGesture)
         
-        // Load current image
-//        self.loadImage(self.imageCurrentIndex, imageURL: self.images![self.imageCurrentIndex])
+        println(self.imageURLs)
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +62,9 @@ class GalleryDetailViewController: UIViewController {
         let itemSizeHeight = self.view.bounds.height
         flowLayout.itemSize = CGSizeMake(itemSizeWidth, itemSizeHeight)
         flowLayout.scrollDirection = .Horizontal
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.minimumLineSpacing = 0
+        
         self.imagesCollection = UICollectionView(frame: self.view.bounds, collectionViewLayout: flowLayout)
         self.imagesCollection?.scrollEnabled = true
         self.imagesCollection?.registerClass(ImagesCell.self, forCellWithReuseIdentifier: "images")
@@ -84,7 +87,6 @@ class GalleryDetailViewController: UIViewController {
         if didFinishSavingWithError != nil {
             println("something goes wrong")
         }
-//        println("saved")
         self.showPop("saved")
     }
 }
@@ -92,29 +94,41 @@ class GalleryDetailViewController: UIViewController {
 
 extension GalleryDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.images!.count
+        return self.imageURLs!.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cell = self.imagesCollection?.dequeueReusableCellWithReuseIdentifier("images", forIndexPath: indexPath) as! ImagesCell
-        cell.dataDelegate = self
-        if self.imageViewsLoaded![indexPath.row] == false {
-            cell.row = indexPath.row
-            cell.imageURL = self.images![indexPath.row]
+        var cell = self.imagesCollection?.dequeueReusableCellWithReuseIdentifier("images", forIndexPath: indexPath) as? ImagesCell
+        if cell == nil {
+            let cellOrigin = RCTools.Math.originInParentView(sizeOfParentView: collectionView.bounds.size, sizeOfSelf: self.view.bounds.size)
+            cell = ImagesCell(frame: CGRect(origin: cellOrigin, size: self.view.bounds.size))
         } else {
-            cell.imageView?.frame = self.frames[indexPath.row]!
-            cell.imageView?.image = self.image[indexPath.row]
+            cell?.dataDelegate = self
+            if self.imageViewsLoaded![indexPath.row] == false {
+                cell?.row = indexPath.row
+                cell?.loadImage(self.imageURLs![indexPath.row], loadedHandler: {
+                    (index, imageData, newFrame) in
+                    println("image loaded")
+                    self.imageDatas[index] = imageData
+                    self.imageFrames[index] = newFrame
+                    self.uiimages[index] = UIImage(data: imageData!)
+                    
+                    self.imageViewsLoaded![index] = true
+                })
+            } else {
+                cell?.imageView?.frame = self.imageFrames[indexPath.row]!
+                cell?.imageView?.image = self.uiimages[indexPath.row]
+                cell?.imageContainer!.contentSize = cell!.imageContainer!.bounds.size
+            }
+            
+//            cell?.imageContainer?.layer.borderColor = UIColor.whiteColor().CGColor
+//            cell?.imageContainer?.layer.borderWidth = 1.0
         }
-        return cell
+        return cell!
     }
 }
 
 extension GalleryDetailViewController: GalleryDataDelegate {
-    func saveImage(index: Int, image: UIImage, frame: CGRect) {
-        self.image[index] = image
-        self.frames[index] = frame
-        self.imageViewsLoaded![index] = true
-    }
     
     func handleLongPress(recognizer: UILongPressGestureRecognizer) {
         switch recognizer.state {

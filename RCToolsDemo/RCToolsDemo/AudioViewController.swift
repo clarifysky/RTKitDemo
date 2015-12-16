@@ -41,7 +41,18 @@ class AudioViewController: UIViewController {
     }
 
     @IBAction func remotePlay(sender: UIButton) {
+//        let aPlayerItem = AVPlayerItem(URL: NSURL(string: self.remoteSoundUrl)!)
+//        let anAudioStreamer = AVPlayer(playerItem: aPlayerItem)
+//        anAudioStreamer.play()
+//        
+//        println("currentTime: \(anAudioStreamer.currentTime())")
+//        println("duration: \(anAudioStreamer.currentItem.asset.duration)")
         
+        var player = AVAudioPlayer(contentsOfURL: NSURL(string: self.remoteSoundUrl), error: self.errorPoint!)
+        if player != nil {
+            println("player is not nil")
+            player.play()
+        }
     }
     
     /**
