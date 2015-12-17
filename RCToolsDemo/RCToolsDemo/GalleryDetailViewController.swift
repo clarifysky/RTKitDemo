@@ -34,10 +34,15 @@ class GalleryDetailViewController: UIViewController {
         }
         // CollectionView
         self.attachCollection()
+        self.attachClose()
         
-        // Gesture
-        let tapGesture = UITapGestureRecognizer(target: self, action: "viewTapped:")
-        self.view.addGestureRecognizer(tapGesture)
+//        // Gesture
+//        let tapGesture = UITapGestureRecognizer(target: self, action: "viewTapped:")
+//        // need tap once.
+//        tapGesture.numberOfTapsRequired = 1
+//        // need one finger.
+//        tapGesture.numberOfTouchesRequired = 1
+//        self.view.addGestureRecognizer(tapGesture)
         
         println(self.imageURLs)
     }
@@ -54,6 +59,19 @@ class GalleryDetailViewController: UIViewController {
             dismissViewControllerAnimated(true, completion: nil)
         default: break
         }
+    }
+    
+    private func attachClose() {
+        let closeButton = UIButton()
+        closeButton.setTitle("Close", forState: .Normal)
+        closeButton.sizeToFit()
+        closeButton.frame.origin = CGPointMake(16, 16)
+        closeButton.addTarget(self, action: "dismissSelf", forControlEvents: .TouchUpInside)
+        self.view.addSubview(closeButton)
+    }
+    
+    func dismissSelf() {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     private func attachCollection() {

@@ -14,7 +14,11 @@ class RCTools {
     // computation with math
     class Math {
         
-        // compute the x or y of origin depend on the border-length of (parent view and sub view)
+        /// Compute the x or y of origin depend on the border-length of (parent view and sub view).
+        /// You must ensure that sub view is littler than parent view, then you can use this function.
+        ///
+        /// :param: borderLengthOfParentView Border length of parent view.
+        /// :param: borderLengthOfSelf Border length of sub view.
         class func xyInParentBorder(#borderLengthOfParentView: CGFloat, borderLengthOfSelf: CGFloat) -> CGFloat {
             return (borderLengthOfParentView - borderLengthOfSelf) / 2
         }
