@@ -10,6 +10,7 @@ import UIKit
 
 protocol GalleryDataDelegate {
     func handleLongPress(recognizer: UILongPressGestureRecognizer)
+    func dismissGalleryDetail()
 }
 
 class GalleryDetailViewController: UIViewController {
@@ -164,5 +165,9 @@ extension GalleryDetailViewController: GalleryDataDelegate {
             break
         default: break
         }
+    }
+    
+    func dismissGalleryDetail() {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

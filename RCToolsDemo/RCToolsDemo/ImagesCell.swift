@@ -12,6 +12,7 @@ class ImagesCell: UICollectionViewCell {
     var imageView: UIImageView?
     var imageContainer: UIScrollView?
     private var spinner: UIActivityIndicatorView?
+    
     var dataDelegate: GalleryDataDelegate?
     var row: Int?
     private var imageContainerOffset: CGPoint = CGPointZero
@@ -49,7 +50,17 @@ class ImagesCell: UICollectionViewCell {
         let doubleTapGesture = UITapGestureRecognizer(target: self, action: "doubleTapHandler:")
         // This will made tapGesture to be double-tap gesture.
         doubleTapGesture.numberOfTapsRequired = 2
+        // how many fingers you need to trigger the touch.
+        doubleTapGesture.numberOfTouchesRequired = 1
         self.imageView?.addGestureRecognizer(doubleTapGesture)
+        
+        let singleTapGesture = UITapGestureRecognizer(target: self, action: "singleTapHandler:")
+        singleTapGesture.numberOfTapsRequired = 1
+        singleTapGesture.numberOfTouchesRequired = 1
+        self.imageContainer?.addGestureRecognizer(singleTapGesture)
+        
+        // When doubleTapGesture cannot be recognized, start to recognize singleTapGesture.
+        singleTapGesture.requireGestureRecognizerToFail(doubleTapGesture)
     }
     
     func pinchHandler(recognizer: UIPinchGestureRecognizer) {
@@ -84,6 +95,12 @@ class ImagesCell: UICollectionViewCell {
         // reset scale to 1 to make us know about growth of next time.
         // otherwise, it's total scale.
         recognizer.scale = 1
+    }
+    
+    func singleTapHandler(recognizer: UITapGestureRecognizer) {
+        if recognizer.state == .Ended {
+            self.dataDelegate?.dismissGalleryDetail()
+        }
     }
     
     func doubleTapHandler(recognizer: UITapGestureRecognizer) {
