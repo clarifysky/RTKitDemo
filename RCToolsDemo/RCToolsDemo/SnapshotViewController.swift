@@ -15,19 +15,30 @@ class SnapshotViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.brownView.RCCurveShadowSide(.Top)
-        self.brownView.RCCurveShadowSide(.Bottom)
-        self.brownView.opaque = false
+//        self.brownView.RCCurveShadowSide(.Top)
+//        self.brownView.RCCurveShadowSide(.Bottom)
+//        self.brownView.opaque = false
         
-        let testView = UIView(frame: self.brownView.frame)
-        let testLabel = UILabel()
-        testLabel.text = "I am inserted above"
-        testLabel.sizeToFit()
-        testLabel.frame = CGRectMake(0, 0, testLabel.bounds.width, testLabel.bounds.height)
-        testView.addSubview(testLabel)
+        self.brownView.RCAttachCurveShadow(10)
         
-        testView.backgroundColor = UIColor.blueColor()
-        self.view.insertSubview(testView, belowSubview: self.brownView)
+//        let shapeLayer = CALayer()
+//        shapeLayer.cornerRadius = 10
+//        shapeLayer.masksToBounds = true
+//        
+//        self.brownView.layer.cornerRadius = 10
+//        self.brownView.layer.shadowOpacity = 0.8
+//        self.brownView.layer.shadowOffset = CGSizeZero
+//        self.brownView.layer.addSublayer(shapeLayer)
+        
+//        let testView = UIView(frame: self.brownView.frame)
+//        let testLabel = UILabel()
+//        testLabel.text = "I am inserted above"
+//        testLabel.sizeToFit()
+//        testLabel.frame = CGRectMake(0, 0, testLabel.bounds.width, testLabel.bounds.height)
+//        testView.addSubview(testLabel)
+//        
+//        testView.backgroundColor = UIColor.blueColor()
+//        self.view.insertSubview(testView, belowSubview: self.brownView)
         self.brownView.backgroundColor = UIColor(red: 40/255, green: 240/255, blue: 144/255, alpha: 0.7)
     }
 

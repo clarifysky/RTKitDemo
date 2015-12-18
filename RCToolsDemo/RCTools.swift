@@ -257,6 +257,19 @@ extension UIView {
         return image
     }
     
+    // Add shadow for current view with specified value
+    func RCAttachCurveShadow(cornerRadius: CGFloat) {
+        	
+        let shapeLayer = CALayer()
+        shapeLayer.cornerRadius = cornerRadius
+        shapeLayer.masksToBounds = true
+        
+        self.layer.cornerRadius = cornerRadius
+        self.layer.shadowOpacity = 0.8
+        self.layer.shadowOffset = CGSizeZero
+        self.layer.addSublayer(shapeLayer)
+    }
+    
     func RCCurveShadowSide(alignment: CurveShadowDirection, color: UIColor? = nil, shadowOpacity: Float = 1.0, archHeight: CGFloat = 5) {
         let slayer = CALayer()
         slayer.frame = self.layer.bounds
