@@ -59,6 +59,7 @@
 		CDD515A51BE307CF00C5765C /* ControlsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD515A41BE307CF00C5765C /* ControlsTableViewController.swift */; };
 		CDD515A81BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */; };
 		CDE315831BAD3F8100D2C6AF /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE315821BAD3F8100D2C6AF /* MaskViewController.swift */; };
+		E60E1DB71C3E1F16006F4D06 /* DateProc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60E1DB61C3E1F16006F4D06 /* DateProc.swift */; };
 		E6D1ECBB1C1EABA400995844 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1ECBA1C1EABA400995844 /* ImageViewController.swift */; };
 		E6D1ECBE1C1EAE2D00995844 /* 496.gif in Resources */ = {isa = PBXBuildFile; fileRef = E6D1ECBD1C1EAE2D00995844 /* 496.gif */; };
 		E6D1ECC31C1EAF4100995844 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D1ECC21C1EAF4100995844 /* UIImage+animatedGIF.m */; };
@@ -133,6 +134,7 @@
 		CDD515A41BE307CF00C5765C /* ControlsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsTableViewController.swift; sourceTree = "<group>"; };
 		CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZeriGapCollectionViewLayout.swift; sourceTree = "<group>"; };
 		CDE315821BAD3F8100D2C6AF /* MaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
+		E60E1DB61C3E1F16006F4D06 /* DateProc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProc.swift; sourceTree = "<group>"; };
 		E6D1ECBA1C1EABA400995844 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		E6D1ECBD1C1EAE2D00995844 /* 496.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 496.gif; sourceTree = "<group>"; };
 		E6D1ECC01C1EAF4000995844 /* RCToolsDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCToolsDemo-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				1838BEEE1BDA0570005D7D8B /* JSProcess.swift */,
 				1892CEC11BDF0FCF006CBA03 /* RCPop.swift */,
 				CD8E90F21C1045E500BF50EA /* RedCircleLayer.swift */,
+				E60E1DB61C3E1F16006F4D06 /* DateProc.swift */,
 			);
 			name = RCTools;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				1868A3731BE87E8D007D5F47 /* CustomizedNavigationController.swift in Sources */,
 				CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */,
 				1838BEED1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift in Sources */,
+				E60E1DB71C3E1F16006F4D06 /* DateProc.swift in Sources */,
 				CD2D80741C1A75A300E49AED /* LabelViewController.swift in Sources */,
 				CDE315831BAD3F8100D2C6AF /* MaskViewController.swift in Sources */,
 				CDBAC6E01BB5328200ADB568 /* ContainerViewController.swift in Sources */,
