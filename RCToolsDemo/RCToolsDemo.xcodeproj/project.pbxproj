@@ -60,6 +60,7 @@
 		CDD515A81BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */; };
 		CDE315831BAD3F8100D2C6AF /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE315821BAD3F8100D2C6AF /* MaskViewController.swift */; };
 		E60E1DB71C3E1F16006F4D06 /* DateProc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60E1DB61C3E1F16006F4D06 /* DateProc.swift */; };
+		E69049011C474EBE006C5314 /* DynamicBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */; };
 		E6D1ECBB1C1EABA400995844 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1ECBA1C1EABA400995844 /* ImageViewController.swift */; };
 		E6D1ECBE1C1EAE2D00995844 /* 496.gif in Resources */ = {isa = PBXBuildFile; fileRef = E6D1ECBD1C1EAE2D00995844 /* 496.gif */; };
 		E6D1ECC31C1EAF4100995844 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D1ECC21C1EAF4100995844 /* UIImage+animatedGIF.m */; };
@@ -135,6 +136,7 @@
 		CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZeriGapCollectionViewLayout.swift; sourceTree = "<group>"; };
 		CDE315821BAD3F8100D2C6AF /* MaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
 		E60E1DB61C3E1F16006F4D06 /* DateProc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProc.swift; sourceTree = "<group>"; };
+		E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBehaviorViewController.swift; sourceTree = "<group>"; };
 		E6D1ECBA1C1EABA400995844 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		E6D1ECBD1C1EAE2D00995844 /* 496.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 496.gif; sourceTree = "<group>"; };
 		E6D1ECC01C1EAF4000995844 /* RCToolsDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCToolsDemo-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 		CD6DD93E1BCBDC170092F561 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */,
 				CD6DD93F1BCBDC3A0092F561 /* ShadowViewController.swift */,
 				18E5C7491BD740AB0095D216 /* GlimmerViewController.swift */,
 				18B5ED061BE0AE4400B29BCC /* GraphicTableViewController.swift */,
@@ -518,6 +521,7 @@
 				CD6DD93D1BCBD9280092F561 /* CurveShadowView.swift in Sources */,
 				18E5C74A1BD740AB0095D216 /* GlimmerViewController.swift in Sources */,
 				CD8E90F11C103D6E00BF50EA /* BadgeViewController.swift in Sources */,
+				E69049011C474EBE006C5314 /* DynamicBehaviorViewController.swift in Sources */,
 				CDB90D051BEC35D10090D802 /* BezierPathViewController.swift in Sources */,
 				18E5C7481BD740430095D216 /* RCGlimmer.swift in Sources */,
 				CD4BB2391BAA6D2300072773 /* ViewController.swift in Sources */,
