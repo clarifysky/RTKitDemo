@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import pop
 
 class DynamicBehaviorViewController: UIViewController {
 
@@ -17,12 +18,18 @@ class DynamicBehaviorViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.title = "DynamicBehavior"
-//        self.item.transform = CGAffineTransformMakeRotation(CGFloat(45 * CGFloat(M_PI) / 180))
+        
+        println("original:")
+        self.listenIt()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.final()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -38,9 +45,27 @@ class DynamicBehaviorViewController: UIViewController {
         // 1. Try to use UIDynamicaBehavior to handle this effect.
 //        self.behaviorHandle()
         // 2. Try to use CAKeyAnimation to handle this effect.
-        self.caanimationHandle()
+//        self.caanimationHandle()
+        // 3. Decay rotation
+//        self.decayRotation()
+        // 4. Facebook style rotation
+//        self.facebookPop()
+        // 5. Final.
+//        self.final()
     }
     
+    @IBAction func change(sender: UIButton) {
+//        self.item.layer.anchorPoint = CGPointMake(0.5, 0)
+//        println("after change anchorPoint")
+//        self.listenIt()
+//        
+//        self.item.layer.position = CGPointMake(self.item.layer.position.x, self.item.layer.position.y - self.item.layer.bounds.height * 0.5)
+//        println("after change position")
+//        self.listenIt()
+//        
+//        self.facebookPop()
+        self.final()
+    }
     
     private func behaviorHandle() {
         let behavior = UIDynamicBehavior()
@@ -85,5 +110,48 @@ class DynamicBehaviorViewController: UIViewController {
         anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         self.item.layer.addAnimation(anim, forKey: "rotation")
     }
-
+    
+    private func decayRotation() {
+        let anim = CAKeyframeAnimation()
+        anim.keyPath = "transform.rotation"
+        anim.values = [-5 * CGFloat(M_PI) / 180, 5 * CGFloat(M_PI) / 180, -5 * CGFloat(M_PI) / 180]
+        anim.duration = 0.25
+        anim.repeatCount = 3.0
+        anim.removedOnCompletion = true
+        anim.fillMode = kCAFillModeForwards
+        anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        
+        self.item.layer.addAnimation(anim, forKey: "decayrotation")
+    }
+    
+    private func facebookPop() {
+        let spin = POPSpringAnimation(propertyNamed: kPOPLayerRotation)
+        spin.fromValue = M_PI / 10
+        spin.toValue = 0
+        spin.springBounciness = 40
+        spin.velocity = 20
+        spin.removedOnCompletion = true
+        
+        self.item.layer.pop_addAnimation(spin, forKey: "likeAnimation")
+    }
+    
+    private func final() {
+        self.item.layer.anchorPoint = CGPointMake(0.5, 0)
+        println("after change anchorPoint")
+        self.listenIt()
+        
+        self.item.layer.position = CGPointMake(self.item.layer.position.x, self.item.layer.position.y - self.item.layer.bounds.height * 0.5)
+        println("after change position")
+        self.listenIt()
+        
+        self.facebookPop()
+    }
+    
+    private func listenIt() {
+        println("\n")
+        println("origin: \(self.item.layer.frame.origin)")
+        println("position: \(self.item.layer.position)")
+        println("anchor: \(self.item.layer.anchorPoint)")
+        println("\n")
+    }
 }

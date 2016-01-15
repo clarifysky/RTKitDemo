@@ -74,12 +74,24 @@
                                     <constraint firstAttribute="width" constant="196" id="Yz5-MP-eVe"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMv-ZD-15S">
+                                <rect key="frame" x="16" y="518" width="51" height="30"/>
+                                <animations/>
+                                <state key="normal" title="change">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="change:" destination="WYa-tq-VxJ" eventType="touchUpInside" id="3jf-dv-IaO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="M12-6w-myF" secondAttribute="centerX" id="hAw-L2-6b1"/>
                             <constraint firstItem="M12-6w-myF" firstAttribute="top" secondItem="5Vw-tS-wdh" secondAttribute="bottom" constant="8" id="neS-co-A4S"/>
+                            <constraint firstItem="xMv-ZD-15S" firstAttribute="leading" secondItem="hAm-nN-Z8j" secondAttribute="leadingMargin" id="r2U-UE-3hT"/>
+                            <constraint firstItem="HPA-3H-SUD" firstAttribute="top" secondItem="xMv-ZD-15S" secondAttribute="bottom" constant="20" id="uSM-XZ-YuQ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -197,7 +209,7 @@
                                     <constraint firstAttribute="width" constant="288" id="PuM-yn-9G5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
