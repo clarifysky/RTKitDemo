@@ -28,6 +28,10 @@ class TextFieldViewController: UIViewController {
 
 extension TextFieldViewController: UITextFieldDelegate {
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        println("string: " + string)
+        println("range: \(range)")
+        println("toRange: \(range.toRange(textField.text))")
+        println("textFromTextField: \(textField.text)")
         let testStr = textField.text.stringByReplacingCharactersInRange(range.toRange(textField.text), withString: string)
         println(testStr + ", length: \(count(testStr))")
         return true
