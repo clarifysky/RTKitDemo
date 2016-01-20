@@ -37,13 +37,3 @@ extension TextFieldViewController: UITextFieldDelegate {
         return true
     }
 }
-
-
-// Make String in swift can use stringByReplacingCharactersInRange
-extension NSRange {
-    func toRange(string: String) -> Range<String.Index> {
-        let startIndex = advance(string.startIndex, self.location)
-        let endIndex = advance(startIndex, self.length)
-        return startIndex..<endIndex
-    }
-}
