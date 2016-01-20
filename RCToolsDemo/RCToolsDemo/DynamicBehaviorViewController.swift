@@ -28,10 +28,6 @@ class DynamicBehaviorViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.final()
-    }
-    
     override func viewDidAppear(animated: Bool) {
         
         // A complex behavior of one item may contain many behaviors,
@@ -51,7 +47,7 @@ class DynamicBehaviorViewController: UIViewController {
         // 4. Facebook style rotation
 //        self.facebookPop()
         // 5. Final.
-//        self.final()
+        self.final()
     }
     
     @IBAction func change(sender: UIButton) {
@@ -128,7 +124,7 @@ class DynamicBehaviorViewController: UIViewController {
         let spin = POPSpringAnimation(propertyNamed: kPOPLayerRotation)
         spin.fromValue = M_PI / 10
         spin.toValue = 0
-        spin.springBounciness = 40
+        spin.springBounciness = 30
         spin.velocity = 20
         spin.removedOnCompletion = true
         
@@ -136,13 +132,13 @@ class DynamicBehaviorViewController: UIViewController {
     }
     
     private func final() {
-        self.item.layer.anchorPoint = CGPointMake(0.5, 0)
-        println("after change anchorPoint")
-        self.listenIt()
-        
-        self.item.layer.position = CGPointMake(self.item.layer.position.x, self.item.layer.position.y - self.item.layer.bounds.height * 0.5)
-        println("after change position")
-        self.listenIt()
+//        self.item.layer.anchorPoint = CGPointMake(0.5, 0)
+//        println("after change anchorPoint")
+//        self.listenIt()
+//        
+//        self.item.layer.position = CGPointMake(self.item.layer.position.x, self.item.layer.position.y - self.item.layer.bounds.height * 0.5)
+//        println("after change position")
+//        self.listenIt()
         
         self.facebookPop()
     }

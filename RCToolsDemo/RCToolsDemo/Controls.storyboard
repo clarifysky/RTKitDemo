@@ -127,6 +127,43 @@
             </objects>
             <point key="canvasLocation" x="1194" y="304"/>
         </scene>
+        <!--Text Field View Controller-->
+        <scene sceneID="3QZ-Ue-dSq">
+            <objects>
+                <viewController storyboardIdentifier="TextFieldViewController" id="PWb-ga-2Lj" customClass="TextFieldViewController" customModule="RCToolsDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fH0-tq-Tl1"/>
+                        <viewControllerLayoutGuide type="bottom" id="bcM-pr-hIN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="78t-i9-tGd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qu2-69-m8I">
+                                <rect key="frame" x="16" y="28" width="182" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="182" id="bQ9-ud-va3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qu2-69-m8I" firstAttribute="top" secondItem="fH0-tq-Tl1" secondAttribute="bottom" constant="8" id="PWj-bI-IQR"/>
+                            <constraint firstItem="Qu2-69-m8I" firstAttribute="leading" secondItem="78t-i9-tGd" secondAttribute="leadingMargin" id="fQy-na-l8Q"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textFieldTest" destination="Qu2-69-m8I" id="0GZ-lS-qbr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YH3-zJ-sQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1650" y="304"/>
+        </scene>
         <!--Label View Controller-->
         <scene sceneID="Lvd-su-nW7">
             <objects>
