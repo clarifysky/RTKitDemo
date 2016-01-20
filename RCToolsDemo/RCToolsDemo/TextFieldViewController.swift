@@ -29,7 +29,7 @@ class TextFieldViewController: UIViewController {
 extension TextFieldViewController: UITextFieldDelegate {
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         let testStr = textField.text.stringByReplacingCharactersInRange(range.toRange(textField.text), withString: string)
-        println(testStr)
+        println(testStr + ", length: \(count(testStr))")
         return true
     }
 }
