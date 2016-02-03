@@ -11,11 +11,15 @@ import UIKit
 class ShadowViewController: UIViewController {
 
     @IBOutlet weak var needShadowView: UIView!
+    @IBOutlet weak var imageViewCar: UIImageView!
     private var curveShadowShowed: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let tapGesture = UITapGestureRecognizer(target: self, action: "testImage:")
+        self.imageViewCar.userInteractionEnabled = true
+        self.imageViewCar.addGestureRecognizer(tapGesture)
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,4 +44,18 @@ class ShadowViewController: UIViewController {
         }
     }
     
+    @IBAction func buildCircleShadow(sender: UIButton) {
+        self.imageViewCar.RCAddCurveShadowLayer(20)
+    }
+    
+    func testImage(recognizer: UITapGestureRecognizer) {
+        if recognizer.state == .Ended {
+            let alertController = UIAlertController(title: "notice", message: "you have set the curve-shadow successfullly", preferredStyle: UIAlertControllerStyle.Alert)
+            let action = UIAlertAction(title: "ok", style: .Default, handler: {
+                action in
+            })
+            alertController.addAction(action)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
 }

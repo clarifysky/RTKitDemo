@@ -270,6 +270,25 @@ extension UIView {
         self.layer.addSublayer(shapeLayer)
     }
     
+    /// Add a curve-shadow effect for current view.
+    ///
+    /// It will pass parent layer's contens to sub layer, then set parent layer's
+    /// contens to nil, then add sub layer to the layer hierachy.
+    func RCAddCurveShadowLayer(cornerRadius: CGFloat) {
+        let shapeLayer = CALayer()
+        shapeLayer.frame = self.layer.bounds
+        shapeLayer.cornerRadius = cornerRadius
+        shapeLayer.masksToBounds = true
+        shapeLayer.contents = self.layer.contents
+        
+        self.layer.contents = nil
+        
+        self.layer.cornerRadius = cornerRadius
+        self.layer.shadowOpacity = 0.8
+        self.layer.shadowOffset = CGSizeZero
+        self.layer.addSublayer(shapeLayer)
+    }
+    
     func RCCurveShadowSide(alignment: CurveShadowDirection, color: UIColor? = nil, shadowOpacity: Float = 1.0, archHeight: CGFloat = 5) {
         let slayer = CALayer()
         slayer.frame = self.layer.bounds
