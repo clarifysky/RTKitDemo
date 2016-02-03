@@ -80,8 +80,21 @@ class GalleryBrowserViewController: UIViewController {
             testArr.append(false)
         }
         galleryDetailVC.imageViewsLoaded = testArr
-        // Set modalPresentationStyle to this to make vc which will be presented to be transparent.
-        self.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
+        
+        // Make view controller which will be present is transparent.
+        // Below only available after ios 8.0.
+        galleryDetailVC.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+        galleryDetailVC.providesPresentationContextTransitionStyle = true
+        galleryDetailVC.definesPresentationContext = true
+        galleryDetailVC.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+        
+        
+        // IOS version before ios 8.0, try below.
+//        self.view.window?.rootViewController?.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
+//        presentViewController(galleryDetailVC, animated: true, completion: nil)
+//        self.view.window?.rootViewController?.modalPresentationStyle = UIModalPresentationStyle.FullScreen
+        
+//        self.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
         presentViewController(galleryDetailVC, animated: true, completion: nil)
     }
 }

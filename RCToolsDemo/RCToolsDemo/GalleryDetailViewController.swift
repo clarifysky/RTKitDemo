@@ -22,10 +22,18 @@ class GalleryDetailViewController: UIViewController {
     private var imageDatas: [NSData?] = [NSData?]()
     private var uiimages: [UIImage?] = [UIImage?]()
     private var imageFrames: [CGRect?] = [CGRect?]()
+    // Create blur effect for the view, only available after ios 8.0
+    private var effectView: UIVisualEffectView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.tag = 0
+        
+        // Add blur effect, only available after ios 8.0
+        let blur = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        self.effectView = UIVisualEffectView(effect: blur)
+        self.effectView!.frame = self.view.bounds
+        self.view.addSubview(self.effectView!)
         
         for var i = 0; i < self.imageURLs!.count; i++ {
             self.imageViewsLoaded?.append(false)
@@ -68,7 +76,7 @@ class GalleryDetailViewController: UIViewController {
         closeButton.sizeToFit()
         closeButton.frame.origin = CGPointMake(16, 16)
         closeButton.addTarget(self, action: "dismissSelf", forControlEvents: .TouchUpInside)
-        self.view.addSubview(closeButton)
+        self.effectView!.addSubview(closeButton)
     }
     
     func dismissSelf() {
@@ -96,7 +104,7 @@ class GalleryDetailViewController: UIViewController {
         // Set this to true to tell UISCollView that scroll its width while every scrolling.
         self.imagesCollection?.pagingEnabled = true
         
-        self.view.addSubview(self.imagesCollection!)
+        self.effectView!.addSubview(self.imagesCollection!)
         
         // Scroll to specific item.
         self.imagesCollection?.scrollToItemAtIndexPath(NSIndexPath(forRow: self.imageCurrentIndex, inSection: 0), atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: true)

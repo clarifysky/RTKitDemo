@@ -38,29 +38,12 @@ class DynamicBehaviorViewController: UIViewController {
         // be its child, third: create a dynamicAnimator associate with the item, fourth: add dynamicBehavior you
         // created in step 2 to the item.
         
-        // 1. Try to use UIDynamicaBehavior to handle this effect.
-//        self.behaviorHandle()
-        // 2. Try to use CAKeyAnimation to handle this effect.
-//        self.caanimationHandle()
-        // 3. Decay rotation
-//        self.decayRotation()
-        // 4. Facebook style rotation
-//        self.facebookPop()
-        // 5. Final.
-        self.final()
+        self.vertical()
     }
     
     @IBAction func change(sender: UIButton) {
-//        self.item.layer.anchorPoint = CGPointMake(0.5, 0)
-//        println("after change anchorPoint")
-//        self.listenIt()
-//        
-//        self.item.layer.position = CGPointMake(self.item.layer.position.x, self.item.layer.position.y - self.item.layer.bounds.height * 0.5)
-//        println("after change position")
-//        self.listenIt()
-//        
-//        self.facebookPop()
-        self.final()
+//        self.final()
+        self.vertical()
     }
     
     private func behaviorHandle() {
@@ -132,15 +115,19 @@ class DynamicBehaviorViewController: UIViewController {
     }
     
     private func final() {
-//        self.item.layer.anchorPoint = CGPointMake(0.5, 0)
-//        println("after change anchorPoint")
-//        self.listenIt()
-//        
-//        self.item.layer.position = CGPointMake(self.item.layer.position.x, self.item.layer.position.y - self.item.layer.bounds.height * 0.5)
-//        println("after change position")
-//        self.listenIt()
-        
         self.facebookPop()
+    }
+    
+    private func vertical() {
+        let position = self.item.layer.position
+        let anim = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+        anim.fromValue = position.y - 20
+        anim.toValue = position.y
+        anim.springBounciness = 30
+        anim.velocity = 15
+        anim.removedOnCompletion = true
+        
+        self.item.layer.pop_addAnimation(anim, forKey: "vertical")
     }
     
     private func listenIt() {
