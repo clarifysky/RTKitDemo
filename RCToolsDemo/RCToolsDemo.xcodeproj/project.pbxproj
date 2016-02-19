@@ -51,6 +51,7 @@
 		CD8816C41BBB959F0052EA45 /* SegueTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8816C31BBB959F0052EA45 /* SegueTools.swift */; };
 		CD8E90F11C103D6E00BF50EA /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E90F01C103D6E00BF50EA /* BadgeViewController.swift */; };
 		CD8E90F31C1045E500BF50EA /* RedCircleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E90F21C1045E500BF50EA /* RedCircleLayer.swift */; };
+		CD9193101C745E9000FA0011 /* RCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD91930F1C745E9000FA0011 /* RCTextField.swift */; };
 		CD9229E81BF4662B004BF267 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9229E61BF4662B004BF267 /* AudioViewController.swift */; };
 		CDB90D051BEC35D10090D802 /* BezierPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB90D041BEC35D10090D802 /* BezierPathViewController.swift */; };
 		CDBAC6E01BB5328200ADB568 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAC6DF1BB5328200ADB568 /* ContainerViewController.swift */; };
@@ -130,6 +131,7 @@
 		CD8816C31BBB959F0052EA45 /* SegueTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueTools.swift; sourceTree = "<group>"; };
 		CD8E90F01C103D6E00BF50EA /* BadgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
 		CD8E90F21C1045E500BF50EA /* RedCircleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedCircleLayer.swift; sourceTree = "<group>"; };
+		CD91930F1C745E9000FA0011 /* RCTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTextField.swift; sourceTree = "<group>"; };
 		CD9229E61BF4662B004BF267 /* AudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		CDB90D041BEC35D10090D802 /* BezierPathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathViewController.swift; sourceTree = "<group>"; };
 		CDBAC6DF1BB5328200ADB568 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 		CD4BB2561BAA6D4100072773 /* RCTools */ = {
 			isa = PBXGroup;
 			children = (
+				CD91930F1C745E9000FA0011 /* RCTextField.swift */,
 				18E5C7471BD740430095D216 /* RCGlimmer.swift */,
 				CD4BB25A1BAA70F000072773 /* RCTools.swift */,
 				CD8816C31BBB959F0052EA45 /* SegueTools.swift */,
@@ -581,6 +584,7 @@
 				CD8E90F11C103D6E00BF50EA /* BadgeViewController.swift in Sources */,
 				E69049011C474EBE006C5314 /* DynamicBehaviorViewController.swift in Sources */,
 				CDB90D051BEC35D10090D802 /* BezierPathViewController.swift in Sources */,
+				CD9193101C745E9000FA0011 /* RCTextField.swift in Sources */,
 				18E5C7481BD740430095D216 /* RCGlimmer.swift in Sources */,
 				CD4BB2391BAA6D2300072773 /* ViewController.swift in Sources */,
 				CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */,
