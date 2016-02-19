@@ -14,6 +14,7 @@ class TextFieldViewController: UIViewController {
     private var textViewTest: UITextView?
     // How to get the height of keyboard?
     private let kOFFSET_FOR_KEYBOARD: CGFloat = 216
+    var textFieldReturn: RCTextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,17 @@ class TextFieldViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: "resignGesture:")
         self.view.addGestureRecognizer(tapGesture)
+        
+        self.textFieldTest.returnKeyType = UIReturnKeyType.Send
+        
+//        self.textFieldReturn = RCTextField(frame: CGRectMake(10, 150, 200, 40))
+//        self.textFieldReturn?.doneTitle = "send"
+//        self.textFieldReturn?.doneAction = {
+//            println("You clicked send button in keyboard view")
+//        }
+//        self.textFieldReturn?.layer.borderColor = UIColor.greenColor().CGColor
+//        self.textFieldReturn?.layer.borderWidth = 1.0
+//        self.view.addSubview(self.textFieldReturn!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -101,6 +113,11 @@ extension TextFieldViewController: UITextFieldDelegate {
         println("textFromTextField: \(textField.text)")
         let testStr = textField.text.stringByReplacingCharactersInRange(range.toRange(textField.text), withString: string)
         println(testStr + ", length: \(count(testStr))")
+        return true
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        println("you pressed the return button")
         return true
     }
 }
