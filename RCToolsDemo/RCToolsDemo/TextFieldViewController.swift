@@ -13,7 +13,7 @@ class TextFieldViewController: UIViewController {
     @IBOutlet weak var textFieldTest: UITextField!
     private var textViewTest: UITextView?
     // How to get the height of keyboard?
-    private let kOFFSET_FOR_KEYBOARD: CGFloat = 216
+    private var kOFFSET_FOR_KEYBOARD: CGFloat = 80
     var textFieldReturn: RCTextField?
     
     override func viewDidLoad() {
@@ -25,6 +25,8 @@ class TextFieldViewController: UIViewController {
         
         self.textViewTest = UITextView(frame: CGRectMake(0, self.view.bounds.height - 200, self.view.bounds.width, 200))
         self.textViewTest?.backgroundColor = UIColor.grayColor()
+        self.textViewTest?.layer.borderColor = UIColor.redColor().CGColor
+        self.textViewTest?.layer.borderWidth = 1.0
         self.view.addSubview(self.textViewTest!)
         self.textViewTest!.delegate = self
         
@@ -50,8 +52,8 @@ class TextFieldViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -67,7 +69,13 @@ class TextFieldViewController: UIViewController {
         }
     }
     
-    func keyboardWillShow() {
+    func keyboardWillShow(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                self.kOFFSET_FOR_KEYBOARD = keyboardSize.height
+            }
+        }
+        
         if self.view.frame.origin.y >= 0 {
             self.setViewMovedUp(true)
         } else if self.view.frame.origin.y < 0 {
@@ -75,7 +83,7 @@ class TextFieldViewController: UIViewController {
         }
     }
     
-    func keyboardWillHide() {
+    func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y >= 0 {
             self.setViewMovedUp(true)
         } else if self.view.frame.origin.y < 0 {
