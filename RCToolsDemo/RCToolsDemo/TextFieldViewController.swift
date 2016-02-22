@@ -29,6 +29,7 @@ class TextFieldViewController: UIViewController {
         self.textViewTest?.layer.borderWidth = 1.0
         self.view.addSubview(self.textViewTest!)
         self.textViewTest!.delegate = self
+        self.textViewTest!.returnKeyType = .Send
         
         let tapGesture = UITapGestureRecognizer(target: self, action: "resignGesture:")
         self.view.addGestureRecognizer(tapGesture)
@@ -137,6 +138,15 @@ extension TextFieldViewController: UITextViewDelegate {
             if self.view.frame.origin.y >= 0 {
                 self.setViewMovedUp(true)
             }
+        }
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            println("You pressed return button")
+            return false
+        } else {
+            return true
         }
     }
 }
