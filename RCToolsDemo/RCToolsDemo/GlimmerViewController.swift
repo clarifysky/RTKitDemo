@@ -97,9 +97,11 @@ class GlimmerViewController: UIViewController {
     }
     
     func attachExtensionGlimmer() {
-        self.glimmerButton = UIButton(frame: CGRectMake(10, 115, 150, 30))
+        self.glimmerButton = UIButton()
         self.glimmerButton!.setTitle("extension Glimmer", forState: .Normal)
         self.glimmerButton!.addTarget(self, action: "toggleExtensionGlimmer", forControlEvents: .TouchUpInside)
+        self.glimmerButton!.sizeToFit()
+        self.glimmerButton?.frame.origin = CGPointMake(10, 115)
         self.glimmerButton!.RCGlimmer()
         self.view.addSubview(self.glimmerButton!)
         self.glimmerButtonAnimationing = true

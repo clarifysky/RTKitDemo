@@ -63,6 +63,7 @@
 		E60E1DB71C3E1F16006F4D06 /* DateProc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60E1DB61C3E1F16006F4D06 /* DateProc.swift */; };
 		E62CC7AD1C4F218500E8E84F /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62CC7AC1C4F218500E8E84F /* TextFieldViewController.swift */; };
 		E69049011C474EBE006C5314 /* DynamicBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */; };
+		E695290D1C7EF7C00032FDDC /* AutoLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */; };
 		E6D1ECBB1C1EABA400995844 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1ECBA1C1EABA400995844 /* ImageViewController.swift */; };
 		E6D1ECBE1C1EAE2D00995844 /* 496.gif in Resources */ = {isa = PBXBuildFile; fileRef = E6D1ECBD1C1EAE2D00995844 /* 496.gif */; };
 		E6D1ECC31C1EAF4100995844 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D1ECC21C1EAF4100995844 /* UIImage+animatedGIF.m */; };
@@ -143,6 +144,7 @@
 		E60E1DB61C3E1F16006F4D06 /* DateProc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProc.swift; sourceTree = "<group>"; };
 		E62CC7AC1C4F218500E8E84F /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBehaviorViewController.swift; sourceTree = "<group>"; };
+		E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutViewController.swift; sourceTree = "<group>"; };
 		E6D1ECBA1C1EABA400995844 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		E6D1ECBD1C1EAE2D00995844 /* 496.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 496.gif; sourceTree = "<group>"; };
 		E6D1ECC01C1EAF4000995844 /* RCToolsDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCToolsDemo-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 		CD6DD93E1BCBDC170092F561 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */,
 				E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */,
 				CD6DD93F1BCBDC3A0092F561 /* ShadowViewController.swift */,
 				18E5C7491BD740AB0095D216 /* GlimmerViewController.swift */,
@@ -575,6 +578,7 @@
 				18A9BB691BD5D93C00532575 /* DictionaryViewController.swift in Sources */,
 				CD2B4D941BABB7D7003FFF19 /* BeenPresentedViewController.swift in Sources */,
 				CD6582F11BC7C9710053BD0E /* PresentedViewController.swift in Sources */,
+				E695290D1C7EF7C00032FDDC /* AutoLayoutViewController.swift in Sources */,
 				1892CEC21BDF0FCF006CBA03 /* RCPop.swift in Sources */,
 				189830A51BDDD60E00FFE854 /* ImagesCell.swift in Sources */,
 				CD4661DA1BBA100B00FDFBDC /* FirstViewController.swift in Sources */,

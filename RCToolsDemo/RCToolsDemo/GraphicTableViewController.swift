@@ -10,7 +10,7 @@ import UIKit
 
 class GraphicTableViewController: UITableViewController {
     
-    let actions = ["carMoving", "snapshot", "bezierpath", "dynamicBehaviors"]
+    let actions = ["carMoving", "snapshot", "bezierpath", "dynamicBehaviors", "glimmer", "autoLayout"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +34,12 @@ class GraphicTableViewController: UITableViewController {
             self.navigationController?.pushViewController(destVC, animated: true)
         } else if row == 3 {
             let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Graphic", SBID: "DynamicBehaviorViewController") as! DynamicBehaviorViewController
+            self.navigationController?.pushViewController(destVC, animated: true)
+        } else if row == 4 {
+            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Graphic", SBID: "GlimmerViewController") as! GlimmerViewController
+            self.navigationController?.pushViewController(destVC, animated: true)
+        } else if row == 5 {
+            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Graphic", SBID: "AutoLayoutViewController") as! AutoLayoutViewController
             self.navigationController?.pushViewController(destVC, animated: true)
         }
     }

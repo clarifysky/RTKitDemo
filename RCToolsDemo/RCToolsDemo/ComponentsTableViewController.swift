@@ -10,7 +10,7 @@ import UIKit
 
 class ComponentsTableViewController: UITableViewController {
 
-    let actions = ["paragraph", "dictionary", "glimmer", "gallery", "audio"]
+    let actions = ["paragraph", "dictionary", "gallery", "audio"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,9 +35,6 @@ class ComponentsTableViewController: UITableViewController {
             let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Components", SBID: "DictionaryViewController") as! DictionaryViewController
             self.navigationController?.pushViewController(destVC, animated: true)
         } else if row == 2 {
-            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Components", SBID: "GlimmerViewController") as! GlimmerViewController
-            self.navigationController?.pushViewController(destVC, animated: true)
-        } else if row == 3 {
             let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Components", SBID: "GalleryBrowserViewController") as! GalleryBrowserViewController
             self.navigationController?.pushViewController(destVC, animated: true)
         } else if row == 4 {
