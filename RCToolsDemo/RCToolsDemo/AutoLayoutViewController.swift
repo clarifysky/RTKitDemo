@@ -11,6 +11,7 @@ import UIKit
 class AutoLayoutViewController: UIViewController {
 
     @IBOutlet weak var labelTest: UILabel!
+    @IBOutlet weak var labelHello: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +28,12 @@ class AutoLayoutViewController: UIViewController {
             self.labelTest.text = "This is some words just for test whether the view will fit its child: UILabel.\n Good lulck!"
         } else {
             self.labelTest.text = "Label"
+        }
+        
+        if self.labelHello.text == "Hello" {
+            self.labelHello.text = "This is some words just for testing whether the view will fit its child: UILabel.\n Good lulck!"
+        } else {
+            self.labelHello.text = "Hello"
         }
     }
 }

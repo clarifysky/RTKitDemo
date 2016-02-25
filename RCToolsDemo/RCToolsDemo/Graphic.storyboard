@@ -317,18 +317,42 @@
                                     <action selector="toggleContents:" destination="tps-15-VHT" eventType="touchUpInside" id="0wp-Gi-WKz"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6m-aP-Qrp">
+                                <rect key="frame" x="16" y="424" width="50" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlR-Lv-KlN">
+                                        <rect key="frame" x="5" y="5" width="40" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="QlR-Lv-KlN" firstAttribute="top" secondItem="M6m-aP-Qrp" secondAttribute="top" constant="5" id="bwM-km-IJu"/>
+                                    <constraint firstItem="QlR-Lv-KlN" firstAttribute="leading" secondItem="M6m-aP-Qrp" secondAttribute="leading" constant="5" id="gQE-GO-EeG"/>
+                                    <constraint firstAttribute="bottom" secondItem="QlR-Lv-KlN" secondAttribute="bottom" constant="5" id="gUu-CB-bcG"/>
+                                    <constraint firstAttribute="trailing" secondItem="QlR-Lv-KlN" secondAttribute="trailing" constant="5" id="rvo-36-CSe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="M6m-aP-Qrp" firstAttribute="leading" secondItem="lsT-6U-0hj" secondAttribute="leadingMargin" id="3S8-4t-fb1"/>
                             <constraint firstItem="E9Y-KU-t0p" firstAttribute="top" secondItem="hyV-31-g6f" secondAttribute="bottom" constant="24" id="JMD-Bo-GuH"/>
                             <constraint firstItem="ibX-3V-gZ4" firstAttribute="leading" secondItem="lsT-6U-0hj" secondAttribute="leadingMargin" id="LWa-hk-nwI"/>
                             <constraint firstItem="cPp-TS-rcA" firstAttribute="top" secondItem="ibX-3V-gZ4" secondAttribute="bottom" constant="20" id="NhW-VU-P6P"/>
                             <constraint firstItem="E9Y-KU-t0p" firstAttribute="leading" secondItem="lsT-6U-0hj" secondAttribute="leadingMargin" constant="24" id="R73-G8-ocV"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="E9Y-KU-t0p" secondAttribute="trailing" constant="24" id="pJH-D0-gyh"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="M6m-aP-Qrp" secondAttribute="trailing" constant="25" id="qZ2-RK-HMa"/>
+                            <constraint firstItem="cPp-TS-rcA" firstAttribute="top" secondItem="M6m-aP-Qrp" secondAttribute="bottom" constant="113" id="v16-n1-UnN"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="labelHello" destination="QlR-Lv-KlN" id="USN-sH-w7I"/>
                         <outlet property="labelTest" destination="NdK-gn-AY8" id="7X5-CK-5UA"/>
                     </connections>
                 </viewController>
