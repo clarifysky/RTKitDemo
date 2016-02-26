@@ -142,10 +142,10 @@ extension UIView {
     }
     
     func RCGlimmerRemove() {
-        if self.layer.mask.animationForKey(self.RCkTextAnimationKey) != nil {
-            self.layer.mask.removeAnimationForKey(self.RCkTextAnimationKey)
-        }
         if self.layer.mask != nil {
+            if self.layer.mask.animationForKey(self.RCkTextAnimationKey) != nil {
+                self.layer.mask.removeAnimationForKey(self.RCkTextAnimationKey)
+            }
             self.layer.mask = nil
         }
     }
