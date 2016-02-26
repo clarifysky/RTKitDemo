@@ -67,6 +67,16 @@
 		E6D1ECBB1C1EABA400995844 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1ECBA1C1EABA400995844 /* ImageViewController.swift */; };
 		E6D1ECBE1C1EAE2D00995844 /* 496.gif in Resources */ = {isa = PBXBuildFile; fileRef = E6D1ECBD1C1EAE2D00995844 /* 496.gif */; };
 		E6D1ECC31C1EAF4100995844 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D1ECC21C1EAF4100995844 /* UIImage+animatedGIF.m */; };
+		E6F2DC1B1C7FFD1D008B9460 /* EWCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F2DC1A1C7FFD1D008B9460 /* EWCViewController.swift */; };
+		E6F2DC1D1C8023D2008B9460 /* EWCMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F2DC1C1C8023D2008B9460 /* EWCMessageViewController.swift */; };
+		E6F2DC1F1C80262E008B9460 /* EWCMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F2DC1E1C80262E008B9460 /* EWCMessage.swift */; };
+		E6F2DC211C80279F008B9460 /* EWCMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F2DC201C80279F008B9460 /* EWCMessageCell.swift */; };
+		E6F2DC231C8029B8008B9460 /* Readme in Resources */ = {isa = PBXBuildFile; fileRef = E6F2DC221C8029B8008B9460 /* Readme */; };
+		E6F2DC271C802B03008B9460 /* EWCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F2DC261C802B03008B9460 /* EWCUser.swift */; };
+		E6F2DC2B1C802DEF008B9460 /* EWCChatBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F2DC2A1C802DEF008B9460 /* EWCChatBox.swift */; };
+		E6F2DC2D1C8030FF008B9460 /* ChatViewImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6F2DC2C1C8030FF008B9460 /* ChatViewImages.xcassets */; };
+		E6F2DC2F1C804994008B9460 /* EWCChatBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F2DC2E1C804994008B9460 /* EWCChatBoxViewController.swift */; };
+		E6F2DC321C804EAC008B9460 /* EWCChatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F2DC311C804EAC008B9460 /* EWCChatHelper.swift */; };
 		F0E44003087A7F78739C3E76 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2862304045F5F0A51216D43A /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -150,6 +160,16 @@
 		E6D1ECC01C1EAF4000995844 /* RCToolsDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCToolsDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		E6D1ECC11C1EAF4100995844 /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
 		E6D1ECC21C1EAF4100995844 /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
+		E6F2DC1A1C7FFD1D008B9460 /* EWCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWCViewController.swift; sourceTree = "<group>"; };
+		E6F2DC1C1C8023D2008B9460 /* EWCMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWCMessageViewController.swift; sourceTree = "<group>"; };
+		E6F2DC1E1C80262E008B9460 /* EWCMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWCMessage.swift; sourceTree = "<group>"; };
+		E6F2DC201C80279F008B9460 /* EWCMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWCMessageCell.swift; sourceTree = "<group>"; };
+		E6F2DC221C8029B8008B9460 /* Readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme; sourceTree = "<group>"; };
+		E6F2DC261C802B03008B9460 /* EWCUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWCUser.swift; sourceTree = "<group>"; };
+		E6F2DC2A1C802DEF008B9460 /* EWCChatBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWCChatBox.swift; sourceTree = "<group>"; };
+		E6F2DC2C1C8030FF008B9460 /* ChatViewImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ChatViewImages.xcassets; sourceTree = "<group>"; };
+		E6F2DC2E1C804994008B9460 /* EWCChatBoxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWCChatBoxViewController.swift; sourceTree = "<group>"; };
+		E6F2DC311C804EAC008B9460 /* EWCChatHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWCChatHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +277,7 @@
 		CD4BB2331BAA6D2300072773 /* RCToolsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E6F2DC101C7FF9EC008B9460 /* Experiment */,
 				E6D1ECC01C1EAF4000995844 /* RCToolsDemo-Bridging-Header.h */,
 				E6D1ECBF1C1EAF1A00995844 /* Utilities */,
 				E6D1ECBC1C1EAE1A00995844 /* Resources */,
@@ -406,6 +427,111 @@
 			name = AnimatedGIF;
 			sourceTree = "<group>";
 		};
+		E6F2DC101C7FF9EC008B9460 /* Experiment */ = {
+			isa = PBXGroup;
+			children = (
+				E6F2DC111C7FF9FB008B9460 /* Wechat */,
+			);
+			name = Experiment;
+			sourceTree = "<group>";
+		};
+		E6F2DC111C7FF9FB008B9460 /* Wechat */ = {
+			isa = PBXGroup;
+			children = (
+				E6F2DC241C802AC6008B9460 /* Contacts */,
+				E6F2DC121C7FFA13008B9460 /* Chat */,
+				E6F2DC221C8029B8008B9460 /* Readme */,
+			);
+			name = Wechat;
+			sourceTree = "<group>";
+		};
+		E6F2DC121C7FFA13008B9460 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				E6F2DC301C804E5F008B9460 /* Helper */,
+				E6F2DC161C7FFA96008B9460 /* Resources */,
+				E6F2DC151C7FFA8B008B9460 /* Models */,
+				E6F2DC141C7FFA82008B9460 /* Views */,
+				E6F2DC131C7FFA7A008B9460 /* Controllers */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		E6F2DC131C7FFA7A008B9460 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E6F2DC2E1C804994008B9460 /* EWCChatBoxViewController.swift */,
+				E6F2DC1A1C7FFD1D008B9460 /* EWCViewController.swift */,
+				E6F2DC1C1C8023D2008B9460 /* EWCMessageViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E6F2DC141C7FFA82008B9460 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E6F2DC291C802DCB008B9460 /* Message */,
+				E6F2DC281C802DBF008B9460 /* InputBox */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E6F2DC151C7FFA8B008B9460 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E6F2DC1E1C80262E008B9460 /* EWCMessage.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E6F2DC161C7FFA96008B9460 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E6F2DC2C1C8030FF008B9460 /* ChatViewImages.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E6F2DC241C802AC6008B9460 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				E6F2DC251C802AE8008B9460 /* Models */,
+			);
+			name = Contacts;
+			sourceTree = "<group>";
+		};
+		E6F2DC251C802AE8008B9460 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E6F2DC261C802B03008B9460 /* EWCUser.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E6F2DC281C802DBF008B9460 /* InputBox */ = {
+			isa = PBXGroup;
+			children = (
+				E6F2DC2A1C802DEF008B9460 /* EWCChatBox.swift */,
+			);
+			name = InputBox;
+			sourceTree = "<group>";
+		};
+		E6F2DC291C802DCB008B9460 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				E6F2DC201C80279F008B9460 /* EWCMessageCell.swift */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
+		E6F2DC301C804E5F008B9460 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E6F2DC311C804EAC008B9460 /* EWCChatHelper.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -492,9 +618,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDD515A31BE3074200C5765C /* Controls.storyboard in Resources */,
+				E6F2DC2D1C8030FF008B9460 /* ChatViewImages.xcassets in Resources */,
 				CD4BB23C1BAA6D2300072773 /* Main.storyboard in Resources */,
 				CD4BB2411BAA6D2300072773 /* LaunchScreen.xib in Resources */,
 				E6D1ECBE1C1EAE2D00995844 /* 496.gif in Resources */,
+				E6F2DC231C8029B8008B9460 /* Readme in Resources */,
 				189B6DA11BCF32A70083C02B /* Components.storyboard in Resources */,
 				18B5ED051BE0ADC700B29BCC /* Graphic.storyboard in Resources */,
 				CD4BB23E1BAA6D2300072773 /* Images.xcassets in Resources */,
@@ -574,25 +702,31 @@
 				CDD515A01BE306F200C5765C /* ZeroGapViewController.swift in Sources */,
 				CD6DFAF81BCFD39F0015E6CF /* MyUILabel.swift in Sources */,
 				18B5ED071BE0AE4400B29BCC /* GraphicTableViewController.swift in Sources */,
+				E6F2DC2B1C802DEF008B9460 /* EWCChatBox.swift in Sources */,
 				CD13C91A1BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift in Sources */,
 				18A9BB691BD5D93C00532575 /* DictionaryViewController.swift in Sources */,
 				CD2B4D941BABB7D7003FFF19 /* BeenPresentedViewController.swift in Sources */,
 				CD6582F11BC7C9710053BD0E /* PresentedViewController.swift in Sources */,
+				E6F2DC1B1C7FFD1D008B9460 /* EWCViewController.swift in Sources */,
 				E695290D1C7EF7C00032FDDC /* AutoLayoutViewController.swift in Sources */,
 				1892CEC21BDF0FCF006CBA03 /* RCPop.swift in Sources */,
 				189830A51BDDD60E00FFE854 /* ImagesCell.swift in Sources */,
 				CD4661DA1BBA100B00FDFBDC /* FirstViewController.swift in Sources */,
 				18A9BB6B1BD5D9D900532575 /* ComponentsTableViewController.swift in Sources */,
+				E6F2DC1F1C80262E008B9460 /* EWCMessage.swift in Sources */,
 				CD6DD93D1BCBD9280092F561 /* CurveShadowView.swift in Sources */,
 				18E5C74A1BD740AB0095D216 /* GlimmerViewController.swift in Sources */,
 				CD8E90F11C103D6E00BF50EA /* BadgeViewController.swift in Sources */,
+				E6F2DC1D1C8023D2008B9460 /* EWCMessageViewController.swift in Sources */,
 				E69049011C474EBE006C5314 /* DynamicBehaviorViewController.swift in Sources */,
 				CDB90D051BEC35D10090D802 /* BezierPathViewController.swift in Sources */,
+				E6F2DC271C802B03008B9460 /* EWCUser.swift in Sources */,
 				CD9193101C745E9000FA0011 /* RCTextField.swift in Sources */,
 				18E5C7481BD740430095D216 /* RCGlimmer.swift in Sources */,
 				CD4BB2391BAA6D2300072773 /* ViewController.swift in Sources */,
 				CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */,
 				1868A3751BE883A9007D5F47 /* TestNavigationController.swift in Sources */,
+				E6F2DC2F1C804994008B9460 /* EWCChatBoxViewController.swift in Sources */,
 				1838BEF11BDA204F005D7D8B /* GalleryDetailViewController.swift in Sources */,
 				CD4661DC1BBA101600FDFBDC /* SecondViewController.swift in Sources */,
 				E62CC7AD1C4F218500E8E84F /* TextFieldViewController.swift in Sources */,
@@ -610,7 +744,9 @@
 				1868A3731BE87E8D007D5F47 /* CustomizedNavigationController.swift in Sources */,
 				CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */,
 				1838BEED1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift in Sources */,
+				E6F2DC321C804EAC008B9460 /* EWCChatHelper.swift in Sources */,
 				E60E1DB71C3E1F16006F4D06 /* DateProc.swift in Sources */,
+				E6F2DC211C80279F008B9460 /* EWCMessageCell.swift in Sources */,
 				CD2D80741C1A75A300E49AED /* LabelViewController.swift in Sources */,
 				CDE315831BAD3F8100D2C6AF /* MaskViewController.swift in Sources */,
 				CDBAC6E01BB5328200ADB568 /* ContainerViewController.swift in Sources */,
