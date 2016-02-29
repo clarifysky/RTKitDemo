@@ -65,11 +65,15 @@
 		E62CC7AD1C4F218500E8E84F /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62CC7AC1C4F218500E8E84F /* TextFieldViewController.swift */; };
 		E69049011C474EBE006C5314 /* DynamicBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */; };
 		E695290D1C7EF7C00032FDDC /* AutoLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */; };
+		E6AA01021C83F8A6009F3AB1 /* EWCTextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA01011C83F8A6009F3AB1 /* EWCTextMessageCell.swift */; };
+		E6AA01041C8415E0009F3AB1 /* EWCImageMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA01031C8415E0009F3AB1 /* EWCImageMessageCell.swift */; };
+		E6AA01061C841A29009F3AB1 /* EWCVoiceMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA01051C841A29009F3AB1 /* EWCVoiceMessageCell.swift */; };
+		E6AA01081C841A58009F3AB1 /* EWCSystemMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA01071C841A58009F3AB1 /* EWCSystemMessageCell.swift */; };
 		E6D1ECBB1C1EABA400995844 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1ECBA1C1EABA400995844 /* ImageViewController.swift */; };
 		E6D1ECBE1C1EAE2D00995844 /* 496.gif in Resources */ = {isa = PBXBuildFile; fileRef = E6D1ECBD1C1EAE2D00995844 /* 496.gif */; };
 		E6D1ECC31C1EAF4100995844 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D1ECC21C1EAF4100995844 /* UIImage+animatedGIF.m */; };
 		E6F2DC1B1C7FFD1D008B9460 /* EWCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F2DC1A1C7FFD1D008B9460 /* EWCViewController.swift */; };
-		E6F2DC1D1C8023D2008B9460 /* EWCMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F2DC1C1C8023D2008B9460 /* EWCMessageViewController.swift */; };
+		E6F2DC1D1C8023D2008B9460 /* EWCChatMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F2DC1C1C8023D2008B9460 /* EWCChatMessageViewController.swift */; };
 		E6F2DC1F1C80262E008B9460 /* EWCMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F2DC1E1C80262E008B9460 /* EWCMessage.swift */; };
 		E6F2DC211C80279F008B9460 /* EWCMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F2DC201C80279F008B9460 /* EWCMessageCell.swift */; };
 		E6F2DC231C8029B8008B9460 /* Readme in Resources */ = {isa = PBXBuildFile; fileRef = E6F2DC221C8029B8008B9460 /* Readme */; };
@@ -157,13 +161,17 @@
 		E62CC7AC1C4F218500E8E84F /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBehaviorViewController.swift; sourceTree = "<group>"; };
 		E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutViewController.swift; sourceTree = "<group>"; };
+		E6AA01011C83F8A6009F3AB1 /* EWCTextMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWCTextMessageCell.swift; sourceTree = "<group>"; };
+		E6AA01031C8415E0009F3AB1 /* EWCImageMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWCImageMessageCell.swift; sourceTree = "<group>"; };
+		E6AA01051C841A29009F3AB1 /* EWCVoiceMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWCVoiceMessageCell.swift; sourceTree = "<group>"; };
+		E6AA01071C841A58009F3AB1 /* EWCSystemMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWCSystemMessageCell.swift; sourceTree = "<group>"; };
 		E6D1ECBA1C1EABA400995844 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		E6D1ECBD1C1EAE2D00995844 /* 496.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 496.gif; sourceTree = "<group>"; };
 		E6D1ECC01C1EAF4000995844 /* RCToolsDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCToolsDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		E6D1ECC11C1EAF4100995844 /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
 		E6D1ECC21C1EAF4100995844 /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
 		E6F2DC1A1C7FFD1D008B9460 /* EWCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWCViewController.swift; sourceTree = "<group>"; };
-		E6F2DC1C1C8023D2008B9460 /* EWCMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWCMessageViewController.swift; sourceTree = "<group>"; };
+		E6F2DC1C1C8023D2008B9460 /* EWCChatMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWCChatMessageViewController.swift; sourceTree = "<group>"; };
 		E6F2DC1E1C80262E008B9460 /* EWCMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWCMessage.swift; sourceTree = "<group>"; };
 		E6F2DC201C80279F008B9460 /* EWCMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWCMessageCell.swift; sourceTree = "<group>"; };
 		E6F2DC221C8029B8008B9460 /* Readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme; sourceTree = "<group>"; };
@@ -462,9 +470,9 @@
 		E6F2DC131C7FFA7A008B9460 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E6F2DC2E1C804994008B9460 /* EWCChatBoxViewController.swift */,
 				E6F2DC1A1C7FFD1D008B9460 /* EWCViewController.swift */,
-				E6F2DC1C1C8023D2008B9460 /* EWCMessageViewController.swift */,
+				E6F2DC2E1C804994008B9460 /* EWCChatBoxViewController.swift */,
+				E6F2DC1C1C8023D2008B9460 /* EWCChatMessageViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -522,6 +530,10 @@
 			isa = PBXGroup;
 			children = (
 				E6F2DC201C80279F008B9460 /* EWCMessageCell.swift */,
+				E6AA01011C83F8A6009F3AB1 /* EWCTextMessageCell.swift */,
+				E6AA01031C8415E0009F3AB1 /* EWCImageMessageCell.swift */,
+				E6AA01051C841A29009F3AB1 /* EWCVoiceMessageCell.swift */,
+				E6AA01071C841A58009F3AB1 /* EWCSystemMessageCell.swift */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -694,6 +706,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6AA01041C8415E0009F3AB1 /* EWCImageMessageCell.swift in Sources */,
 				1813E37A1BE1EDB100B2514F /* SnapshotViewController.swift in Sources */,
 				CD8816C41BBB959F0052EA45 /* SegueTools.swift in Sources */,
 				189B6DA41BCF32D50083C02B /* ParagraphViewController.swift in Sources */,
@@ -702,10 +715,12 @@
 				CD8E90F31C1045E500BF50EA /* RedCircleLayer.swift in Sources */,
 				E6D1ECBB1C1EABA400995844 /* ImageViewController.swift in Sources */,
 				CD9229E81BF4662B004BF267 /* AudioViewController.swift in Sources */,
+				E6AA01021C83F8A6009F3AB1 /* EWCTextMessageCell.swift in Sources */,
 				CDD515A01BE306F200C5765C /* ZeroGapViewController.swift in Sources */,
 				CD6DFAF81BCFD39F0015E6CF /* MyUILabel.swift in Sources */,
 				18B5ED071BE0AE4400B29BCC /* GraphicTableViewController.swift in Sources */,
 				E6F2DC2B1C802DEF008B9460 /* EWCChatBox.swift in Sources */,
+				E6AA01061C841A29009F3AB1 /* EWCVoiceMessageCell.swift in Sources */,
 				CD13C91A1BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift in Sources */,
 				18A9BB691BD5D93C00532575 /* DictionaryViewController.swift in Sources */,
 				CD2B4D941BABB7D7003FFF19 /* BeenPresentedViewController.swift in Sources */,
@@ -720,7 +735,7 @@
 				CD6DD93D1BCBD9280092F561 /* CurveShadowView.swift in Sources */,
 				18E5C74A1BD740AB0095D216 /* GlimmerViewController.swift in Sources */,
 				CD8E90F11C103D6E00BF50EA /* BadgeViewController.swift in Sources */,
-				E6F2DC1D1C8023D2008B9460 /* EWCMessageViewController.swift in Sources */,
+				E6F2DC1D1C8023D2008B9460 /* EWCChatMessageViewController.swift in Sources */,
 				E69049011C474EBE006C5314 /* DynamicBehaviorViewController.swift in Sources */,
 				CDB90D051BEC35D10090D802 /* BezierPathViewController.swift in Sources */,
 				E6F2DC271C802B03008B9460 /* EWCUser.swift in Sources */,
@@ -730,6 +745,7 @@
 				CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */,
 				1868A3751BE883A9007D5F47 /* TestNavigationController.swift in Sources */,
 				E6F2DC2F1C804994008B9460 /* EWCChatBoxViewController.swift in Sources */,
+				E6AA01081C841A58009F3AB1 /* EWCSystemMessageCell.swift in Sources */,
 				1838BEF11BDA204F005D7D8B /* GalleryDetailViewController.swift in Sources */,
 				CD4661DC1BBA101600FDFBDC /* SecondViewController.swift in Sources */,
 				E62CC7AD1C4F218500E8E84F /* TextFieldViewController.swift in Sources */,

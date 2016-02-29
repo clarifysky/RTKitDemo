@@ -9,10 +9,10 @@
 import Foundation
 
 class EWCUser {
-    var userName: String?
-    var userId: String?
+    var userName: String = "小测测"
+    var userId: String = "li-bokun"
     var nickName: String?
-    var avatarURL: String?
+    var avatarURL: String = "0.jpg"
     var motto: String?
     var phoneNumber: String?
     

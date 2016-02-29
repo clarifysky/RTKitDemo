@@ -44,24 +44,24 @@ enum MessageReadState {
 
 class EWCMessage {
     /// Information about sender.
-    private var from: EWCUser?
-    private var date: NSDate?
-    private var dateString: String?
-    private var messageType: MessageType?
-    private var ownerType: MessageOwnerType?
-    private var readState: MessageReadState?
-    private var sendState: MessageSendState?
+    var from: EWCUser?
+    var date: NSDate?
+    var dateString: String?
+    var messageType: MessageType?
+    var ownerType: MessageOwnerType?
+    var readState: MessageReadState?
+    var sendState: MessageSendState?
     
-    private var messageSize: CGSize?
-    private var cellHeight: CGFloat?
-    private var cellIdentity: String?
+    var messageSize: CGSize?
+    var cellHeight: CGFloat?
+    var cellIdentity: String?
     
-    private var text: String?
-    private var attrText: NSAttributedString?
+    var text: String?
+    var attrText: NSAttributedString?
     
-    private var imagePath: String?
-    private var image: UIImage?
-    private var imageURL: String?
+    var imagePath: String?
+    var image: UIImage?
+    var imageURL: String?
     
     private var coordinate: CLLocationCoordinate2D?
     private var address: String?
