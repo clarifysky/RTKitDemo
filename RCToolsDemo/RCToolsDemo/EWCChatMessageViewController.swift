@@ -29,7 +29,10 @@ class EWCChatMessageViewController: UITableViewController {
         self.tableView.tableFooterView = UIView()
         self.tableView.separatorStyle = .None
         
-        
+        self.tableView.registerClass(EWCTextMessageCell.self, forCellReuseIdentifier: "TextMessageCell")
+        self.tableView.registerClass(EWCImageMessageCell.self, forCellReuseIdentifier: "ImageMessageCell")
+        self.tableView.registerClass(EWCVoiceMessageCell.self, forCellReuseIdentifier: "VoiceMessageCell")
+        self.tableView.registerClass(EWCSystemMessageCell.self, forCellReuseIdentifier: "SystemMessageCell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,7 +58,7 @@ class EWCChatMessageViewController: UITableViewController {
     
     func scrollToBottom() {
         if self.data?.count > 0 {
-            self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: self.data!.count - 1, inSection: 0), atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+//            self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: self.data!.count - 1, inSection: 0), atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
         }
     }
     

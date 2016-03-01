@@ -14,7 +14,11 @@ class TextFieldViewController: UIViewController {
     private var textViewTest: UITextView?
     // How to get the height of keyboard?
     private var kOFFSET_FOR_KEYBOARD: CGFloat = 80
-    var textFieldReturn: RCTextField?
+    private var tableView: UITableView?
+    
+    // data
+    private var data: [EWCMessage] = [EWCMessage]()
+    private var dataText: [String] = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +27,7 @@ class TextFieldViewController: UIViewController {
         self.title = "textFieldTest"
         self.textFieldTest.delegate = self
         
+        // textView
         self.textViewTest = UITextView(frame: CGRectMake(0, self.view.bounds.height - 40, 200, 40))
         self.textViewTest?.backgroundColor = UIColor.grayColor()
         self.textViewTest?.layer.borderColor = UIColor.redColor().CGColor
@@ -32,19 +37,22 @@ class TextFieldViewController: UIViewController {
         self.textViewTest!.delegate = self
         self.textViewTest!.returnKeyType = .Send
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: "resignGesture:")
-        self.view.addGestureRecognizer(tapGesture)
-        
         self.textFieldTest.returnKeyType = UIReturnKeyType.Send
         
-//        self.textFieldReturn = RCTextField(frame: CGRectMake(10, 150, 200, 40))
-//        self.textFieldReturn?.doneTitle = "send"
-//        self.textFieldReturn?.doneAction = {
-//            println("You clicked send button in keyboard view")
-//        }
-//        self.textFieldReturn?.layer.borderColor = UIColor.greenColor().CGColor
-//        self.textFieldReturn?.layer.borderWidth = 1.0
-//        self.view.addSubview(self.textFieldReturn!)
+        // tableView
+        self.tableView = UITableView(frame: CGRectMake(0, 120, self.view.bounds.width, self.view.bounds.height - 120 - self.textViewTest!.frame.height))
+        self.tableView?.delegate = self
+        self.tableView?.dataSource = self
+        self.tableView?.registerClass(UITableViewCell.self, forCellReuseIdentifier: "TextMessageCell")
+//        self.tableView?.registerClass(EWCTextMessageCell.self, forCellReuseIdentifier: "TextMessageCell")
+//        self.tableView?.registerClass(EWCVoiceMessageCell.self, forCellReuseIdentifier: "VoiceMessageCell")
+        self.tableView?.layer.borderColor = UIColor.redColor().CGColor
+        self.tableView?.layer.borderWidth = 0.5
+        self.tableView?.backgroundColor = UIColor.orangeColor()
+        self.view.addSubview(self.tableView!)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: "resignGesture:")
+        self.view.addGestureRecognizer(tapGesture)
         
         println("[TextFieldViewController] viewDidLoad:")
         println("__frame: \(self.view.frame)")
@@ -137,34 +145,58 @@ class TextFieldViewController: UIViewController {
         self.view.frame = rect
         UIView.commitAnimations()
     }
-}
-
-extension TextFieldViewController: UITextFieldDelegate {
-    // If you want to reset the height of UITextView dynamically: 
-    // 1. You must set the upper limit of height for the UITextView. If you don't set the upper limit, the UITextView 
-    //      will grow much high as it can, this may not be what you want.
-    // 2. Calculate the height when it best fits its contents.
-    // 3. Calculate the gap of old height and new height.
-    // 4. Reset its frame.
-    // IMPORTANT: Only when the new height is less than the upper limit you set, the frame of UITextView can be reset.
-    func textViewDidChange(textView: UITextView) {
-        println("[TextFieldViewController] textViewDidChange:")
-        // Caculate the size which best fits the specified size.
-        // This height is just the height of textView which best fits its content.
-        var height = textView.sizeThatFits(CGSizeMake(self.textViewTest!.frame.width, CGFloat(MAXFLOAT))).height
-        // Compare with the original height, if bigger than original value, use current height, otherwise, use original value
-        height = height > 40 ? height : 40
-        // Here i set the max height for textView is 80.
-        if height <= 80 {
-            // Get how much the textView grows at height dimission
-            let heightDiff = height - self.textViewTest!.frame.height
-            UIView.animateWithDuration(0.05, animations: {
-                self.textViewTest?.frame = CGRectMake(self.textViewTest!.frame.origin.x, self.textViewTest!.frame.origin.y - heightDiff, self.textViewTest!.frame.width, height)
-            })
+    
+    private func sendCurrentMessage() {
+        if count(self.textViewTest!.text) > 0 {
+            let message = EWCMessage()
+            message.messageType = .Text
+            message.ownerType = .Mine
+            message.text = self.textViewTest!.text
+            message.date = NSDate()
+            message.from = EWCUser()
+            self.addNewMessage(message)
+            
+            let recMessage = EWCMessage()
+            recMessage.messageType = message.messageType
+            recMessage.ownerType = .Other
+            recMessage.date = NSDate()
+            recMessage.text = message.text
+            recMessage.imagePath = message.imagePath
+            recMessage.from = message.from
+            self.addNewMessage(recMessage)
+            
+            self.scrollToBottom()
         }
+        self.textViewTest?.text = ""
+        self.textViewDidChange(self.textViewTest!)
+    }
+    
+    private func addNewMessage(message: EWCMessage) {
+        self.data.append(message)
+        self.tableView?.reloadData()
     }
     
     
+    private func sendTextMessage() {
+        if count(self.textViewTest!.text) > 0 {
+            self.addTextMessage(self.textViewTest!.text)
+        }
+    }
+    
+    private func addTextMessage(message: String) {
+        self.dataText.append(message)
+        self.tableView?.reloadData()
+    }
+    
+    private func scrollToBottom() {
+        if self.data.count > 0 {
+            self.tableView?.scrollToRowAtIndexPath(NSIndexPath(forRow: self.data.count - 1, inSection: 0), atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+        }
+    }
+}
+
+extension TextFieldViewController: UITextFieldDelegate {
+
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         println("string: " + string)
         println("range: \(range)")
@@ -182,6 +214,32 @@ extension TextFieldViewController: UITextFieldDelegate {
 }
 
 extension TextFieldViewController: UITextViewDelegate {
+    
+    // If you want to reset the height of UITextView dynamically:
+    // 1. You must set the upper limit of height for the UITextView. If you don't set the upper limit, the UITextView
+    //      will grow much high as it can, this may not be what you want.
+    // 2. Calculate the height when it best fits its contents.
+    // 3. Calculate the gap of old height and new height.
+    // 4. Reset its frame.
+    // IMPORTANT: Only when the new height is less than the upper limit you set, the frame of UITextView can be reset.
+    func textViewDidChange(textView: UITextView) {
+        println("[TextFieldViewController] textViewDidChange:")
+        // Caculate the size which best fits the specified size.
+        // This height is just the height of textView which best fits its content.
+        var height = textView.sizeThatFits(CGSizeMake(self.textViewTest!.frame.width, CGFloat(MAXFLOAT))).height
+        // Compare with the original height, if bigger than original value, use current height, otherwise, use original value
+        height = height > 40 ? height : 40
+        // Here i set the max height for textView is 80.
+        if height <= 80 {
+            // Get how much the textView grows at height dimission
+            let heightDiff = height - self.textViewTest!.frame.height
+            UIView.animateWithDuration(0.05, animations: {
+                self.tableView?.frame = CGRectMake(self.tableView!.frame.origin.x, self.tableView!.frame.origin.y - heightDiff, self.tableView!.frame.width, self.tableView!.frame.height)
+                self.textViewTest?.frame = CGRectMake(self.textViewTest!.frame.origin.x, self.textViewTest!.frame.origin.y - heightDiff, self.textViewTest!.frame.width, height)
+            })
+        }
+    }
+    
     func textViewDidBeginEditing(textView: UITextView) {
         if textView.isEqual(self.textViewTest) {
             // move the main view, so that the keyboard does not hide it.
@@ -194,9 +252,44 @@ extension TextFieldViewController: UITextViewDelegate {
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
             println("You pressed return button")
+            self.sendTextMessage()
             return false
         } else {
             return true
         }
+    }
+}
+
+extension TextFieldViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.data.count
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let message = self.data[indexPath.row]
+        return message.cellHeight!
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        var message = self.data[indexPath.row]
+//        var cell = tableView.dequeueReusableCellWithIdentifier(message.cellIdentity!) as! EWCMessageCell
+//        switch message.messageType! {
+//        case .Text:
+//            cell = cell as! EWCTextMessageCell
+//            break
+//        case .Image:
+//            cell = cell as! EWCImageMessageCell
+//            break
+//        default:
+//            break
+//        }
+        let message = self.dataText[indexPath.row]
+        var cell = self.tableView?.dequeueReusableCellWithIdentifier("TextMessageCell") as! UITableViewCell
+        cell.textLabel?.text = message
+        return cell
     }
 }

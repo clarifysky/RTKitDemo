@@ -64,6 +64,7 @@
 		E60E1DB71C3E1F16006F4D06 /* DateProc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60E1DB61C3E1F16006F4D06 /* DateProc.swift */; };
 		E62CC7AD1C4F218500E8E84F /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62CC7AC1C4F218500E8E84F /* TextFieldViewController.swift */; };
 		E69049011C474EBE006C5314 /* DynamicBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */; };
+		E694936E1C85940C009F90D6 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E694936D1C85940C009F90D6 /* ChatViewController.swift */; };
 		E695290D1C7EF7C00032FDDC /* AutoLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */; };
 		E6AA01021C83F8A6009F3AB1 /* EWCTextMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA01011C83F8A6009F3AB1 /* EWCTextMessageCell.swift */; };
 		E6AA01041C8415E0009F3AB1 /* EWCImageMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA01031C8415E0009F3AB1 /* EWCImageMessageCell.swift */; };
@@ -160,6 +161,7 @@
 		E60E1DB61C3E1F16006F4D06 /* DateProc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProc.swift; sourceTree = "<group>"; };
 		E62CC7AC1C4F218500E8E84F /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBehaviorViewController.swift; sourceTree = "<group>"; };
+		E694936D1C85940C009F90D6 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutViewController.swift; sourceTree = "<group>"; };
 		E6AA01011C83F8A6009F3AB1 /* EWCTextMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWCTextMessageCell.swift; sourceTree = "<group>"; };
 		E6AA01031C8415E0009F3AB1 /* EWCImageMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EWCImageMessageCell.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		189B6DA21BCF32C30083C02B /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E694936D1C85940C009F90D6 /* ChatViewController.swift */,
 				189B6DA31BCF32D50083C02B /* ParagraphViewController.swift */,
 				18A9BB681BD5D93C00532575 /* DictionaryViewController.swift */,
 				18A9BB6A1BD5D9D900532575 /* ComponentsTableViewController.swift */,
@@ -752,6 +755,7 @@
 				1838BEEF1BDA0570005D7D8B /* JSProcess.swift in Sources */,
 				CD4BB2591BAA70B000072773 /* WindowMaskViewController.swift in Sources */,
 				18B5ED091BE0AEA900B29BCC /* CarMovingViewController.swift in Sources */,
+				E694936E1C85940C009F90D6 /* ChatViewController.swift in Sources */,
 				CD4BB25B1BAA70F000072773 /* RCTools.swift in Sources */,
 				CD765E421C83D524005B8C6E /* EWCFaceHelper.swift in Sources */,
 				CD4BB2371BAA6D2300072773 /* AppDelegate.swift in Sources */,

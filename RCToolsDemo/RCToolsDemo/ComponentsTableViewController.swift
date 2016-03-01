@@ -10,7 +10,7 @@ import UIKit
 
 class ComponentsTableViewController: UITableViewController {
 
-    let actions = ["paragraph", "dictionary", "gallery", "audio"]
+    let actions = ["paragraph", "dictionary", "gallery", "audio", "chat"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,8 +37,11 @@ class ComponentsTableViewController: UITableViewController {
         } else if row == 2 {
             let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Components", SBID: "GalleryBrowserViewController") as! GalleryBrowserViewController
             self.navigationController?.pushViewController(destVC, animated: true)
-        } else if row == 4 {
+        } else if row == 3 {
             let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Components", SBID: "AudioViewController") as! AudioViewController
+            self.navigationController?.pushViewController(destVC, animated: true)
+        } else if row == 4 {
+            let destVC = ChatViewController()
             self.navigationController?.pushViewController(destVC, animated: true)
         }
     }
