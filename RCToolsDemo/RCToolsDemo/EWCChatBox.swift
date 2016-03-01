@@ -112,6 +112,7 @@ class EWCChatBox: UIView {
 extension EWCChatBox: UITextViewDelegate {
     
     func textViewDidBeginEditing(textView: UITextView) {
+        println("[EWCChatBox] textViewDidChange:")
         let lastStatus = self.status!
         self.status = .ShowKeyboard
         self.delegate?.chatBox(changeStatusFrom: lastStatus, to: self.status!)
@@ -123,10 +124,13 @@ extension EWCChatBox: UITextViewDelegate {
     // 49 * 0.74: HEIGHT_TEXTVIEW
     func textViewDidChange(textView: UITextView) {
         println("[EWCChatBox] textViewDidChange:")
+        // Caculate the size which best fits the specified size.
         var height = textView.sizeThatFits(CGSizeMake(self.textView!.frame.width, CGFloat(MAXFLOAT))).height
-        height = height > textView.frame.height ? height : textView.frame.height
+        // Compare with the original height, if bigger than original value, then use original value
+        height = height > 49 * 0.74 ? height : 49 * 0.74
+        // Compare with the max height, if less than the max height, use current height, otherwise, use the max height.
         height = height < 104 ? height : textView.frame.height
-        self.currentHeight = height + 49 - textView.frame.height
+        self.currentHeight = height + 49 - 49 * 0.74
         if self.currentHeight != self.frame.height {
             UIView.animateWithDuration(0.05, animations: {
                 self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.width, self.currentHeight!)
@@ -145,6 +149,7 @@ extension EWCChatBox: UITextViewDelegate {
     
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        println("[EWCChatBox] textViewDidChange:")
         if text == "\n" {
             self.sendCurrentMessage()
             return false

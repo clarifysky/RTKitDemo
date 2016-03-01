@@ -23,10 +23,11 @@ class TextFieldViewController: UIViewController {
         self.title = "textFieldTest"
         self.textFieldTest.delegate = self
         
-        self.textViewTest = UITextView(frame: CGRectMake(0, self.view.bounds.height - 200, self.view.bounds.width, 200))
+        self.textViewTest = UITextView(frame: CGRectMake(0, self.view.bounds.height - 40, 200, 40))
         self.textViewTest?.backgroundColor = UIColor.grayColor()
         self.textViewTest?.layer.borderColor = UIColor.redColor().CGColor
         self.textViewTest?.layer.borderWidth = 1.0
+        self.textViewTest?.font = UIFont.systemFontOfSize(16)
         self.view.addSubview(self.textViewTest!)
         self.textViewTest!.delegate = self
         self.textViewTest!.returnKeyType = .Send
@@ -44,6 +45,9 @@ class TextFieldViewController: UIViewController {
 //        self.textFieldReturn?.layer.borderColor = UIColor.greenColor().CGColor
 //        self.textFieldReturn?.layer.borderWidth = 1.0
 //        self.view.addSubview(self.textFieldReturn!)
+        
+        println("[TextFieldViewController] viewDidLoad:")
+        println("__frame: \(self.view.frame)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,22 +55,34 @@ class TextFieldViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(animated: Bool) {       
         super.viewWillAppear(animated)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardFrameWillChange:", name: UIKeyboardWillChangeFrameNotification, object: nil)
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+//        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillChangeFrameNotification, object: nil)
     }
     
     
     func resignGesture(recognizer: UITapGestureRecognizer) {
         if recognizer.view != self.textViewTest && self.textViewTest!.isFirstResponder() {
             self.textViewTest!.resignFirstResponder()
+        }
+    }
+    
+    
+    func keyboardFrameWillChange(notification: NSNotification) {
+        println("[TextFieldViewController] keyboardFrameWillChange:")
+        if let userInfo = notification.userInfo {
+            if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                self.changeViewFrame(keyboardSize.height)
+            }
         }
     }
     
@@ -85,11 +101,20 @@ class TextFieldViewController: UIViewController {
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y >= 0 {
-            self.setViewMovedUp(true)
-        } else if self.view.frame.origin.y < 0 {
-            self.setViewMovedUp(false)
-        }
+        println("[TextFieldViewController] keyboardWillHide:")
+//        if self.view.frame.origin.y >= 0 {
+//            self.setViewMovedUp(true)
+//        } else if self.view.frame.origin.y < 0 {
+//            self.setViewMovedUp(false)
+//        }
+        self.changeViewFrame(0)
+    }
+    
+    
+    private func changeViewFrame(height: CGFloat) {
+        println("[TextFieldViewController] changeViewFrame:")
+        println("__height: \(height)")
+        self.view.frame = CGRectMake(self.view.frame.origin.x, 0 - height, self.view.frame.width, self.view.frame.height)
     }
 
     /// Method to move the view up/down whenever the keyboard is shown/dismissed
@@ -115,6 +140,31 @@ class TextFieldViewController: UIViewController {
 }
 
 extension TextFieldViewController: UITextFieldDelegate {
+    // If you want to reset the height of UITextView dynamically: 
+    // 1. You must set the upper limit of height for the UITextView. If you don't set the upper limit, the UITextView 
+    //      will grow much high as it can, this may not be what you want.
+    // 2. Calculate the height when it best fits its contents.
+    // 3. Calculate the gap of old height and new height.
+    // 4. Reset its frame.
+    // IMPORTANT: Only when the new height is less than the upper limit you set, the frame of UITextView can be reset.
+    func textViewDidChange(textView: UITextView) {
+        println("[TextFieldViewController] textViewDidChange:")
+        // Caculate the size which best fits the specified size.
+        // This height is just the height of textView which best fits its content.
+        var height = textView.sizeThatFits(CGSizeMake(self.textViewTest!.frame.width, CGFloat(MAXFLOAT))).height
+        // Compare with the original height, if bigger than original value, use current height, otherwise, use original value
+        height = height > 40 ? height : 40
+        // Here i set the max height for textView is 80.
+        if height <= 80 {
+            // Get how much the textView grows at height dimission
+            let heightDiff = height - self.textViewTest!.frame.height
+            UIView.animateWithDuration(0.05, animations: {
+                self.textViewTest?.frame = CGRectMake(self.textViewTest!.frame.origin.x, self.textViewTest!.frame.origin.y - heightDiff, self.textViewTest!.frame.width, height)
+            })
+        }
+    }
+    
+    
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         println("string: " + string)
         println("range: \(range)")

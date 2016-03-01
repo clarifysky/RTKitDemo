@@ -53,8 +53,6 @@ class EWCViewController: UIViewController {
 extension EWCViewController: ChatBoxViewControllerDelegate {
     func chatBoxViewController(chatBoxViewController: EWCChatBoxViewController, didChangeChatBoxHeight height: CGFloat) {
         println("[EWCViewController] didChangeChatBoxHeight")
-        println("__frame of chatMessgeVC: \(self.chatMessageVC!.view.frame)")
-        println("__frame of chatBoxVC: \(self.chatBoxVC!.view.frame)")
         
         self.chatMessageVC!.view.frame = CGRectMake(self.chatMessageVC!.view.frame.origin.x, self.chatMessageVC!.view.frame.origin.y, self.chatMessageVC!.view.frame.width, self.view.frame.height - height - (20 + 44))
         self.chatBoxVC?.view.frame.origin = CGPointMake(self.chatBoxVC!.view.frame.origin.x, self.chatMessageVC!.view.frame.origin.y + self.chatMessageVC!.view.frame.height)

@@ -56,7 +56,6 @@ class EWCChatBoxViewController: UIViewController {
     
     func keyboardWillHide(notification: NSNotification) {
         println("[EWCChatBoxViewController] keyboardWillHide:")
-        println("current height of chatBox: \(self.chatBox!.currentHeight!)")
         
         self.keyboardFrame = CGRectZero
         self.delegate?.chatBoxViewController(self, didChangeChatBoxHeight: self.chatBox!.currentHeight!)
@@ -67,8 +66,6 @@ class EWCChatBoxViewController: UIViewController {
         
         if let userInfo = notification.userInfo {
             self.keyboardFrame = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue()
-            println("height of keyboard: \(self.keyboardFrame!.height)")
-            println("currentHeight of chatBox: \(self.chatBox!.currentHeight!)")
 //            self.view.frame.origin = CGPointMake(self.view.frame.origin.x, self.view.frame.origin.y - (self.keyboardFrame!.height))
             
             // Here, the animation is derived by default keyboard-show animation?
