@@ -65,6 +65,10 @@
 		E63317A71C867790008980DC /* ChatTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317A61C867790008980DC /* ChatTextCell.swift */; };
 		E63317A91C8677B0008980DC /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317A81C8677B0008980DC /* ChatCell.swift */; };
 		E63317AC1C867A3D008980DC /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317AB1C867A3D008980DC /* ChatMessage.swift */; };
+		E63317AF1C868260008980DC /* ChatTextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317AE1C868260008980DC /* ChatTextMessage.swift */; };
+		E63317B11C8682C8008980DC /* ChatVoiceMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317B01C8682C8008980DC /* ChatVoiceMessage.swift */; };
+		E63317B41C869448008980DC /* 10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E63317B31C869448008980DC /* 10.jpeg */; };
+		E63317B61C869A94008980DC /* ChatVoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317B51C869A94008980DC /* ChatVoiceCell.swift */; };
 		E69049011C474EBE006C5314 /* DynamicBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */; };
 		E694936E1C85940C009F90D6 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E694936D1C85940C009F90D6 /* ChatViewController.swift */; };
 		E695290D1C7EF7C00032FDDC /* AutoLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */; };
@@ -152,6 +156,10 @@
 		E63317A61C867790008980DC /* ChatTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTextCell.swift; sourceTree = "<group>"; };
 		E63317A81C8677B0008980DC /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		E63317AB1C867A3D008980DC /* ChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		E63317AE1C868260008980DC /* ChatTextMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTextMessage.swift; sourceTree = "<group>"; };
+		E63317B01C8682C8008980DC /* ChatVoiceMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVoiceMessage.swift; sourceTree = "<group>"; };
+		E63317B31C869448008980DC /* 10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpeg; sourceTree = "<group>"; };
+		E63317B51C869A94008980DC /* ChatVoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVoiceCell.swift; sourceTree = "<group>"; };
 		E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBehaviorViewController.swift; sourceTree = "<group>"; };
 		E694936D1C85940C009F90D6 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutViewController.swift; sourceTree = "<group>"; };
@@ -419,6 +427,7 @@
 			children = (
 				E63317A81C8677B0008980DC /* ChatCell.swift */,
 				E63317A61C867790008980DC /* ChatTextCell.swift */,
+				E63317B51C869A94008980DC /* ChatVoiceCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -427,6 +436,8 @@
 			isa = PBXGroup;
 			children = (
 				E63317AB1C867A3D008980DC /* ChatMessage.swift */,
+				E63317AE1C868260008980DC /* ChatTextMessage.swift */,
+				E63317B01C8682C8008980DC /* ChatVoiceMessage.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -439,10 +450,19 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		E6D1ECBC1C1EAE1A00995844 /* Resources */ = {
+		E63317B21C86942F008980DC /* Images */ = {
 			isa = PBXGroup;
 			children = (
 				E6D1ECBD1C1EAE2D00995844 /* 496.gif */,
+				E63317B31C869448008980DC /* 10.jpeg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		E6D1ECBC1C1EAE1A00995844 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E63317B21C86942F008980DC /* Images */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -555,6 +575,7 @@
 				CD4BB2411BAA6D2300072773 /* LaunchScreen.xib in Resources */,
 				E6D1ECBE1C1EAE2D00995844 /* 496.gif in Resources */,
 				E6F2DC231C8029B8008B9460 /* Readme in Resources */,
+				E63317B41C869448008980DC /* 10.jpeg in Resources */,
 				189B6DA11BCF32A70083C02B /* Components.storyboard in Resources */,
 				18B5ED051BE0ADC700B29BCC /* Graphic.storyboard in Resources */,
 				CD4BB23E1BAA6D2300072773 /* Images.xcassets in Resources */,
@@ -649,6 +670,8 @@
 				E63317AC1C867A3D008980DC /* ChatMessage.swift in Sources */,
 				E69049011C474EBE006C5314 /* DynamicBehaviorViewController.swift in Sources */,
 				CDB90D051BEC35D10090D802 /* BezierPathViewController.swift in Sources */,
+				E63317B11C8682C8008980DC /* ChatVoiceMessage.swift in Sources */,
+				E63317B61C869A94008980DC /* ChatVoiceCell.swift in Sources */,
 				CD9193101C745E9000FA0011 /* RCTextField.swift in Sources */,
 				18E5C7481BD740430095D216 /* RCGlimmer.swift in Sources */,
 				CD4BB2391BAA6D2300072773 /* ViewController.swift in Sources */,
@@ -661,6 +684,7 @@
 				1838BEEF1BDA0570005D7D8B /* JSProcess.swift in Sources */,
 				CD4BB2591BAA70B000072773 /* WindowMaskViewController.swift in Sources */,
 				18B5ED091BE0AEA900B29BCC /* CarMovingViewController.swift in Sources */,
+				E63317AF1C868260008980DC /* ChatTextMessage.swift in Sources */,
 				E694936E1C85940C009F90D6 /* ChatViewController.swift in Sources */,
 				CD4BB25B1BAA70F000072773 /* RCTools.swift in Sources */,
 				CD4BB2371BAA6D2300072773 /* AppDelegate.swift in Sources */,
