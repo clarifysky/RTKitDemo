@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    let actions = ["windowMask", "scenesTransition", "shadowView", "components", "graphic", "controls", "experiment"]
+    let actions = ["windowMask", "scenesTransition", "shadowView", "components", "graphic", "controls"]
     let cellIdentifier = "tools"
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,9 +57,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         } else if self.actions[indexPath.row] == "controls" {
             let destinationVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Controls", SBID: "ControlsTableViewController") as! ControlsTableViewController
             self.navigationController?.pushViewController(destinationVC, animated: true)
-        } else if self.actions[indexPath.row] == "experiment" {
-            let destVC = EWCViewController()
-            self.navigationController?.pushViewController(destVC, animated: true)
         } else {
             performSegueWithIdentifier(self.actions[indexPath.row], sender: self)   
         }

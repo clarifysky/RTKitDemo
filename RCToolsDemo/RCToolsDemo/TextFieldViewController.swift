@@ -14,11 +14,6 @@ class TextFieldViewController: UIViewController {
     private var textViewTest: UITextView?
     // How to get the height of keyboard?
     private var kOFFSET_FOR_KEYBOARD: CGFloat = 80
-    private var tableView: UITableView?
-    
-    // data
-    private var data: [EWCMessage] = [EWCMessage]()
-    private var dataText: [String] = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,33 +21,6 @@ class TextFieldViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.title = "textFieldTest"
         self.textFieldTest.delegate = self
-        
-        // textView
-        self.textViewTest = UITextView(frame: CGRectMake(0, self.view.bounds.height - 40, 200, 40))
-        self.textViewTest?.backgroundColor = UIColor.grayColor()
-        self.textViewTest?.layer.borderColor = UIColor.redColor().CGColor
-        self.textViewTest?.layer.borderWidth = 1.0
-        self.textViewTest?.font = UIFont.systemFontOfSize(16)
-        self.view.addSubview(self.textViewTest!)
-        self.textViewTest!.delegate = self
-        self.textViewTest!.returnKeyType = .Send
-        
-        self.textFieldTest.returnKeyType = UIReturnKeyType.Send
-        
-        // tableView
-        self.tableView = UITableView(frame: CGRectMake(0, 120, self.view.bounds.width, self.view.bounds.height - 120 - self.textViewTest!.frame.height))
-        self.tableView?.delegate = self
-        self.tableView?.dataSource = self
-        self.tableView?.registerClass(UITableViewCell.self, forCellReuseIdentifier: "TextMessageCell")
-//        self.tableView?.registerClass(EWCTextMessageCell.self, forCellReuseIdentifier: "TextMessageCell")
-//        self.tableView?.registerClass(EWCVoiceMessageCell.self, forCellReuseIdentifier: "VoiceMessageCell")
-        self.tableView?.layer.borderColor = UIColor.redColor().CGColor
-        self.tableView?.layer.borderWidth = 0.5
-        self.tableView?.backgroundColor = UIColor.orangeColor()
-        self.view.addSubview(self.tableView!)
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: "resignGesture:")
-        self.view.addGestureRecognizer(tapGesture)
         
         println("[TextFieldViewController] viewDidLoad:")
         println("__frame: \(self.view.frame)")
@@ -65,133 +33,10 @@ class TextFieldViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {       
         super.viewWillAppear(animated)
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardFrameWillChange:", name: UIKeyboardWillChangeFrameNotification, object: nil)
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-//        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillChangeFrameNotification, object: nil)
-    }
-    
-    
-    func resignGesture(recognizer: UITapGestureRecognizer) {
-        if recognizer.view != self.textViewTest && self.textViewTest!.isFirstResponder() {
-            self.textViewTest!.resignFirstResponder()
-        }
-    }
-    
-    
-    func keyboardFrameWillChange(notification: NSNotification) {
-        println("[TextFieldViewController] keyboardFrameWillChange:")
-        if let userInfo = notification.userInfo {
-            if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.changeViewFrame(keyboardSize.height)
-            }
-        }
-    }
-    
-    func keyboardWillShow(notification: NSNotification) {
-        if let userInfo = notification.userInfo {
-            if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                self.kOFFSET_FOR_KEYBOARD = keyboardSize.height
-            }
-        }
-        
-        if self.view.frame.origin.y >= 0 {
-            self.setViewMovedUp(true)
-        } else if self.view.frame.origin.y < 0 {
-            self.setViewMovedUp(false)
-        }
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-        println("[TextFieldViewController] keyboardWillHide:")
-//        if self.view.frame.origin.y >= 0 {
-//            self.setViewMovedUp(true)
-//        } else if self.view.frame.origin.y < 0 {
-//            self.setViewMovedUp(false)
-//        }
-        self.changeViewFrame(0)
-    }
-    
-    
-    private func changeViewFrame(height: CGFloat) {
-        println("[TextFieldViewController] changeViewFrame:")
-        println("__height: \(height)")
-        self.view.frame = CGRectMake(self.view.frame.origin.x, 0 - height, self.view.frame.width, self.view.frame.height)
-    }
-
-    /// Method to move the view up/down whenever the keyboard is shown/dismissed
-    /// http://stackoverflow.com/questions/1126726/how-to-make-a-uitextfield-move-up-when-keyboard-is-present?page=1&tab=votes#tab-top
-    private func setViewMovedUp(movedUp: Bool) {
-        UIView.beginAnimations(nil, context: nil)
-        UIView.setAnimationDuration(0.3)
-        
-        var rect = self.view.frame
-        if movedUp {
-            // 1. move the view's origin up so that the text field that will be hidden come above the keyboard
-            // 2. increase the size of the view so that the area behind the keyboard is covered up
-            rect.origin.y -= self.kOFFSET_FOR_KEYBOARD
-            rect.size.height += self.kOFFSET_FOR_KEYBOARD
-        } else {
-            // revert back to the normal state
-            rect.origin.y += self.kOFFSET_FOR_KEYBOARD
-            rect.size.height -= self.kOFFSET_FOR_KEYBOARD
-        }
-        self.view.frame = rect
-        UIView.commitAnimations()
-    }
-    
-    private func sendCurrentMessage() {
-        if count(self.textViewTest!.text) > 0 {
-            let message = EWCMessage()
-            message.messageType = .Text
-            message.ownerType = .Mine
-            message.text = self.textViewTest!.text
-            message.date = NSDate()
-            message.from = EWCUser()
-            self.addNewMessage(message)
-            
-            let recMessage = EWCMessage()
-            recMessage.messageType = message.messageType
-            recMessage.ownerType = .Other
-            recMessage.date = NSDate()
-            recMessage.text = message.text
-            recMessage.imagePath = message.imagePath
-            recMessage.from = message.from
-            self.addNewMessage(recMessage)
-            
-            self.scrollToBottom()
-        }
-        self.textViewTest?.text = ""
-        self.textViewDidChange(self.textViewTest!)
-    }
-    
-    private func addNewMessage(message: EWCMessage) {
-        self.data.append(message)
-        self.tableView?.reloadData()
-    }
-    
-    
-    private func sendTextMessage() {
-        if count(self.textViewTest!.text) > 0 {
-            self.addTextMessage(self.textViewTest!.text)
-        }
-    }
-    
-    private func addTextMessage(message: String) {
-        self.dataText.append(message)
-        self.tableView?.reloadData()
-    }
-    
-    private func scrollToBottom() {
-        if self.data.count > 0 {
-            self.tableView?.scrollToRowAtIndexPath(NSIndexPath(forRow: self.data.count - 1, inSection: 0), atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
-        }
     }
 }
 
@@ -210,86 +55,5 @@ extension TextFieldViewController: UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         println("you pressed the return button")
         return true
-    }
-}
-
-extension TextFieldViewController: UITextViewDelegate {
-    
-    // If you want to reset the height of UITextView dynamically:
-    // 1. You must set the upper limit of height for the UITextView. If you don't set the upper limit, the UITextView
-    //      will grow much high as it can, this may not be what you want.
-    // 2. Calculate the height when it best fits its contents.
-    // 3. Calculate the gap of old height and new height.
-    // 4. Reset its frame.
-    // IMPORTANT: Only when the new height is less than the upper limit you set, the frame of UITextView can be reset.
-    func textViewDidChange(textView: UITextView) {
-        println("[TextFieldViewController] textViewDidChange:")
-        // Caculate the size which best fits the specified size.
-        // This height is just the height of textView which best fits its content.
-        var height = textView.sizeThatFits(CGSizeMake(self.textViewTest!.frame.width, CGFloat(MAXFLOAT))).height
-        // Compare with the original height, if bigger than original value, use current height, otherwise, use original value
-        height = height > 40 ? height : 40
-        // Here i set the max height for textView is 80.
-        if height <= 80 {
-            // Get how much the textView grows at height dimission
-            let heightDiff = height - self.textViewTest!.frame.height
-            UIView.animateWithDuration(0.05, animations: {
-                self.tableView?.frame = CGRectMake(self.tableView!.frame.origin.x, self.tableView!.frame.origin.y - heightDiff, self.tableView!.frame.width, self.tableView!.frame.height)
-                self.textViewTest?.frame = CGRectMake(self.textViewTest!.frame.origin.x, self.textViewTest!.frame.origin.y - heightDiff, self.textViewTest!.frame.width, height)
-            })
-        }
-    }
-    
-    func textViewDidBeginEditing(textView: UITextView) {
-        if textView.isEqual(self.textViewTest) {
-            // move the main view, so that the keyboard does not hide it.
-            if self.view.frame.origin.y >= 0 {
-                self.setViewMovedUp(true)
-            }
-        }
-    }
-    
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        if text == "\n" {
-            println("You pressed return button")
-            self.sendTextMessage()
-            return false
-        } else {
-            return true
-        }
-    }
-}
-
-extension TextFieldViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.data.count
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let message = self.data[indexPath.row]
-        return message.cellHeight!
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        var message = self.data[indexPath.row]
-//        var cell = tableView.dequeueReusableCellWithIdentifier(message.cellIdentity!) as! EWCMessageCell
-//        switch message.messageType! {
-//        case .Text:
-//            cell = cell as! EWCTextMessageCell
-//            break
-//        case .Image:
-//            cell = cell as! EWCImageMessageCell
-//            break
-//        default:
-//            break
-//        }
-        let message = self.dataText[indexPath.row]
-        var cell = self.tableView?.dequeueReusableCellWithIdentifier("TextMessageCell") as! UITableViewCell
-        cell.textLabel?.text = message
-        return cell
     }
 }
