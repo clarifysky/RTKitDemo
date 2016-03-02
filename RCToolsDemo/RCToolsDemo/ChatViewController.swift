@@ -103,6 +103,7 @@ class ChatViewController: UIViewController {
         self.textView?.clipsToBounds = true
         self.textView?.delegate = self
         self.textView?.font = UIFont.systemFontOfSize(16)
+        self.textView?.returnKeyType = .Send
         self.textViewInitialOriginY = self.textView!.frame.origin.y
         
         self.containerTextView!.addSubview(topLine)
