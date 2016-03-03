@@ -48,7 +48,6 @@
 		CD6DFAF81BCFD39F0015E6CF /* MyUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6DFAF71BCFD39F0015E6CF /* MyUILabel.swift */; };
 		CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7C96AB1BB4E311001754A1 /* ScenesTransitionViewController.swift */; };
 		CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7FCDE91BC6433200A126A6 /* FourthViewController.swift */; };
-		CD8816C41BBB959F0052EA45 /* SegueTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8816C31BBB959F0052EA45 /* SegueTools.swift */; };
 		CD8E90F11C103D6E00BF50EA /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E90F01C103D6E00BF50EA /* BadgeViewController.swift */; };
 		CD8E90F31C1045E500BF50EA /* RedCircleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E90F21C1045E500BF50EA /* RedCircleLayer.swift */; };
 		CD9193101C745E9000FA0011 /* RCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD91930F1C745E9000FA0011 /* RCTextField.swift */; };
@@ -139,7 +138,6 @@
 		CD6DFAF71BCFD39F0015E6CF /* MyUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUILabel.swift; sourceTree = "<group>"; };
 		CD7C96AB1BB4E311001754A1 /* ScenesTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenesTransitionViewController.swift; sourceTree = "<group>"; };
 		CD7FCDE91BC6433200A126A6 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
-		CD8816C31BBB959F0052EA45 /* SegueTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueTools.swift; sourceTree = "<group>"; };
 		CD8E90F01C103D6E00BF50EA /* BadgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
 		CD8E90F21C1045E500BF50EA /* RedCircleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedCircleLayer.swift; sourceTree = "<group>"; };
 		CD91930F1C745E9000FA0011 /* RCTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTextField.swift; sourceTree = "<group>"; };
@@ -322,7 +320,6 @@
 				CD91930F1C745E9000FA0011 /* RCTextField.swift */,
 				18E5C7471BD740430095D216 /* RCGlimmer.swift */,
 				CD4BB25A1BAA70F000072773 /* RCTools.swift */,
-				CD8816C31BBB959F0052EA45 /* SegueTools.swift */,
 				CD6DD93C1BCBD9280092F561 /* CurveShadowView.swift */,
 				CD6DFAF71BCFD39F0015E6CF /* MyUILabel.swift */,
 				18E03B071BD08FDB0080FA72 /* UIVerticalLabel.swift */,
@@ -409,17 +406,17 @@
 				E63317AD1C867B53008980DC /* Resources */,
 				E63317AA1C8677DF008980DC /* Models */,
 				E63317A51C8675AC008980DC /* Views */,
-				E63317A41C8675A1008980DC /* Controller */,
+				E63317A41C8675A1008980DC /* Controllers */,
 			);
 			name = Chat;
 			sourceTree = "<group>";
 		};
-		E63317A41C8675A1008980DC /* Controller */ = {
+		E63317A41C8675A1008980DC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				E694936D1C85940C009F90D6 /* ChatViewController.swift */,
 			);
-			name = Controller;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		E63317A51C8675AC008980DC /* Views */ = {
@@ -645,7 +642,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1813E37A1BE1EDB100B2514F /* SnapshotViewController.swift in Sources */,
-				CD8816C41BBB959F0052EA45 /* SegueTools.swift in Sources */,
 				189B6DA41BCF32D50083C02B /* ParagraphViewController.swift in Sources */,
 				CD6582EF1BC7C9610053BD0E /* FifthViewController.swift in Sources */,
 				CD2B4D9A1BABC5FA003FFF19 /* TestWindowMask.swift in Sources */,
