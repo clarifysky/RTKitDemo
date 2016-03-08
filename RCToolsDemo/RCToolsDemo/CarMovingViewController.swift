@@ -17,19 +17,37 @@ class CarMovingViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.attachBlackView()
+        self.view.backgroundColor = UIColor.orangeColor()
+        
         self.car = self.buildCar()
+        self.car?.frame.origin = CGPointMake(0, self.car!.frame.origin.y + self.car!.frame.height)
         self.view.addSubview(self.car!)
         
         self.attachAnimation()
+//        self.attachTestLabel()
         
         // stop button
         let stopButton = UIButton(frame: CGRectMake(0, 0, 100, 20))
         stopButton.setTitle("Stop", forState: .Normal)
-        stopButton.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        stopButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         stopButton.addTarget(self, action: "stopCar", forControlEvents: .TouchUpInside)
         stopButton.sizeToFit()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: stopButton)
+        
+        // transparent navigation bar
+//        self.navigationController?.navigationBar.completeTransparent()
+        self.navigationController?.navigationBar.setBgColor(UIColor(red: 0/255, green: 255/255, blue: 0/255, alpha: 0.4))
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationController?.view.backgroundColor = UIColor.clearColor()
+        
+//        self.navigationController?.navigationBar.alpha = 0.0
+//        self.navigationController?.navigationBar.translucent = true
+//        self.navigationController?.navigationBar.shadowImage = nil
+//        self.navigationController?.navigationBar.barTintColor = UIColor.clearColor()
+//        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,5 +96,24 @@ class CarMovingViewController: UIViewController {
         self.car!.layer.beginTime = beginTime
         // 1.0 is normal speed?
         self.car!.layer.speed = 1.0
+    }
+    
+    private func attachBlackView() {
+        let blackView = UIView(frame: CGRectMake(self.view.bounds.width / 2, 0, self.view.bounds.width / 2, self.view.bounds.height))
+        blackView.backgroundColor = UIColor.blueColor()
+        self.view.addSubview(blackView)
+    }
+    
+    private func attachTestLabel() {
+        let label = UILabel()
+        label.text = "This is a label for testing whether \nthe navigation bar is transparent or not."
+        label.numberOfLines = 0
+        label.font = UIFont.systemFontOfSize(16)
+        label.textColor = UIColor.blueColor()
+        label.sizeToFit()
+        label.frame.origin = CGPointMake(0, 10)
+        label.backgroundColor = UIColor.greenColor()
+        println("[CarMovingViewController:attachTestLabel] frame of testLabel: \(label.frame)")
+        self.view.addSubview(label)
     }
 }

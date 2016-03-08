@@ -331,3 +331,18 @@ extension NSRange {
         return startIndex..<endIndex
     }
 }
+
+extension UINavigationBar {
+    
+    /// Make navigation bar to be complete transparent.
+    func completeTransparent() {
+        self.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.shadowImage = UIImage()
+    }
+    
+    func setBgColor(backgroundColor: UIColor?) {
+        self.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.shadowImage = UIImage()
+        self.backgroundColor = backgroundColor
+    }
+}
