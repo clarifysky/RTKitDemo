@@ -48,7 +48,6 @@
 		CD6DFAF81BCFD39F0015E6CF /* MyUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6DFAF71BCFD39F0015E6CF /* MyUILabel.swift */; };
 		CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7C96AB1BB4E311001754A1 /* ScenesTransitionViewController.swift */; };
 		CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7FCDE91BC6433200A126A6 /* FourthViewController.swift */; };
-		CD8816C41BBB959F0052EA45 /* SegueTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8816C31BBB959F0052EA45 /* SegueTools.swift */; };
 		CD8E90F11C103D6E00BF50EA /* BadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E90F01C103D6E00BF50EA /* BadgeViewController.swift */; };
 		CD8E90F31C1045E500BF50EA /* RedCircleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E90F21C1045E500BF50EA /* RedCircleLayer.swift */; };
 		CD9193101C745E9000FA0011 /* RCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD91930F1C745E9000FA0011 /* RCTextField.swift */; };
@@ -62,11 +61,21 @@
 		CDE315831BAD3F8100D2C6AF /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE315821BAD3F8100D2C6AF /* MaskViewController.swift */; };
 		E60E1DB71C3E1F16006F4D06 /* DateProc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60E1DB61C3E1F16006F4D06 /* DateProc.swift */; };
 		E62CC7AD1C4F218500E8E84F /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62CC7AC1C4F218500E8E84F /* TextFieldViewController.swift */; };
+		E63317A71C867790008980DC /* ChatTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317A61C867790008980DC /* ChatTextCell.swift */; };
+		E63317A91C8677B0008980DC /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317A81C8677B0008980DC /* ChatCell.swift */; };
+		E63317AC1C867A3D008980DC /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317AB1C867A3D008980DC /* ChatMessage.swift */; };
+		E63317AF1C868260008980DC /* ChatTextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317AE1C868260008980DC /* ChatTextMessage.swift */; };
+		E63317B11C8682C8008980DC /* ChatVoiceMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317B01C8682C8008980DC /* ChatVoiceMessage.swift */; };
+		E63317B41C869448008980DC /* 10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E63317B31C869448008980DC /* 10.jpeg */; };
+		E63317B61C869A94008980DC /* ChatVoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317B51C869A94008980DC /* ChatVoiceCell.swift */; };
 		E69049011C474EBE006C5314 /* DynamicBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */; };
+		E694936E1C85940C009F90D6 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E694936D1C85940C009F90D6 /* ChatViewController.swift */; };
 		E695290D1C7EF7C00032FDDC /* AutoLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */; };
 		E6D1ECBB1C1EABA400995844 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1ECBA1C1EABA400995844 /* ImageViewController.swift */; };
 		E6D1ECBE1C1EAE2D00995844 /* 496.gif in Resources */ = {isa = PBXBuildFile; fileRef = E6D1ECBD1C1EAE2D00995844 /* 496.gif */; };
 		E6D1ECC31C1EAF4100995844 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D1ECC21C1EAF4100995844 /* UIImage+animatedGIF.m */; };
+		E6F2DC231C8029B8008B9460 /* Readme in Resources */ = {isa = PBXBuildFile; fileRef = E6F2DC221C8029B8008B9460 /* Readme */; };
+		E6F2DC2D1C8030FF008B9460 /* ChatViewImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6F2DC2C1C8030FF008B9460 /* ChatViewImages.xcassets */; };
 		F0E44003087A7F78739C3E76 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2862304045F5F0A51216D43A /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -129,7 +138,6 @@
 		CD6DFAF71BCFD39F0015E6CF /* MyUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUILabel.swift; sourceTree = "<group>"; };
 		CD7C96AB1BB4E311001754A1 /* ScenesTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenesTransitionViewController.swift; sourceTree = "<group>"; };
 		CD7FCDE91BC6433200A126A6 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
-		CD8816C31BBB959F0052EA45 /* SegueTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueTools.swift; sourceTree = "<group>"; };
 		CD8E90F01C103D6E00BF50EA /* BadgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeViewController.swift; sourceTree = "<group>"; };
 		CD8E90F21C1045E500BF50EA /* RedCircleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedCircleLayer.swift; sourceTree = "<group>"; };
 		CD91930F1C745E9000FA0011 /* RCTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTextField.swift; sourceTree = "<group>"; };
@@ -143,13 +151,23 @@
 		CDE315821BAD3F8100D2C6AF /* MaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
 		E60E1DB61C3E1F16006F4D06 /* DateProc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProc.swift; sourceTree = "<group>"; };
 		E62CC7AC1C4F218500E8E84F /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
+		E63317A61C867790008980DC /* ChatTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTextCell.swift; sourceTree = "<group>"; };
+		E63317A81C8677B0008980DC /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		E63317AB1C867A3D008980DC /* ChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		E63317AE1C868260008980DC /* ChatTextMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTextMessage.swift; sourceTree = "<group>"; };
+		E63317B01C8682C8008980DC /* ChatVoiceMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVoiceMessage.swift; sourceTree = "<group>"; };
+		E63317B31C869448008980DC /* 10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpeg; sourceTree = "<group>"; };
+		E63317B51C869A94008980DC /* ChatVoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVoiceCell.swift; sourceTree = "<group>"; };
 		E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBehaviorViewController.swift; sourceTree = "<group>"; };
+		E694936D1C85940C009F90D6 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutViewController.swift; sourceTree = "<group>"; };
 		E6D1ECBA1C1EABA400995844 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		E6D1ECBD1C1EAE2D00995844 /* 496.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 496.gif; sourceTree = "<group>"; };
 		E6D1ECC01C1EAF4000995844 /* RCToolsDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCToolsDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		E6D1ECC11C1EAF4100995844 /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
 		E6D1ECC21C1EAF4100995844 /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
+		E6F2DC221C8029B8008B9460 /* Readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme; sourceTree = "<group>"; };
+		E6F2DC2C1C8030FF008B9460 /* ChatViewImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ChatViewImages.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +203,7 @@
 		189B6DA21BCF32C30083C02B /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E63317A31C867593008980DC /* Chat */,
 				189B6DA31BCF32D50083C02B /* ParagraphViewController.swift */,
 				18A9BB681BD5D93C00532575 /* DictionaryViewController.swift */,
 				18A9BB6A1BD5D9D900532575 /* ComponentsTableViewController.swift */,
@@ -261,7 +280,7 @@
 				E6D1ECBF1C1EAF1A00995844 /* Utilities */,
 				E6D1ECBC1C1EAE1A00995844 /* Resources */,
 				189B6D9F1BCF32920083C02B /* Storyboard */,
-				CD4BB2571BAA6D9800072773 /* Controllers */,
+				CD4BB2571BAA6D9800072773 /* Categories */,
 				CD4BB2341BAA6D2300072773 /* Supporting Files */,
 			);
 			path = RCToolsDemo;
@@ -301,7 +320,6 @@
 				CD91930F1C745E9000FA0011 /* RCTextField.swift */,
 				18E5C7471BD740430095D216 /* RCGlimmer.swift */,
 				CD4BB25A1BAA70F000072773 /* RCTools.swift */,
-				CD8816C31BBB959F0052EA45 /* SegueTools.swift */,
 				CD6DD93C1BCBD9280092F561 /* CurveShadowView.swift */,
 				CD6DFAF71BCFD39F0015E6CF /* MyUILabel.swift */,
 				18E03B071BD08FDB0080FA72 /* UIVerticalLabel.swift */,
@@ -313,7 +331,7 @@
 			name = RCTools;
 			sourceTree = "<group>";
 		};
-		CD4BB2571BAA6D9800072773 /* Controllers */ = {
+		CD4BB2571BAA6D9800072773 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
 				CDD515A11BE3072C00C5765C /* Controls */,
@@ -324,7 +342,7 @@
 				CD2B4D951BABC1A4003FFF19 /* Mask */,
 				CD4BB2381BAA6D2300072773 /* ViewController.swift */,
 			);
-			name = Controllers;
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		CD6DD93E1BCBDC170092F561 /* Graphics */ = {
@@ -381,10 +399,67 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		E6D1ECBC1C1EAE1A00995844 /* Resources */ = {
+		E63317A31C867593008980DC /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				E6F2DC221C8029B8008B9460 /* Readme */,
+				E63317AD1C867B53008980DC /* Resources */,
+				E63317AA1C8677DF008980DC /* Models */,
+				E63317A51C8675AC008980DC /* Views */,
+				E63317A41C8675A1008980DC /* Controllers */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		E63317A41C8675A1008980DC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E694936D1C85940C009F90D6 /* ChatViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E63317A51C8675AC008980DC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E63317A81C8677B0008980DC /* ChatCell.swift */,
+				E63317A61C867790008980DC /* ChatTextCell.swift */,
+				E63317B51C869A94008980DC /* ChatVoiceCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E63317AA1C8677DF008980DC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E63317AB1C867A3D008980DC /* ChatMessage.swift */,
+				E63317AE1C868260008980DC /* ChatTextMessage.swift */,
+				E63317B01C8682C8008980DC /* ChatVoiceMessage.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E63317AD1C867B53008980DC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E6F2DC2C1C8030FF008B9460 /* ChatViewImages.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E63317B21C86942F008980DC /* Images */ = {
 			isa = PBXGroup;
 			children = (
 				E6D1ECBD1C1EAE2D00995844 /* 496.gif */,
+				E63317B31C869448008980DC /* 10.jpeg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		E6D1ECBC1C1EAE1A00995844 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E63317B21C86942F008980DC /* Images */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -492,9 +567,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDD515A31BE3074200C5765C /* Controls.storyboard in Resources */,
+				E6F2DC2D1C8030FF008B9460 /* ChatViewImages.xcassets in Resources */,
 				CD4BB23C1BAA6D2300072773 /* Main.storyboard in Resources */,
 				CD4BB2411BAA6D2300072773 /* LaunchScreen.xib in Resources */,
 				E6D1ECBE1C1EAE2D00995844 /* 496.gif in Resources */,
+				E6F2DC231C8029B8008B9460 /* Readme in Resources */,
+				E63317B41C869448008980DC /* 10.jpeg in Resources */,
 				189B6DA11BCF32A70083C02B /* Components.storyboard in Resources */,
 				18B5ED051BE0ADC700B29BCC /* Graphic.storyboard in Resources */,
 				CD4BB23E1BAA6D2300072773 /* Images.xcassets in Resources */,
@@ -564,7 +642,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1813E37A1BE1EDB100B2514F /* SnapshotViewController.swift in Sources */,
-				CD8816C41BBB959F0052EA45 /* SegueTools.swift in Sources */,
 				189B6DA41BCF32D50083C02B /* ParagraphViewController.swift in Sources */,
 				CD6582EF1BC7C9610053BD0E /* FifthViewController.swift in Sources */,
 				CD2B4D9A1BABC5FA003FFF19 /* TestWindowMask.swift in Sources */,
@@ -586,12 +663,16 @@
 				CD6DD93D1BCBD9280092F561 /* CurveShadowView.swift in Sources */,
 				18E5C74A1BD740AB0095D216 /* GlimmerViewController.swift in Sources */,
 				CD8E90F11C103D6E00BF50EA /* BadgeViewController.swift in Sources */,
+				E63317AC1C867A3D008980DC /* ChatMessage.swift in Sources */,
 				E69049011C474EBE006C5314 /* DynamicBehaviorViewController.swift in Sources */,
 				CDB90D051BEC35D10090D802 /* BezierPathViewController.swift in Sources */,
+				E63317B11C8682C8008980DC /* ChatVoiceMessage.swift in Sources */,
+				E63317B61C869A94008980DC /* ChatVoiceCell.swift in Sources */,
 				CD9193101C745E9000FA0011 /* RCTextField.swift in Sources */,
 				18E5C7481BD740430095D216 /* RCGlimmer.swift in Sources */,
 				CD4BB2391BAA6D2300072773 /* ViewController.swift in Sources */,
 				CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */,
+				E63317A91C8677B0008980DC /* ChatCell.swift in Sources */,
 				1868A3751BE883A9007D5F47 /* TestNavigationController.swift in Sources */,
 				1838BEF11BDA204F005D7D8B /* GalleryDetailViewController.swift in Sources */,
 				CD4661DC1BBA101600FDFBDC /* SecondViewController.swift in Sources */,
@@ -599,6 +680,8 @@
 				1838BEEF1BDA0570005D7D8B /* JSProcess.swift in Sources */,
 				CD4BB2591BAA70B000072773 /* WindowMaskViewController.swift in Sources */,
 				18B5ED091BE0AEA900B29BCC /* CarMovingViewController.swift in Sources */,
+				E63317AF1C868260008980DC /* ChatTextMessage.swift in Sources */,
+				E694936E1C85940C009F90D6 /* ChatViewController.swift in Sources */,
 				CD4BB25B1BAA70F000072773 /* RCTools.swift in Sources */,
 				CD4BB2371BAA6D2300072773 /* AppDelegate.swift in Sources */,
 				CD4661DE1BBA102000FDFBDC /* ThirdViewController.swift in Sources */,
@@ -606,6 +689,7 @@
 				CDD515A51BE307CF00C5765C /* ControlsTableViewController.swift in Sources */,
 				CDD515A81BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift in Sources */,
 				E6D1ECC31C1EAF4100995844 /* UIImage+animatedGIF.m in Sources */,
+				E63317A71C867790008980DC /* ChatTextCell.swift in Sources */,
 				CD6DD9401BCBDC3A0092F561 /* ShadowViewController.swift in Sources */,
 				1868A3731BE87E8D007D5F47 /* CustomizedNavigationController.swift in Sources */,
 				CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */,
