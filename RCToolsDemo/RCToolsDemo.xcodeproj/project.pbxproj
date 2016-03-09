@@ -68,6 +68,9 @@
 		E63317B11C8682C8008980DC /* ChatVoiceMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317B01C8682C8008980DC /* ChatVoiceMessage.swift */; };
 		E63317B41C869448008980DC /* 10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E63317B31C869448008980DC /* 10.jpeg */; };
 		E63317B61C869A94008980DC /* ChatVoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317B51C869A94008980DC /* ChatVoiceCell.swift */; };
+		E63FD0301C8FCBA6002D8ADD /* RCAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FD02F1C8FCBA6002D8ADD /* RCAudio.swift */; };
+		E63FD0331C8FCCC8002D8ADD /* SoundTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FD0321C8FCCC8002D8ADD /* SoundTableViewController.swift */; };
+		E63FD0351C8FCDF9002D8ADD /* VibrateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FD0341C8FCDF9002D8ADD /* VibrateViewController.swift */; };
 		E69049011C474EBE006C5314 /* DynamicBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */; };
 		E694936E1C85940C009F90D6 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E694936D1C85940C009F90D6 /* ChatViewController.swift */; };
 		E695290D1C7EF7C00032FDDC /* AutoLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */; };
@@ -158,6 +161,10 @@
 		E63317B01C8682C8008980DC /* ChatVoiceMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVoiceMessage.swift; sourceTree = "<group>"; };
 		E63317B31C869448008980DC /* 10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpeg; sourceTree = "<group>"; };
 		E63317B51C869A94008980DC /* ChatVoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVoiceCell.swift; sourceTree = "<group>"; };
+		E63FD02F1C8FCBA6002D8ADD /* RCAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCAudio.swift; sourceTree = "<group>"; };
+		E63FD0321C8FCCC8002D8ADD /* SoundTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundTableViewController.swift; sourceTree = "<group>"; };
+		E63FD0341C8FCDF9002D8ADD /* VibrateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VibrateViewController.swift; sourceTree = "<group>"; };
+		E63FD0361C8FE397002D8ADD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBehaviorViewController.swift; sourceTree = "<group>"; };
 		E694936D1C85940C009F90D6 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +234,7 @@
 		B06190B4550DD57BAA0E2EAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E63FD0361C8FE397002D8ADD /* AudioToolbox.framework */,
 				2862304045F5F0A51216D43A /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -327,6 +335,7 @@
 				1892CEC11BDF0FCF006CBA03 /* RCPop.swift */,
 				CD8E90F21C1045E500BF50EA /* RedCircleLayer.swift */,
 				E60E1DB61C3E1F16006F4D06 /* DateProc.swift */,
+				E63FD02F1C8FCBA6002D8ADD /* RCAudio.swift */,
 			);
 			name = RCTools;
 			sourceTree = "<group>";
@@ -334,6 +343,7 @@
 		CD4BB2571BAA6D9800072773 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E63FD0311C8FCC6A002D8ADD /* Sound */,
 				CDD515A11BE3072C00C5765C /* Controls */,
 				189B6DA21BCF32C30083C02B /* Components */,
 				CD6DD93E1BCBDC170092F561 /* Graphics */,
@@ -454,6 +464,15 @@
 				E63317B31C869448008980DC /* 10.jpeg */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		E63FD0311C8FCC6A002D8ADD /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				E63FD0321C8FCCC8002D8ADD /* SoundTableViewController.swift */,
+				E63FD0341C8FCDF9002D8ADD /* VibrateViewController.swift */,
+			);
+			name = Sound;
 			sourceTree = "<group>";
 		};
 		E6D1ECBC1C1EAE1A00995844 /* Resources */ = {
@@ -670,8 +689,10 @@
 				E63317B61C869A94008980DC /* ChatVoiceCell.swift in Sources */,
 				CD9193101C745E9000FA0011 /* RCTextField.swift in Sources */,
 				18E5C7481BD740430095D216 /* RCGlimmer.swift in Sources */,
+				E63FD0331C8FCCC8002D8ADD /* SoundTableViewController.swift in Sources */,
 				CD4BB2391BAA6D2300072773 /* ViewController.swift in Sources */,
 				CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */,
+				E63FD0301C8FCBA6002D8ADD /* RCAudio.swift in Sources */,
 				E63317A91C8677B0008980DC /* ChatCell.swift in Sources */,
 				1868A3751BE883A9007D5F47 /* TestNavigationController.swift in Sources */,
 				1838BEF11BDA204F005D7D8B /* GalleryDetailViewController.swift in Sources */,
@@ -692,6 +713,7 @@
 				E63317A71C867790008980DC /* ChatTextCell.swift in Sources */,
 				CD6DD9401BCBDC3A0092F561 /* ShadowViewController.swift in Sources */,
 				1868A3731BE87E8D007D5F47 /* CustomizedNavigationController.swift in Sources */,
+				E63FD0351C8FCDF9002D8ADD /* VibrateViewController.swift in Sources */,
 				CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */,
 				1838BEED1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift in Sources */,
 				E60E1DB71C3E1F16006F4D06 /* DateProc.swift in Sources */,
