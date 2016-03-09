@@ -37,17 +37,8 @@ class CarMovingViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: stopButton)
         
         // transparent navigation bar
-//        self.navigationController?.navigationBar.completeTransparent()
-        self.navigationController?.navigationBar.setBgColor(UIColor(red: 0/255, green: 255/255, blue: 0/255, alpha: 0.4))
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-//        self.navigationController?.view.backgroundColor = UIColor.clearColor()
-        
-//        self.navigationController?.navigationBar.alpha = 0.0
-//        self.navigationController?.navigationBar.translucent = true
-//        self.navigationController?.navigationBar.shadowImage = nil
-//        self.navigationController?.navigationBar.barTintColor = UIColor.clearColor()
-//        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+        self.navigationController?.navigationBar.RCTransparentBgColor(UIColor(red: 0/255, green: 255/255, blue: 0/255, alpha: 0.4))
+//        self.navigationController?.navigationBar.RCOpaqueBgColor(UIColor.blueColor())
     }
 
     override func didReceiveMemoryWarning() {

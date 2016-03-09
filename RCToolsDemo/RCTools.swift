@@ -335,14 +335,29 @@ extension NSRange {
 extension UINavigationBar {
     
     /// Make navigation bar to be complete transparent.
-    func completeTransparent() {
+    func RCCompleteTransparent() {
         self.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.shadowImage = UIImage()
     }
     
-    func setBgColor(backgroundColor: UIColor?) {
+    func RCTransparentBgColor(backgroundColor: UIColor?) {
         self.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.shadowImage = UIImage()
         self.backgroundColor = backgroundColor
+    }
+    
+    func RCOpaqueBgColor(backgroundColor: UIColor) {
+        self.translucent = false
+        self.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.barTintColor = backgroundColor
+        self.shadowImage = UIImage()
+    }
+}
+
+extension UIColor {
+    
+    /// Return a color with specified red, green, blue and alpha.
+    class func RCColorWithRGBOpaque (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> UIColor {
+        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
 }
