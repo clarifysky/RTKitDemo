@@ -60,6 +60,7 @@
 		CDD515A81BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */; };
 		CDE315831BAD3F8100D2C6AF /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE315821BAD3F8100D2C6AF /* MaskViewController.swift */; };
 		E60E1DB71C3E1F16006F4D06 /* DateProc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60E1DB61C3E1F16006F4D06 /* DateProc.swift */; };
+		E62B4D6B1C9263B70092F14F /* RTAudioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62B4D6A1C9263B70092F14F /* RTAudioStream.swift */; };
 		E62CC7AD1C4F218500E8E84F /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62CC7AC1C4F218500E8E84F /* TextFieldViewController.swift */; };
 		E63317A71C867790008980DC /* ChatTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317A61C867790008980DC /* ChatTextCell.swift */; };
 		E63317A91C8677B0008980DC /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317A81C8677B0008980DC /* ChatCell.swift */; };
@@ -153,6 +154,7 @@
 		CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZeriGapCollectionViewLayout.swift; sourceTree = "<group>"; };
 		CDE315821BAD3F8100D2C6AF /* MaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
 		E60E1DB61C3E1F16006F4D06 /* DateProc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProc.swift; sourceTree = "<group>"; };
+		E62B4D6A1C9263B70092F14F /* RTAudioStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTAudioStream.swift; sourceTree = "<group>"; };
 		E62CC7AC1C4F218500E8E84F /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		E63317A61C867790008980DC /* ChatTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTextCell.swift; sourceTree = "<group>"; };
 		E63317A81C8677B0008980DC /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
@@ -409,6 +411,23 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		E62B4D681C92633D0092F14F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E63FD0321C8FCCC8002D8ADD /* SoundTableViewController.swift */,
+				E63FD0341C8FCDF9002D8ADD /* VibrateViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E62B4D691C9263550092F14F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E62B4D6A1C9263B70092F14F /* RTAudioStream.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		E63317A31C867593008980DC /* Chat */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,8 +488,8 @@
 		E63FD0311C8FCC6A002D8ADD /* Sound */ = {
 			isa = PBXGroup;
 			children = (
-				E63FD0321C8FCCC8002D8ADD /* SoundTableViewController.swift */,
-				E63FD0341C8FCDF9002D8ADD /* VibrateViewController.swift */,
+				E62B4D691C9263550092F14F /* Classes */,
+				E62B4D681C92633D0092F14F /* Controllers */,
 			);
 			name = Sound;
 			sourceTree = "<group>";
@@ -695,6 +714,7 @@
 				E63FD0301C8FCBA6002D8ADD /* RCAudio.swift in Sources */,
 				E63317A91C8677B0008980DC /* ChatCell.swift in Sources */,
 				1868A3751BE883A9007D5F47 /* TestNavigationController.swift in Sources */,
+				E62B4D6B1C9263B70092F14F /* RTAudioStream.swift in Sources */,
 				1838BEF11BDA204F005D7D8B /* GalleryDetailViewController.swift in Sources */,
 				CD4661DC1BBA101600FDFBDC /* SecondViewController.swift in Sources */,
 				E62CC7AD1C4F218500E8E84F /* TextFieldViewController.swift in Sources */,
