@@ -3,3 +3,4 @@
 //
 
 #import "UIImage+animatedGIF.h"
+#import "AFSoundManager.h"

@@ -75,11 +75,21 @@
 		E69049011C474EBE006C5314 /* DynamicBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */; };
 		E694936E1C85940C009F90D6 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E694936D1C85940C009F90D6 /* ChatViewController.swift */; };
 		E695290D1C7EF7C00032FDDC /* AutoLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */; };
+		E6C35ABC1C96B91E0087771D /* AFSoundItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C35AB21C96B91E0087771D /* AFSoundItem.m */; };
+		E6C35ABD1C96B91E0087771D /* AFSoundPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C35AB51C96B91E0087771D /* AFSoundPlayback.m */; };
+		E6C35ABE1C96B91E0087771D /* AFSoundQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C35AB71C96B91E0087771D /* AFSoundQueue.m */; };
+		E6C35ABF1C96B91E0087771D /* AFSoundRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C35AB91C96B91E0087771D /* AFSoundRecord.m */; };
+		E6C35AC01C96B91E0087771D /* NSTimer+AFSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C35ABB1C96B91E0087771D /* NSTimer+AFSoundManager.m */; };
+		E6C35AC21C96B9FC0087771D /* AudioStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C35AC11C96B9FC0087771D /* AudioStreamViewController.swift */; };
+		E6C35AC41C96BA8F0087771D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C35AC31C96BA8F0087771D /* MediaPlayer.framework */; };
+		E6C35AC61C96BA9D0087771D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C35AC51C96BA9D0087771D /* AVFoundation.framework */; };
+		E6C35AC71C96BAA40087771D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E63FD0361C8FE397002D8ADD /* AudioToolbox.framework */; };
 		E6D1ECBB1C1EABA400995844 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1ECBA1C1EABA400995844 /* ImageViewController.swift */; };
 		E6D1ECBE1C1EAE2D00995844 /* 496.gif in Resources */ = {isa = PBXBuildFile; fileRef = E6D1ECBD1C1EAE2D00995844 /* 496.gif */; };
 		E6D1ECC31C1EAF4100995844 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D1ECC21C1EAF4100995844 /* UIImage+animatedGIF.m */; };
 		E6F2DC231C8029B8008B9460 /* Readme in Resources */ = {isa = PBXBuildFile; fileRef = E6F2DC221C8029B8008B9460 /* Readme */; };
 		E6F2DC2D1C8030FF008B9460 /* ChatViewImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6F2DC2C1C8030FF008B9460 /* ChatViewImages.xcassets */; };
+		E6F7B6651C9650FD00CEFBD8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F7B6641C9650FD00CEFBD8 /* CFNetwork.framework */; };
 		F0E44003087A7F78739C3E76 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2862304045F5F0A51216D43A /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -170,6 +180,20 @@
 		E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBehaviorViewController.swift; sourceTree = "<group>"; };
 		E694936D1C85940C009F90D6 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutViewController.swift; sourceTree = "<group>"; };
+		E6C35AB11C96B91E0087771D /* AFSoundItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSoundItem.h; sourceTree = "<group>"; };
+		E6C35AB21C96B91E0087771D /* AFSoundItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSoundItem.m; sourceTree = "<group>"; };
+		E6C35AB31C96B91E0087771D /* AFSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSoundManager.h; sourceTree = "<group>"; };
+		E6C35AB41C96B91E0087771D /* AFSoundPlayback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSoundPlayback.h; sourceTree = "<group>"; };
+		E6C35AB51C96B91E0087771D /* AFSoundPlayback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSoundPlayback.m; sourceTree = "<group>"; };
+		E6C35AB61C96B91E0087771D /* AFSoundQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSoundQueue.h; sourceTree = "<group>"; };
+		E6C35AB71C96B91E0087771D /* AFSoundQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSoundQueue.m; sourceTree = "<group>"; };
+		E6C35AB81C96B91E0087771D /* AFSoundRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSoundRecord.h; sourceTree = "<group>"; };
+		E6C35AB91C96B91E0087771D /* AFSoundRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSoundRecord.m; sourceTree = "<group>"; };
+		E6C35ABA1C96B91E0087771D /* NSTimer+AFSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+AFSoundManager.h"; sourceTree = "<group>"; };
+		E6C35ABB1C96B91E0087771D /* NSTimer+AFSoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+AFSoundManager.m"; sourceTree = "<group>"; };
+		E6C35AC11C96B9FC0087771D /* AudioStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioStreamViewController.swift; sourceTree = "<group>"; };
+		E6C35AC31C96BA8F0087771D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		E6C35AC51C96BA9D0087771D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E6D1ECBA1C1EABA400995844 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		E6D1ECBD1C1EAE2D00995844 /* 496.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 496.gif; sourceTree = "<group>"; };
 		E6D1ECC01C1EAF4000995844 /* RCToolsDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCToolsDemo-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -177,6 +201,7 @@
 		E6D1ECC21C1EAF4100995844 /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
 		E6F2DC221C8029B8008B9460 /* Readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme; sourceTree = "<group>"; };
 		E6F2DC2C1C8030FF008B9460 /* ChatViewImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ChatViewImages.xcassets; sourceTree = "<group>"; };
+		E6F7B6641C9650FD00CEFBD8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +209,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6C35AC71C96BAA40087771D /* AudioToolbox.framework in Frameworks */,
+				E6C35AC61C96BA9D0087771D /* AVFoundation.framework in Frameworks */,
+				E6C35AC41C96BA8F0087771D /* MediaPlayer.framework in Frameworks */,
+				E6F7B6651C9650FD00CEFBD8 /* CFNetwork.framework in Frameworks */,
 				F0E44003087A7F78739C3E76 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,6 +265,9 @@
 		B06190B4550DD57BAA0E2EAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E6C35AC51C96BA9D0087771D /* AVFoundation.framework */,
+				E6C35AC31C96BA8F0087771D /* MediaPlayer.framework */,
+				E6F7B6641C9650FD00CEFBD8 /* CFNetwork.framework */,
 				E63FD0361C8FE397002D8ADD /* AudioToolbox.framework */,
 				2862304045F5F0A51216D43A /* Pods.framework */,
 			);
@@ -416,6 +448,7 @@
 			children = (
 				E63FD0321C8FCCC8002D8ADD /* SoundTableViewController.swift */,
 				E63FD0341C8FCDF9002D8ADD /* VibrateViewController.swift */,
+				E6C35AC11C96B9FC0087771D /* AudioStreamViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -494,6 +527,24 @@
 			name = Sound;
 			sourceTree = "<group>";
 		};
+		E6C35AB01C96B8D10087771D /* AFSoundManager */ = {
+			isa = PBXGroup;
+			children = (
+				E6C35AB11C96B91E0087771D /* AFSoundItem.h */,
+				E6C35AB21C96B91E0087771D /* AFSoundItem.m */,
+				E6C35AB31C96B91E0087771D /* AFSoundManager.h */,
+				E6C35AB41C96B91E0087771D /* AFSoundPlayback.h */,
+				E6C35AB51C96B91E0087771D /* AFSoundPlayback.m */,
+				E6C35AB61C96B91E0087771D /* AFSoundQueue.h */,
+				E6C35AB71C96B91E0087771D /* AFSoundQueue.m */,
+				E6C35AB81C96B91E0087771D /* AFSoundRecord.h */,
+				E6C35AB91C96B91E0087771D /* AFSoundRecord.m */,
+				E6C35ABA1C96B91E0087771D /* NSTimer+AFSoundManager.h */,
+				E6C35ABB1C96B91E0087771D /* NSTimer+AFSoundManager.m */,
+			);
+			name = AFSoundManager;
+			sourceTree = "<group>";
+		};
 		E6D1ECBC1C1EAE1A00995844 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -505,6 +556,7 @@
 		E6D1ECBF1C1EAF1A00995844 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				E6C35AB01C96B8D10087771D /* AFSoundManager */,
 				E6D1ECC41C1EAF6500995844 /* AnimatedGIF */,
 			);
 			name = Utilities;
@@ -686,6 +738,7 @@
 				CD8E90F31C1045E500BF50EA /* RedCircleLayer.swift in Sources */,
 				E6D1ECBB1C1EABA400995844 /* ImageViewController.swift in Sources */,
 				CD9229E81BF4662B004BF267 /* AudioViewController.swift in Sources */,
+				E6C35AC21C96B9FC0087771D /* AudioStreamViewController.swift in Sources */,
 				CDD515A01BE306F200C5765C /* ZeroGapViewController.swift in Sources */,
 				CD6DFAF81BCFD39F0015E6CF /* MyUILabel.swift in Sources */,
 				18B5ED071BE0AE4400B29BCC /* GraphicTableViewController.swift in Sources */,
@@ -698,10 +751,12 @@
 				189830A51BDDD60E00FFE854 /* ImagesCell.swift in Sources */,
 				CD4661DA1BBA100B00FDFBDC /* FirstViewController.swift in Sources */,
 				18A9BB6B1BD5D9D900532575 /* ComponentsTableViewController.swift in Sources */,
+				E6C35ABE1C96B91E0087771D /* AFSoundQueue.m in Sources */,
 				CD6DD93D1BCBD9280092F561 /* CurveShadowView.swift in Sources */,
 				18E5C74A1BD740AB0095D216 /* GlimmerViewController.swift in Sources */,
 				CD8E90F11C103D6E00BF50EA /* BadgeViewController.swift in Sources */,
 				E63317AC1C867A3D008980DC /* ChatMessage.swift in Sources */,
+				E6C35ABC1C96B91E0087771D /* AFSoundItem.m in Sources */,
 				E69049011C474EBE006C5314 /* DynamicBehaviorViewController.swift in Sources */,
 				CDB90D051BEC35D10090D802 /* BezierPathViewController.swift in Sources */,
 				E63317B11C8682C8008980DC /* ChatVoiceMessage.swift in Sources */,
@@ -713,6 +768,7 @@
 				CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */,
 				E63FD0301C8FCBA6002D8ADD /* RCAudio.swift in Sources */,
 				E63317A91C8677B0008980DC /* ChatCell.swift in Sources */,
+				E6C35ABD1C96B91E0087771D /* AFSoundPlayback.m in Sources */,
 				1868A3751BE883A9007D5F47 /* TestNavigationController.swift in Sources */,
 				E62B4D6B1C9263B70092F14F /* RTAudioStream.swift in Sources */,
 				1838BEF11BDA204F005D7D8B /* GalleryDetailViewController.swift in Sources */,
@@ -729,8 +785,10 @@
 				18E03B081BD08FDB0080FA72 /* UIVerticalLabel.swift in Sources */,
 				CDD515A51BE307CF00C5765C /* ControlsTableViewController.swift in Sources */,
 				CDD515A81BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift in Sources */,
+				E6C35ABF1C96B91E0087771D /* AFSoundRecord.m in Sources */,
 				E6D1ECC31C1EAF4100995844 /* UIImage+animatedGIF.m in Sources */,
 				E63317A71C867790008980DC /* ChatTextCell.swift in Sources */,
+				E6C35AC01C96B91E0087771D /* NSTimer+AFSoundManager.m in Sources */,
 				CD6DD9401BCBDC3A0092F561 /* ShadowViewController.swift in Sources */,
 				1868A3731BE87E8D007D5F47 /* CustomizedNavigationController.swift in Sources */,
 				E63FD0351C8FCDF9002D8ADD /* VibrateViewController.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 
 class SoundTableViewController: UITableViewController {
 
-    private let categories = ["vibrate"]
+    private let categories = ["vibrate", "audio"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,6 +48,8 @@ class SoundTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0 {
             self.navigationController?.pushViewController(VibrateViewController(), animated: true)
+        } else if indexPath.row == 1 {
+            self.navigationController?.pushViewController(AudioStreamViewController(), animated: true)
         }
     }
 
