@@ -63,6 +63,11 @@ class AudioStreamViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.queue?.clearQueue()
+    }
+    
     func start() {
         println("[AudioStreamViewController:start] You touched the start button.")
         self.queue?.playCurrentItem()

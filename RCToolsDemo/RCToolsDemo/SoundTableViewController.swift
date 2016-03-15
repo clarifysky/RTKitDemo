@@ -14,6 +14,7 @@ class SoundTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "AudioList"
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "text")
     }
 
