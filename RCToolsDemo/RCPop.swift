@@ -23,11 +23,10 @@ class RCPop: UIView {
         self.messageLabel?.textColor = UIColor.whiteColor()
         self.messageLabel?.textAlignment = .Center
         self.messageLabel?.backgroundColor = UIColor.clearColor()
-        self.messageLabel?.sizeToFit()
+        let properSize = self.messageLabel?.sizeThatFits(CGSizeMake(3 * frame.width / 4, frame.height))
         
-        let labelOrigin = RCTools.Math.originInParentView(sizeOfParentView: frame.size, sizeOfSelf: self.messageLabel!.frame.size)
-        self.messageLabel?.frame = CGRectMake(labelOrigin.x, labelOrigin.y, self.messageLabel!.frame.width, self.messageLabel!.frame.height
-        )
+        let labelOrigin = RCTools.Math.originInParentView(sizeOfParentView: frame.size, sizeOfSelf: properSize!)
+        self.messageLabel?.frame = CGRectMake(labelOrigin.x, labelOrigin.y, properSize!.width, properSize!.height)
         self.addSubview(self.messageLabel!)
         
         self.timer = NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(1), target: self, selector: "tick", userInfo: nil, repeats: true)
