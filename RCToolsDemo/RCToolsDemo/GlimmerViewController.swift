@@ -84,7 +84,7 @@ class GlimmerViewController: UIViewController {
         let button = UIButton(frame: glimmerView.bounds)
         button.setTitle("Glimmer", forState: .Normal)
         button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        button.addTarget(self, action: "toggleGlimmer", forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(GlimmerViewController.toggleGlimmer), forControlEvents: .TouchUpInside)
         glimmerView.addSubview(button)
         glimmerView.RCAnimationDuration = 2.0
         glimmerView.glimmer = true
@@ -99,7 +99,7 @@ class GlimmerViewController: UIViewController {
     func attachExtensionGlimmer() {
         self.glimmerButton = UIButton()
         self.glimmerButton!.setTitle("extension Glimmer", forState: .Normal)
-        self.glimmerButton!.addTarget(self, action: "toggleExtensionGlimmer", forControlEvents: .TouchUpInside)
+        self.glimmerButton!.addTarget(self, action: #selector(GlimmerViewController.toggleExtensionGlimmer), forControlEvents: .TouchUpInside)
         self.glimmerButton!.sizeToFit()
         self.glimmerButton?.frame.origin = CGPointMake(10, 115)
         self.glimmerButton!.RCGlimmer()

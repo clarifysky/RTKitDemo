@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RTKit
 
 class BadgeViewController: UIViewController {
 
@@ -16,7 +17,7 @@ class BadgeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
 //        self.testButton.attachBadge()
-        self.testButton.attachBadge(999)
+        self.testButton.badge(999, position: .TopRight)
     }
 
     override func didReceiveMemoryWarning() {

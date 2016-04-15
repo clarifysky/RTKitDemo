@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import RTKit
 
 class GalleryBrowserViewController: UIViewController {
     
@@ -34,7 +35,7 @@ class GalleryBrowserViewController: UIViewController {
         refreshButton.setTitle("Refresh", forState: .Normal)
         refreshButton.setTitleColor(UIColor.purpleColor(), forState: .Normal)
 //        refreshButton.tintColor = self.navigationItem.leftBarButtonItem?.tintColor
-        refreshButton.addTarget(self, action: "refreshBrowser", forControlEvents: .TouchUpInside)
+        refreshButton.addTarget(self, action: #selector(GalleryBrowserViewController.refreshBrowser), forControlEvents: .TouchUpInside)
         refreshButton.sizeToFit()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: refreshButton)
@@ -50,7 +51,7 @@ class GalleryBrowserViewController: UIViewController {
         config.userContentController.addScriptMessageHandler(self, name: "test")
         
         // WebView
-        var webView = WKWebView(frame: self.view.bounds, configuration: config)
+        let webView = WKWebView(frame: self.view.bounds, configuration: config)
         self.webView = webView
         self.webView?.navigationDelegate = self
         self.view.addSubview(self.webView!)
@@ -58,25 +59,26 @@ class GalleryBrowserViewController: UIViewController {
         
         // Spinner
         let spinnerSize: CGFloat = 30
-        let spinnerOrigin = RCTools.Math.originInParentView(sizeOfParentView: self.view.bounds.size, sizeOfSelf: CGSizeMake(spinnerSize, spinnerSize))
-        var spinner = UIActivityIndicatorView(frame: CGRectMake(spinnerOrigin.x, spinnerOrigin.y, spinnerSize, spinnerSize))
+        let spinnerOrigin = RTMath.centerOrigin(self.view.bounds.size, childSize: CGSizeMake(spinnerSize, spinnerSize))
+        let spinner = UIActivityIndicatorView(frame: CGRectMake(spinnerOrigin.x, spinnerOrigin.y, spinnerSize, spinnerSize))
         spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
         self.spinner = spinner
         self.view.addSubview(self.spinner!)
         
         // LoadUrl
-        let url: NSURL = NSURL(string: RCTools.Characters.encodeUrl(self.url))!
+        let url: NSURL = NSURL(string: RTText.encodeUrl(self.url))!
         let request = NSURLRequest(URL: url)
         self.webView!.loadRequest(request)
     }
     
     func presentGalleryDetail(imageCurrentIndex: Int, images: [String]) {
-        let galleryDetailVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Components", SBID: "GalleryDetailViewController") as! GalleryDetailViewController
+        let galleryDetailVC = RTView.viewController("Components", storyboardID: "GalleryDetailViewController") as! GalleryDetailViewController
+//        let galleryDetailVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Components", SBID: "GalleryDetailViewController") as! GalleryDetailViewController
         galleryDetailVC.imageCurrentIndex = imageCurrentIndex
         galleryDetailVC.imageURLs = images
         galleryDetailVC.view.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5)
         var testArr = [Bool]()
-        for var i = 0; i < images.count; i++ {
+        for _ in 0 ..< images.count {
             testArr.append(false)
         }
         galleryDetailVC.imageViewsLoaded = testArr
@@ -115,15 +117,15 @@ extension GalleryBrowserViewController: WKNavigationDelegate {
 extension GalleryBrowserViewController: WKScriptMessageHandler {
     func userContentController(userContentController: WKUserContentController, didReceiveScriptMessage message: WKScriptMessage) {
         if message.name == "share" {
-            println("You triggered sharing")
+            print("You triggered sharing")
         } else {
             let sentData = message.body as? Dictionary<String, AnyObject>
-            println("sentData: \(sentData)")
+            print("sentData: \(sentData)")
             
             if let type = sentData!["type"] as? String {
                 if type == "index" {
                     let cid = sentData!["data"] as! Int
-                    println("index: \(cid)")
+                    print("index: \(cid)")
                     self.presentGalleryDetail(cid, images: self.imageURLs!)
                 } else {
                     self.imageURLs = sentData!["data"] as? [String]

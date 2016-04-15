@@ -22,17 +22,17 @@ class RedCircleLayer: CALayer {
         }
     }
     
-    override init!() {
+    override init() {
         super.init()
         self.backgroundColor = UIColor.redColor().CGColor
         
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func drawInContext(ctx: CGContext!) {
+    override func drawInContext(ctx: CGContext) {
         let opath = UIBezierPath(arcCenter: CGPointMake(self.frame.width / 2, self.frame.height / 2), radius: self.frame.width / 2, startAngle: 0, endAngle: 2 * CGFloat(M_PI), clockwise: true)
         UIColor.redColor().setFill()
         opath.fill()

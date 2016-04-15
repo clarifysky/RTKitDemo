@@ -58,13 +58,13 @@ class ZeroGapViewController: UIViewController {
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
 //        println("decelerating ended")
         for cell in self.collectionView!.visibleCells() {
-            let indexPath = self.collectionView?.indexPathForCell(cell as! UICollectionViewCell)
-            println("current row: \(indexPath!.row)")
+            let indexPath = self.collectionView?.indexPathForCell(cell )
+            print("current row: \(indexPath!.row)")
         }
     }
     
     func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
-        println("animation ended")
+        print("animation ended")
     }
 }
 
@@ -75,13 +75,13 @@ extension ZeroGapViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView!.dequeueReusableCellWithReuseIdentifier(self.collectionIdentifier, forIndexPath: indexPath) as! UICollectionViewCell
+        let cell = self.collectionView!.dequeueReusableCellWithReuseIdentifier(self.collectionIdentifier, forIndexPath: indexPath) 
         cell.backgroundColor = self.colors[indexPath.row]
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        println("you selected item at index: \(indexPath.item)")
+        print("you selected item at index: \(indexPath.item)")
     }
     
     // Custom UICollectionViewCell does not support long-press to show menu.
@@ -89,12 +89,12 @@ extension ZeroGapViewController: UICollectionViewDelegate, UICollectionViewDataS
         return true
     }
     
-    func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject!) -> Bool {
+    func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
         return true
     }
     
-    func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject!) {
-        println("indexPath \(indexPath.row)")
+    func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
+        print("indexPath \(indexPath.row)")
     }
     
 }

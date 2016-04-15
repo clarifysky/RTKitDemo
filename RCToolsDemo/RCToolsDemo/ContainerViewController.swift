@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RTKit
 
 class ContainerViewController: UIViewController {
     
@@ -23,11 +24,10 @@ class ContainerViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.firstVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "FirstViewController") as? FirstViewController
-        self.secondVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "SecondViewController") as? SecondViewController
-        self.thirdVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "ThirdViewController") as? ThirdViewController
-        self.fourthVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "FourthNav") as? UINavigationController
-//        self.fifthVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "FifthViewController") as? FifthViewController
+        self.firstVC = RTView.viewController("Main", storyboardID: "FirstViewController") as? FirstViewController
+        self.secondVC = RTView.viewController("Main", storyboardID: "SecondViewController") as? SecondViewController
+        self.thirdVC = RTView.viewController("Main", storyboardID: "ThirdViewController") as? ThirdViewController
+        self.fourthVC = RTView.viewController("Main", storyboardID: "FourthNav") as? UINavigationController
         
         self.addChildViewController(self.firstVC!)
         self.addChildViewController(self.secondVC!)
@@ -71,25 +71,25 @@ class ContainerViewController: UIViewController {
         let duration = NSTimeInterval(0.5)
         switch sender.tag {
         case 1:
-            self.swipeLeft(self.firstVC!, fromVC: self.currentVC!, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
+            self.swipe(self.firstVC!, fromVC: self.currentVC!, direction: .Left, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
                 finished in
                 if finished {
                     self.currentVC = self.firstVC
                     self.currentVCStr = "firstVC"
-                    self.firstVC?.backButton.addTarget(self, action: "toThirdVC", forControlEvents: UIControlEvents.TouchUpInside)
-                    println("subViewControllers of containerViewController: \(self.childViewControllers.count)")
+                    self.firstVC?.backButton.addTarget(self, action: #selector(ContainerViewController.toThirdVC), forControlEvents: UIControlEvents.TouchUpInside)
+                    print("subViewControllers of containerViewController: \(self.childViewControllers.count)")
                 }
             })
             
             break
         case 2:
-            self.swipeUp(self.secondVC!, fromVC: self.currentVC!, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
+            self.swipe(self.secondVC!, fromVC: self.currentVC!, direction: .Up, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
                 finished in
                 if finished {
                     self.currentVC = self.secondVC
                     self.currentVCStr = "secondVC"
-                    self.secondVC?.dismissButton.addTarget(self, action: "dismissSecondVC", forControlEvents: UIControlEvents.TouchUpInside)
-                    println("subViewControllers of containerViewController: \(self.childViewControllers.count)")
+                    self.secondVC?.dismissButton.addTarget(self, action: #selector(ContainerViewController.dismissSecondVC), forControlEvents: UIControlEvents.TouchUpInside)
+                    print("subViewControllers of containerViewController: \(self.childViewControllers.count)")
                 }
             })
             break
@@ -97,36 +97,36 @@ class ContainerViewController: UIViewController {
             self.show(self.thirdVC, fromVC: self.currentVC, completion: {
                 finished in
                 if finished {
-                    println("transition from currentVC to thirdVC is finished")
+                    print("transition from currentVC to thirdVC is finished")
                     self.currentVC = self.thirdVC!
                     self.currentVCStr = "thirdVC"
-                    println("subViewControllers of containerViewController: \(self.childViewControllers.count)")
+                    print("subViewControllers of containerViewController: \(self.childViewControllers.count)")
                 }
             })
             break
         case 4:
-            println("will show fouthVC")
+            print("will show fouthVC")
             self.show(self.fourthVC, fromVC: self.currentVC, completion: {
                 finished in
                 if finished {
                     // Because code below is not executed, so I can't contiue to transit viewControllers.
-                    println("transition from currentVC to fourthVC completed")
+                    print("transition from currentVC to fourthVC completed")
                     self.currentVC = self.fourthVC!
                     self.currentVCStr = "fourthVC"
                 } else {
-                    println("transition from currentVC to fourthVC is not finished")
+                    print("transition from currentVC to fourthVC is not finished")
                 }
             })
             break
         case 5:
-            println("will show fifthVC")
-            let fifthVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "FifthViewController") as! FifthViewController
+            print("will show fifthVC")
+            let fifthVC = RTView.viewController("Main", storyboardID: "FifthViewController") as! FifthViewController
             self.addChildViewController(fifthVC)
             self.show(fifthVC, fromVC: self.currentVC, completion: {
                 finished in
                 if finished {
                     // Because code below is not executed, so I can't contiue to transit viewControllers.
-                    println("transition from currentVC to fifthVC completed")
+                    print("transition from currentVC to fifthVC completed")
                     self.currentVC = fifthVC
                     self.currentVCStr = "fifthVC"
                 }
@@ -152,9 +152,9 @@ class ContainerViewController: UIViewController {
     }
     
     func toThirdVC() {
-        println("subViewControllers of containerViewController: \(self.childViewControllers.count)")
+        print("subViewControllers of containerViewController: \(self.childViewControllers.count)")
         let duration = NSTimeInterval(0.5)
-        self.swipeRight(self.thirdVC!, fromVC: self.currentVC!, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
+        self.swipe(self.thirdVC!, fromVC: self.currentVC!, direction: .Right, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
             finished in
             if finished {
                 self.currentVC = self.thirdVC!
@@ -163,9 +163,9 @@ class ContainerViewController: UIViewController {
     }
     
     func dismissSecondVC() {
-        println("subViewControllers of containerViewController: \(self.childViewControllers.count)")
+        print("subViewControllers of containerViewController: \(self.childViewControllers.count)")
         let duration = NSTimeInterval(0.5)
-        self.swipeDown(self.thirdVC!, fromVC: self.currentVC!, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
+        self.swipe(self.thirdVC!, fromVC: self.currentVC!, direction: .Down, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
             finished in
             if finished {
                 self.currentVC = self.thirdVC!

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RTKit
 
 protocol GalleryDataDelegate {
     func handleLongPress(recognizer: UILongPressGestureRecognizer)
@@ -35,7 +36,7 @@ class GalleryDetailViewController: UIViewController {
         self.effectView!.frame = self.view.bounds
         self.view.addSubview(self.effectView!)
         
-        for var i = 0; i < self.imageURLs!.count; i++ {
+        for _ in 0 ..< self.imageURLs!.count {
             self.imageViewsLoaded?.append(false)
             self.imageDatas.append(nil)
             self.uiimages.append(nil)
@@ -53,7 +54,7 @@ class GalleryDetailViewController: UIViewController {
 //        tapGesture.numberOfTouchesRequired = 1
 //        self.view.addGestureRecognizer(tapGesture)
         
-        println(self.imageURLs)
+        print(self.imageURLs)
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,7 +63,7 @@ class GalleryDetailViewController: UIViewController {
     }
     
     func viewTapped(recognizer: UITapGestureRecognizer) {
-        println(recognizer.view?.tag)
+        print(recognizer.view?.tag)
         switch recognizer.state {
         case .Ended:
             dismissViewControllerAnimated(true, completion: nil)
@@ -75,7 +76,7 @@ class GalleryDetailViewController: UIViewController {
         closeButton.setTitle("Close", forState: .Normal)
         closeButton.sizeToFit()
         closeButton.frame.origin = CGPointMake(16, 16)
-        closeButton.addTarget(self, action: "dismissSelf", forControlEvents: .TouchUpInside)
+        closeButton.addTarget(self, action: #selector(GalleryDetailViewController.dismissSelf), forControlEvents: .TouchUpInside)
         self.effectView!.addSubview(closeButton)
     }
     
@@ -112,7 +113,7 @@ class GalleryDetailViewController: UIViewController {
     
     func image(image: UIImage, didFinishSavingWithError: NSError?, contextInfo: AnyObject) {
         if didFinishSavingWithError != nil {
-            println("something goes wrong")
+            print("something goes wrong")
         }
         self.showPop("saved")
     }
@@ -127,7 +128,7 @@ extension GalleryDetailViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var cell = self.imagesCollection?.dequeueReusableCellWithReuseIdentifier("images", forIndexPath: indexPath) as? ImagesCell
         if cell == nil {
-            let cellOrigin = RCTools.Math.originInParentView(sizeOfParentView: collectionView.bounds.size, sizeOfSelf: self.view.bounds.size)
+            let cellOrigin = RTMath.centerOrigin(collectionView.bounds.size, childSize: self.view.bounds.size)
             cell = ImagesCell(frame: CGRect(origin: cellOrigin, size: self.view.bounds.size))
         } else {
             cell?.dataDelegate = self
@@ -135,7 +136,7 @@ extension GalleryDetailViewController: UICollectionViewDelegate, UICollectionVie
                 cell?.row = indexPath.row
                 cell?.loadImage(self.imageURLs![indexPath.row], loadedHandler: {
                     (index, imageData, newFrame) in
-                    println("image loaded")
+                    print("image loaded")
                     self.imageDatas[index] = imageData
                     self.imageFrames[index] = newFrame
                     self.uiimages[index] = UIImage(data: imageData!)
@@ -160,16 +161,16 @@ extension GalleryDetailViewController: GalleryDataDelegate {
     func handleLongPress(recognizer: UILongPressGestureRecognizer) {
         switch recognizer.state {
         case .Began:
-            println("began")
+            print("began")
             let imageView = recognizer.view as! UIImageView
             let image = imageView.image
-            UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo:", nil)
+            UIImageWriteToSavedPhotosAlbum(image!, self, #selector(GalleryDetailViewController.image(_:didFinishSavingWithError:contextInfo:)), nil)
             break
         case .Changed:
-            println("changed")
+            print("changed")
             break
         case .Ended:
-            println("ended")
+            print("ended")
             break
         default: break
         }

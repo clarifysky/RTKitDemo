@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RTKit
 
 class WindowMaskViewController: UIViewController {
 
@@ -23,10 +24,10 @@ class WindowMaskViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: self.cellIdentifier)
         
-        println("-initially create mask")
+        print("-initially create mask")
         self.testTool = TestWindowMask()
         self.testTool?.showMask()
-        self.testTool?.addTapGesutreToMask()
+//        self.testTool?.addTapGesutreToMask()
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,20 +36,20 @@ class WindowMaskViewController: UIViewController {
     }
     
     @IBAction func createMask(sender: UIBarButtonItem) {
-        println("-touch to create mask")
-        println("windows before create : \(UIApplication.sharedApplication().windows.count)")
+        print("-touch to create mask")
+        print("windows before create : \(UIApplication.sharedApplication().windows.count)")
         self.testTool?.showMask()
     }
     
     
-    func presentVC(#sample: String) {
+    func presentVC(sample: String) {
         switch sample {
         case "presentView":
-            let beenPresentedVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "BeenPresentedViewController")
+            let beenPresentedVC = RTView.viewController("Main", storyboardID: "BeenPresentedViewController")
             presentViewController(beenPresentedVC, animated: true, completion: nil)
             break
         case "presentVCWithNav":
-            let withNavBeenPresentedVC = UIStoryboard.NWithSpecificSBAndSBID(SBName: "Main", SBID: "BeenPresentedNavController")
+            let withNavBeenPresentedVC = RTView.viewController("Main", storyboardID: "BeenPresentedNavController")
             presentViewController(withNavBeenPresentedVC, animated: true, completion: nil)
             break
             
@@ -65,13 +66,13 @@ extension WindowMaskViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier, forIndexPath: indexPath) 
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         cell.textLabel?.text = self.samples[indexPath.row]
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.presentVC(sample: self.samples[indexPath.row])
+        self.presentVC(self.samples[indexPath.row])
     }
 }

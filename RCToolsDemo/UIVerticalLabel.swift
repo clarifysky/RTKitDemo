@@ -34,27 +34,27 @@ class UIVerticalLabel: UILabel {
         // Number of lines.(this line is vertical direction)
         let actualLineNumber = Int(floor(Float(viewWidth / width)))
         // Number of lines expected.
-        let expectedLineNumber = Int(ceil(Float(count(drawStr) / charNumber)))
+        let expectedLineNumber = Int(ceil(Float(drawStr.characters.count / charNumber)))
         
         if expectedLineNumber >= actualLineNumber {
-            let startIndex = advance(drawStr.startIndex, 0)
-            let endIndex = advance(drawStr.startIndex, actualLineNumber * charNumber)
-            let range = Range<String.Index>(start: startIndex, end: endIndex)
+            let startIndex = drawStr.startIndex.advancedBy(0)
+            let endIndex = drawStr.startIndex.advancedBy(actualLineNumber * charNumber)
+            let range = startIndex..<endIndex
 //            drawStr = drawStr.substringToIndex(endIndex)
             drawStr = drawStr.substringWithRange(range)
         }
         
-        for var i = 0; i < count(drawStr); i++ {
+        for i in 0 ..< drawStr.characters.count {
             x = startX - floor(CGFloat(i/charNumber))*width
             y = startY + CGFloat(i%charNumber)*height
             
             let charFrame = CGRectMake(x, y, width, height)
-            let range = Range<String.Index>(start: advance(drawStr.startIndex, i), end: advance(drawStr.startIndex, i+1))
+            let range = drawStr.startIndex.advancedBy(i)..<drawStr.startIndex.advancedBy(i+1)
             let str = NSString(string: drawStr.substringWithRange(range))
             
-            let attribs = NSMutableDictionary()
+            var attribs: [String: AnyObject] = NSDictionary() as! [String : AnyObject]
             attribs[NSFontAttributeName] = self.font
-            str.drawInRect(charFrame, withAttributes: attribs as [NSObject : AnyObject])
+            str.drawInRect(charFrame, withAttributes: attribs)
         }
     }
 

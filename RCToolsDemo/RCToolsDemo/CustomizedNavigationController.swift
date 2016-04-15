@@ -27,12 +27,12 @@ class CustomizedNavigationController: UINavigationController {
         bottomBar.backgroundColor = UIColor.grayColor()
         let testButton = UIButton(frame: CGRectMake(0, 0, 40, 40))
         testButton.setTitle("BT", forState: .Normal)
-        testButton.addTarget(self, action: "tapTest", forControlEvents: .TouchUpInside)
+        testButton.addTarget(self, action: #selector(CustomizedNavigationController.tapTest), forControlEvents: .TouchUpInside)
         bottomBar.addSubview(testButton)
         self.view.addSubview(bottomBar)
     }
     
     func tapTest() {
-        println("you tapped a button on navigationController")
+        print("you tapped a button on navigationController")
     }
 }

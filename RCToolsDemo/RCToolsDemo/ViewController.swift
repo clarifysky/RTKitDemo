@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RTKit
 
 class ViewController: UIViewController {
     
@@ -18,7 +19,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: self.cellIdentifier)
         
-        println("\(RCTools.Window().keyWindow()?.subviews.count)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +41,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier, forIndexPath: indexPath) 
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         cell.textLabel?.text = self.actions[indexPath.row]
         return cell
@@ -49,14 +49,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if self.actions[indexPath.row] == "components" {
-            let destinationVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Components", SBID: "ComponentsTableViewController") as! ComponentsTableViewController
-            self.navigationController?.pushViewController(destinationVC, animated: true)
+            let destVC = RTView.viewController("Components", storyboardID: "ComponentsTableViewController") as! ComponentsTableViewController
+            self.navigationController?.pushViewController(destVC, animated: true)
         } else if self.actions[indexPath.row] == "graphic" {
-            let destinationVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Graphic", SBID: "GraphicTableViewController") as! GraphicTableViewController
-            self.navigationController?.pushViewController(destinationVC, animated: true)
+            let destVC = RTView.viewController("Graphic", storyboardID: "GraphicTableViewController") as! GraphicTableViewController
+            self.navigationController?.pushViewController(destVC, animated: true)
         } else if self.actions[indexPath.row] == "controls" {
-            let destinationVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Controls", SBID: "ControlsTableViewController") as! ControlsTableViewController
-            self.navigationController?.pushViewController(destinationVC, animated: true)
+            let destVC = RTView.viewController("Controls", storyboardID: "ControlsTableViewController") as! ControlsTableViewController
+            self.navigationController?.pushViewController(destVC, animated: true)
         } else if self.actions[indexPath.row] == "sound" {
             self.navigationController?.pushViewController(SoundTableViewController(), animated: true)
         } else {

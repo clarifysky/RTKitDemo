@@ -8,30 +8,20 @@
 
 import Foundation
 import UIKit
+import RTKit
 
 class TestWindowMask: NSObject {
-    var windowTools: RCTools.Window
+    var windowTools: RTTopWindow?
     var popView: UIView?
     
     override init() {
-        self.windowTools = RCTools.Window()
+        self.windowTools = RTWindow.sharedTopWindow()
         super.init()
     }
     
-    func createMask() {
-        println("maskView: before mask, view number is: \(self.windowTools.sharedWindow?.rootViewController?.view.subviews.count)")
-        self.windowTools.mask()
-    }
-    
-//    func createMaskForRootView() {
-//        self.windowTools = RCTools.Window()
-//        println("maskView: before mask, view number is: \(self.windowTools.keyWindow()?.subviews.count)")
-//        self.windowTools.maskToRootView()
-//    }
-    
     func createControls() {
         let popViewSize = CGSizeMake(200, 150)
-        let popViewOrigin = RCTools.Math.originInParentView(sizeOfParentView: self.windowTools.keyWindow()!.bounds.size, sizeOfSelf: popViewSize)
+        let popViewOrigin = RTMath.centerOrigin(RTWindow.keyWindow()!.bounds.size, childSize: popViewSize)
         
         self.popView = UIView(frame: CGRectMake(popViewOrigin.x, popViewOrigin.y, popViewSize.width, popViewSize.height))
         self.popView!.backgroundColor = UIColor.whiteColor()
@@ -41,15 +31,13 @@ class TestWindowMask: NSObject {
         closeButton.setTitle("close", forState: UIControlState.Normal)
         closeButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         closeButton.sizeToFit()
-        closeButton.addTarget(self, action: "revokeMask", forControlEvents: UIControlEvents.TouchUpInside)
+        closeButton.addTarget(self, action: #selector(TestWindowMask.revokeMask), forControlEvents: UIControlEvents.TouchUpInside)
         
         self.popView!.addSubview(closeButton)
-        self.windowTools.sharedWindow?.rootViewController?.view.addSubview(self.popView!)
-//        self.windowTools.maskView?.addSubview(popView)
     }
     
     func showMask() {
-        self.createMask()
+//        self.createMask()
 //        self.createControls()
     }
     
@@ -58,21 +46,21 @@ class TestWindowMask: NSObject {
 //        self.createControls()
 //    }
     
-    func addTapGesutreToMask() {
-        // add TapGetsture to maskView
-        let tapPopView = UITapGestureRecognizer(target: self, action: "tapPopView:")
-        self.popView?.addGestureRecognizer(tapPopView)
-    }
+//    func addTapGesutreToMask() {
+//        // add TapGetsture to maskView
+//        let tapPopView = UITapGestureRecognizer(target: self, action: "tapPopView:")
+//        self.popView?.addGestureRecognizer(tapPopView)
+//    }
     
     func tapMaskView(recognizer: UITapGestureRecognizer) {
         switch recognizer.state {
         case .Ended:
-            println("tapped the popView ")
+            print("tapped the popView ")
         default:break
         }
     }
     
     func revokeMask() {
-        self.windowTools.revokeMask(self.popView)
+//        self.windowTools.revokeMask(self.popView)
     }
 }

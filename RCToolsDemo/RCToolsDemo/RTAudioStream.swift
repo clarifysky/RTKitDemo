@@ -228,7 +228,7 @@ class RTAudioStream: NSObject {
         
     }
     
-    private func handleInterruptionChangeToState(notification: NSNotification) {
+    @objc private func handleInterruptionChangeToState(notification: NSNotification) {
         
     }
     
@@ -257,7 +257,7 @@ class RTAudioStream: NSObject {
 
 func ASPropertyListenerProc(inClientData: AnyObject?, inAudioFileStream: AudioFileStreamID, inPropertyID: AudioFileStreamPropertyID, ioFlags: UInt32) {
     // This is called by audio file stream when it finds property values.
-    var streamer = inClientData as! RTAudioStream
+    let streamer = inClientData as! RTAudioStream
     streamer.handlePropertyChangeForFileStream(inAudioFileStream, fileStreamPropertyID: inPropertyID, ioFlags: ioFlags)
 }
 
@@ -270,7 +270,7 @@ func ASPropertyListenerProc(inClientData: AnyObject?, inAudioFileStream: AudioFi
 /// CBR functionality added.
 func ASPacketsProc(inClientData: AnyObject?, inNumberBytes: UInt32, inNumberPackets: UInt32, inInputData: AnyObject?, inPacketDescriptions: AudioStreamPacketDescription) {
     // This is called by audio file stream when it finds packets of audio.
-    var streamer = inClientData as! RTAudioStream
+    let streamer = inClientData as! RTAudioStream
     streamer.handleAudioPackets(inInputData, numberBytes: inNumberBytes, numberPackets: inNumberPackets, packetDescriptions: inPacketDescriptions)
 }
 
@@ -282,7 +282,7 @@ func ASPacketsProc(inClientData: AnyObject?, inNumberBytes: UInt32, inNumberPack
 func ASAudioQueueOutputCallback(inClientData: AnyObject?, inAQ: AudioQueueRef, inBuffer: AudioQueueBufferRef) {
     // This is called by the audio queue when it has finished decoding our data.
     // The buffer is now free to be reused.
-    var streamer = inClientData as! RTAudioStream
+    let streamer = inClientData as! RTAudioStream
     streamer.handleBufferCompleteForQueue(inAQ, buffer: inBuffer)
 }
 
@@ -290,7 +290,7 @@ func ASAudioQueueOutputCallback(inClientData: AnyObject?, inAQ: AudioQueueRef, i
 /// information is used to toggle the observable "isPlaying" property and
 /// set the "finished" flag.
 func ASAudioQueueIsRunningCallback(inUserData: AnyObject?, inAQ: AudioQueueRef, inID: AudioQueuePropertyID) {
-    var streamer = inUserData as! RTAudioStream
+    let streamer = inUserData as! RTAudioStream
     streamer.handlePropertyChangeForQueue(inAQ, propertyID: inID)
 }
 
@@ -306,14 +306,14 @@ func ASAudioSessionInterruptionListener(inClientData: AnyObject?, inInterruption
 ///
 /// Invoked when an error occurs, the stream ends or we have data to read.
 func ASReadStreamCallBack(aStream: CFReadStreamRef, eventType: CFStreamEventType, inClientInfo: AnyObject?) {
-    var streamer = inClientInfo as! RTAudioStream
+    let streamer = inClientInfo as! RTAudioStream
     streamer.handleReadFromStream(aStream, eventType: eventType)
 }
 
 
 extension RTAudioStream {
     func initWithURL(aURL: NSURL) {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleInterruptionChangeToState:", name: RTAudioStream.ASAudioSessionInterruptionOccuredNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RTAudioStream.handleInterruptionChangeToState(_:)), name: RTAudioStream.ASAudioSessionInterruptionOccuredNotification, object: nil)
     }
     
     /// Returned true if the audio has reached a stopping condition
@@ -338,7 +338,7 @@ extension RTAudioStream {
     /// Converts an error code to a string that can be localized or presented
     /// to the user.
     ///
-    /// :param: anErrorCode the error code to convert
+    /// - parameter anErrorCode: the error code to convert
     /// :return: the string representation of the error code
     func stringForErrorCode(anErrorCode: RTAudioStreamErrorCode) -> String {
         var res = RTAudioStream.AUDIO_STREAMER_FAILED_STRING
@@ -395,8 +395,8 @@ extension RTAudioStream {
     
     
     func presentAlertWithTitle(title: String, message: String) {
-        println(title)
-        println(message)
+        print(title)
+        print(message)
     }
     
     /// Sets the playback state to failed and logs the error.
@@ -409,7 +409,7 @@ extension RTAudioStream {
         
         errorCode = anErrorCode
         if err != nil {
-            println(err)
+            print(err)
         } else {
             self.stringForErrorCode(anErrorCode)
         }
@@ -417,7 +417,7 @@ extension RTAudioStream {
         if state! == .Playing || state! == .Paused || state! == .Buffering {
             self.state = .Stopping
             stopReason = .StoppingError
-            AudioQueueStop(audioQueue!, Boolean(1))
+            AudioQueueStop(audioQueue!, true)
         }
         if self.shouldDisplayAlertOnError! {
             self.presentAlertWithTitle("Errors", message: "Unable to configure network read stream")
@@ -429,12 +429,12 @@ extension RTAudioStream {
     /// Method invoked on main thread to send notifications to the main thread's
     /// notification center.
     func mainThreadStateNotification() {
-        var notification = NSNotification(name: RTAudioStream.ASStatusChangedNotification, object: self)
+        let notification = NSNotification(name: RTAudioStream.ASStatusChangedNotification, object: self)
         NSNotificationCenter.defaultCenter().postNotification(notification)
     }
     
     /// Sets the state and sends a notification that the state has changed.
-    /// :param: anErrorCode The error condition
+    /// - parameter anErrorCode: The error condition
     func setSate(aStatus: RTAudioStreamState) {
         objc_sync_enter(self)
         if state! != aStatus {
@@ -492,11 +492,11 @@ extension RTAudioStream {
     }
     
     /// Generates a first guess for the file type based on the file's extension
-    /// :param: fileExtension the file extension
+    /// - parameter fileExtension: the file extension
     ///
     /// :return: Returns a file type hint that can be passed to the AudioFileStream
     func hintForFileExtension(fileExtension: String) ->AudioFileTypeID {
-        var fileTypeHint: Int?
+        var fileTypeHint: AudioFileTypeID?
         switch fileExtension {
         case "mp3":
             fileTypeHint = kAudioFileMP3Type
@@ -534,14 +534,14 @@ extension RTAudioStream {
     func openReadStream() {
         objc_sync_enter(self)
         // Create the HTTP GET request.
-        var message = CFHTTPMessageCreateRequest(nil, "GET", url!, kCFHTTPVersion1_1)
+        _ = CFHTTPMessageCreateRequest(nil, "GET", url!, kCFHTTPVersion1_1)
         
         // If we are creating this request to seek to a location, set the requested byte
         // range in the headers.
         if fileLength! > 0 && seekByteOffset! > 0 {
             
-            let tmp = Double(seekByteOffset!)
-            let tmp1 = Double(fileLength!)
+            _ = Double(seekByteOffset!)
+            _ = Double(fileLength!)
             /// MARK: Stopped at here
         }
         

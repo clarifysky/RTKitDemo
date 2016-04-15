@@ -26,7 +26,7 @@ class AudioViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         if self.audioSession == nil {
-            self.errorPoint = NSErrorPointer()
+            self.errorPoint = nil
             self.audioSession = AVAudioSession.sharedInstance()
             // Only "PlayAndRecord" support Audio Session route override.(according to "http://stackoverflow.com/questions/2662585/how-to-switch-between-speaker-and-headphones-in-iphone-application")
             // Default is speakers.
@@ -41,16 +41,22 @@ class AudioViewController: UIViewController {
     }
 
     @IBAction func remotePlay(sender: UIButton) {
-//        let aPlayerItem = AVPlayerItem(URL: NSURL(string: self.remoteSoundUrl)!)
+        //        let aPlayerItem = AVPlayerItem(URL: NSURL(string: self.remoteSoundUrl)!)
 //        let anAudioStreamer = AVPlayer(playerItem: aPlayerItem)
 //        anAudioStreamer.play()
 //        
 //        println("currentTime: \(anAudioStreamer.currentTime())")
 //        println("duration: \(anAudioStreamer.currentItem.asset.duration)")
         
-        var player = AVAudioPlayer(contentsOfURL: NSURL(string: self.remoteSoundUrl), error: self.errorPoint!)
+    var player: AVAudioPlayer!
+        do {
+            player = try AVAudioPlayer(contentsOfURL: NSURL(string: self.remoteSoundUrl)!)
+        } catch let error as NSError {
+            self.errorPoint!.memory = error
+            player = nil
+        }
         if player != nil {
-            println("player is not nil")
+            print("player is not nil")
             player.play()
         }
     }
@@ -65,7 +71,7 @@ class AudioViewController: UIViewController {
         UIDevice.currentDevice().proximityMonitoringEnabled = true
         // If currentDevice support proximityMonitoring, add observer.
         if UIDevice.currentDevice().proximityMonitoringEnabled == true {
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "sensorStateChanged:", name: "UIDeviceProximityStateDidChangeNotification", object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AudioViewController.sensorStateChanged(_:)), name: "UIDeviceProximityStateDidChangeNotification", object: nil)
         }
         
         
@@ -91,7 +97,7 @@ class AudioViewController: UIViewController {
     private func loadSound(completionHandler: (() -> Void)?) {
         if self.soundData == nil {
             self.switchButton.setTitle("requesting...", forState: .Normal)
-            let qos = Int(QOS_CLASS_USER_INITIATED.value)
+            let qos = Int(QOS_CLASS_USER_INITIATED.rawValue)
             dispatch_async(dispatch_get_global_queue(qos, 0), {
                 let soundData = NSData(contentsOfURL: NSURL(string: self.remoteSoundUrl)!)
                 dispatch_async(dispatch_get_main_queue(), {
@@ -105,12 +111,25 @@ class AudioViewController: UIViewController {
     }
     
     private func playWithHeadphone() {
-        // Only "PlayAndRecord" support Audio Session route override.(according to "http://stackoverflow.com/questions/2662585/how-to-switch-between-speaker-and-headphones-in-iphone-application")
-        self.audioSession?.setCategory(AVAudioSessionCategoryPlayAndRecord, error: self.errorPoint!)
-        self.audioSession?.overrideOutputAudioPort(AVAudioSessionPortOverride.None, error: self.errorPoint!)
+        do {
+            // Only "PlayAndRecord" support Audio Session route override.(according to "http://stackoverflow.com/questions/2662585/how-to-switch-between-speaker-and-headphones-in-iphone-application")
+            try self.audioSession?.setCategory(AVAudioSessionCategoryPlayAndRecord)
+        } catch let error as NSError {
+            self.errorPoint!.memory = error
+        }
+        do {
+            try self.audioSession?.overrideOutputAudioPort(AVAudioSessionPortOverride.None)
+        } catch let error as NSError {
+            self.errorPoint!.memory = error
+        }
 //        self.audioSession?.setActive(true, error: self.errorPoint!)
         if self.player == nil {
-            self.player = AVAudioPlayer(data: self.soundData, error: self.errorPoint!)
+            do {
+                self.player = try AVAudioPlayer(data: self.soundData!)
+            } catch let error as NSError {
+                self.errorPoint!.memory = error
+                self.player = nil
+            }
             self.player?.delegate = self
             self.player?.prepareToPlay()
             self.player?.play()
@@ -118,12 +137,25 @@ class AudioViewController: UIViewController {
     }
     
     private func playWithSpeakers() {
-        self.audioSession?.setCategory(AVAudioSessionCategoryPlayback, error: self.errorPoint!)
-        self.audioSession?.overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker, error: self.errorPoint!)
+        do {
+            try self.audioSession?.setCategory(AVAudioSessionCategoryPlayback)
+        } catch let error as NSError {
+            self.errorPoint!.memory = error
+        }
+        do {
+            try self.audioSession?.overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker)
+        } catch let error as NSError {
+            self.errorPoint!.memory = error
+        }
 //        self.audioSession?.setActive(true, error: self.errorPoint!)
         
         if self.player == nil {
-            self.player = AVAudioPlayer(data: self.soundData, error: self.errorPoint!)
+            do {
+                self.player = try AVAudioPlayer(data: self.soundData!)
+            } catch let error as NSError {
+                self.errorPoint!.memory = error
+                self.player = nil
+            }
             self.player?.delegate = self
             self.player?.prepareToPlay()
             self.player?.play()
@@ -135,20 +167,36 @@ class AudioViewController: UIViewController {
         // device is close to user
         if UIDevice.currentDevice().proximityState == true {
             self.showPop("close to user")
-            self.audioSession?.setCategory(AVAudioSessionCategoryPlayAndRecord, error: self.errorPoint!)
-            self.audioSession?.overrideOutputAudioPort(AVAudioSessionPortOverride.None, error: self.errorPoint!)
+            do {
+                try self.audioSession?.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            } catch let error as NSError {
+                self.errorPoint!.memory = error
+            }
+            do {
+                try self.audioSession?.overrideOutputAudioPort(AVAudioSessionPortOverride.None)
+            } catch let error as NSError {
+                self.errorPoint!.memory = error
+            }
             self.currentRouteSpeaker = false
         } else {
             self.showPop("away from user")
-            self.audioSession?.setCategory(AVAudioSessionCategoryPlayback, error: self.errorPoint!)
-            self.audioSession?.overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker, error: self.errorPoint!)
+            do {
+                try self.audioSession?.setCategory(AVAudioSessionCategoryPlayback)
+            } catch let error as NSError {
+                self.errorPoint!.memory = error
+            }
+            do {
+                try self.audioSession?.overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker)
+            } catch let error as NSError {
+                self.errorPoint!.memory = error
+            }
             self.currentRouteSpeaker = true
         }
     }
 }
 
 extension AudioViewController: AVAudioPlayerDelegate {
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
         self.switchButton.setTitle("SwitchRoutes", forState: .Normal)
         // Close proximityMonitoring when playing finished.
         UIDevice.currentDevice().proximityMonitoringEnabled = false

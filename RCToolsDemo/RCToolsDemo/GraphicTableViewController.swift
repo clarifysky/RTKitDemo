@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RTKit
 
 class GraphicTableViewController: UITableViewController {
     
@@ -24,22 +25,22 @@ class GraphicTableViewController: UITableViewController {
     
     func popVC(row: Int) {
         if row == 0 {
-            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Graphic", SBID: "CarMovingViewController") as! CarMovingViewController
+            let destVC = RTView.viewController("Graphic", storyboardID: "CarMovingViewController") as! CarMovingViewController
             self.navigationController?.pushViewController(destVC, animated: true)
         } else if row == 1 {
-            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Graphic", SBID: "SnapshotViewController") as! SnapshotViewController
+            let destVC = RTView.viewController("Graphic", storyboardID: "SnapshotViewController") as! SnapshotViewController
             self.navigationController?.pushViewController(destVC, animated: true)
         } else if row == 2 {
-            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Graphic", SBID: "BezierPathViewController") as! BezierPathViewController
+            let destVC = RTView.viewController("Graphic", storyboardID: "BezierPathViewController") as! BezierPathViewController
             self.navigationController?.pushViewController(destVC, animated: true)
         } else if row == 3 {
-            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Graphic", SBID: "DynamicBehaviorViewController") as! DynamicBehaviorViewController
+            let destVC = RTView.viewController("Graphic", storyboardID: "DynamicBehaviorViewController") as! DynamicBehaviorViewController
             self.navigationController?.pushViewController(destVC, animated: true)
         } else if row == 4 {
-            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Graphic", SBID: "GlimmerViewController") as! GlimmerViewController
+            let destVC = RTView.viewController("Graphic", storyboardID: "GlimmerViewController") as! GlimmerViewController
             self.navigationController?.pushViewController(destVC, animated: true)
         } else if row == 5 {
-            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Graphic", SBID: "AutoLayoutViewController") as! AutoLayoutViewController
+            let destVC = RTView.viewController("Graphic", storyboardID: "AutoLayoutViewController") as! AutoLayoutViewController
             self.navigationController?.pushViewController(destVC, animated: true)
         }
     }
@@ -68,7 +69,7 @@ class GraphicTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("graphic") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("graphic")! as UITableViewCell
         cell.textLabel?.text = self.actions[indexPath.row]
         
         return cell

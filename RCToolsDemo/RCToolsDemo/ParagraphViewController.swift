@@ -41,12 +41,12 @@ class ParagraphViewController: UIViewController {
 //        ps.minimumLineHeight = 20
         
         
-        let attribs = NSMutableDictionary()
+        var attribs: [String: AnyObject] = NSDictionary() as! [String : AnyObject]
 //        attribs[NSParagraphStyleAttributeName] = ps
 //        attribs[NSWritingDirectionAttributeName] = NSArray(object: NSNumber(integer: 3))
         attribs[NSVerticalGlyphFormAttributeName] = NSNumber(integer: 1)
         attribs[NSTextLayoutSectionOrientation] = NSNumber(integer: 0)
-        let attributedText = NSMutableAttributedString(string: text, attributes: attribs as [NSObject : AnyObject])
+        let attributedText = NSMutableAttributedString(string: text, attributes: attribs as [String: AnyObject])
         
         richLabel.attributedText = attributedText
         richLabel.layer.borderColor = UIColor.blackColor().CGColor

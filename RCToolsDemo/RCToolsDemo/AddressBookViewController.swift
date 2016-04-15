@@ -28,18 +28,18 @@ class AddressBookViewController: UIViewController {
         // Request authorization.
         let sysAddressBookStatus = ABAddressBookGetAuthorizationStatus()
         if sysAddressBookStatus == ABAuthorizationStatus.NotDetermined {
-            println("requesting...")
+            print("requesting...")
             ABAddressBookRequestAccessWithCompletion(self.addressBook, {
                 success, error in
                 if success {
                     // Load all people in addressBook.
                     self.loadContacts()
                 } else {
-                    println(error)
+                    print(error)
                 }
             })
         } else if sysAddressBookStatus == .Denied || sysAddressBookStatus == .Restricted {
-            println("access denied")
+            print("access denied")
         } else if sysAddressBookStatus == .Authorized {
             self.loadContacts()
         }
@@ -59,8 +59,8 @@ class AddressBookViewController: UIViewController {
 
     private func loadContacts() {
         
-        var dataRead = ABAddressBookCopyArrayOfAllPeople(self.addressBook).takeRetainedValue() as NSArray
-        println("count of addressBook: \(dataRead.count)")
+        let dataRead = ABAddressBookCopyArrayOfAllPeople(self.addressBook).takeRetainedValue() as NSArray
+        print("count of addressBook: \(dataRead.count)")
         self.extractUsers(dataRead)
         
         self.attachTable()
@@ -77,17 +77,17 @@ class AddressBookViewController: UIViewController {
             
             // phone
             var phone = ""
-            var phoneValues: ABMutableMultiValueRef? = ABRecordCopyValue(contact, kABPersonPhoneProperty).takeRetainedValue()
+            let phoneValues: ABMutableMultiValueRef? = ABRecordCopyValue(contact, kABPersonPhoneProperty).takeRetainedValue()
             if phoneValues != nil {
                 let count = ABMultiValueGetCount(phoneValues)
                 if count > 0 {
                     // I only take the first phone number here.
-                    var tmp = ABMultiValueCopyLabelAtIndex(phoneValues, 0)
-                    var localizedPhoneLabel = ""
+                    let tmp = ABMultiValueCopyLabelAtIndex(phoneValues, 0)
+//                    var localizedPhoneLabel = ""
                     if tmp != nil {
-                        var phoneLabel = ABMultiValueCopyLabelAtIndex(phoneValues, 0).takeRetainedValue() as CFStringRef
+//                        let phoneLabel = ABMultiValueCopyLabelAtIndex(phoneValues, 0).takeRetainedValue() as CFStringRef
                         // convert to localized labe.
-                        localizedPhoneLabel = ABAddressBookCopyLocalizedLabel(phoneLabel).takeRetainedValue() as! String
+//                        localizedPhoneLabel = ABAddressBookCopyLocalizedLabel(phoneLabel).takeRetainedValue() as String
                     }
                     
                     phone = ABMultiValueCopyValueAtIndex(phoneValues, 0).takeRetainedValue() as! String
@@ -95,7 +95,7 @@ class AddressBookViewController: UIViewController {
                 }
             }
             
-            println("name: " + name + ", phone: " + phone)
+            print("name: " + name + ", phone: " + phone)
             users.append(["name": name, "phone": phone])
         }
         self.contacts = users
@@ -109,12 +109,12 @@ extension AddressBookViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("addressBook") as? UITableViewCell
-        if cell == nil {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: "addressBook")
-        }
-        cell?.textLabel?.text = self.contacts![indexPath.row]["name"]! + " " + self.contacts![indexPath.row]["phone"]!
-        return cell! 
+        let cell = tableView.dequeueReusableCellWithIdentifier("addressBook")! as UITableViewCell
+//        if cell == nil {
+//            cell = UITableViewCell(style: .Default, reuseIdentifier: "addressBook")
+//        }
+        cell.textLabel?.text = self.contacts![indexPath.row]["name"]! + " " + self.contacts![indexPath.row]["phone"]!
+        return cell 
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

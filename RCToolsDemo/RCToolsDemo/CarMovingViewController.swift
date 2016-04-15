@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RTKit
 
 class CarMovingViewController: UIViewController {
 
@@ -31,13 +32,13 @@ class CarMovingViewController: UIViewController {
         let stopButton = UIButton(frame: CGRectMake(0, 0, 100, 20))
         stopButton.setTitle("Stop", forState: .Normal)
         stopButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        stopButton.addTarget(self, action: "stopCar", forControlEvents: .TouchUpInside)
+        stopButton.addTarget(self, action: #selector(CarMovingViewController.stopCar), forControlEvents: .TouchUpInside)
         stopButton.sizeToFit()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: stopButton)
         
         // transparent navigation bar
-        self.navigationController?.navigationBar.RCTransparentBgColor(UIColor(red: 0/255, green: 255/255, blue: 0/255, alpha: 0.4))
+        self.navigationController?.navigationBar.transparentBgColor(UIColor.colorWithRGBOpaque(0, green: 1, blue: 0, alpha: 0.4))
 //        self.navigationController?.navigationBar.RCOpaqueBgColor(UIColor.blueColor())
     }
 
@@ -104,7 +105,7 @@ class CarMovingViewController: UIViewController {
         label.sizeToFit()
         label.frame.origin = CGPointMake(0, 10)
         label.backgroundColor = UIColor.greenColor()
-        println("[CarMovingViewController:attachTestLabel] frame of testLabel: \(label.frame)")
+        print("[CarMovingViewController:attachTestLabel] frame of testLabel: \(label.frame)")
         self.view.addSubview(label)
     }
 }

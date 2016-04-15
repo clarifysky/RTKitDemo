@@ -15,10 +15,10 @@ class WithNavBeenPresentedViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        println("-withNavVC did load")
+        print("-withNavVC did load")
         self.testTool = TestWindowMask()
         self.testTool?.showMask()
-        self.testTool?.addTapGesutreToMask()
+//        self.testTool?.addTapGesutreToMask()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +27,7 @@ class WithNavBeenPresentedViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        println("-withNavVC did appear")
+        print("-withNavVC did appear")
     }
     
     

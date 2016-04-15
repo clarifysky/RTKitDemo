@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import RTKit
 
 class MaskViewController: UIViewController {
 //    var windowBelong: UIWindow?
-    var windowTools: RCTools.Window?
+    var windowTools: RTWindow?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        println("-mask view did load")
+        print("-mask view did load")
         self.addTapGesutreToMask()
     }
 
@@ -26,23 +27,23 @@ class MaskViewController: UIViewController {
     
     func addTapGesutreToMask() {
         // add TapGetsture to maskView
-        let tapMaskView = UITapGestureRecognizer(target: self, action: "tapMaskView:")
+        let tapMaskView = UITapGestureRecognizer(target: self, action: #selector(MaskViewController.tapMaskView(_:)))
         self.view.addGestureRecognizer(tapMaskView)
     }
     
     func tapMaskView(recognizer: UITapGestureRecognizer) {
         switch recognizer.state {
         case .Ended:
-            println("tapped the maskView ")
+            print("tapped the maskView ")
         default:break
         }
     }
 
     @IBAction func closeMaskWindow(sender: UIButton) {
-        println("You clicked close button")
-        println("Views in mask view: \(self.view.subviews.count)")
+        print("You clicked close button")
+        print("Views in mask view: \(self.view.subviews.count)")
         
-        self.windowTools?.revokeMask(sender.superview)
+//        self.windowTools?.revokeMask(sender.superview)
         
         
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import AudioToolbox
+import RTKit
 
 class VibrateViewController: UIViewController {
 
@@ -19,10 +20,10 @@ class VibrateViewController: UIViewController {
         let vibrateButton = UIButton()
         vibrateButton.setTitle("vibrate", forState: .Normal)
         vibrateButton.sizeToFit()
-        vibrateButton.addTarget(self, action: "vibrate", forControlEvents: .TouchUpInside)
+        vibrateButton.addTarget(self, action: #selector(VibrateViewController.vibrate), forControlEvents: .TouchUpInside)
         vibrateButton.frame.origin = CGPointMake(0, 64)
         vibrateButton.setTitleColor(UIColor.orangeColor(), forState: .Normal)
-        println(vibrateButton.frame)
+        print(vibrateButton.frame)
         self.view.addSubview(vibrateButton)
     }
 
@@ -32,8 +33,8 @@ class VibrateViewController: UIViewController {
     }
     
     func vibrate() {
-        println("[VibrateViewController:vibrate:] You touched the vibrate button.")
-        RCAudio.playVibrate()
+        print("[VibrateViewController:vibrate:] You touched the vibrate button.")
+        RTAudio.playVibrate()
     }
 
 }

@@ -38,7 +38,7 @@ class SoundTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("text", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("text", forIndexPath: indexPath) 
 
         // Configure the cell...
         cell.textLabel?.text = self.categories[indexPath.row]

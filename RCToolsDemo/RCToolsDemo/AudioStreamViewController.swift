@@ -23,7 +23,7 @@ class AudioStreamViewController: UIViewController {
         let startButton = UIButton()
         startButton.setTitle("start", forState: .Normal)
         startButton.sizeToFit()
-        startButton.addTarget(self, action: "start", forControlEvents: .TouchUpInside)
+        startButton.addTarget(self, action: #selector(AudioStreamViewController.start), forControlEvents: .TouchUpInside)
         startButton.frame.origin = CGPointMake(0, 64)
         startButton.setTitleColor(UIColor.orangeColor(), forState: .Normal)
         self.view.addSubview(startButton)
@@ -31,7 +31,7 @@ class AudioStreamViewController: UIViewController {
         let stopButton = UIButton()
         stopButton.setTitle("pause", forState: .Normal)
         stopButton.sizeToFit()
-        stopButton.addTarget(self, action: "pause", forControlEvents: .TouchUpInside)
+        stopButton.addTarget(self, action: #selector(AudioStreamViewController.pause), forControlEvents: .TouchUpInside)
         stopButton.frame.origin = CGPointMake(startButton.frame.origin.x + startButton.frame.width + 10, 64)
         stopButton.setTitleColor(UIColor.orangeColor(), forState: .Normal)
         self.view.addSubview(stopButton)
@@ -51,10 +51,10 @@ class AudioStreamViewController: UIViewController {
         self.queue?.playCurrentItem()
         self.queue?.listenFeedbackUpdatesWithBlock({
             item in
-            println("Item duration: \(item.duration) - time elapsed: \(item.timePlayed)")
+            print("Item duration: \(item.duration) - time elapsed: \(item.timePlayed)")
             }, andFinishedBlock: {
                 nextItem in
-                println("Finished item, next one is \(nextItem.title)")
+                print("Finished item, next one is \(nextItem.title)")
         })
     }
 
@@ -69,7 +69,7 @@ class AudioStreamViewController: UIViewController {
     }
     
     func start() {
-        println("[AudioStreamViewController:start] You touched the start button.")
+        print("[AudioStreamViewController:start] You touched the start button.")
         self.queue?.playCurrentItem()
     }
     
@@ -84,7 +84,7 @@ extension AudioStreamViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("music") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("music")! as UITableViewCell
         cell.textLabel!.text = self.titles[indexPath.row]
         return cell
     }

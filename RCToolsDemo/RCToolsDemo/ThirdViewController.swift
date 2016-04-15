@@ -14,7 +14,7 @@ class ThirdViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        println("third VC loaded")
+        print("third VC loaded")
     }
 
     override func didReceiveMemoryWarning() {

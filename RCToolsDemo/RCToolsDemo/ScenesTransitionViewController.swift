@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RTKit
 
 class ScenesTransitionViewController: UIViewController {
     
@@ -47,8 +48,7 @@ class ScenesTransitionViewController: UIViewController {
      * Their parent view controller take the responsibility to handle the transition effect.
      */
     func transitionFromVC() {
-//        let toVC = ContainerViewController()
-        let toVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "ContainerViewController")
+        let toVC = RTView.viewController("Main", storyboardID: "ContainerViewController")
         presentViewController(toVC, animated: true, completion: nil)
     }
 }
@@ -60,7 +60,7 @@ extension ScenesTransitionViewController: UITableViewDelegate, UITableViewDataSo
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier, forIndexPath: indexPath) 
         cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         cell.textLabel?.text = self.actions[indexPath.row]
         return cell

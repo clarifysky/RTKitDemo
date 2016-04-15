@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RTKit
 
 class ChatViewController: UIViewController {
 
@@ -34,7 +35,7 @@ class ChatViewController: UIViewController {
         self.createTableView()
         self.createTextView()
         // gesture
-        let tapGesture = UITapGestureRecognizer(target: self, action: "viewDidTapped:")
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ChatViewController.viewDidTapped(_:)))
         self.view.addGestureRecognizer(tapGesture)
     }
     
@@ -66,8 +67,8 @@ class ChatViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardFrameWillChange:", name: UIKeyboardWillChangeFrameNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ChatViewController.keyboardFrameWillChange(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
         self.tableScrollToBottom()
     }
     
@@ -95,7 +96,7 @@ class ChatViewController: UIViewController {
         let topLine = UIView(frame: CGRectMake(0, 0, self.containerTextView!.bounds.width, 0.5))
         topLine.backgroundColor = UIColor.grayColor()
         
-        let origin = RCTools.Math.originInParentView(sizeOfParentView: self.containerTextView!.frame.size, sizeOfSelf: CGSizeMake(self.textViewWidth, self.textViewHeight))
+        let origin = RTMath.centerOrigin(self.containerTextView!.frame.size, childSize: CGSizeMake(self.textViewWidth, self.textViewHeight))
         self.textView = UITextView(frame: CGRectMake(origin.x, origin.y, self.textViewWidth, self.textViewHeight))
         self.textView?.layer.borderColor = UIColor.grayColor().CGColor
         self.textView?.layer.borderWidth = 0.5
@@ -131,7 +132,7 @@ class ChatViewController: UIViewController {
     }
     
     func keyboardFrameWillChange(notification: NSNotification) {
-        println("[ChatViewController] keyboardFrameWillChange:")
+        print("[ChatViewController] keyboardFrameWillChange:")
         if let userInfo = notification.userInfo {
             if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
                 self.changeViewFrame(keyboardSize.height)
@@ -140,7 +141,7 @@ class ChatViewController: UIViewController {
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        println("[ChatViewController] keyboardWillHide:")
+        print("[ChatViewController] keyboardWillHide:")
         self.changeViewFrame(0)
     }
 
@@ -177,7 +178,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
         let message = self.data[indexPath.row]
         if message.messageType == .Text {
 //            var cell = tableView.cellForRowAtIndexPath(indexPath) as? ChatTextCell
-            var cell = ChatTextCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
+            let cell = ChatTextCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
             
             height = (message as! ChatTextMessage).messageSize!.height + 2 * cell.gapLabelMessage + 2 * cell.gapPortrait
         }
@@ -187,7 +188,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let message = self.data[indexPath.row]
         
-        var cell = tableView.dequeueReusableCellWithIdentifier(message.cellIdentity) as! ChatCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(message.cellIdentity) as! ChatCell
         if message.messageType == .Text {
             (cell as! ChatTextCell).setMessage(message)
             return cell as! ChatTextCell
@@ -209,7 +210,7 @@ extension ChatViewController: UITextViewDelegate {
     // 4. Reset its frame.
     // IMPORTANT: Only when the new height is less than the upper limit you set, the frame of UITextView can be reset.
     func textViewDidChange(textView: UITextView) {
-        println("[TextFieldViewController] textViewDidChange:")
+        print("[TextFieldViewController] textViewDidChange:")
         // Caculate the size which best fits the specified size.
         // This height is just the height of textView which best fits its content.
         var height = textView.sizeThatFits(CGSizeMake(self.textView!.frame.width, CGFloat(MAXFLOAT))).height
@@ -231,7 +232,7 @@ extension ChatViewController: UITextViewDelegate {
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
-            println("You pressed return button")
+            print("You pressed return button")
             self.sendMessage()
             return false
         } else {

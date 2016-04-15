@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RTKit
 
 class FifthViewController: UIViewController {
 
@@ -16,7 +17,7 @@ class FifthViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        println("fifth view did load")
+        print("fifth view did load")
         UIView.animateWithDuration(0.25, animations: {
             self.movingView.frame.origin.x = self.view.bounds.width - self.movingView.frame.width
         })
@@ -38,14 +39,14 @@ class FifthViewController: UIViewController {
 //        UIView.animateWithDuration(0.25, animations: {
 //            self.movingView.frame.origin.x = self.view.bounds.width - self.movingView.frame.width
 //        })
-        println("fifth view did appear")
+        print("fifth view did appear")
     }
     
 
     @IBAction func presentAnother(sender: UIButton) {
-        let willPresentVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "PresentedViewController") as! PresentedViewController
+        let willPresentVC = RTView.viewController("Main", storyboardID: "PresentedViewController") as! PresentedViewController
         self.presentViewController(willPresentVC, animated: true, completion: {
-            println("presentedViewController has been presented, its presentingViewController is \(willPresentVC.presentingViewController)")
+            print("presentedViewController has been presented, its presentingViewController is \(willPresentVC.presentingViewController)")
         })
     }
 }

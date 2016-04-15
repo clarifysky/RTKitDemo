@@ -9,11 +9,9 @@
 /* Begin PBXBuildFile section */
 		1813E37A1BE1EDB100B2514F /* SnapshotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813E3791BE1EDB000B2514F /* SnapshotViewController.swift */; };
 		1838BEED1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838BEEC1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift */; };
-		1838BEEF1BDA0570005D7D8B /* JSProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838BEEE1BDA0570005D7D8B /* JSProcess.swift */; };
 		1838BEF11BDA204F005D7D8B /* GalleryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1838BEF01BDA204F005D7D8B /* GalleryDetailViewController.swift */; };
 		1868A3731BE87E8D007D5F47 /* CustomizedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868A3721BE87E8D007D5F47 /* CustomizedNavigationController.swift */; };
 		1868A3751BE883A9007D5F47 /* TestNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868A3741BE883A9007D5F47 /* TestNavigationController.swift */; };
-		1892CEC21BDF0FCF006CBA03 /* RCPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1892CEC11BDF0FCF006CBA03 /* RCPop.swift */; };
 		189830A51BDDD60E00FFE854 /* ImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189830A41BDDD60E00FFE854 /* ImagesCell.swift */; };
 		189B6DA11BCF32A70083C02B /* Components.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189B6DA01BCF32A70083C02B /* Components.storyboard */; };
 		189B6DA41BCF32D50083C02B /* ParagraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B6DA31BCF32D50083C02B /* ParagraphViewController.swift */; };
@@ -40,10 +38,8 @@
 		CD4BB2411BAA6D2300072773 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD4BB23F1BAA6D2300072773 /* LaunchScreen.xib */; };
 		CD4BB24D1BAA6D2400072773 /* RCToolsDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BB24C1BAA6D2400072773 /* RCToolsDemoTests.swift */; };
 		CD4BB2591BAA70B000072773 /* WindowMaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BB2581BAA70B000072773 /* WindowMaskViewController.swift */; };
-		CD4BB25B1BAA70F000072773 /* RCTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BB25A1BAA70F000072773 /* RCTools.swift */; };
 		CD6582EF1BC7C9610053BD0E /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6582EE1BC7C9610053BD0E /* FifthViewController.swift */; };
 		CD6582F11BC7C9710053BD0E /* PresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6582F01BC7C9710053BD0E /* PresentedViewController.swift */; };
-		CD6DD93D1BCBD9280092F561 /* CurveShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6DD93C1BCBD9280092F561 /* CurveShadowView.swift */; };
 		CD6DD9401BCBDC3A0092F561 /* ShadowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6DD93F1BCBDC3A0092F561 /* ShadowViewController.swift */; };
 		CD6DFAF81BCFD39F0015E6CF /* MyUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6DFAF71BCFD39F0015E6CF /* MyUILabel.swift */; };
 		CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7C96AB1BB4E311001754A1 /* ScenesTransitionViewController.swift */; };
@@ -59,7 +55,6 @@
 		CDD515A51BE307CF00C5765C /* ControlsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD515A41BE307CF00C5765C /* ControlsTableViewController.swift */; };
 		CDD515A81BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */; };
 		CDE315831BAD3F8100D2C6AF /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE315821BAD3F8100D2C6AF /* MaskViewController.swift */; };
-		E60E1DB71C3E1F16006F4D06 /* DateProc.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60E1DB61C3E1F16006F4D06 /* DateProc.swift */; };
 		E62B4D6B1C9263B70092F14F /* RTAudioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62B4D6A1C9263B70092F14F /* RTAudioStream.swift */; };
 		E62CC7AD1C4F218500E8E84F /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62CC7AC1C4F218500E8E84F /* TextFieldViewController.swift */; };
 		E63317A71C867790008980DC /* ChatTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317A61C867790008980DC /* ChatTextCell.swift */; };
@@ -69,9 +64,10 @@
 		E63317B11C8682C8008980DC /* ChatVoiceMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317B01C8682C8008980DC /* ChatVoiceMessage.swift */; };
 		E63317B41C869448008980DC /* 10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E63317B31C869448008980DC /* 10.jpeg */; };
 		E63317B61C869A94008980DC /* ChatVoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317B51C869A94008980DC /* ChatVoiceCell.swift */; };
-		E63FD0301C8FCBA6002D8ADD /* RCAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FD02F1C8FCBA6002D8ADD /* RCAudio.swift */; };
 		E63FD0331C8FCCC8002D8ADD /* SoundTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FD0321C8FCCC8002D8ADD /* SoundTableViewController.swift */; };
 		E63FD0351C8FCDF9002D8ADD /* VibrateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FD0341C8FCDF9002D8ADD /* VibrateViewController.swift */; };
+		E64BA81D1CC0C9F900F330EB /* RTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E64BA81B1CC0C9EC00F330EB /* RTKit.framework */; };
+		E64BA81E1CC0C9F900F330EB /* RTKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E64BA81B1CC0C9EC00F330EB /* RTKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E69049011C474EBE006C5314 /* DynamicBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */; };
 		E694936E1C85940C009F90D6 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E694936D1C85940C009F90D6 /* ChatViewController.swift */; };
 		E695290D1C7EF7C00032FDDC /* AutoLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */; };
@@ -105,14 +101,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E64BA81A1CC0C96400F330EB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E64BA81E1CC0C9F900F330EB /* RTKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1813E3791BE1EDB000B2514F /* SnapshotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotViewController.swift; sourceTree = "<group>"; };
 		1838BEEC1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryBrowserViewController.swift; sourceTree = "<group>"; };
-		1838BEEE1BDA0570005D7D8B /* JSProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSProcess.swift; sourceTree = "<group>"; };
 		1838BEF01BDA204F005D7D8B /* GalleryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryDetailViewController.swift; sourceTree = "<group>"; };
 		1868A3721BE87E8D007D5F47 /* CustomizedNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizedNavigationController.swift; sourceTree = "<group>"; };
 		1868A3741BE883A9007D5F47 /* TestNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestNavigationController.swift; sourceTree = "<group>"; };
-		1892CEC11BDF0FCF006CBA03 /* RCPop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCPop.swift; sourceTree = "<group>"; };
 		189830A41BDDD60E00FFE854 /* ImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesCell.swift; sourceTree = "<group>"; };
 		189B6DA01BCF32A70083C02B /* Components.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Components.storyboard; sourceTree = "<group>"; };
 		189B6DA31BCF32D50083C02B /* ParagraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParagraphViewController.swift; sourceTree = "<group>"; };
@@ -146,10 +154,8 @@
 		CD4BB24B1BAA6D2400072773 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD4BB24C1BAA6D2400072773 /* RCToolsDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCToolsDemoTests.swift; sourceTree = "<group>"; };
 		CD4BB2581BAA70B000072773 /* WindowMaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowMaskViewController.swift; sourceTree = "<group>"; };
-		CD4BB25A1BAA70F000072773 /* RCTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTools.swift; sourceTree = "<group>"; };
 		CD6582EE1BC7C9610053BD0E /* FifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 		CD6582F01BC7C9710053BD0E /* PresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedViewController.swift; sourceTree = "<group>"; };
-		CD6DD93C1BCBD9280092F561 /* CurveShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveShadowView.swift; sourceTree = "<group>"; };
 		CD6DD93F1BCBDC3A0092F561 /* ShadowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowViewController.swift; sourceTree = "<group>"; };
 		CD6DFAF71BCFD39F0015E6CF /* MyUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUILabel.swift; sourceTree = "<group>"; };
 		CD7C96AB1BB4E311001754A1 /* ScenesTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenesTransitionViewController.swift; sourceTree = "<group>"; };
@@ -165,7 +171,6 @@
 		CDD515A41BE307CF00C5765C /* ControlsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsTableViewController.swift; sourceTree = "<group>"; };
 		CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZeriGapCollectionViewLayout.swift; sourceTree = "<group>"; };
 		CDE315821BAD3F8100D2C6AF /* MaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
-		E60E1DB61C3E1F16006F4D06 /* DateProc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProc.swift; sourceTree = "<group>"; };
 		E62B4D6A1C9263B70092F14F /* RTAudioStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTAudioStream.swift; sourceTree = "<group>"; };
 		E62CC7AC1C4F218500E8E84F /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		E63317A61C867790008980DC /* ChatTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTextCell.swift; sourceTree = "<group>"; };
@@ -175,10 +180,10 @@
 		E63317B01C8682C8008980DC /* ChatVoiceMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVoiceMessage.swift; sourceTree = "<group>"; };
 		E63317B31C869448008980DC /* 10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpeg; sourceTree = "<group>"; };
 		E63317B51C869A94008980DC /* ChatVoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVoiceCell.swift; sourceTree = "<group>"; };
-		E63FD02F1C8FCBA6002D8ADD /* RCAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCAudio.swift; sourceTree = "<group>"; };
 		E63FD0321C8FCCC8002D8ADD /* SoundTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundTableViewController.swift; sourceTree = "<group>"; };
 		E63FD0341C8FCDF9002D8ADD /* VibrateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VibrateViewController.swift; sourceTree = "<group>"; };
 		E63FD0361C8FE397002D8ADD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E64BA81B1CC0C9EC00F330EB /* RTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RTKit.framework; sourceTree = "<group>"; };
 		E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBehaviorViewController.swift; sourceTree = "<group>"; };
 		E694936D1C85940C009F90D6 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6BE7EE51CA1193700193597 /* AddressBook.framework in Frameworks */,
+				E64BA81D1CC0C9F900F330EB /* RTKit.framework in Frameworks */,
 				E6C35AC71C96BAA40087771D /* AudioToolbox.framework in Frameworks */,
 				E6C35AC61C96BA9D0087771D /* AVFoundation.framework in Frameworks */,
 				E6C35AC41C96BA8F0087771D /* MediaPlayer.framework in Frameworks */,
@@ -271,6 +277,7 @@
 		B06190B4550DD57BAA0E2EAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E64BA81B1CC0C9EC00F330EB /* RTKit.framework */,
 				E6BE7EE41CA1193700193597 /* AddressBook.framework */,
 				E6C35AC51C96BA9D0087771D /* AVFoundation.framework */,
 				E6C35AC31C96BA8F0087771D /* MediaPlayer.framework */,
@@ -368,15 +375,9 @@
 			children = (
 				CD91930F1C745E9000FA0011 /* RCTextField.swift */,
 				18E5C7471BD740430095D216 /* RCGlimmer.swift */,
-				CD4BB25A1BAA70F000072773 /* RCTools.swift */,
-				CD6DD93C1BCBD9280092F561 /* CurveShadowView.swift */,
 				CD6DFAF71BCFD39F0015E6CF /* MyUILabel.swift */,
 				18E03B071BD08FDB0080FA72 /* UIVerticalLabel.swift */,
-				1838BEEE1BDA0570005D7D8B /* JSProcess.swift */,
-				1892CEC11BDF0FCF006CBA03 /* RCPop.swift */,
 				CD8E90F21C1045E500BF50EA /* RedCircleLayer.swift */,
-				E60E1DB61C3E1F16006F4D06 /* DateProc.swift */,
-				E63FD02F1C8FCBA6002D8ADD /* RCAudio.swift */,
 			);
 			name = RCTools;
 			sourceTree = "<group>";
@@ -591,6 +592,7 @@
 				CD4BB22F1BAA6D2300072773 /* Resources */,
 				035D055DCC74232FFDA8C176 /* Embed Pods Frameworks */,
 				A675652C0920F861DF2A0478 /* Copy Pods Resources */,
+				E64BA81A1CC0C96400F330EB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -625,8 +627,9 @@
 		CD4BB2291BAA6D2300072773 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0730;
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = rexcao;
 				TargetAttributes = {
 					CD4BB2301BAA6D2300072773 = {
@@ -754,12 +757,10 @@
 				CD2B4D941BABB7D7003FFF19 /* BeenPresentedViewController.swift in Sources */,
 				CD6582F11BC7C9710053BD0E /* PresentedViewController.swift in Sources */,
 				E695290D1C7EF7C00032FDDC /* AutoLayoutViewController.swift in Sources */,
-				1892CEC21BDF0FCF006CBA03 /* RCPop.swift in Sources */,
 				189830A51BDDD60E00FFE854 /* ImagesCell.swift in Sources */,
 				CD4661DA1BBA100B00FDFBDC /* FirstViewController.swift in Sources */,
 				18A9BB6B1BD5D9D900532575 /* ComponentsTableViewController.swift in Sources */,
 				E6C35ABE1C96B91E0087771D /* AFSoundQueue.m in Sources */,
-				CD6DD93D1BCBD9280092F561 /* CurveShadowView.swift in Sources */,
 				18E5C74A1BD740AB0095D216 /* GlimmerViewController.swift in Sources */,
 				CD8E90F11C103D6E00BF50EA /* BadgeViewController.swift in Sources */,
 				E63317AC1C867A3D008980DC /* ChatMessage.swift in Sources */,
@@ -773,7 +774,6 @@
 				E63FD0331C8FCCC8002D8ADD /* SoundTableViewController.swift in Sources */,
 				CD4BB2391BAA6D2300072773 /* ViewController.swift in Sources */,
 				CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */,
-				E63FD0301C8FCBA6002D8ADD /* RCAudio.swift in Sources */,
 				E63317A91C8677B0008980DC /* ChatCell.swift in Sources */,
 				E6C35ABD1C96B91E0087771D /* AFSoundPlayback.m in Sources */,
 				1868A3751BE883A9007D5F47 /* TestNavigationController.swift in Sources */,
@@ -781,12 +781,10 @@
 				1838BEF11BDA204F005D7D8B /* GalleryDetailViewController.swift in Sources */,
 				CD4661DC1BBA101600FDFBDC /* SecondViewController.swift in Sources */,
 				E62CC7AD1C4F218500E8E84F /* TextFieldViewController.swift in Sources */,
-				1838BEEF1BDA0570005D7D8B /* JSProcess.swift in Sources */,
 				CD4BB2591BAA70B000072773 /* WindowMaskViewController.swift in Sources */,
 				18B5ED091BE0AEA900B29BCC /* CarMovingViewController.swift in Sources */,
 				E63317AF1C868260008980DC /* ChatTextMessage.swift in Sources */,
 				E694936E1C85940C009F90D6 /* ChatViewController.swift in Sources */,
-				CD4BB25B1BAA70F000072773 /* RCTools.swift in Sources */,
 				CD4BB2371BAA6D2300072773 /* AppDelegate.swift in Sources */,
 				CD4661DE1BBA102000FDFBDC /* ThirdViewController.swift in Sources */,
 				18E03B081BD08FDB0080FA72 /* UIVerticalLabel.swift in Sources */,
@@ -802,7 +800,6 @@
 				E63FD0351C8FCDF9002D8ADD /* VibrateViewController.swift in Sources */,
 				CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */,
 				1838BEED1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift in Sources */,
-				E60E1DB71C3E1F16006F4D06 /* DateProc.swift in Sources */,
 				CD2D80741C1A75A300E49AED /* LabelViewController.swift in Sources */,
 				CDE315831BAD3F8100D2C6AF /* MaskViewController.swift in Sources */,
 				CDBAC6E01BB5328200ADB568 /* ContainerViewController.swift in Sources */,
@@ -869,6 +866,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -938,8 +936,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = RCToolsDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.breadth.rex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RCToolsDemo/RCToolsDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -953,8 +956,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = RCToolsDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.breadth.rex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RCToolsDemo/RCToolsDemo-Bridging-Header.h";
 			};
@@ -974,6 +982,7 @@
 				);
 				INFOPLIST_FILE = RCToolsDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rexcao.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RCToolsDemo.app/RCToolsDemo";
 			};
@@ -989,6 +998,7 @@
 				);
 				INFOPLIST_FILE = RCToolsDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rexcao.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RCToolsDemo.app/RCToolsDemo";
 			};

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RTKit
 
 class SnapshotViewController: UIViewController {
 
@@ -19,7 +20,7 @@ class SnapshotViewController: UIViewController {
 //        self.brownView.RCCurveShadowSide(.Bottom)
 //        self.brownView.opaque = false
         
-        self.brownView.RCAttachCurveShadow(10)
+        self.brownView.curveShadow(10)
         
 //        let shapeLayer = CALayer()
 //        shapeLayer.cornerRadius = 10
@@ -48,12 +49,12 @@ class SnapshotViewController: UIViewController {
     }
 
     @IBAction func takeSnapshot(sender: UIButton) {
-        UIImageWriteToSavedPhotosAlbum(self.brownView.snapshot(), nil, nil, nil)
+        UIImageWriteToSavedPhotosAlbum(self.brownView.snapshot()!, nil, nil, nil)
         self.showPop("saved")
     }
     
     @IBAction func takeScreenshot(sender: UIButton) {
-        UIImageWriteToSavedPhotosAlbum(RCTools.Window().keyWindow()!.snapshot(), nil, nil, nil)
+        UIImageWriteToSavedPhotosAlbum(RTWindow.keyWindow()!.snapshot()!, nil, nil, nil)
         self.showPop("saved")
     }
     

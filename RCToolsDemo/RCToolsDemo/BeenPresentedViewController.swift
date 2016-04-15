@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RTKit
 
 class BeenPresentedViewController: UIViewController {
 
@@ -15,14 +16,14 @@ class BeenPresentedViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        println("-been presented vc did load")
-        self.testTool = TestWindowMask()
-        self.testTool?.showMask()
-        self.testTool?.addTapGesutreToMask()
+        print("-been presented vc did load")
+//        self.testTool = TestWindowMask()
+//        self.testTool?.showMask()
+//        self.testTool?.addTapGesutreToMask()
     }
     
     override func viewDidAppear(animated: Bool) {
-        println("been presented vc did appear")
+        print("been presented vc did appear")
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +37,7 @@ class BeenPresentedViewController: UIViewController {
     }
     
     @IBAction func toNextVC(sender: UIButton) {
-        let secondVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Main", SBID: "SecondBeenPresentedViewController")
+        let secondVC = RTView.viewController("Main", storyboardID: "SecondBeenPresentedViewController")
         presentViewController(secondVC, animated: true, completion: nil)
     }
 }

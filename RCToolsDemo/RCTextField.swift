@@ -16,11 +16,11 @@ class RCTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidShow:", name: UIKeyboardDidShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardDidHide:", name: UIKeyboardDidHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RCTextField.keyboardDidShow(_:)), name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RCTextField.keyboardDidHide(_:)), name: UIKeyboardDidHideNotification, object: nil)
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -34,7 +34,7 @@ class RCTextField: UITextField {
         var tempWindow: UIWindow? = nil
         var keyboard: UIView? = nil
         
-        tempWindow = UIApplication.sharedApplication().windows[1] as? UIWindow
+        tempWindow = UIApplication.sharedApplication().windows[1] as UIWindow
 //        tempWindow = UIApplication.sharedApplication().windows[UIApplication.sharedApplication().windows.count - 1] as? UIWindow
         if tempWindow == nil {
             return
@@ -42,15 +42,15 @@ class RCTextField: UITextField {
         
         let viewCount = tempWindow!.subviews.count
         
-        println("[windows count]: \(UIApplication.sharedApplication().windows.count)")
+        print("[windows count]: \(UIApplication.sharedApplication().windows.count)")
         // find keyboard view out.
         for i in 0..<viewCount {
-            keyboard = tempWindow?.subviews[i] as? UIView
-            println("[description]: \(keyboard?.description)")
+            keyboard = (tempWindow?.subviews[i])! as UIView
+            print("[description]: \(keyboard?.description)")
             
             // keyboard view found, add custom button to it.
             if keyboard?.description.hasPrefix("<UIPeripheralHostView") == true || keyboard?.description.hasPrefix("<UIKeyboard") == true || keyboard?.description.hasPrefix("<UIInputSetContainerView") == true {
-                println("found UIKeyboard or UIPeripheralHostView")
+                print("found UIKeyboard or UIPeripheralHostView")
                 self.createDoneButton()
                 keyboard!.addSubview(self.doneButton!)
                 break
@@ -61,14 +61,14 @@ class RCTextField: UITextField {
     
     private func createDoneButton() {
         if self.doneButton == nil {
-            self.doneButton = UIButton.buttonWithType(UIButtonType.System) as? UIButton
+            self.doneButton = UIButton(type: UIButtonType.System) as UIButton
             self.doneButton?.hidden = true
             self.doneButton?.setTitle(self.doneTitle, forState: .Normal)
             self.doneButton?.frame = CGRectMake(773/2.0, 250/2.0, 180/2.0, 68/2.0)
             self.doneButton?.setTitleColor(UIColor.whiteColor(), forState: .Normal)
             self.doneButton?.titleLabel?.font = UIFont.systemFontOfSize(16)
             
-            self.doneButton?.addTarget(self, action: "donePressed", forControlEvents: .TouchUpInside)
+            self.doneButton?.addTarget(self, action: #selector(RCTextField.donePressed), forControlEvents: .TouchUpInside)
             self.doneButton?.backgroundColor = UIColor.blackColor()
         }
         

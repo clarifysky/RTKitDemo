@@ -1,0 +1,3 @@
+framework module RTKit {
+    header "RTKit-Swift.h"
+}

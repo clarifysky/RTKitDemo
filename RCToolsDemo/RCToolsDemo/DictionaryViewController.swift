@@ -33,8 +33,8 @@ class DictionaryViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.resBefore.text = "\(self.testObject)"
-        println("result before convert:")
-        println("\(self.testObject)")
+        print("result before convert:")
+        print("\(self.testObject)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,8 +44,8 @@ class DictionaryViewController: UIViewController {
 
     @IBAction func convertPressed(sender: UIButton) {
         let resDic = self.testObject as! [AnyObject]
-        println("result after convert:")
-        println(resDic)
+        print("result after convert:")
+        print(resDic)
         self.resAfter.text = "\(resDic)"
     }
 }

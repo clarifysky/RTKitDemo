@@ -18,7 +18,7 @@ class ChatVoiceCell: ChatCell {
         self.createSoundWave()
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -32,7 +32,7 @@ class ChatVoiceCell: ChatCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        println("[ChatVoiceCell] layoutSubviews: frame of imageViewWave: \(self.imageViewWave!.frame)")
+        print("[ChatVoiceCell] layoutSubviews: frame of imageViewWave: \(self.imageViewWave!.frame)")
         
         // Because there is 5 pixels disparity in background image, so here use gapLabelMessage to make up.
         var y = self.imageViewAvatar!.frame.origin.y + self.gapLabelMessage
@@ -60,8 +60,8 @@ class ChatVoiceCell: ChatCell {
             self.imageViewWave?.image = UIImage(named: "message_voice_receiver_normal")
         }
         self.imageViewWave?.sizeToFit()
-        println("[ChatVoiceCell] setMessage: frame of imageViewWave: \(self.imageViewWave!.frame)")
-        println(UIImage(named: "message_voice_sender_normal"))
+        print("[ChatVoiceCell] setMessage: frame of imageViewWave: \(self.imageViewWave!.frame)")
+        print(UIImage(named: "message_voice_sender_normal"))
     }
     
     private func voiceLength() -> CGFloat {

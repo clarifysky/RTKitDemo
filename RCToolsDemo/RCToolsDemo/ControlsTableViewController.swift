@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RTKit
 
 class ControlsTableViewController: UITableViewController {
     
@@ -24,22 +25,22 @@ class ControlsTableViewController: UITableViewController {
     
     func popVC(row: Int) {
         if row == 0 {
-            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Controls", SBID: "ZeroGapViewController") as! ZeroGapViewController
+            let destVC = RTView.viewController("Controls", storyboardID: "ZeroGapViewController") as! ZeroGapViewController
             self.navigationController?.pushViewController(destVC, animated: true)
         } else if row == 1 {
-            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Controls", SBID: "CustomizedNavigationController") as! CustomizedNavigationController
+            let destVC = RTView.viewController("Controls", storyboardID: "CustomizedNavigationController") as! CustomizedNavigationController
             self.presentViewController(destVC, animated: true, completion: nil)
         } else if row == 2 {
-            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Controls", SBID: "BadgeViewController") as! BadgeViewController
+            let destVC = RTView.viewController("Controls", storyboardID: "BadgeViewController") as! BadgeViewController
             self.presentViewController(destVC, animated: true, completion: nil)
         } else if row == 3 {
-            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Controls", SBID: "LabelViewController") as! LabelViewController
+            let destVC = RTView.viewController("Controls", storyboardID: "LabelViewController") as! LabelViewController
             self.presentViewController(destVC, animated: true, completion: nil)
         } else if row == 4 {
-            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Controls", SBID: "ImageViewController") as! ImageViewController
+            let destVC = RTView.viewController("Controls", storyboardID: "ImageViewController") as! ImageViewController
             self.presentViewController(destVC, animated: true, completion: nil)
         } else if row == 5 {
-            let destVC = UIStoryboard.VCWithSpecificSBAndSBID(SBName: "Controls", SBID: "TextFieldViewController") as! TextFieldViewController
+            let destVC = RTView.viewController("Controls", storyboardID: "TextFieldViewController") as! TextFieldViewController
             self.navigationController?.pushViewController(destVC, animated: true)
         }
     }
@@ -64,7 +65,7 @@ class ControlsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("controls", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("controls", forIndexPath: indexPath) 
         cell.textLabel?.text = self.actions[indexPath.row]
 
         return cell

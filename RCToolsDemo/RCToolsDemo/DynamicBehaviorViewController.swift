@@ -19,7 +19,7 @@ class DynamicBehaviorViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.title = "DynamicBehavior"
         
-        println("original:")
+        print("original:")
         self.listenIt()
     }
 
@@ -131,10 +131,10 @@ class DynamicBehaviorViewController: UIViewController {
     }
     
     private func listenIt() {
-        println("\n")
-        println("origin: \(self.item.layer.frame.origin)")
-        println("position: \(self.item.layer.position)")
-        println("anchor: \(self.item.layer.anchorPoint)")
-        println("\n")
+        print("\n")
+        print("origin: \(self.item.layer.frame.origin)")
+        print("position: \(self.item.layer.position)")
+        print("anchor: \(self.item.layer.anchorPoint)")
+        print("\n")
     }
 }

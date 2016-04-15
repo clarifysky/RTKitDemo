@@ -28,8 +28,8 @@ class LabelViewController: UIViewController {
     
 
     @IBAction func sliderChange(sender: UISlider) {
-        println("sliderChange")
-        let labelContent = self.labelText.text
+        print("sliderChange")
+        _ = self.labelText.text
         let newFontSize = self.defaultFontSize / self.defaultSliderValue! * CGFloat(sender.value)
         self.labelText.font = UIFont.systemFontOfSize(newFontSize)
     }

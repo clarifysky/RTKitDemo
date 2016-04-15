@@ -18,7 +18,7 @@ class RCGlimmer: UIView {
             self.gradientMask?.colors = newValue
         }
     }
-    var RCGradientLocations: [AnyObject]? = [0, 0.15, 0.3] {
+    var RCGradientLocations: [NSNumber]? = [0, 0.15, 0.3] {
         willSet {
             self.gradientMask?.locations = newValue
         }
@@ -42,7 +42,7 @@ class RCGlimmer: UIView {
         super.init(frame: frame)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -83,7 +83,7 @@ class RCGlimmer: UIView {
             self.gradientAnimation = gradientAnimation
         }
         
-        self.gradientMask?.addAnimation(self.gradientAnimation, forKey: self.kTextAnimationKey)
+        self.gradientMask?.addAnimation(self.gradientAnimation!, forKey: self.kTextAnimationKey)
     }
     
     private func start() {
@@ -93,7 +93,7 @@ class RCGlimmer: UIView {
     
     private func stop() {
         if self.gradientMask != nil && self.gradientAnimation != nil {
-            self.layer.mask.removeAnimationForKey(self.kTextAnimationKey)
+            self.layer.mask!.removeAnimationForKey(self.kTextAnimationKey)
             self.layer.mask = nil
         }
     }
@@ -104,7 +104,7 @@ extension UIView {
     
     func RCGlimmer(
         RCGradientColors: [AnyObject] = [UIColor(white: 1.0, alpha: 0.3).CGColor, UIColor.greenColor().CGColor, UIColor(white: 1.0, alpha: 0.3).CGColor],
-        RCGradientLocations: [AnyObject] = [0, 0.15, 0.3],
+        RCGradientLocations: [NSNumber] = [0, 0.15, 0.3],
         RCAnimationDuration: CFTimeInterval = 1.0) {
             
             if self.layer.mask == nil {
@@ -121,30 +121,30 @@ extension UIView {
                 // Section for locations is from 0 to 1.
                 // Point for startPoint and endPoint is not same to normal, it's the coordinate of layer.
                 // (0.5, 0.5) is the center point of layer.
-                gradientMask.startPoint = CGPointMake(-(RCGradientLocations[2] as! CGFloat), 0.5)
-                gradientMask.endPoint = CGPointMake(1+(RCGradientLocations[2] as! CGFloat), 0.5)
+                gradientMask.startPoint = CGPointMake(-(RCGradientLocations[2] as CGFloat), 0.5)
+                gradientMask.endPoint = CGPointMake(1+(RCGradientLocations[2] as CGFloat), 0.5)
                 gradientMask.locations = RCGradientLocations
                 self.layer.mask = gradientMask
             }
             
-            if self.layer.mask.animationForKey(self.RCkTextAnimationKey) == nil {
+            if self.layer.mask!.animationForKey(self.RCkTextAnimationKey) == nil {
                 // This animation will be applied on the locations of gradient.
                 // So its keyPath is locations?
                 let gradientAnimation = CABasicAnimation(keyPath: "locations")
                 gradientAnimation.fromValue = RCGradientLocations
-                gradientAnimation.toValue = [1-(RCGradientLocations[2] as! CGFloat), 1-(RCGradientLocations[1] as! CGFloat), 1]
+                gradientAnimation.toValue = [1-(RCGradientLocations[2] as CGFloat), 1-(RCGradientLocations[1] as CGFloat), 1]
                 gradientAnimation.repeatCount = Float.infinity
                 gradientAnimation.duration = RCAnimationDuration
                 gradientAnimation.delegate = self
-                self.layer.mask.addAnimation(gradientAnimation, forKey:
+                self.layer.mask!.addAnimation(gradientAnimation, forKey:
                     RCkTextAnimationKey)
             }
     }
     
     func RCGlimmerRemove() {
         if self.layer.mask != nil {
-            if self.layer.mask.animationForKey(self.RCkTextAnimationKey) != nil {
-                self.layer.mask.removeAnimationForKey(self.RCkTextAnimationKey)
+            if self.layer.mask!.animationForKey(self.RCkTextAnimationKey) != nil {
+                self.layer.mask!.removeAnimationForKey(self.RCkTextAnimationKey)
             }
             self.layer.mask = nil
         }

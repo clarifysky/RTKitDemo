@@ -43,7 +43,7 @@ class ChatTextMessage: ChatMessage {
         self.label?.text = self.text
         let messageSize = self.label?.sizeThatFits(CGSizeMake(UIScreen.mainScreen().bounds.width * 0.58, CGFloat(MAXFLOAT)))
         self.messageSize = messageSize
-        println("[ChatTextMessage] computeMessageSize: messageSize: \(messageSize)")
+        print("[ChatTextMessage] computeMessageSize: messageSize: \(messageSize)")
         return messageSize
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RTKit
 
 class ShadowViewController: UIViewController {
 
@@ -17,7 +18,7 @@ class ShadowViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let tapGesture = UITapGestureRecognizer(target: self, action: "testImage:")
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ShadowViewController.testImage(_:)))
         self.imageViewCar.userInteractionEnabled = true
         self.imageViewCar.addGestureRecognizer(tapGesture)
     }
@@ -28,13 +29,13 @@ class ShadowViewController: UIViewController {
     }
 
     @IBAction func addShadow(sender: UIBarButtonItem) {
-        let curveShadow = CurveShadowView(alignment: .horizontal, length: 300, anchor: CGPointMake(10, 100))
-        self.view.addSubview(curveShadow)
+//        let curveShadow = CurveShadowView(alignment: .horizontal, length: 300, anchor: CGPointMake(10, 100))
+//        self.view.addSubview(curveShadow)
     }
     
     @IBAction func toggleShadow(sender: UIButton) {
         if !self.curveShadowShowed {
-            self.needShadowView.layer.RCCurveShadow(CurveShadowDirection.Left)
+            self.needShadowView.layer.curveShadow(.Left)
             self.curveShadowShowed = true
         } else {
             self.needShadowView.layer.shadowOpacity = 0.0
@@ -45,7 +46,7 @@ class ShadowViewController: UIViewController {
     }
     
     @IBAction func buildCircleShadow(sender: UIButton) {
-        self.imageViewCar.RCAddCurveShadowLayer(20)
+        self.imageViewCar.curveShadow(20)
     }
     
     func testImage(recognizer: UITapGestureRecognizer) {

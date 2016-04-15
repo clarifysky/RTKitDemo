@@ -23,7 +23,7 @@ class PresentedViewController: UIViewController {
     
     @IBAction func dismissClicked(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: {
-            println("presentedViewController has been dismissed")
+            print("presentedViewController has been dismissed")
         })
     }
 
