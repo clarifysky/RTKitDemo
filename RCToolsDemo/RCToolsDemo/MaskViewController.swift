@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import RTKit
+
 
 class MaskViewController: UIViewController {
 //    var windowBelong: UIWindow?

@@ -19,6 +19,8 @@ class LabelViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.defaultSliderValue = CGFloat(self.slider.value)
+        self.labelText.layer.borderColor = UIColor.redColor().CGColor
+        self.labelText.layer.borderWidth = 1.0
     }
 
     override func didReceiveMemoryWarning() {

@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import RTKit
+
 
 class GraphicTableViewController: UITableViewController {
     
-    let actions = ["carMoving", "snapshot", "bezierpath", "dynamicBehaviors", "glimmer", "autoLayout"]
+    let actions = ["carMoving", "snapshot", "bezierpath", "dynamicBehaviors", "glimmer", "autoLayout", "animations"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,6 +42,8 @@ class GraphicTableViewController: UITableViewController {
         } else if row == 5 {
             let destVC = RTView.viewController("Graphic", storyboardID: "AutoLayoutViewController") as! AutoLayoutViewController
             self.navigationController?.pushViewController(destVC, animated: true)
+        } else if row == 6 {
+            self.navigationController?.pushViewController(AnimationTableViewController(), animated: true)
         }
     }
 

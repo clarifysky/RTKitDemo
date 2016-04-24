@@ -8,7 +8,7 @@
 
 import UIKit
 import AudioToolbox
-import RTKit
+
 
 class VibrateViewController: UIViewController {
 

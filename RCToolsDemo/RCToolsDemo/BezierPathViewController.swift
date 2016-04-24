@@ -21,8 +21,8 @@ class BezierPathViewController: UIViewController {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        let circleImageView = UIImageView(frame: CGRectMake(0, 64, 81, 81))
-        circleImageView.image = image
+        let circleImageView = UIImageView(image: image)
+        circleImageView.frame.origin = CGPointMake(0, 64)
         self.view.addSubview(circleImageView)
         
     }

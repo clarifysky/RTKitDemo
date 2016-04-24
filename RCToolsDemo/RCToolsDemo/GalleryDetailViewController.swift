@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import RTKit
+
 
 protocol GalleryDataDelegate {
     func handleLongPress(recognizer: UILongPressGestureRecognizer)
