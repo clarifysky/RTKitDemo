@@ -11,7 +11,7 @@ import Foundation
 class ChatVoiceCell: ChatCell {
     /// Store a wave image.
     private var imageViewWave: UIImageView?
-    let height: CGFloat = 60
+    let newHeight: CGFloat = 60
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

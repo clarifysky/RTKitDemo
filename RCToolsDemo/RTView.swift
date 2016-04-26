@@ -183,6 +183,61 @@ extension UIView {
         self.layer.borderColor = borderColor
         self.layer.borderWidth = borderWidth
     }
+    
+    /// Width of current view's frame.
+    var width: CGFloat {
+        return self.frame.width
+    }
+    
+    /// Height of current view's frame.
+    var height: CGFloat {
+        return self.frame.height
+    }
+    
+    /// Origin of current view based on its superView.
+    var origin: CGPoint {
+        return self.frame.origin
+    }
+    
+    /// Value of x axis of current view based on its superView.
+    var x: CGFloat {
+        return self.origin.x
+    }
+    
+    /// Value of y axis of current view based on its superView.
+    var y: CGFloat {
+        return self.origin.y
+    }
+    
+    /// Set value of x axis of current view based on its superView.
+    func setX(x: CGFloat) {
+        self.frame.origin = CGPointMake(x, self.origin.y)
+    }
+    
+    /// Set value of y axis of current view based on its superView.
+    func setY(y: CGFloat) {
+        self.frame.origin = CGPointMake(self.origin.x, y)
+    }
+    
+    /// Set origin for current view based on its superView.
+    func setOrigin(origin: CGPoint) {
+        self.frame.origin = origin
+    }
+    
+    /// Set width for current view.
+    func setWidth(width: CGFloat) {
+        self.frame = CGRectMake(self.x, self.y, width, self.height)
+    }
+    
+    /// Set height for current view.
+    func setHeight(height: CGFloat) {
+        self.frame = CGRectMake(self.x, self.y, self.width, height)
+    }
+    
+    /// Set size for current view.
+    func setSize(size: CGSize) {
+        self.frame = CGRect(origin: self.origin, size: size)
+    }
 }
 
 extension UILabel {

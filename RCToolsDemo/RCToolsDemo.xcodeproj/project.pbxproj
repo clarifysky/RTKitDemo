@@ -51,6 +51,7 @@
 		CD5C7DCC1CC654CE00DB4448 /* AnimationCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5C7DCB1CC654CE00DB4448 /* AnimationCircleViewController.swift */; };
 		CD6582EF1BC7C9610053BD0E /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6582EE1BC7C9610053BD0E /* FifthViewController.swift */; };
 		CD6582F11BC7C9710053BD0E /* PresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6582F01BC7C9710053BD0E /* PresentedViewController.swift */; };
+		CD680CFA1CCF27A70002EA9D /* SixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD680CF91CCF27A70002EA9D /* SixViewController.swift */; };
 		CD6DD9401BCBDC3A0092F561 /* ShadowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6DD93F1BCBDC3A0092F561 /* ShadowViewController.swift */; };
 		CD6DFAF81BCFD39F0015E6CF /* MyUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6DFAF71BCFD39F0015E6CF /* MyUILabel.swift */; };
 		CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7C96AB1BB4E311001754A1 /* ScenesTransitionViewController.swift */; };
@@ -61,6 +62,7 @@
 		CD9229E81BF4662B004BF267 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9229E61BF4662B004BF267 /* AudioViewController.swift */; };
 		CDB90D051BEC35D10090D802 /* BezierPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB90D041BEC35D10090D802 /* BezierPathViewController.swift */; };
 		CDBAC6E01BB5328200ADB568 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAC6DF1BB5328200ADB568 /* ContainerViewController.swift */; };
+		CDC3FBAD1CCFA18400CDB11D /* GravityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3FBAC1CCFA18400CDB11D /* GravityViewController.swift */; };
 		CDD515A01BE306F200C5765C /* ZeroGapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD5159F1BE306F200C5765C /* ZeroGapViewController.swift */; };
 		CDD515A31BE3074200C5765C /* Controls.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD515A21BE3074200C5765C /* Controls.storyboard */; };
 		CDD515A51BE307CF00C5765C /* ControlsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD515A41BE307CF00C5765C /* ControlsTableViewController.swift */; };
@@ -176,6 +178,7 @@
 		CD5C7DCB1CC654CE00DB4448 /* AnimationCircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationCircleViewController.swift; sourceTree = "<group>"; };
 		CD6582EE1BC7C9610053BD0E /* FifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 		CD6582F01BC7C9710053BD0E /* PresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedViewController.swift; sourceTree = "<group>"; };
+		CD680CF91CCF27A70002EA9D /* SixViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixViewController.swift; sourceTree = "<group>"; };
 		CD6DD93F1BCBDC3A0092F561 /* ShadowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowViewController.swift; sourceTree = "<group>"; };
 		CD6DFAF71BCFD39F0015E6CF /* MyUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUILabel.swift; sourceTree = "<group>"; };
 		CD7C96AB1BB4E311001754A1 /* ScenesTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenesTransitionViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +189,7 @@
 		CD9229E61BF4662B004BF267 /* AudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		CDB90D041BEC35D10090D802 /* BezierPathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathViewController.swift; sourceTree = "<group>"; };
 		CDBAC6DF1BB5328200ADB568 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		CDC3FBAC1CCFA18400CDB11D /* GravityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityViewController.swift; sourceTree = "<group>"; };
 		CDD5159F1BE306F200C5765C /* ZeroGapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZeroGapViewController.swift; sourceTree = "<group>"; };
 		CDD515A21BE3074200C5765C /* Controls.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Controls.storyboard; sourceTree = "<group>"; };
 		CDD515A41BE307CF00C5765C /* ControlsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsTableViewController.swift; sourceTree = "<group>"; };
@@ -438,6 +442,7 @@
 			children = (
 				CD5C7DC91CC6504200DB4448 /* AnimationTableViewController.swift */,
 				CD5C7DCB1CC654CE00DB4448 /* AnimationCircleViewController.swift */,
+				CDC3FBAC1CCFA18400CDB11D /* GravityViewController.swift */,
 			);
 			name = Animations;
 			sourceTree = "<group>";
@@ -469,6 +474,7 @@
 				CD7FCDE91BC6433200A126A6 /* FourthViewController.swift */,
 				CD6582EE1BC7C9610053BD0E /* FifthViewController.swift */,
 				CD6582F01BC7C9710053BD0E /* PresentedViewController.swift */,
+				CD680CF91CCF27A70002EA9D /* SixViewController.swift */,
 			);
 			name = Transition;
 			sourceTree = "<group>";
@@ -795,6 +801,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDC3FBAD1CCFA18400CDB11D /* GravityViewController.swift in Sources */,
 				1813E37A1BE1EDB100B2514F /* SnapshotViewController.swift in Sources */,
 				CD5C7DCC1CC654CE00DB4448 /* AnimationCircleViewController.swift in Sources */,
 				189B6DA41BCF32D50083C02B /* ParagraphViewController.swift in Sources */,
@@ -816,6 +823,7 @@
 				CD4661DA1BBA100B00FDFBDC /* FirstViewController.swift in Sources */,
 				CD5C7DC01CC64DEC00DB4448 /* RTAudio.swift in Sources */,
 				18A9BB6B1BD5D9D900532575 /* ComponentsTableViewController.swift in Sources */,
+				CD680CFA1CCF27A70002EA9D /* SixViewController.swift in Sources */,
 				CD5C7DCA1CC6504200DB4448 /* AnimationTableViewController.swift in Sources */,
 				E6C35ABE1C96B91E0087771D /* AFSoundQueue.m in Sources */,
 				18E5C74A1BD740AB0095D216 /* GlimmerViewController.swift in Sources */,

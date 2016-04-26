@@ -16,6 +16,8 @@ class ContainerViewController: UIViewController {
     var thirdVC: ThirdViewController?
     var fourthVC: UIViewController?
     var fifthVC: FifthViewController?
+    var sixNav: UINavigationController?
+    
     @IBOutlet weak var contentView: UIView!
     private var currentVCStr: String = "thirdVC"
 
@@ -28,10 +30,14 @@ class ContainerViewController: UIViewController {
         self.thirdVC = RTView.viewController("Main", storyboardID: "ThirdViewController") as? ThirdViewController
         self.fourthVC = RTView.viewController("Main", storyboardID: "FourthNav") as? UINavigationController
         
+        let sixVC = SixViewController()
+        self.sixNav = UINavigationController(rootViewController: sixVC)
+        
         self.addChildViewController(self.firstVC!)
         self.addChildViewController(self.secondVC!)
         self.addChildViewController(self.thirdVC!)
         self.addChildViewController(self.fourthVC!)
+        self.addChildViewController(self.sixNav!)
 //        self.addChildViewController(self.fifthVC!)
         
         self.contentView.addSubview(self.thirdVC!.view)
@@ -64,6 +70,10 @@ class ContainerViewController: UIViewController {
         }
         
         if self.currentVC == "fifthVC" && sender.tag == 5 {
+            return
+        }
+        
+        if self.currentVC == "sixNav" && sender.tag == 6 {
             return
         }
         
@@ -141,6 +151,19 @@ class ContainerViewController: UIViewController {
 //                }
 //            })
             break
+        case 6:
+            print("will show six vc")
+            self.show(self.sixNav!, fromVC: self.currentVC, completion: {
+                finished in
+                if finished {
+                    // Because code below is not executed, so I can't contiue to transit viewControllers.
+                    print("transition from currentVC to sixVC completed")
+                    self.currentVC = self.sixNav!
+                    self.currentVCStr = "sixNav"
+                } else {
+                    print("transition from currentVC to sixNav is not finished")
+                }
+            })
             
         default: break
         }
