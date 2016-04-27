@@ -11,7 +11,7 @@ import UIKit
 
 class ControlsTableViewController: UITableViewController {
     
-    let actions = ["UICollectionView", "CustomizedNavigation", "RedLayer", "UILabel", "UIImage", "TextField"]
+    let actions = ["UICollectionView", "CustomizedNavigation", "RedLayer", "UILabel", "UIImage", "TextField", "Button"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,6 +42,8 @@ class ControlsTableViewController: UITableViewController {
         } else if row == 5 {
             let destVC = RTView.viewController("Controls", storyboardID: "TextFieldViewController") as! TextFieldViewController
             self.navigationController?.pushViewController(destVC, animated: true)
+        } else if row == 6 {
+            self.navigationController?.pushViewController(ButtonViewController(), animated: true)
         }
     }
 

@@ -23,6 +23,7 @@
 		18E03B081BD08FDB0080FA72 /* UIVerticalLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E03B071BD08FDB0080FA72 /* UIVerticalLabel.swift */; };
 		18E5C7481BD740430095D216 /* RCGlimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E5C7471BD740430095D216 /* RCGlimmer.swift */; };
 		18E5C74A1BD740AB0095D216 /* GlimmerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E5C7491BD740AB0095D216 /* GlimmerViewController.swift */; };
+		CD0E779F1CD0A9E50086C038 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0E779E1CD0A9E50086C038 /* ButtonViewController.swift */; };
 		CD13C91A1BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD13C9191BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift */; };
 		CD2B4D941BABB7D7003FFF19 /* BeenPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B4D931BABB7D7003FFF19 /* BeenPresentedViewController.swift */; };
 		CD2B4D971BABC263003FFF19 /* WithNavBeenPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B4D961BABC263003FFF19 /* WithNavBeenPresentedViewController.swift */; };
@@ -146,6 +147,7 @@
 		2862304045F5F0A51216D43A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0704147E1EBE1FADCB45EA6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B955DFDD506B0E9E45209427 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		CD0E779E1CD0A9E50086C038 /* ButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		CD13C9191BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondBeenPresentedViewController.swift; sourceTree = "<group>"; };
 		CD2B4D931BABB7D7003FFF19 /* BeenPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeenPresentedViewController.swift; sourceTree = "<group>"; };
 		CD2B4D961BABC263003FFF19 /* WithNavBeenPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithNavBeenPresentedViewController.swift; sourceTree = "<group>"; };
@@ -310,6 +312,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CD0E77A01CD0BD310086C038 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD5C7DBD1CC64DEC00DB4448 /* RTView.swift */,
+				CD5C7DBE1CC64DEC00DB4448 /* RTWindow.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		CD2B4D951BABC1A4003FFF19 /* Mask */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,6 +435,7 @@
 		CD5C7DB51CC64DE100DB4448 /* RTKit */ = {
 			isa = PBXGroup;
 			children = (
+				CD0E77A01CD0BD310086C038 /* View */,
 				CD5C7DB61CC64DEC00DB4448 /* RTAnimation.swift */,
 				CD5C7DB71CC64DEC00DB4448 /* RTAudio.swift */,
 				CD5C7DB81CC64DEC00DB4448 /* RTFile.swift */,
@@ -431,8 +443,6 @@
 				CD5C7DBA1CC64DEC00DB4448 /* RTNumber.swift */,
 				CD5C7DBB1CC64DEC00DB4448 /* RTText.swift */,
 				CD5C7DBC1CC64DEC00DB4448 /* RTTimer.swift */,
-				CD5C7DBD1CC64DEC00DB4448 /* RTView.swift */,
-				CD5C7DBE1CC64DEC00DB4448 /* RTWindow.swift */,
 			);
 			name = RTKit;
 			sourceTree = "<group>";
@@ -491,6 +501,7 @@
 				1868A3741BE883A9007D5F47 /* TestNavigationController.swift */,
 				CD8E90F01C103D6E00BF50EA /* BadgeViewController.swift */,
 				CD2D80731C1A75A300E49AED /* LabelViewController.swift */,
+				CD0E779E1CD0A9E50086C038 /* ButtonViewController.swift */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -877,6 +888,7 @@
 				CDBAC6E01BB5328200ADB568 /* ContainerViewController.swift in Sources */,
 				CD5C7DC51CC64DEC00DB4448 /* RTTimer.swift in Sources */,
 				CD2B4D971BABC263003FFF19 /* WithNavBeenPresentedViewController.swift in Sources */,
+				CD0E779F1CD0A9E50086C038 /* ButtonViewController.swift in Sources */,
 				CD5C7DC41CC64DEC00DB4448 /* RTText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

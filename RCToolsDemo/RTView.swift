@@ -204,9 +204,19 @@ extension UIView {
         return self.origin.x
     }
     
+    /// Value of x axis of current view's right edge.
+    var xRight: CGFloat {
+        return self.x + self.width
+    }
+    
     /// Value of y axis of current view based on its superView.
     var y: CGFloat {
         return self.origin.y
+    }
+    
+    /// Value of y axis of current view's bottom edge.
+    var yBottom: CGFloat {
+        return self.y + self.height
     }
     
     /// Set value of x axis of current view based on its superView.
@@ -222,6 +232,10 @@ extension UIView {
     /// Set origin for current view based on its superView.
     func setOrigin(origin: CGPoint) {
         self.frame.origin = origin
+    }
+    
+    func setOrigin(x: CGFloat, y: CGFloat) {
+        self.setOrigin(CGPointMake(x, y))
     }
     
     /// Set width for current view.
