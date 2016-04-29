@@ -23,6 +23,7 @@
 		18E03B081BD08FDB0080FA72 /* UIVerticalLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E03B071BD08FDB0080FA72 /* UIVerticalLabel.swift */; };
 		18E5C7481BD740430095D216 /* RCGlimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E5C7471BD740430095D216 /* RCGlimmer.swift */; };
 		18E5C74A1BD740AB0095D216 /* GlimmerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E5C7491BD740AB0095D216 /* GlimmerViewController.swift */; };
+		CD08E1F81CD21C7300615692 /* SnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD08E1F71CD21C7300615692 /* SnapViewController.swift */; };
 		CD0E779F1CD0A9E50086C038 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0E779E1CD0A9E50086C038 /* ButtonViewController.swift */; };
 		CD13C91A1BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD13C9191BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift */; };
 		CD2B4D941BABB7D7003FFF19 /* BeenPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B4D931BABB7D7003FFF19 /* BeenPresentedViewController.swift */; };
@@ -63,6 +64,7 @@
 		CD9229E81BF4662B004BF267 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9229E61BF4662B004BF267 /* AudioViewController.swift */; };
 		CDB90D051BEC35D10090D802 /* BezierPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB90D041BEC35D10090D802 /* BezierPathViewController.swift */; };
 		CDBAC6E01BB5328200ADB568 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAC6DF1BB5328200ADB568 /* ContainerViewController.swift */; };
+		CDC3350D1CD0F6C40050F3A8 /* AttachmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3350C1CD0F6C40050F3A8 /* AttachmentViewController.swift */; };
 		CDC3FBAD1CCFA18400CDB11D /* GravityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3FBAC1CCFA18400CDB11D /* GravityViewController.swift */; };
 		CDD515A01BE306F200C5765C /* ZeroGapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD5159F1BE306F200C5765C /* ZeroGapViewController.swift */; };
 		CDD515A31BE3074200C5765C /* Controls.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD515A21BE3074200C5765C /* Controls.storyboard */; };
@@ -70,6 +72,7 @@
 		CDD515A81BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */; };
 		CDE315831BAD3F8100D2C6AF /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE315821BAD3F8100D2C6AF /* MaskViewController.swift */; };
 		CDF1158F1CC719240007547D /* TextTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF1158E1CC719240007547D /* TextTableViewController.swift */; };
+		CDF4EB7B1CD2F5B6006E713D /* PushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4EB7A1CD2F5B6006E713D /* PushViewController.swift */; };
 		E62B4D6B1C9263B70092F14F /* RTAudioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62B4D6A1C9263B70092F14F /* RTAudioStream.swift */; };
 		E62CC7AD1C4F218500E8E84F /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62CC7AC1C4F218500E8E84F /* TextFieldViewController.swift */; };
 		E63317A71C867790008980DC /* ChatTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317A61C867790008980DC /* ChatTextCell.swift */; };
@@ -147,6 +150,7 @@
 		2862304045F5F0A51216D43A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0704147E1EBE1FADCB45EA6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B955DFDD506B0E9E45209427 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		CD08E1F71CD21C7300615692 /* SnapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapViewController.swift; sourceTree = "<group>"; };
 		CD0E779E1CD0A9E50086C038 /* ButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		CD13C9191BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondBeenPresentedViewController.swift; sourceTree = "<group>"; };
 		CD2B4D931BABB7D7003FFF19 /* BeenPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeenPresentedViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 		CD9229E61BF4662B004BF267 /* AudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		CDB90D041BEC35D10090D802 /* BezierPathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathViewController.swift; sourceTree = "<group>"; };
 		CDBAC6DF1BB5328200ADB568 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		CDC3350C1CD0F6C40050F3A8 /* AttachmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentViewController.swift; sourceTree = "<group>"; };
 		CDC3FBAC1CCFA18400CDB11D /* GravityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityViewController.swift; sourceTree = "<group>"; };
 		CDD5159F1BE306F200C5765C /* ZeroGapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZeroGapViewController.swift; sourceTree = "<group>"; };
 		CDD515A21BE3074200C5765C /* Controls.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Controls.storyboard; sourceTree = "<group>"; };
@@ -198,6 +203,7 @@
 		CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZeriGapCollectionViewLayout.swift; sourceTree = "<group>"; };
 		CDE315821BAD3F8100D2C6AF /* MaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
 		CDF1158E1CC719240007547D /* TextTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTableViewController.swift; sourceTree = "<group>"; };
+		CDF4EB7A1CD2F5B6006E713D /* PushViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushViewController.swift; sourceTree = "<group>"; };
 		E62B4D6A1C9263B70092F14F /* RTAudioStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTAudioStream.swift; sourceTree = "<group>"; };
 		E62CC7AC1C4F218500E8E84F /* TextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
 		E63317A61C867790008980DC /* ChatTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTextCell.swift; sourceTree = "<group>"; };
@@ -450,9 +456,9 @@
 		CD5C7DC81CC6501900DB4448 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				CDC3350B1CD0F6A00050F3A8 /* DynamicAnimator */,
 				CD5C7DC91CC6504200DB4448 /* AnimationTableViewController.swift */,
 				CD5C7DCB1CC654CE00DB4448 /* AnimationCircleViewController.swift */,
-				CDC3FBAC1CCFA18400CDB11D /* GravityViewController.swift */,
 			);
 			name = Animations;
 			sourceTree = "<group>";
@@ -487,6 +493,17 @@
 				CD680CF91CCF27A70002EA9D /* SixViewController.swift */,
 			);
 			name = Transition;
+			sourceTree = "<group>";
+		};
+		CDC3350B1CD0F6A00050F3A8 /* DynamicAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				CDC3FBAC1CCFA18400CDB11D /* GravityViewController.swift */,
+				CDC3350C1CD0F6C40050F3A8 /* AttachmentViewController.swift */,
+				CD08E1F71CD21C7300615692 /* SnapViewController.swift */,
+				CDF4EB7A1CD2F5B6006E713D /* PushViewController.swift */,
+			);
+			name = DynamicAnimator;
 			sourceTree = "<group>";
 		};
 		CDD515A11BE3072C00C5765C /* Controls */ = {
@@ -817,6 +834,7 @@
 				CD5C7DCC1CC654CE00DB4448 /* AnimationCircleViewController.swift in Sources */,
 				189B6DA41BCF32D50083C02B /* ParagraphViewController.swift in Sources */,
 				CD6582EF1BC7C9610053BD0E /* FifthViewController.swift in Sources */,
+				CDF4EB7B1CD2F5B6006E713D /* PushViewController.swift in Sources */,
 				CD2B4D9A1BABC5FA003FFF19 /* TestWindowMask.swift in Sources */,
 				CD8E90F31C1045E500BF50EA /* RedCircleLayer.swift in Sources */,
 				E6D1ECBB1C1EABA400995844 /* ImageViewController.swift in Sources */,
@@ -832,6 +850,7 @@
 				E695290D1C7EF7C00032FDDC /* AutoLayoutViewController.swift in Sources */,
 				189830A51BDDD60E00FFE854 /* ImagesCell.swift in Sources */,
 				CD4661DA1BBA100B00FDFBDC /* FirstViewController.swift in Sources */,
+				CD08E1F81CD21C7300615692 /* SnapViewController.swift in Sources */,
 				CD5C7DC01CC64DEC00DB4448 /* RTAudio.swift in Sources */,
 				18A9BB6B1BD5D9D900532575 /* ComponentsTableViewController.swift in Sources */,
 				CD680CFA1CCF27A70002EA9D /* SixViewController.swift in Sources */,
@@ -848,6 +867,7 @@
 				E63317B61C869A94008980DC /* ChatVoiceCell.swift in Sources */,
 				CD9193101C745E9000FA0011 /* RCTextField.swift in Sources */,
 				18E5C7481BD740430095D216 /* RCGlimmer.swift in Sources */,
+				CDC3350D1CD0F6C40050F3A8 /* AttachmentViewController.swift in Sources */,
 				E63FD0331C8FCCC8002D8ADD /* SoundTableViewController.swift in Sources */,
 				CD5C7DC61CC64DEC00DB4448 /* RTView.swift in Sources */,
 				CD4BB2391BAA6D2300072773 /* ViewController.swift in Sources */,

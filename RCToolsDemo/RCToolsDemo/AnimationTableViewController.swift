@@ -10,7 +10,7 @@ import UIKit
 
 class AnimationTableViewController: UITableViewController {
 
-    let actions = ["circle", "gravity"]
+    let actions = ["circle", "gravity", "attachment", "snap", "push"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Animation"
@@ -27,8 +27,14 @@ class AnimationTableViewController: UITableViewController {
     private func pushVC(index: Int) {
         if index == 0 {
             self.navigationController?.pushViewController(AnimationCircleViewController(), animated: true)
-        } else {
+        } else if index == 1 {
             self.navigationController?.pushViewController(GravityViewController(), animated: true)
+        } else if index == 2 {
+            self.navigationController?.pushViewController(AttachmentViewController(), animated: true)
+        } else if index == 3 {
+            self.navigationController?.pushViewController(SnapViewController(), animated: true)
+        } else if index == 4 {
+            self.navigationController?.pushViewController(PushViewController(), animated: true)
         }
     }
 
