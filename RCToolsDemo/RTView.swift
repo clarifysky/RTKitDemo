@@ -252,6 +252,66 @@ extension UIView {
     func setSize(size: CGSize) {
         self.frame = CGRect(origin: self.origin, size: size)
     }
+    
+    /// Attach border view to current view, this type of border is the border which will add to current view, it's not
+    /// the way to add border on layer. This may add four view which their tag which sorted with top, left, bottom, right
+    /// is 100, 101, 102, 103  to current view.
+    ///
+    /// - parameter RTBorders: The array of RTBorder instances, this instances include information of border, like side,
+    /// borderWidth, borderColor etc.
+    func attachBorder(RTBorders: [RTBorder]) {
+        for rtBorder in RTBorders {
+            var borderFrame = CGRectMake(0, 0, self.width, rtBorder.borderWidth)
+            var borderViewTag = 100
+            switch rtBorder.side {
+            case .Top:
+                // This is the default one, do nothing.
+                break
+            case .Left:
+                borderFrame = CGRectMake(0, 0, rtBorder.borderWidth, self.height)
+                borderViewTag = 101
+                break
+            case .Bottom:
+                borderFrame = CGRectMake(0, self.height - rtBorder.borderWidth, self.width, rtBorder.borderWidth)
+                borderViewTag = 102
+                break
+            case .Right:
+                borderFrame = CGRectMake(self.width - rtBorder.borderWidth, 0, rtBorder.borderWidth, self.height)
+                borderViewTag = 103
+            }
+            
+            let borderView = UIView(frame: borderFrame)
+            borderView.backgroundColor = rtBorder.borderColor
+            borderView.tag = borderViewTag
+            self.addSubview(borderView)
+        }
+    }
+    
+    /// Rmove all attached border view depends on these views' tag
+    func removeAttachedBorder() {
+        for subview in self.subviews {
+            if [100, 101, 102, 103].contains(subview.tag) {
+                subview.removeFromSuperview()
+            }
+        }
+    }
+    
+    /// Judge whether this view has been added border view or not. This property use closure to 
+    /// get the result.
+    var attachedBorder: Bool {
+        return {
+            () -> Bool in
+            var result = false
+            for subview in self.subviews {
+                if [100, 101, 102, 103].contains(subview.tag) {
+                    result = true
+                    break
+                }
+            }
+            return result
+        }()
+        // The () here means {}(), it means immediately called the closure while it has been built.
+    }
 }
 
 extension UILabel {

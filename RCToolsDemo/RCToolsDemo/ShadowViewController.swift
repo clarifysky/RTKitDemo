@@ -59,4 +59,17 @@ class ShadowViewController: UIViewController {
             self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func attachBorder(sender: UIButton) {
+        if self.needShadowView.attachedBorder {
+            self.needShadowView.removeAttachedBorder()
+        } else {
+            self.needShadowView.attachBorder([
+                RTBorder(side: .Top, borderWidth: 1, borderColor: UIColor.greenColor()),
+                RTBorder(side: .Left, borderWidth: 1, borderColor: UIColor.redColor()),
+                RTBorder(side: .Bottom, borderWidth: 1, borderColor: UIColor.blueColor()),
+                RTBorder(side: .Right, borderWidth: 1, borderColor: UIColor.yellowColor()),
+                ])
+        }
+    }
 }

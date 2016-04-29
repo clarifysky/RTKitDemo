@@ -62,6 +62,7 @@
 		CD8E90F31C1045E500BF50EA /* RedCircleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8E90F21C1045E500BF50EA /* RedCircleLayer.swift */; };
 		CD9193101C745E9000FA0011 /* RCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD91930F1C745E9000FA0011 /* RCTextField.swift */; };
 		CD9229E81BF4662B004BF267 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9229E61BF4662B004BF267 /* AudioViewController.swift */; };
+		CDA79E531CD33C0200DB5ABD /* RTBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA79E521CD33C0200DB5ABD /* RTBorder.swift */; };
 		CDB90D051BEC35D10090D802 /* BezierPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB90D041BEC35D10090D802 /* BezierPathViewController.swift */; };
 		CDBAC6E01BB5328200ADB568 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAC6DF1BB5328200ADB568 /* ContainerViewController.swift */; };
 		CDC3350D1CD0F6C40050F3A8 /* AttachmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3350C1CD0F6C40050F3A8 /* AttachmentViewController.swift */; };
@@ -193,6 +194,7 @@
 		CD8E90F21C1045E500BF50EA /* RedCircleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedCircleLayer.swift; sourceTree = "<group>"; };
 		CD91930F1C745E9000FA0011 /* RCTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTextField.swift; sourceTree = "<group>"; };
 		CD9229E61BF4662B004BF267 /* AudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
+		CDA79E521CD33C0200DB5ABD /* RTBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTBorder.swift; sourceTree = "<group>"; };
 		CDB90D041BEC35D10090D802 /* BezierPathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathViewController.swift; sourceTree = "<group>"; };
 		CDBAC6DF1BB5328200ADB568 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		CDC3350C1CD0F6C40050F3A8 /* AttachmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentViewController.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 			children = (
 				CD5C7DBD1CC64DEC00DB4448 /* RTView.swift */,
 				CD5C7DBE1CC64DEC00DB4448 /* RTWindow.swift */,
+				CDA79E521CD33C0200DB5ABD /* RTBorder.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -856,6 +859,7 @@
 				CD680CFA1CCF27A70002EA9D /* SixViewController.swift in Sources */,
 				CD5C7DCA1CC6504200DB4448 /* AnimationTableViewController.swift in Sources */,
 				E6C35ABE1C96B91E0087771D /* AFSoundQueue.m in Sources */,
+				CDA79E531CD33C0200DB5ABD /* RTBorder.swift in Sources */,
 				18E5C74A1BD740AB0095D216 /* GlimmerViewController.swift in Sources */,
 				CD8E90F11C103D6E00BF50EA /* BadgeViewController.swift in Sources */,
 				E63317AC1C867A3D008980DC /* ChatMessage.swift in Sources */,
