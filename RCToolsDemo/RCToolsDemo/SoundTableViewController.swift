@@ -10,7 +10,7 @@ import UIKit
 
 class SoundTableViewController: UITableViewController {
 
-    private let categories = ["vibrate", "audio"]
+    private let categories = ["vibrate", "audio", "RTAudioPlayback"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,6 +51,8 @@ class SoundTableViewController: UITableViewController {
             self.navigationController?.pushViewController(VibrateViewController(), animated: true)
         } else if indexPath.row == 1 {
             self.navigationController?.pushViewController(AudioStreamViewController(), animated: true)
+        } else if indexPath.row == 2 {
+            self.navigationController?.pushViewController(AudioSingleViewController(), animated: true)
         }
     }
 

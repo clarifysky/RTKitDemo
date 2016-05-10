@@ -36,6 +36,8 @@ class RTAudio: NSObject {
         }
     }
     
+    private var audioManager: RTAudioManager?
+    
     override init() {
         super.init()
         if self.audioSession == nil {
@@ -131,6 +133,18 @@ class RTAudio: NSObject {
             self.playWithSpeakers()
             self.currentRouteSpeaker = true
         }
+    }
+    
+    /// Play sound use AVPlayer.
+    ///
+    /// - parameter: type This parameter used to identify the sound is local resource or net resource.
+    /// - parameter: path The path for sound resource.
+    func play(type: AudioItemType, path: String) {
+        if self.audioManager == nil {
+            self.audioManager = RTAudioManager()
+        }
+        self.audioManager?.prepare(type, path: path)
+        self.audioManager?.play()
     }
     
     private func loadSound(loadingHandler: (() -> Void)?, loadedHandler: (() -> Void)?) {

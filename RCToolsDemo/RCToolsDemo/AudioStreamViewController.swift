@@ -10,10 +10,12 @@ import UIKit
 
 class AudioStreamViewController: UIViewController {
     
-    private let adds = ["http://120.24.165.30/ShadoPan_A_Hero.mp3", "http://120.24.165.30/Vi_Music_Master_v16.mp3"]
-    private let titles = ["ShadoPan_A_Hero.mp3", "Vi_Music_Master_v16.mp3"]
+    private let adds = ["http://www.bu-chou-la.com/uploadfile/24Vi.mp3", "http://120.24.165.30/ShadoPan_A_Hero.mp3"]
+    private let titles = ["24Vi.mp3", "ShadoPan_A_Hero.mp3"]
     private var queue: AFSoundQueue?
     private lazy var items = [AFSoundItem]()
+    
+    private var player: RTAudioPlayback?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,7 @@ class AudioStreamViewController: UIViewController {
         startButton.setTitle("start", forState: .Normal)
         startButton.sizeToFit()
         startButton.addTarget(self, action: #selector(AudioStreamViewController.start), forControlEvents: .TouchUpInside)
-        startButton.frame.origin = CGPointMake(0, 64)
+        startButton.frame.origin = CGPointMake(10, 64)
         startButton.setTitleColor(UIColor.orangeColor(), forState: .Normal)
         self.view.addSubview(startButton)
         
@@ -48,13 +50,15 @@ class AudioStreamViewController: UIViewController {
         self.items.append(item1)
         self.items.append(item2)
         self.queue = AFSoundQueue(items: items)
-        self.queue?.playCurrentItem()
+//        self.queue?.playCurrentItem()
         self.queue?.listenFeedbackUpdatesWithBlock({
             item in
             print("Item duration: \(item.duration) - time elapsed: \(item.timePlayed)")
             }, andFinishedBlock: {
                 nextItem in
-                print("Finished item, next one is \(nextItem.title)")
+                if nextItem != nil {
+                    print("Finished item, next one is \(nextItem.title)")
+                }
         })
     }
 
@@ -71,10 +75,12 @@ class AudioStreamViewController: UIViewController {
     func start() {
         print("[AudioStreamViewController:start] You touched the start button.")
         self.queue?.playCurrentItem()
+        self.player?.restart()
     }
     
     func pause() {
         self.queue?.pause()
+        self.player?.pause()
     }
 }
 
