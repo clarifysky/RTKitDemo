@@ -144,6 +144,7 @@ class RTAudio: NSObject {
             self.audioManager = RTAudioManager()
         }
         self.audioManager?.prepare(type, path: path)
+        self.audioManager?.setCompletionHandler(self.completionHandler)
         self.audioManager?.play()
     }
     

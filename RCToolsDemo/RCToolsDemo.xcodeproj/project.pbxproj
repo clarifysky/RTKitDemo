@@ -94,6 +94,9 @@
 		E63317B61C869A94008980DC /* ChatVoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63317B51C869A94008980DC /* ChatVoiceCell.swift */; };
 		E63FD0331C8FCCC8002D8ADD /* SoundTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FD0321C8FCCC8002D8ADD /* SoundTableViewController.swift */; };
 		E63FD0351C8FCDF9002D8ADD /* VibrateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FD0341C8FCDF9002D8ADD /* VibrateViewController.swift */; };
+		E641004F1CE421900071DEDB /* RTError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641004E1CE421900071DEDB /* RTError.swift */; };
+		E64100521CE4235B0071DEDB /* SkeletonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64100511CE4235B0071DEDB /* SkeletonTableViewController.swift */; };
+		E64100541CE4241D0071DEDB /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64100531CE4241D0071DEDB /* ErrorViewController.swift */; };
 		E69049011C474EBE006C5314 /* DynamicBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */; };
 		E694936E1C85940C009F90D6 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E694936D1C85940C009F90D6 /* ChatViewController.swift */; };
 		E695290D1C7EF7C00032FDDC /* AutoLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */; };
@@ -237,6 +240,9 @@
 		E63FD0321C8FCCC8002D8ADD /* SoundTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundTableViewController.swift; sourceTree = "<group>"; };
 		E63FD0341C8FCDF9002D8ADD /* VibrateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VibrateViewController.swift; sourceTree = "<group>"; };
 		E63FD0361C8FE397002D8ADD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E641004E1CE421900071DEDB /* RTError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTError.swift; sourceTree = "<group>"; };
+		E64100511CE4235B0071DEDB /* SkeletonTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonTableViewController.swift; sourceTree = "<group>"; };
+		E64100531CE4241D0071DEDB /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBehaviorViewController.swift; sourceTree = "<group>"; };
 		E694936D1C85940C009F90D6 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutViewController.swift; sourceTree = "<group>"; };
@@ -436,6 +442,7 @@
 		CD4BB2571BAA6D9800072773 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				E64100501CE423430071DEDB /* Skeleton */,
 				CDF1158D1CC7190F0007547D /* Text */,
 				E63FD0311C8FCC6A002D8ADD /* Sound */,
 				CDD515A11BE3072C00C5765C /* Controls */,
@@ -452,6 +459,7 @@
 		CD5C7DB51CC64DE100DB4448 /* RTKit */ = {
 			isa = PBXGroup;
 			children = (
+				E641004D1CE421780071DEDB /* Skeleton */,
 				CDCD51681CE191D80000A86B /* Audio */,
 				CD0E77A01CD0BD310086C038 /* View */,
 				CD5C7DB61CC64DEC00DB4448 /* RTAnimation.swift */,
@@ -652,6 +660,23 @@
 				E62B4D681C92633D0092F14F /* Controllers */,
 			);
 			name = Sound;
+			sourceTree = "<group>";
+		};
+		E641004D1CE421780071DEDB /* Skeleton */ = {
+			isa = PBXGroup;
+			children = (
+				E641004E1CE421900071DEDB /* RTError.swift */,
+			);
+			name = Skeleton;
+			sourceTree = "<group>";
+		};
+		E64100501CE423430071DEDB /* Skeleton */ = {
+			isa = PBXGroup;
+			children = (
+				E64100511CE4235B0071DEDB /* SkeletonTableViewController.swift */,
+				E64100531CE4241D0071DEDB /* ErrorViewController.swift */,
+			);
+			name = Skeleton;
 			sourceTree = "<group>";
 		};
 		E6C35AB01C96B8D10087771D /* AFSoundManager */ = {
@@ -868,6 +893,7 @@
 				CDF4EB7B1CD2F5B6006E713D /* PushViewController.swift in Sources */,
 				CD2B4D9A1BABC5FA003FFF19 /* TestWindowMask.swift in Sources */,
 				CD8E90F31C1045E500BF50EA /* RedCircleLayer.swift in Sources */,
+				E64100521CE4235B0071DEDB /* SkeletonTableViewController.swift in Sources */,
 				E6D1ECBB1C1EABA400995844 /* ImageViewController.swift in Sources */,
 				CD9229E81BF4662B004BF267 /* AudioViewController.swift in Sources */,
 				E6C35AC21C96B9FC0087771D /* AudioStreamViewController.swift in Sources */,
@@ -903,6 +929,7 @@
 				CDC3350D1CD0F6C40050F3A8 /* AttachmentViewController.swift in Sources */,
 				E63FD0331C8FCCC8002D8ADD /* SoundTableViewController.swift in Sources */,
 				CD5C7DC61CC64DEC00DB4448 /* RTView.swift in Sources */,
+				E641004F1CE421900071DEDB /* RTError.swift in Sources */,
 				CD4BB2391BAA6D2300072773 /* ViewController.swift in Sources */,
 				CD7C96AC1BB4E311001754A1 /* ScenesTransitionViewController.swift in Sources */,
 				E63317A91C8677B0008980DC /* ChatCell.swift in Sources */,
@@ -935,6 +962,7 @@
 				CDCD51631CE1847C0000A86B /* AFSoundItem.m in Sources */,
 				1868A3731BE87E8D007D5F47 /* CustomizedNavigationController.swift in Sources */,
 				E6BE7EE31CA1191F00193597 /* AddressBookViewController.swift in Sources */,
+				E64100541CE4241D0071DEDB /* ErrorViewController.swift in Sources */,
 				E63FD0351C8FCDF9002D8ADD /* VibrateViewController.swift in Sources */,
 				CDCD51661CE1847C0000A86B /* AFSoundRecord.m in Sources */,
 				CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */,

@@ -12,7 +12,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    let actions = ["windowMask", "scenesTransition", "shadowView", "components", "graphic", "controls", "sound"]
+    let actions = ["windowMask", "scenesTransition", "shadowView", "components", "graphic", "controls", "sound", "skeleton"]
     let cellIdentifier = "tools"
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +59,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             self.navigationController?.pushViewController(destVC, animated: true)
         } else if self.actions[indexPath.row] == "sound" {
             self.navigationController?.pushViewController(SoundTableViewController(), animated: true)
+        } else if self.actions[indexPath.row] == "skeleton" {
+            self.navigationController?.pushViewController(ErrorViewController(), animated: true)
         } else {
             performSegueWithIdentifier(self.actions[indexPath.row], sender: self)   
         }

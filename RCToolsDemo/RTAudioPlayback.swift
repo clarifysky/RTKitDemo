@@ -27,6 +27,7 @@ class RTAudioPlayback {
     private var error: NSError?
     private var audioSession: AVAudioSession?
     private var currentRouteSpeaker: Bool = true
+    var completionHandler: (() -> Void)?
     
     private func prepare() {
         // Maybe use AVAudioPlayer here would be better, it support delegate.

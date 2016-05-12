@@ -40,4 +40,9 @@ class RTAudioManager {
     func pause() {
         self.player?.pause()
     }
+    
+    func setCompletionHandler(handler: (() -> Void)?) {
+        // Disclosure to force user to specify the handler.
+        self.player!.completionHandler = handler
+    }
 }
