@@ -11,7 +11,7 @@ import UIKit
 
 class ControlsTableViewController: UITableViewController {
     
-    let actions = ["UICollectionView", "CustomizedNavigation", "RedLayer", "UILabel", "UIImage", "TextField", "Button"]
+    let actions = ["UICollectionView", "CustomizedNavigation", "RedLayer", "UILabel", "UIImage", "TextField", "Button", "Menu"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,6 +44,8 @@ class ControlsTableViewController: UITableViewController {
             self.navigationController?.pushViewController(destVC, animated: true)
         } else if row == 6 {
             self.navigationController?.pushViewController(ButtonViewController(), animated: true)
+        } else if row == 7 {
+            self.navigationController?.pushViewController(MenuViewController(), animated: true)
         }
     }
 
