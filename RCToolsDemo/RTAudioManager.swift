@@ -45,4 +45,12 @@ class RTAudioManager {
         // Disclosure to force user to specify the handler.
         self.player!.completionHandler = handler
     }
+    
+    func headPhone() {
+        self.player?.playWithHeadPhone()
+    }
+    
+    func speaker() {
+        self.player?.playWithSpeaker()
+    }
 }

@@ -114,31 +114,39 @@ class RTAudioPlayback {
         // device is close to user
         if UIDevice.currentDevice().proximityState == true {
             print("close")
-            do {
-                try self.audioSession?.setCategory(AVAudioSessionCategoryPlayAndRecord)
-            } catch let error as NSError {
-                self.error = error
-            }
-            do {
-                try self.audioSession?.overrideOutputAudioPort(AVAudioSessionPortOverride.None)
-            } catch let error as NSError {
-                self.error = error
-            }
-            self.currentRouteSpeaker = false
+            self.playWithHeadPhone()
         } else {
             print("far")
-            do {
-                try self.audioSession?.setCategory(AVAudioSessionCategoryPlayback)
-            } catch let error as NSError {
-                self.error = error
-            }
-            do {
-                try self.audioSession?.overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker)
-            } catch let error as NSError {
-                self.error = error
-            }
-            self.currentRouteSpeaker = true
+            self.playWithSpeaker()
         }
+    }
+    
+    func playWithHeadPhone() {
+        do {
+            try self.audioSession?.setCategory(AVAudioSessionCategoryPlayAndRecord)
+        } catch let error as NSError {
+            self.error = error
+        }
+        do {
+            try self.audioSession?.overrideOutputAudioPort(AVAudioSessionPortOverride.None)
+        } catch let error as NSError {
+            self.error = error
+        }
+        self.currentRouteSpeaker = false
+    }
+    
+    func playWithSpeaker() {
+        do {
+            try self.audioSession?.setCategory(AVAudioSessionCategoryPlayback)
+        } catch let error as NSError {
+            self.error = error
+        }
+        do {
+            try self.audioSession?.overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker)
+        } catch let error as NSError {
+            self.error = error
+        }
+        self.currentRouteSpeaker = true
     }
     
     @objc func playFinished() {
