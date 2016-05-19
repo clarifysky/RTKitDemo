@@ -11,7 +11,7 @@ import UIKit
 class MenuViewController: UIViewController {
 
     private var table: UITableView?
-    private let list = ["cell0", "cell1", "cell2"]
+    private let list = ["custom menu button", "cell1", "cell2"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
@@ -112,6 +112,13 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         cell.addGestureRecognizer(longGR)
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if indexPath.row == 0 {
+            self.navigationController?.pushViewController(MenuCustomCellViewController(), animated: true)
+        }
     }
 }
 

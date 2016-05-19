@@ -99,6 +99,9 @@
 		E64100521CE4235B0071DEDB /* SkeletonTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64100511CE4235B0071DEDB /* SkeletonTableViewController.swift */; };
 		E64100541CE4241D0071DEDB /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64100531CE4241D0071DEDB /* ErrorViewController.swift */; };
 		E64CBF511CED555600157626 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64CBF501CED555600157626 /* MenuViewController.swift */; };
+		E64CBF531CED732500157626 /* MenuCustomCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64CBF521CED732500157626 /* MenuCustomCellViewController.swift */; };
+		E64CBF551CED73B800157626 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64CBF541CED73B800157626 /* MenuButton.swift */; };
+		E64CBF571CED756A00157626 /* MenuButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64CBF561CED756A00157626 /* MenuButtonTableViewCell.swift */; };
 		E69049011C474EBE006C5314 /* DynamicBehaviorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */; };
 		E694936E1C85940C009F90D6 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E694936D1C85940C009F90D6 /* ChatViewController.swift */; };
 		E695290D1C7EF7C00032FDDC /* AutoLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */; };
@@ -247,6 +250,9 @@
 		E64100511CE4235B0071DEDB /* SkeletonTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkeletonTableViewController.swift; sourceTree = "<group>"; };
 		E64100531CE4241D0071DEDB /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		E64CBF501CED555600157626 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		E64CBF521CED732500157626 /* MenuCustomCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCustomCellViewController.swift; sourceTree = "<group>"; };
+		E64CBF541CED73B800157626 /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		E64CBF561CED756A00157626 /* MenuButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButtonTableViewCell.swift; sourceTree = "<group>"; };
 		E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBehaviorViewController.swift; sourceTree = "<group>"; };
 		E694936D1C85940C009F90D6 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutViewController.swift; sourceTree = "<group>"; };
@@ -562,6 +568,7 @@
 				CD2D80731C1A75A300E49AED /* LabelViewController.swift */,
 				CD0E779E1CD0A9E50086C038 /* ButtonViewController.swift */,
 				E64CBF501CED555600157626 /* MenuViewController.swift */,
+				E64CBF521CED732500157626 /* MenuCustomCellViewController.swift */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -570,6 +577,8 @@
 			isa = PBXGroup;
 			children = (
 				CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */,
+				E64CBF541CED73B800157626 /* MenuButton.swift */,
+				E64CBF561CED756A00157626 /* MenuButtonTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -911,6 +920,7 @@
 				CDCD51651CE1847C0000A86B /* AFSoundQueue.m in Sources */,
 				CD13C91A1BABE5B4007CDA32 /* SecondBeenPresentedViewController.swift in Sources */,
 				18A9BB691BD5D93C00532575 /* DictionaryViewController.swift in Sources */,
+				E64CBF551CED73B800157626 /* MenuButton.swift in Sources */,
 				CD2B4D941BABB7D7003FFF19 /* BeenPresentedViewController.swift in Sources */,
 				CD6582F11BC7C9710053BD0E /* PresentedViewController.swift in Sources */,
 				E695290D1C7EF7C00032FDDC /* AutoLayoutViewController.swift in Sources */,
@@ -947,10 +957,12 @@
 				1838BEF11BDA204F005D7D8B /* GalleryDetailViewController.swift in Sources */,
 				CD4661DC1BBA101600FDFBDC /* SecondViewController.swift in Sources */,
 				E62CC7AD1C4F218500E8E84F /* TextFieldViewController.swift in Sources */,
+				E64CBF531CED732500157626 /* MenuCustomCellViewController.swift in Sources */,
 				CD4BB2591BAA70B000072773 /* WindowMaskViewController.swift in Sources */,
 				18B5ED091BE0AEA900B29BCC /* CarMovingViewController.swift in Sources */,
 				E63317AF1C868260008980DC /* ChatTextMessage.swift in Sources */,
 				E64CBF511CED555600157626 /* MenuViewController.swift in Sources */,
+				E64CBF571CED756A00157626 /* MenuButtonTableViewCell.swift in Sources */,
 				CDCD51671CE1847C0000A86B /* NSTimer+AFSoundManager.m in Sources */,
 				E694936E1C85940C009F90D6 /* ChatViewController.swift in Sources */,
 				CD5C7DC71CC64DEC00DB4448 /* RTWindow.swift in Sources */,
