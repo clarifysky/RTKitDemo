@@ -256,6 +256,7 @@
 		E69049001C474EBE006C5314 /* DynamicBehaviorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicBehaviorViewController.swift; sourceTree = "<group>"; };
 		E694936D1C85940C009F90D6 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		E695290C1C7EF7C00032FDDC /* AutoLayoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutViewController.swift; sourceTree = "<group>"; };
+		E6B879241CF403A3002EA261 /* CodeSnippet.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CodeSnippet.playground; sourceTree = "<group>"; };
 		E6BE7EE21CA1191F00193597 /* AddressBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
 		E6BE7EE41CA1193700193597 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		E6C35AC11C96B9FC0087771D /* AudioStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioStreamViewController.swift; sourceTree = "<group>"; };
@@ -405,6 +406,7 @@
 				189B6D9F1BCF32920083C02B /* Storyboard */,
 				CD4BB2571BAA6D9800072773 /* Categories */,
 				CD4BB2341BAA6D2300072773 /* Supporting Files */,
+				E6B879241CF403A3002EA261 /* CodeSnippet.playground */,
 			);
 			path = RCToolsDemo;
 			sourceTree = "<group>";
