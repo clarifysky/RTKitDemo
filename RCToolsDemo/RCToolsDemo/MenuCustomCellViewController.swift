@@ -27,7 +27,7 @@ class MenuCustomCellViewController: UIViewController {
         self.table = UITableView(frame: self.view.bounds)
         self.table?.delegate = self
         self.table?.dataSource = self
-        self.table?.registerClass(MenuButtonTableViewCell.self, forCellReuseIdentifier: "menuButton")
+//        self.table?.registerClass(MenuButtonTableViewCell.self, forCellReuseIdentifier: "menuButton")
         self.view.addSubview(self.table!)
     }
     
@@ -41,6 +41,10 @@ class MenuCustomCellViewController: UIViewController {
     
     func tapped(sender: MenuButton) {
         print("you tapped the button")
+    }
+    
+    func test(sender: UIMenuItem) {
+        print("test")
     }
 }
 
@@ -57,11 +61,21 @@ extension MenuCustomCellViewController: UITableViewDelegate, UITableViewDataSour
         var cell = tableView.dequeueReusableCellWithIdentifier("menuButton") as? MenuButtonTableViewCell
         if cell == nil {
             cell = MenuButtonTableViewCell(style: .Default, reuseIdentifier: "menuButton")
+            
+            if indexPath.row == 0 {
+                cell?.menuButton?.blockForMenu = {
+                    let test = UIMenuItem(title: "test0", action: #selector(MenuCustomCellViewController.test(_:)))
+                    cell?.menuButton?.menu?.menuItems = [test]
+                }
+            } else {
+                cell?.menuButton?.blockForMenu = {
+                    let headPhone = UIMenuItem(title: "headPhone", action: #selector(MenuCustomCellViewController.headPhone(_:)))
+                    let speaker = UIMenuItem(title: "speaker", action: #selector(MenuCustomCellViewController.speaker(_:)))
+                    cell?.menuButton?.menu?.menuItems = [headPhone, speaker]
+                }
+            }
+            cell?.menuButton?.addTarget(self, action: #selector(MenuCustomCellViewController.tapped(_:)), forControlEvents: .TouchUpInside)
         }
-        let headPhone = UIMenuItem(title: "headPhone", action: #selector(MenuCustomCellViewController.headPhone(_:)))
-        let speaker = UIMenuItem(title: "speaker", action: #selector(MenuCustomCellViewController.speaker(_:)))
-        cell?.menuButton?.menu?.menuItems = [headPhone, speaker]
-        cell?.menuButton?.addTarget(self, action: #selector(MenuCustomCellViewController.tapped(_:)), forControlEvents: .TouchUpInside)
         return cell!
     }
 }

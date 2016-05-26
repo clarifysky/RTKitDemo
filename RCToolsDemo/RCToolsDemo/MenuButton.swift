@@ -11,6 +11,7 @@ import UIKit
 class MenuButton: UIButton {
     
     var menu: UIMenuController?
+    var blockForMenu: (() -> Void)?
     override init(frame: CGRect) {
         super.init(frame: frame)
         let longGR = UILongPressGestureRecognizer(target: self, action: #selector(MenuButton.longPress(_:)))
@@ -25,6 +26,7 @@ class MenuButton: UIButton {
     func longPress(recognizer: UILongPressGestureRecognizer) {
         if recognizer.state == .Began {
             self.becomeFirstResponder()
+            self.blockForMenu?()
             
             self.menu?.setTargetRect(self.frame, inView: self.superview!)
             self.menu?.setMenuVisible(true, animated: true)

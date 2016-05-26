@@ -52,6 +52,24 @@ class MenuViewController: UIViewController {
         }
     }
     
+    func handleLongPress1(recognizer: UILongPressGestureRecognizer) {
+        if recognizer.state == .Began {
+            let cell = recognizer.view as! UITableViewCell
+            //            if (cell as? UITableViewCell) != nil {
+            //                print("you hint cell")
+            //            }
+            
+            cell.becomeFirstResponder()
+            
+            let headPhone = UIMenuItem(title: "headPhone11", action: #selector(MenuViewController.headPhone(_:)))
+            let speaker = UIMenuItem(title: "speaker11", action: #selector(MenuViewController.speaker(_:)))
+            let menu = UIMenuController.sharedMenuController()
+            menu.menuItems = [headPhone, speaker]
+            menu.setTargetRect(cell.frame, inView: cell.superview!)
+            menu.setMenuVisible(true, animated: true)
+        }
+    }
+    
     override func canBecomeFirstResponder() -> Bool {
         return true
     }
@@ -106,10 +124,18 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("menu")! as UITableViewCell
         cell.textLabel?.text = self.list[indexPath.row]
-        let longGR = UILongPressGestureRecognizer(target: self, action: #selector(MenuViewController.handleLongPress(_:)))
-//        cell.userInteractionEnabled = true
-        cell.separatorInset = UIEdgeInsetsZero
-        cell.addGestureRecognizer(longGR)
+        
+        if indexPath.row == 1 {
+            let longGR = UILongPressGestureRecognizer(target: self, action: #selector(MenuViewController.handleLongPress1(_:)))
+            //        cell.userInteractionEnabled = true
+            cell.separatorInset = UIEdgeInsetsZero
+            cell.addGestureRecognizer(longGR)
+        } else {
+            let longGR = UILongPressGestureRecognizer(target: self, action: #selector(MenuViewController.handleLongPress(_:)))
+            //        cell.userInteractionEnabled = true
+            cell.separatorInset = UIEdgeInsetsZero
+            cell.addGestureRecognizer(longGR)
+        }
         
         return cell
     }
