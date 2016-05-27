@@ -28,7 +28,11 @@ class RTPrint {
         print(items)
     }
     
-    /// print multiple items
+    /// Print multiple items concatenate with separator and terminate with terminator.
+    ///
+    /// - parameter items: The items you want to print.
+    /// - parameter separator: The separator you used to separate items.
+    /// - parameter terminator: The terminator you used to terminate print.
     func prtm(items: Any..., separator: String = " ", terminator: String = "\n") {
         guard !self.disable else {
             return

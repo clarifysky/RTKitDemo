@@ -37,7 +37,7 @@ class MenuCustomCellViewController: UIViewController {
     }
     
     func speaker(sender: UIMenuItem) {
-        RTPrint.shareInstance().prtm("1", "2", "3", separator: ">", terminator: ":")
+        RTPrint.shareInstance().prtm("1", "2", "3", separator: ", ", terminator: ":")
     }
     
     func tapped(sender: MenuButton) {
