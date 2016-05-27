@@ -114,6 +114,8 @@
 		E6D1ECBB1C1EABA400995844 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1ECBA1C1EABA400995844 /* ImageViewController.swift */; };
 		E6D1ECBE1C1EAE2D00995844 /* 496.gif in Resources */ = {isa = PBXBuildFile; fileRef = E6D1ECBD1C1EAE2D00995844 /* 496.gif */; };
 		E6D1ECC31C1EAF4100995844 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D1ECC21C1EAF4100995844 /* UIImage+animatedGIF.m */; };
+		E6EB898A1CF7FE420084F5A2 /* RTPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB89891CF7FE420084F5A2 /* RTPrint.swift */; };
+		E6EB898B1CF7FE420084F5A2 /* RTPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EB89891CF7FE420084F5A2 /* RTPrint.swift */; };
 		E6F2DC231C8029B8008B9460 /* Readme in Resources */ = {isa = PBXBuildFile; fileRef = E6F2DC221C8029B8008B9460 /* Readme */; };
 		E6F2DC2D1C8030FF008B9460 /* ChatViewImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6F2DC2C1C8030FF008B9460 /* ChatViewImages.xcassets */; };
 		E6F7B6651C9650FD00CEFBD8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F7B6641C9650FD00CEFBD8 /* CFNetwork.framework */; };
@@ -267,6 +269,7 @@
 		E6D1ECC01C1EAF4000995844 /* RCToolsDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCToolsDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		E6D1ECC11C1EAF4100995844 /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
 		E6D1ECC21C1EAF4100995844 /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
+		E6EB89891CF7FE420084F5A2 /* RTPrint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTPrint.swift; sourceTree = "<group>"; };
 		E6F2DC221C8029B8008B9460 /* Readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme; sourceTree = "<group>"; };
 		E6F2DC2C1C8030FF008B9460 /* ChatViewImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ChatViewImages.xcassets; sourceTree = "<group>"; };
 		E6F7B6641C9650FD00CEFBD8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -683,6 +686,7 @@
 			children = (
 				E641004E1CE421900071DEDB /* RTError.swift */,
 				E631A9B91CEC101A002251EA /* RTRC.swift */,
+				E6EB89891CF7FE420084F5A2 /* RTPrint.swift */,
 			);
 			name = Skeleton;
 			sourceTree = "<group>";
@@ -980,6 +984,7 @@
 				CD5C7DBF1CC64DEC00DB4448 /* RTAnimation.swift in Sources */,
 				E6D1ECC31C1EAF4100995844 /* UIImage+animatedGIF.m in Sources */,
 				E63317A71C867790008980DC /* ChatTextCell.swift in Sources */,
+				E6EB898A1CF7FE420084F5A2 /* RTPrint.swift in Sources */,
 				CD6DD9401BCBDC3A0092F561 /* ShadowViewController.swift in Sources */,
 				CDCD51631CE1847C0000A86B /* AFSoundItem.m in Sources */,
 				1868A3731BE87E8D007D5F47 /* CustomizedNavigationController.swift in Sources */,
@@ -1004,6 +1009,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD4BB24D1BAA6D2400072773 /* RCToolsDemoTests.swift in Sources */,
+				E6EB898B1CF7FE420084F5A2 /* RTPrint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
