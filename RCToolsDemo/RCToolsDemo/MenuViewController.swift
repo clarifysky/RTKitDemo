@@ -38,7 +38,7 @@ class MenuViewController: UIViewController {
         if recognizer.state == .Began {
             let cell = recognizer.view as! UITableViewCell
 //            if (cell as? UITableViewCell) != nil {
-//                print("you hint cell")
+//                RTPrint.shareInstance().prt("you hint cell")
 //            }
             
             cell.becomeFirstResponder()
@@ -56,7 +56,7 @@ class MenuViewController: UIViewController {
         if recognizer.state == .Began {
             let cell = recognizer.view as! UITableViewCell
             //            if (cell as? UITableViewCell) != nil {
-            //                print("you hint cell")
+            //                RTPrint.shareInstance().prt("you hint cell")
             //            }
             
             cell.becomeFirstResponder()
@@ -75,17 +75,17 @@ class MenuViewController: UIViewController {
     }
     
     func headPhone(sender: UIMenuItem) {
-        print("tapped headPhone")
+        RTPrint.shareInstance().prt("tapped headPhone")
     }
     
     func speaker(sender: UIMenuItem) {
-        print("tapped speaker")
+        RTPrint.shareInstance().prt("tapped speaker")
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        print(touches.first?.view)
+        RTPrint.shareInstance().prt(touches.first?.view)
         if (touches.first?.view as? UITableViewCell) != nil {
-            print("cell")
+            RTPrint.shareInstance().prt("cell")
         }
     }
 

@@ -51,12 +51,12 @@ class AudioSingleViewController: UIViewController {
     }
     
     func start() {
-        print("play")
+        RTPrint.shareInstance().prt("play")
         self.audioManager?.play()
     }
     
     func pause() {
-        print("pause")
+        RTPrint.shareInstance().prt("pause")
         self.audioManager?.pause()
     }
 

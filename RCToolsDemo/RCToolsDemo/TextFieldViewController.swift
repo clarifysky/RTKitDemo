@@ -22,8 +22,8 @@ class TextFieldViewController: UIViewController {
         self.title = "textFieldTest"
         self.textFieldTest.delegate = self
         
-        print("[TextFieldViewController] viewDidLoad:")
-        print("__frame: \(self.view.frame)")
+        RTPrint.shareInstance().prt("[TextFieldViewController] viewDidLoad:")
+        RTPrint.shareInstance().prt("__frame: \(self.view.frame)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,17 +43,17 @@ class TextFieldViewController: UIViewController {
 extension TextFieldViewController: UITextFieldDelegate {
 
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        print("string: " + string)
-        print("range: \(range)")
-        print("toRange: \(range.toRange(textField.text!))")
-        print("textFromTextField: \(textField.text)")
+        RTPrint.shareInstance().prt("string: " + string)
+        RTPrint.shareInstance().prt("range: \(range)")
+        RTPrint.shareInstance().prt("toRange: \(range.toRange(textField.text!))")
+        RTPrint.shareInstance().prt("textFromTextField: \(textField.text)")
         let testStr = textField.text!.stringByReplacingCharactersInRange(range.toRange(textField.text!), withString: string)
-        print(testStr + ", length: \(testStr.characters.count)")
+        RTPrint.shareInstance().prt(testStr + ", length: \(testStr.characters.count)")
         return true
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        print("you pressed the return button")
+        RTPrint.shareInstance().prt("you pressed the return button")
         return true
     }
 }

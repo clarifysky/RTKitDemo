@@ -32,19 +32,20 @@ class MenuCustomCellViewController: UIViewController {
     }
     
     func headPhone(sender: UIMenuItem) {
-        print("headPhone")
+        let test = ["1", "2", "3"]
+        RTPrint.shareInstance().prt(test)
     }
     
     func speaker(sender: UIMenuItem) {
-        print("speaker")
+        RTPrint.shareInstance().prtm("1", "2", "3", separator: ">", terminator: ":")
     }
     
     func tapped(sender: MenuButton) {
-        print("you tapped the button")
+        RTPrint.shareInstance().prt("you tapped the button")
     }
     
     func test(sender: UIMenuItem) {
-        print("test")
+        RTPrint.shareInstance().prt("test")
     }
 }
 

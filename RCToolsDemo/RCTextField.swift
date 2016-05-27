@@ -42,15 +42,15 @@ class RCTextField: UITextField {
         
         let viewCount = tempWindow!.subviews.count
         
-        print("[windows count]: \(UIApplication.sharedApplication().windows.count)")
+        RTPrint.shareInstance().prt("[windows count]: \(UIApplication.sharedApplication().windows.count)")
         // find keyboard view out.
         for i in 0..<viewCount {
             keyboard = (tempWindow?.subviews[i])! as UIView
-            print("[description]: \(keyboard?.description)")
+            RTPrint.shareInstance().prt("[description]: \(keyboard?.description)")
             
             // keyboard view found, add custom button to it.
             if keyboard?.description.hasPrefix("<UIPeripheralHostView") == true || keyboard?.description.hasPrefix("<UIKeyboard") == true || keyboard?.description.hasPrefix("<UIInputSetContainerView") == true {
-                print("found UIKeyboard or UIPeripheralHostView")
+                RTPrint.shareInstance().prt("found UIKeyboard or UIPeripheralHostView")
                 self.createDoneButton()
                 keyboard!.addSubview(self.doneButton!)
                 break

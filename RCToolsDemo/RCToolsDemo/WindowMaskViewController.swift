@@ -24,7 +24,7 @@ class WindowMaskViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: self.cellIdentifier)
         
-        print("-initially create mask")
+        RTPrint.shareInstance().prt("-initially create mask")
         self.testTool = TestWindowMask()
         self.testTool?.showMask()
 //        self.testTool?.addTapGesutreToMask()
@@ -36,8 +36,8 @@ class WindowMaskViewController: UIViewController {
     }
     
     @IBAction func createMask(sender: UIBarButtonItem) {
-        print("-touch to create mask")
-        print("windows before create : \(UIApplication.sharedApplication().windows.count)")
+        RTPrint.shareInstance().prt("-touch to create mask")
+        RTPrint.shareInstance().prt("windows before create : \(UIApplication.sharedApplication().windows.count)")
         self.testTool?.showMask()
     }
     

@@ -86,7 +86,7 @@ class ContainerViewController: UIViewController {
                     self.currentVC = self.firstVC
                     self.currentVCStr = "firstVC"
                     self.firstVC?.backButton.addTarget(self, action: #selector(ContainerViewController.toThirdVC), forControlEvents: UIControlEvents.TouchUpInside)
-                    print("subViewControllers of containerViewController: \(self.childViewControllers.count)")
+                    RTPrint.shareInstance().prt("subViewControllers of containerViewController: \(self.childViewControllers.count)")
                 }
             })
             
@@ -98,7 +98,7 @@ class ContainerViewController: UIViewController {
                     self.currentVC = self.secondVC
                     self.currentVCStr = "secondVC"
                     self.secondVC?.dismissButton.addTarget(self, action: #selector(ContainerViewController.dismissSecondVC), forControlEvents: UIControlEvents.TouchUpInside)
-                    print("subViewControllers of containerViewController: \(self.childViewControllers.count)")
+                    RTPrint.shareInstance().prt("subViewControllers of containerViewController: \(self.childViewControllers.count)")
                 }
             })
             break
@@ -106,36 +106,36 @@ class ContainerViewController: UIViewController {
             self.show(self.thirdVC, fromVC: self.currentVC, completion: {
                 finished in
                 if finished {
-                    print("transition from currentVC to thirdVC is finished")
+                    RTPrint.shareInstance().prt("transition from currentVC to thirdVC is finished")
                     self.currentVC = self.thirdVC!
                     self.currentVCStr = "thirdVC"
-                    print("subViewControllers of containerViewController: \(self.childViewControllers.count)")
+                    RTPrint.shareInstance().prt("subViewControllers of containerViewController: \(self.childViewControllers.count)")
                 }
             })
             break
         case 4:
-            print("will show fouthVC")
+            RTPrint.shareInstance().prt("will show fouthVC")
             self.show(self.fourthVC, fromVC: self.currentVC, completion: {
                 finished in
                 if finished {
                     // Because code below is not executed, so I can't contiue to transit viewControllers.
-                    print("transition from currentVC to fourthVC completed")
+                    RTPrint.shareInstance().prt("transition from currentVC to fourthVC completed")
                     self.currentVC = self.fourthVC!
                     self.currentVCStr = "fourthVC"
                 } else {
-                    print("transition from currentVC to fourthVC is not finished")
+                    RTPrint.shareInstance().prt("transition from currentVC to fourthVC is not finished")
                 }
             })
             break
         case 5:
-            print("will show fifthVC")
+            RTPrint.shareInstance().prt("will show fifthVC")
             let fifthVC = RTView.viewController("Main", storyboardID: "FifthViewController") as! FifthViewController
             self.addChildViewController(fifthVC)
             self.show(fifthVC, fromVC: self.currentVC, completion: {
                 finished in
                 if finished {
                     // Because code below is not executed, so I can't contiue to transit viewControllers.
-                    print("transition from currentVC to fifthVC completed")
+                    RTPrint.shareInstance().prt("transition from currentVC to fifthVC completed")
                     self.currentVC = fifthVC
                     self.currentVCStr = "fifthVC"
                 }
@@ -152,16 +152,16 @@ class ContainerViewController: UIViewController {
 //            })
             break
         case 6:
-            print("will show six vc")
+            RTPrint.shareInstance().prt("will show six vc")
             self.show(self.sixNav!, fromVC: self.currentVC, completion: {
                 finished in
                 if finished {
                     // Because code below is not executed, so I can't contiue to transit viewControllers.
-                    print("transition from currentVC to sixVC completed")
+                    RTPrint.shareInstance().prt("transition from currentVC to sixVC completed")
                     self.currentVC = self.sixNav!
                     self.currentVCStr = "sixNav"
                 } else {
-                    print("transition from currentVC to sixNav is not finished")
+                    RTPrint.shareInstance().prt("transition from currentVC to sixNav is not finished")
                 }
             })
             
@@ -174,7 +174,7 @@ class ContainerViewController: UIViewController {
     }
     
     func toThirdVC() {
-        print("subViewControllers of containerViewController: \(self.childViewControllers.count)")
+        RTPrint.shareInstance().prt("subViewControllers of containerViewController: \(self.childViewControllers.count)")
         let duration = NSTimeInterval(0.5)
         self.swipe(self.thirdVC!, fromVC: self.currentVC!, direction: .Right, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
             finished in
@@ -185,7 +185,7 @@ class ContainerViewController: UIViewController {
     }
     
     func dismissSecondVC() {
-        print("subViewControllers of containerViewController: \(self.childViewControllers.count)")
+        RTPrint.shareInstance().prt("subViewControllers of containerViewController: \(self.childViewControllers.count)")
         let duration = NSTimeInterval(0.5)
         self.swipe(self.thirdVC!, fromVC: self.currentVC!, direction: .Down, duration: duration, options: UIViewAnimationOptions.CurveEaseInOut, completion: {
             finished in

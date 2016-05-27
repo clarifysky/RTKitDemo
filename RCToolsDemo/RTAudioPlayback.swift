@@ -110,13 +110,13 @@ class RTAudioPlayback {
     
     // Process observation.
     @objc func sensorStateChanged(notification: NSNotificationCenter) {
-        print("sensor state changed")
+        RTPrint.shareInstance().prt("sensor state changed")
         // device is close to user
         if UIDevice.currentDevice().proximityState == true {
-            print("close")
+            RTPrint.shareInstance().prt("close")
             self.playWithHeadPhone()
         } else {
-            print("far")
+            RTPrint.shareInstance().prt("far")
             self.playWithSpeaker()
         }
     }
@@ -150,7 +150,7 @@ class RTAudioPlayback {
     }
     
     @objc func playFinished() {
-        print("play finished, disable proxymity sensor.")
+        RTPrint.shareInstance().prt("play finished, disable proxymity sensor.")
         NSNotificationCenter.defaultCenter().removeObserver(self)
         self.disableProximitySensor()
     }

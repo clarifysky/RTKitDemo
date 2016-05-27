@@ -104,7 +104,7 @@ class CarMovingViewController: UIViewController {
         label.sizeToFit()
         label.frame.origin = CGPointMake(0, 10)
         label.backgroundColor = UIColor.greenColor()
-        print("[CarMovingViewController:attachTestLabel] frame of testLabel: \(label.frame)")
+        RTPrint.shareInstance().prt("[CarMovingViewController:attachTestLabel] frame of testLabel: \(label.frame)")
         self.view.addSubview(label)
     }
 }

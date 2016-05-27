@@ -19,7 +19,7 @@ class DynamicBehaviorViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.title = "DynamicBehavior"
         
-        print("original:")
+        RTPrint.shareInstance().prt("original:")
         self.listenIt()
     }
 
@@ -131,10 +131,10 @@ class DynamicBehaviorViewController: UIViewController {
     }
     
     private func listenIt() {
-        print("\n")
-        print("origin: \(self.item.layer.frame.origin)")
-        print("position: \(self.item.layer.position)")
-        print("anchor: \(self.item.layer.anchorPoint)")
-        print("\n")
+        RTPrint.shareInstance().prt("\n")
+        RTPrint.shareInstance().prt("origin: \(self.item.layer.frame.origin)")
+        RTPrint.shareInstance().prt("position: \(self.item.layer.position)")
+        RTPrint.shareInstance().prt("anchor: \(self.item.layer.anchorPoint)")
+        RTPrint.shareInstance().prt("\n")
     }
 }

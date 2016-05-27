@@ -59,12 +59,12 @@ class ZeroGapViewController: UIViewController {
 //        println("decelerating ended")
         for cell in self.collectionView!.visibleCells() {
             let indexPath = self.collectionView?.indexPathForCell(cell )
-            print("current row: \(indexPath!.row)")
+            RTPrint.shareInstance().prt("current row: \(indexPath!.row)")
         }
     }
     
     func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
-        print("animation ended")
+        RTPrint.shareInstance().prt("animation ended")
     }
 }
 
@@ -81,7 +81,7 @@ extension ZeroGapViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        print("you selected item at index: \(indexPath.item)")
+        RTPrint.shareInstance().prt("you selected item at index: \(indexPath.item)")
     }
     
     // Custom UICollectionViewCell does not support long-press to show menu.
@@ -94,7 +94,7 @@ extension ZeroGapViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
-        print("indexPath \(indexPath.row)")
+        RTPrint.shareInstance().prt("indexPath \(indexPath.row)")
     }
     
 }

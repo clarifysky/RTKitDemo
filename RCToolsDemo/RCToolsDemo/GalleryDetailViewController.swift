@@ -54,7 +54,7 @@ class GalleryDetailViewController: UIViewController {
 //        tapGesture.numberOfTouchesRequired = 1
 //        self.view.addGestureRecognizer(tapGesture)
         
-        print(self.imageURLs)
+        RTPrint.shareInstance().prt(self.imageURLs)
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,7 +63,7 @@ class GalleryDetailViewController: UIViewController {
     }
     
     func viewTapped(recognizer: UITapGestureRecognizer) {
-        print(recognizer.view?.tag)
+        RTPrint.shareInstance().prt(recognizer.view?.tag)
         switch recognizer.state {
         case .Ended:
             dismissViewControllerAnimated(true, completion: nil)
@@ -113,7 +113,7 @@ class GalleryDetailViewController: UIViewController {
     
     func image(image: UIImage, didFinishSavingWithError: NSError?, contextInfo: AnyObject) {
         if didFinishSavingWithError != nil {
-            print("something goes wrong")
+            RTPrint.shareInstance().prt("something goes wrong")
         }
         self.showPop("saved")
     }
@@ -136,7 +136,7 @@ extension GalleryDetailViewController: UICollectionViewDelegate, UICollectionVie
                 cell?.row = indexPath.row
                 cell?.loadImage(self.imageURLs![indexPath.row], loadedHandler: {
                     (index, imageData, newFrame) in
-                    print("image loaded")
+                    RTPrint.shareInstance().prt("image loaded")
                     self.imageDatas[index] = imageData
                     self.imageFrames[index] = newFrame
                     self.uiimages[index] = UIImage(data: imageData!)
@@ -161,16 +161,16 @@ extension GalleryDetailViewController: GalleryDataDelegate {
     func handleLongPress(recognizer: UILongPressGestureRecognizer) {
         switch recognizer.state {
         case .Began:
-            print("began")
+            RTPrint.shareInstance().prt("began")
             let imageView = recognizer.view as! UIImageView
             let image = imageView.image
             UIImageWriteToSavedPhotosAlbum(image!, self, #selector(GalleryDetailViewController.image(_:didFinishSavingWithError:contextInfo:)), nil)
             break
         case .Changed:
-            print("changed")
+            RTPrint.shareInstance().prt("changed")
             break
         case .Ended:
-            print("ended")
+            RTPrint.shareInstance().prt("ended")
             break
         default: break
         }

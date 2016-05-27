@@ -23,7 +23,7 @@ class VibrateViewController: UIViewController {
         vibrateButton.addTarget(self, action: #selector(VibrateViewController.vibrate), forControlEvents: .TouchUpInside)
         vibrateButton.frame.origin = CGPointMake(0, 64)
         vibrateButton.setTitleColor(UIColor.orangeColor(), forState: .Normal)
-        print(vibrateButton.frame)
+        RTPrint.shareInstance().prt(vibrateButton.frame)
         self.view.addSubview(vibrateButton)
     }
 
@@ -33,7 +33,7 @@ class VibrateViewController: UIViewController {
     }
     
     func vibrate() {
-        print("[VibrateViewController:vibrate:] You touched the vibrate button.")
+        RTPrint.shareInstance().prt("[VibrateViewController:vibrate:] You touched the vibrate button.")
         RTAudio.playVibrate()
     }
 

@@ -28,18 +28,18 @@ class AddressBookViewController: UIViewController {
         // Request authorization.
         let sysAddressBookStatus = ABAddressBookGetAuthorizationStatus()
         if sysAddressBookStatus == ABAuthorizationStatus.NotDetermined {
-            print("requesting...")
+            RTPrint.shareInstance().prt("requesting...")
             ABAddressBookRequestAccessWithCompletion(self.addressBook, {
                 success, error in
                 if success {
                     // Load all people in addressBook.
                     self.loadContacts()
                 } else {
-                    print(error)
+                    RTPrint.shareInstance().prt(error)
                 }
             })
         } else if sysAddressBookStatus == .Denied || sysAddressBookStatus == .Restricted {
-            print("access denied")
+            RTPrint.shareInstance().prt("access denied")
         } else if sysAddressBookStatus == .Authorized {
             self.loadContacts()
         }
@@ -60,7 +60,7 @@ class AddressBookViewController: UIViewController {
     private func loadContacts() {
         
         let dataRead = ABAddressBookCopyArrayOfAllPeople(self.addressBook).takeRetainedValue() as NSArray
-        print("count of addressBook: \(dataRead.count)")
+        RTPrint.shareInstance().prt("count of addressBook: \(dataRead.count)")
         self.extractUsers(dataRead)
         
         self.attachTable()
@@ -95,7 +95,7 @@ class AddressBookViewController: UIViewController {
                 }
             }
             
-            print("name: " + name + ", phone: " + phone)
+            RTPrint.shareInstance().prt("name: " + name + ", phone: " + phone)
             users.append(["name": name, "phone": phone])
         }
         self.contacts = users

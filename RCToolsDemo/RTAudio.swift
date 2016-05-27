@@ -46,10 +46,10 @@ class RTAudio: NSObject {
     }
     
     func startRecording(soundFileName: String) {
-        print("recording started...")
+        RTPrint.shareInstance().prt("recording started...")
         let path = RTFile.appDirectory(.DocumentDirectory, domainMask: .UserDomainMask)
         self.soundFile = path + "/" + soundFileName
-        print("will save sound data to \(self.soundFile)")
+        RTPrint.shareInstance().prt("will save sound data to \(self.soundFile)")
         
         let recordSetting: [String: AnyObject] = [
             AVEncoderAudioQualityKey: AVAudioQuality.Min.rawValue,
@@ -113,7 +113,7 @@ class RTAudio: NSObject {
     ///
     /// - parameter soundPath: Path of sound file in bundle.
     func playLocal(soundPath: String) {
-        print("preparing to play: \(soundPath)")
+        RTPrint.shareInstance().prt("preparing to play: \(soundPath)")
         // reset player to preparing for next sound.
         self.player = nil
         // Important: Not all the devices support proximityMonitoring.!!
@@ -127,7 +127,7 @@ class RTAudio: NSObject {
         let fileManager = NSFileManager.defaultManager()
         // check if file exists
         if(!fileManager.fileExistsAtPath(soundPath)) {
-            print("voice file does not exist")
+            RTPrint.shareInstance().prt("voice file does not exist")
         } else {
             self.soundData = NSData(contentsOfFile: soundPath)
             self.playWithSpeakers()

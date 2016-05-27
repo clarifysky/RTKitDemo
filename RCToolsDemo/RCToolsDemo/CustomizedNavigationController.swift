@@ -33,6 +33,6 @@ class CustomizedNavigationController: UINavigationController {
     }
     
     func tapTest() {
-        print("you tapped a button on navigationController")
+        RTPrint.shareInstance().prt("you tapped a button on navigationController")
     }
 }

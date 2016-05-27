@@ -16,7 +16,7 @@ class MaskViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print("-mask view did load")
+        RTPrint.shareInstance().prt("-mask view did load")
         self.addTapGesutreToMask()
     }
 
@@ -34,14 +34,14 @@ class MaskViewController: UIViewController {
     func tapMaskView(recognizer: UITapGestureRecognizer) {
         switch recognizer.state {
         case .Ended:
-            print("tapped the maskView ")
+            RTPrint.shareInstance().prt("tapped the maskView ")
         default:break
         }
     }
 
     @IBAction func closeMaskWindow(sender: UIButton) {
-        print("You clicked close button")
-        print("Views in mask view: \(self.view.subviews.count)")
+        RTPrint.shareInstance().prt("You clicked close button")
+        RTPrint.shareInstance().prt("Views in mask view: \(self.view.subviews.count)")
         
 //        self.windowTools?.revokeMask(sender.superview)
         

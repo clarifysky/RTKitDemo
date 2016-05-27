@@ -66,8 +66,8 @@ class ImagesCell: UICollectionViewCell {
     
     func pinchHandler(recognizer: UIPinchGestureRecognizer) {
         if recognizer.state == .Ended {
-            print("at last, frame of imageView is: \(self.imageView!.frame)")
-            print("isBiggest: \(self.isBiggest)")
+            RTPrint.shareInstance().prt("at last, frame of imageView is: \(self.imageView!.frame)")
+            RTPrint.shareInstance().prt("isBiggest: \(self.isBiggest)")
             if self.imageView!.frame.width >= self.imageView!.image!.size.width {
                 UIView.animateWithDuration(0.25, animations: {
                     self.resizeImageAndItsContainer(self.imageView!.image!.size)
@@ -87,10 +87,10 @@ class ImagesCell: UICollectionViewCell {
             }
         } else if recognizer.state == .Changed {
             let newSize = CGSizeMake(self.imageView!.bounds.width * recognizer.scale, self.imageView!.bounds.height * recognizer.scale)
-            print("newSize: \(newSize)")
-            print("baseFrameSize: \(self.baseFrame!.size)")
-            print("scale: \(recognizer.scale)")
-            print("changed")
+            RTPrint.shareInstance().prt("newSize: \(newSize)")
+            RTPrint.shareInstance().prt("baseFrameSize: \(self.baseFrame!.size)")
+            RTPrint.shareInstance().prt("scale: \(recognizer.scale)")
+            RTPrint.shareInstance().prt("changed")
             self.resizeImageAndItsContainer(newSize)
         }
         // reset scale to 1 to make us know about growth of next time.
@@ -213,7 +213,7 @@ class ImagesCell: UICollectionViewCell {
         self.imageView?.transform = affineMatrix
 
 //        println("a: \(affineMatrix.a), b: \(affineMatrix.b), c: \(affineMatrix.c), d: \(affineMatrix.d), tx: \(affineMatrix.tx), ty: \(affineMatrix.ty)")
-        print("scale: \(recognizer.scale)")
+        RTPrint.shareInstance().prt("scale: \(recognizer.scale)")
         recognizer.scale = 1
     }
 }

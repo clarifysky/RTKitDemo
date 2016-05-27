@@ -17,7 +17,7 @@ class SixViewController: UIViewController {
         label.backgroundColor = UIColor.greenColor()
         label.sizeToFit()
         label.setOrigin(CGPointMake(0, 100))
-        print("frame of label: \(label.frame)")
+        RTPrint.shareInstance().prt("frame of label: \(label.frame)")
         self.view.addSubview(label)
     }
 

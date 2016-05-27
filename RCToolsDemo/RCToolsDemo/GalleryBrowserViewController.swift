@@ -117,15 +117,15 @@ extension GalleryBrowserViewController: WKNavigationDelegate {
 extension GalleryBrowserViewController: WKScriptMessageHandler {
     func userContentController(userContentController: WKUserContentController, didReceiveScriptMessage message: WKScriptMessage) {
         if message.name == "share" {
-            print("You triggered sharing")
+            RTPrint.shareInstance().prt("You triggered sharing")
         } else {
             let sentData = message.body as? Dictionary<String, AnyObject>
-            print("sentData: \(sentData)")
+            RTPrint.shareInstance().prt("sentData: \(sentData)")
             
             if let type = sentData!["type"] as? String {
                 if type == "index" {
                     let cid = sentData!["data"] as! Int
-                    print("index: \(cid)")
+                    RTPrint.shareInstance().prt("index: \(cid)")
                     self.presentGalleryDetail(cid, images: self.imageURLs!)
                 } else {
                     self.imageURLs = sentData!["data"] as? [String]

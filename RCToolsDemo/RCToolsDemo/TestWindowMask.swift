@@ -55,7 +55,7 @@ class TestWindowMask: NSObject {
     func tapMaskView(recognizer: UITapGestureRecognizer) {
         switch recognizer.state {
         case .Ended:
-            print("tapped the popView ")
+            RTPrint.shareInstance().prt("tapped the popView ")
         default:break
         }
     }

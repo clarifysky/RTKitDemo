@@ -14,7 +14,7 @@ class SecondBeenPresentedViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print("-second vc did load")
+        RTPrint.shareInstance().prt("-second vc did load")
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,7 +23,7 @@ class SecondBeenPresentedViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        print("second vc did appear")
+        RTPrint.shareInstance().prt("second vc did appear")
     }
 
     @IBAction func dismissVC(sender: UIButton) {

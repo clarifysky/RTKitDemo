@@ -32,7 +32,7 @@ class ChatVoiceCell: ChatCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        print("[ChatVoiceCell] layoutSubviews: frame of imageViewWave: \(self.imageViewWave!.frame)")
+        RTPrint.shareInstance().prt("[ChatVoiceCell] layoutSubviews: frame of imageViewWave: \(self.imageViewWave!.frame)")
         
         // Because there is 5 pixels disparity in background image, so here use gapLabelMessage to make up.
         var y = self.imageViewAvatar!.frame.origin.y + self.gapLabelMessage
@@ -60,8 +60,8 @@ class ChatVoiceCell: ChatCell {
             self.imageViewWave?.image = UIImage(named: "message_voice_receiver_normal")
         }
         self.imageViewWave?.sizeToFit()
-        print("[ChatVoiceCell] setMessage: frame of imageViewWave: \(self.imageViewWave!.frame)")
-        print(UIImage(named: "message_voice_sender_normal"))
+        RTPrint.shareInstance().prt("[ChatVoiceCell] setMessage: frame of imageViewWave: \(self.imageViewWave!.frame)")
+        RTPrint.shareInstance().prt(UIImage(named: "message_voice_sender_normal"))
     }
     
     private func voiceLength() -> CGFloat {

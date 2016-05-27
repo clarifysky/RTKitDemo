@@ -17,7 +17,7 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print("first VC loaded")
+        RTPrint.shareInstance().prt("first VC loaded")
     }
 
     override func didReceiveMemoryWarning() {

@@ -56,7 +56,7 @@ class AudioViewController: UIViewController {
             player = nil
         }
         if player != nil {
-            print("player is not nil")
+            RTPrint.shareInstance().prt("player is not nil")
             player.play()
         }
     }

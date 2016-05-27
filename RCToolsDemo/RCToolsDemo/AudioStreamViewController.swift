@@ -53,11 +53,11 @@ class AudioStreamViewController: UIViewController {
 //        self.queue?.playCurrentItem()
         self.queue?.listenFeedbackUpdatesWithBlock({
             item in
-            print("Item duration: \(item.duration) - time elapsed: \(item.timePlayed)")
+            RTPrint.shareInstance().prt("Item duration: \(item.duration) - time elapsed: \(item.timePlayed)")
             }, andFinishedBlock: {
                 nextItem in
                 if nextItem != nil {
-                    print("Finished item, next one is \(nextItem.title)")
+                    RTPrint.shareInstance().prt("Finished item, next one is \(nextItem.title)")
                 }
         })
     }
@@ -73,7 +73,7 @@ class AudioStreamViewController: UIViewController {
     }
     
     func start() {
-        print("[AudioStreamViewController:start] You touched the start button.")
+        RTPrint.shareInstance().prt("[AudioStreamViewController:start] You touched the start button.")
         self.queue?.playCurrentItem()
         self.player?.restart()
     }

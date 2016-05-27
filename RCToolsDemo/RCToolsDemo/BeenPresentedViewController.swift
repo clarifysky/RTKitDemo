@@ -15,14 +15,14 @@ class BeenPresentedViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print("-been presented vc did load")
+        RTPrint.shareInstance().prt("-been presented vc did load")
 //        self.testTool = TestWindowMask()
 //        self.testTool?.showMask()
 //        self.testTool?.addTapGesutreToMask()
     }
     
     override func viewDidAppear(animated: Bool) {
-        print("been presented vc did appear")
+        RTPrint.shareInstance().prt("been presented vc did appear")
     }
 
     override func didReceiveMemoryWarning() {

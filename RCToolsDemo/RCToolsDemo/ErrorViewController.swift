@@ -47,9 +47,9 @@ class ErrorViewController: UIViewController {
         do {
             try self.sum()
         } catch RTErrorType.Nil {
-            print("nil error occurs")
+            RTPrint.shareInstance().prt("nil error occurs")
         } catch {
-            print("other errors")
+            RTPrint.shareInstance().prt("other errors")
         }
     }
 }

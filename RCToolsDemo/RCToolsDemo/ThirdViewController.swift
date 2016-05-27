@@ -14,7 +14,7 @@ class ThirdViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print("third VC loaded")
+        RTPrint.shareInstance().prt("third VC loaded")
     }
 
     override func didReceiveMemoryWarning() {

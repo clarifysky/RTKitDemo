@@ -20,10 +20,19 @@ class RTPrint {
         return instance!
     }
     
-    func print(obj: AnyObject?) {
+    /// print any data
+    func prt(items: Any) {
         guard !self.disable else {
             return
         }
-        print(obj)
+        print(items)
+    }
+    
+    /// print multiple items
+    func prtm(items: Any..., separator: String = " ", terminator: String = "\n") {
+        guard !self.disable else {
+            return
+        }
+        print(items, separator: separator, terminator: terminator)
     }
 }

@@ -395,8 +395,8 @@ extension RTAudioStream {
     
     
     func presentAlertWithTitle(title: String, message: String) {
-        print(title)
-        print(message)
+        RTPrint.shareInstance().prt(title)
+        RTPrint.shareInstance().prt(message)
     }
     
     /// Sets the playback state to failed and logs the error.
@@ -409,7 +409,7 @@ extension RTAudioStream {
         
         errorCode = anErrorCode
         if err != nil {
-            print(err)
+            RTPrint.shareInstance().prt(err)
         } else {
             self.stringForErrorCode(anErrorCode)
         }

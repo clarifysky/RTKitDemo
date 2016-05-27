@@ -15,7 +15,7 @@ class WithNavBeenPresentedViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print("-withNavVC did load")
+        RTPrint.shareInstance().prt("-withNavVC did load")
         self.testTool = TestWindowMask()
         self.testTool?.showMask()
 //        self.testTool?.addTapGesutreToMask()
@@ -27,7 +27,7 @@ class WithNavBeenPresentedViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        print("-withNavVC did appear")
+        RTPrint.shareInstance().prt("-withNavVC did appear")
     }
     
     

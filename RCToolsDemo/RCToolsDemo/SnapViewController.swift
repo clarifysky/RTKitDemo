@@ -40,7 +40,7 @@ class SnapViewController: UIViewController {
     
     
     func tap(recognizer: UITapGestureRecognizer) {
-        print("tapped")
+        RTPrint.shareInstance().prt("tapped")
         if recognizer.state == .Ended {
             if #available(iOS 9.0, *) {
                 self.snapBehavior!.snapPoint = recognizer.locationInView(self.view)

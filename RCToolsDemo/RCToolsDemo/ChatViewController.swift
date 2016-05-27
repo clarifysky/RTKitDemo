@@ -131,7 +131,7 @@ class ChatViewController: UIViewController {
     }
     
     func keyboardFrameWillChange(notification: NSNotification) {
-        print("[ChatViewController] keyboardFrameWillChange:")
+        RTPrint.shareInstance().prt("[ChatViewController] keyboardFrameWillChange:")
         if let userInfo = notification.userInfo {
             if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
                 self.changeViewFrame(keyboardSize.height)
@@ -140,7 +140,7 @@ class ChatViewController: UIViewController {
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        print("[ChatViewController] keyboardWillHide:")
+        RTPrint.shareInstance().prt("[ChatViewController] keyboardWillHide:")
         self.changeViewFrame(0)
     }
 
@@ -209,7 +209,7 @@ extension ChatViewController: UITextViewDelegate {
     // 4. Reset its frame.
     // IMPORTANT: Only when the new height is less than the upper limit you set, the frame of UITextView can be reset.
     func textViewDidChange(textView: UITextView) {
-        print("[TextFieldViewController] textViewDidChange:")
+        RTPrint.shareInstance().prt("[TextFieldViewController] textViewDidChange:")
         // Caculate the size which best fits the specified size.
         // This height is just the height of textView which best fits its content.
         var height = textView.sizeThatFits(CGSizeMake(self.textView!.frame.width, CGFloat(MAXFLOAT))).height
@@ -231,7 +231,7 @@ extension ChatViewController: UITextViewDelegate {
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
-            print("You pressed return button")
+            RTPrint.shareInstance().prt("You pressed return button")
             self.sendMessage()
             return false
         } else {
