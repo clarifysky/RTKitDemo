@@ -14,13 +14,36 @@ class GraphicTableViewController: UITableViewController {
     let actions = ["carMoving", "snapshot", "bezierpath", "dynamicBehaviors", "glimmer", "autoLayout", "animations"]
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.navigationItem.title = "Graphic"
+        
+        self.navigationController?.navigationBar.RTBackgroundColor(UIColor.clearColor())
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+        // Tell the delegate when user scroll the scroll view.
+        self.scrollViewDidScroll(self.tableView)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.RTReset()
+    }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        let color = UIColor.colorWithRGB(45, green: 45, blue: 45, alpha: 1)
+        let offsetY = scrollView.contentOffset.y
+        
+        let halfHeight = UIScreen.mainScreen().bounds.height / 2
+        
+        if offsetY >= -halfHeight - 64 {
+            let alphat = min(1, (halfHeight + 64 + offsetY) / halfHeight)
+            self.navigationController?.navigationBar.RTBackgroundColor(color.colorWithAlphaComponent(alphat))
+        } else {
+            self.navigationController?.navigationBar.RTBackgroundColor(color.colorWithAlphaComponent(0))
+        }
     }
     
     func popVC(row: Int) {

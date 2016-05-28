@@ -37,13 +37,24 @@ class CarMovingViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: stopButton)
         
         // transparent navigation bar
-        self.navigationController?.navigationBar.transparentBgColor(UIColor.colorWithRGBOpaque(0, green: 1, blue: 0, alpha: 0.4))
-//        self.navigationController?.navigationBar.RCOpaqueBgColor(UIColor.blueColor())
+//        self.navigationController?.navigationBar.transparentBgColor(UIColor.colorWithRGB(0, green: 1, blue: 0, alpha: 0.4))
+//        self.navigationController?.navigationBar.opaqueBgColor(UIColor.blueColor())
+        self.navigationController?.navigationBar.RTBackgroundColor(UIColor.colorWithRGB(0, green: 1, blue: 0, alpha: 0.4))
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.RTReset()
     }
     
     func buildCar() -> UIImageView {

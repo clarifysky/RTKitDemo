@@ -441,18 +441,52 @@ extension UINavigationBar {
     func opaqueBgColor(backgroundColor: UIColor) {
         self.translucent = false
         self.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        self.barTintColor = backgroundColor
         self.shadowImage = UIImage()
+        self.barTintColor = backgroundColor
+    }
+    
+    /// Use this private struct to store the extended properties. This will not pollute the namespace.
+    private struct AssociatedKeys {
+        static var Overlay: UIView?
+    }
+    
+    /// Use this extended property to prepare for add a custome view to navigationBar
+    var overlay: UIView? {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.Overlay) as? UIView
+        }
+        set {
+            if newValue != nil {
+                objc_setAssociatedObject(self, &AssociatedKeys.Overlay, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            }
+        }
+    }
+    
+    /// Set backgroundColor for UINavigationBar
+    func RTBackgroundColor(color: UIColor) {
+        if self.overlay == nil {
+            self.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+            self.overlay = UIView(frame: CGRectMake(0, -20, UIScreen.mainScreen().bounds.width, self.bounds.height + 20))
+            self.overlay?.userInteractionEnabled = false
+            self.insertSubview(self.overlay!, atIndex: 0)
+        }
+        self.overlay?.backgroundColor = color
+    }
+    
+    func RTReset() {
+        self.setBackgroundImage(nil, forBarMetrics: .Default)
+        self.overlay?.removeFromSuperview()
+        self.overlay = nil
     }
 }
 
 extension UIColor {
     
-    class func colorWithRGBOpaque (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> UIColor {
+    class func colorWithRGB(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> UIColor {
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
     
-    class func colorWithRGB (red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
+    class func colorWithRGB(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
         return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
     }
     
