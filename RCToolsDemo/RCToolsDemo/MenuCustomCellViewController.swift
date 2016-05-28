@@ -15,6 +15,7 @@ class MenuCustomCellViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
         self.attachTable()
+        RTPrint.shareInstance().disable = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,12 +33,14 @@ class MenuCustomCellViewController: UIViewController {
     }
     
     func headPhone(sender: UIMenuItem) {
+        RTPrint.shareInstance().disable = true
         let test = ["1", "2", "3"]
         RTPrint.shareInstance().prt(test)
     }
     
     func speaker(sender: UIMenuItem) {
-        RTPrint.shareInstance().prtm("1", "2", "3", separator: ", ", terminator: ":")
+        RTPrint.shareInstance().disable = false
+        RTPrint.shareInstance().prt(4, 5, "hello", separator: "< ", terminator: "\n")
     }
     
     func tapped(sender: MenuButton) {

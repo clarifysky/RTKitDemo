@@ -233,6 +233,7 @@
 		CDD515A41BE307CF00C5765C /* ControlsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsTableViewController.swift; sourceTree = "<group>"; };
 		CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZeriGapCollectionViewLayout.swift; sourceTree = "<group>"; };
 		CDE315821BAD3F8100D2C6AF /* MaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
+		CDEA9CDD1CF82E070096ACF9 /* test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = test.playground; sourceTree = "<group>"; };
 		CDF1158E1CC719240007547D /* TextTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTableViewController.swift; sourceTree = "<group>"; };
 		CDF4EB7A1CD2F5B6006E713D /* PushViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushViewController.swift; sourceTree = "<group>"; };
 		E62B4D6A1C9263B70092F14F /* RTAudioStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTAudioStream.swift; sourceTree = "<group>"; };
@@ -410,6 +411,7 @@
 				CD4BB2571BAA6D9800072773 /* Categories */,
 				CD4BB2341BAA6D2300072773 /* Supporting Files */,
 				E6B879241CF403A3002EA261 /* CodeSnippet.playground */,
+				CDEA9CDD1CF82E070096ACF9 /* test.playground */,
 			);
 			path = RCToolsDemo;
 			sourceTree = "<group>";
