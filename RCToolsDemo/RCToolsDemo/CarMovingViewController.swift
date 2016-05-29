@@ -39,7 +39,8 @@ class CarMovingViewController: UIViewController {
         // transparent navigation bar
 //        self.navigationController?.navigationBar.transparentBgColor(UIColor.colorWithRGB(0, green: 1, blue: 0, alpha: 0.4))
 //        self.navigationController?.navigationBar.opaqueBgColor(UIColor.blueColor())
-        self.navigationController?.navigationBar.RTBackgroundColor(UIColor.colorWithRGB(0, green: 1, blue: 0, alpha: 0.4))
+        
+//        self.navigationController?.navigationBar.RTBackgroundColor(UIColor.colorWithRGB(0, green: 1, blue: 0, alpha: 1))
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,12 +50,12 @@ class CarMovingViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.navigationBar.RTReset()
+//        self.navigationController?.navigationBar.RTReset()
     }
     
     func buildCar() -> UIImageView {

@@ -11,17 +11,21 @@ import UIKit
 
 class GraphicTableViewController: UITableViewController {
     
-    let actions = ["carMoving", "snapshot", "bezierpath", "dynamicBehaviors", "glimmer", "autoLayout", "animations"]
+    let actions = ["carMoving", "snapshot", "bezierpath", "dynamicBehaviors", "glimmer", "autoLayout", "animations", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test"]
+    private var initialOffsetY: CGFloat = -RTNumber.screenHeight() / 3
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Graphic"
         
-        self.navigationController?.navigationBar.RTBackgroundColor(UIColor.clearColor())
+        self.tableView.tableFooterView = UIView()
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "bg"))
+        self.tableView.contentInset = UIEdgeInsetsMake(RTNumber.screenHeight() / 3, 0, 0, 0)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
+        self.navigationController?.navigationBar.RTBackgroundColor(UIColor.clearColor())
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.Default
         // Tell the delegate when user scroll the scroll view.
         self.scrollViewDidScroll(self.tableView)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -30,17 +34,20 @@ class GraphicTableViewController: UITableViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.RTReset()
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.Default
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
-        let color = UIColor.colorWithRGB(45, green: 45, blue: 45, alpha: 1)
+        let color = UIColor.colorWithRGB(1, green: 0, blue: 0, alpha: 1)
         let offsetY = scrollView.contentOffset.y
+        let walked = offsetY - self.initialOffsetY
+        let tHeight = RTNumber.screenHeight() / 3
         
-        let halfHeight = UIScreen.mainScreen().bounds.height / 2
-        
-        if offsetY >= -halfHeight - 64 {
-            let alphat = min(1, (halfHeight + 64 + offsetY) / halfHeight)
-            self.navigationController?.navigationBar.RTBackgroundColor(color.colorWithAlphaComponent(alphat))
+        RTPrint.shareInstance().prt(offsetY)
+        RTPrint.shareInstance().prt(walked)
+        if walked >= 0 {
+            let alpha = min(1, walked / tHeight)
+            self.navigationController?.navigationBar.RTBackgroundColor(color.colorWithAlphaComponent(alpha))
         } else {
             self.navigationController?.navigationBar.RTBackgroundColor(color.colorWithAlphaComponent(0))
         }

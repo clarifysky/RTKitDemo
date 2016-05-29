@@ -15,4 +15,20 @@ class RTNumber {
         let res = number < 10 ? "0" + String(number) : String(number)
         return res
     }
+    
+    class func screenHeight() -> CGFloat {
+        return UIScreen.mainScreen().bounds.height
+    }
+    
+    class func screenWidth() -> CGFloat {
+        return UIScreen.mainScreen().bounds.width
+    }
+    
+    class func statusBarWidth() -> CGFloat {
+        return UIApplication.sharedApplication().statusBarFrame.width
+    }
+    
+    class func statusBarHeight() -> CGFloat {
+        return UIApplication.sharedApplication().statusBarFrame.height
+    }
 }

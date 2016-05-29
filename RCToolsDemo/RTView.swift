@@ -466,7 +466,7 @@ extension UINavigationBar {
     func RTBackgroundColor(color: UIColor) {
         if self.overlay == nil {
             self.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-            self.overlay = UIView(frame: CGRectMake(0, -20, UIScreen.mainScreen().bounds.width, self.bounds.height + 20))
+            self.overlay = UIView(frame: CGRectMake(0, -RTNumber.statusBarHeight(), UIScreen.mainScreen().bounds.width, self.bounds.height + RTNumber.statusBarHeight()))
             self.overlay?.userInteractionEnabled = false
             self.insertSubview(self.overlay!, atIndex: 0)
         }
