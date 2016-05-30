@@ -68,6 +68,7 @@
 		CDBAC6E01BB5328200ADB568 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAC6DF1BB5328200ADB568 /* ContainerViewController.swift */; };
 		CDC3350D1CD0F6C40050F3A8 /* AttachmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3350C1CD0F6C40050F3A8 /* AttachmentViewController.swift */; };
 		CDC3FBAD1CCFA18400CDB11D /* GravityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3FBAC1CCFA18400CDB11D /* GravityViewController.swift */; };
+		CDCB3E8C1CFBF061008CA765 /* ScrollCatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB3E8B1CFBF061008CA765 /* ScrollCatViewController.swift */; };
 		CDCD51631CE1847C0000A86B /* AFSoundItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCD51591CE1847C0000A86B /* AFSoundItem.m */; };
 		CDCD51641CE1847C0000A86B /* AFSoundPlayback.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCD515C1CE1847C0000A86B /* AFSoundPlayback.m */; };
 		CDCD51651CE1847C0000A86B /* AFSoundQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CDCD515E1CE1847C0000A86B /* AFSoundQueue.m */; };
@@ -215,6 +216,7 @@
 		CDBAC6DF1BB5328200ADB568 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		CDC3350C1CD0F6C40050F3A8 /* AttachmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentViewController.swift; sourceTree = "<group>"; };
 		CDC3FBAC1CCFA18400CDB11D /* GravityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityViewController.swift; sourceTree = "<group>"; };
+		CDCB3E8B1CFBF061008CA765 /* ScrollCatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollCatViewController.swift; sourceTree = "<group>"; };
 		CDCD51581CE1847C0000A86B /* AFSoundItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSoundItem.h; sourceTree = "<group>"; };
 		CDCD51591CE1847C0000A86B /* AFSoundItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSoundItem.m; sourceTree = "<group>"; };
 		CDCD515A1CE1847C0000A86B /* AFSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSoundManager.h; sourceTree = "<group>"; };
@@ -494,9 +496,9 @@
 		CD5C7DC81CC6501900DB4448 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				CDCB3E8A1CFBEFD5008CA765 /* LayerAnimation */,
 				CDC3350B1CD0F6A00050F3A8 /* DynamicAnimator */,
 				CD5C7DC91CC6504200DB4448 /* AnimationTableViewController.swift */,
-				CD5C7DCB1CC654CE00DB4448 /* AnimationCircleViewController.swift */,
 			);
 			name = Animations;
 			sourceTree = "<group>";
@@ -542,6 +544,15 @@
 				CDF4EB7A1CD2F5B6006E713D /* PushViewController.swift */,
 			);
 			name = DynamicAnimator;
+			sourceTree = "<group>";
+		};
+		CDCB3E8A1CFBEFD5008CA765 /* LayerAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				CD5C7DCB1CC654CE00DB4448 /* AnimationCircleViewController.swift */,
+				CDCB3E8B1CFBF061008CA765 /* ScrollCatViewController.swift */,
+			);
+			name = LayerAnimation;
 			sourceTree = "<group>";
 		};
 		CDCD51681CE191D80000A86B /* Audio */ = {
@@ -970,6 +981,7 @@
 				E62CC7AD1C4F218500E8E84F /* TextFieldViewController.swift in Sources */,
 				E64CBF531CED732500157626 /* MenuCustomCellViewController.swift in Sources */,
 				CD4BB2591BAA70B000072773 /* WindowMaskViewController.swift in Sources */,
+				CDCB3E8C1CFBF061008CA765 /* ScrollCatViewController.swift in Sources */,
 				18B5ED091BE0AEA900B29BCC /* CarMovingViewController.swift in Sources */,
 				E63317AF1C868260008980DC /* ChatTextMessage.swift in Sources */,
 				E64CBF511CED555600157626 /* MenuViewController.swift in Sources */,

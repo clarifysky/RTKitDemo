@@ -50,13 +50,11 @@ class CarMovingViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         rtprint("CarMoving viewWillAppear")
-        self.navigationController?.navigationBar.RTBackgroundColor(UIColor.purpleColor())
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         rtprint("CarMoving viewWillDisappear")
-        self.navigationController?.navigationBar.RTReset()
     }
     
     func buildCar() -> UIImageView {

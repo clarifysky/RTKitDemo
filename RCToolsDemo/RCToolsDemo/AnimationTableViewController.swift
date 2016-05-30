@@ -10,7 +10,7 @@ import UIKit
 
 class AnimationTableViewController: UITableViewController {
 
-    let actions = ["circle", "gravity", "attachment", "snap", "push"]
+    let actions = ["circle", "gravity", "attachment", "snap", "push", "catScroll"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Animation"
@@ -35,6 +35,8 @@ class AnimationTableViewController: UITableViewController {
             self.navigationController?.pushViewController(SnapViewController(), animated: true)
         } else if index == 4 {
             self.navigationController?.pushViewController(PushViewController(), animated: true)
+        } else if index == 5 {
+            self.navigationController?.pushViewController(ScrollCatViewController(), animated: true)
         }
     }
 

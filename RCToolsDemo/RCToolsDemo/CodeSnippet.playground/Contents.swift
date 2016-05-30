@@ -64,3 +64,7 @@ extension <#className#>: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 }
 
+
+/// RTImage
+let image = UIImageView(image: <#T##UIImage?#>)
+
