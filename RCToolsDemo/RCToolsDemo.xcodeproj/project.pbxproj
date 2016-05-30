@@ -63,6 +63,7 @@
 		CD9193101C745E9000FA0011 /* RCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD91930F1C745E9000FA0011 /* RCTextField.swift */; };
 		CD9229E81BF4662B004BF267 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9229E61BF4662B004BF267 /* AudioViewController.swift */; };
 		CDA79E531CD33C0200DB5ABD /* RTBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA79E521CD33C0200DB5ABD /* RTBorder.swift */; };
+		CDB905551CFA9CD90063048D /* RTFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB905541CFA9CD90063048D /* RTFuncs.swift */; };
 		CDB90D051BEC35D10090D802 /* BezierPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB90D041BEC35D10090D802 /* BezierPathViewController.swift */; };
 		CDBAC6E01BB5328200ADB568 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAC6DF1BB5328200ADB568 /* ContainerViewController.swift */; };
 		CDC3350D1CD0F6C40050F3A8 /* AttachmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3350C1CD0F6C40050F3A8 /* AttachmentViewController.swift */; };
@@ -209,6 +210,7 @@
 		CD91930F1C745E9000FA0011 /* RCTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTextField.swift; sourceTree = "<group>"; };
 		CD9229E61BF4662B004BF267 /* AudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		CDA79E521CD33C0200DB5ABD /* RTBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTBorder.swift; sourceTree = "<group>"; };
+		CDB905541CFA9CD90063048D /* RTFuncs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTFuncs.swift; sourceTree = "<group>"; };
 		CDB90D041BEC35D10090D802 /* BezierPathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathViewController.swift; sourceTree = "<group>"; };
 		CDBAC6DF1BB5328200ADB568 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		CDC3350C1CD0F6C40050F3A8 /* AttachmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentViewController.swift; sourceTree = "<group>"; };
@@ -689,6 +691,7 @@
 				E641004E1CE421900071DEDB /* RTError.swift */,
 				E631A9B91CEC101A002251EA /* RTRC.swift */,
 				E6EB89891CF7FE420084F5A2 /* RTPrint.swift */,
+				CDB905541CFA9CD90063048D /* RTFuncs.swift */,
 			);
 			name = Skeleton;
 			sourceTree = "<group>";
@@ -985,6 +988,7 @@
 				CD5C7DC21CC64DEC00DB4448 /* RTMath.swift in Sources */,
 				CD5C7DBF1CC64DEC00DB4448 /* RTAnimation.swift in Sources */,
 				E6D1ECC31C1EAF4100995844 /* UIImage+animatedGIF.m in Sources */,
+				CDB905551CFA9CD90063048D /* RTFuncs.swift in Sources */,
 				E63317A71C867790008980DC /* ChatTextCell.swift in Sources */,
 				E6EB898A1CF7FE420084F5A2 /* RTPrint.swift in Sources */,
 				CD6DD9401BCBDC3A0092F561 /* ShadowViewController.swift in Sources */,

@@ -24,8 +24,9 @@ class GraphicTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        rtprint("Graphic viewWillAppear")
         self.navigationController?.navigationBar.RTBackgroundColor(UIColor.clearColor())
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.Default
         // Tell the delegate when user scroll the scroll view.
         self.scrollViewDidScroll(self.tableView)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -33,8 +34,8 @@ class GraphicTableViewController: UITableViewController {
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        rtprint("Graphic viewWillDisappear")
         self.navigationController?.navigationBar.RTReset()
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.Default
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {

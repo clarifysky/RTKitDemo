@@ -456,24 +456,25 @@ extension UINavigationBar {
             return objc_getAssociatedObject(self, &AssociatedKeys.Overlay) as? UIView
         }
         set {
-            if newValue != nil {
-                objc_setAssociatedObject(self, &AssociatedKeys.Overlay, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            }
+            objc_setAssociatedObject(self, &AssociatedKeys.Overlay, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
     /// Set backgroundColor for UINavigationBar
     func RTBackgroundColor(color: UIColor) {
         if self.overlay == nil {
+            rtprint("overlay is nil, will create overlay")
             self.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
             self.overlay = UIView(frame: CGRectMake(0, -RTNumber.statusBarHeight(), UIScreen.mainScreen().bounds.width, self.bounds.height + RTNumber.statusBarHeight()))
             self.overlay?.userInteractionEnabled = false
             self.insertSubview(self.overlay!, atIndex: 0)
         }
+        rtprint("overlay is not nil, will set backgroundColor")
         self.overlay?.backgroundColor = color
     }
     
     func RTReset() {
+        rtprint("reset navigationBar")
         self.setBackgroundImage(nil, forBarMetrics: .Default)
         self.overlay?.removeFromSuperview()
         self.overlay = nil
