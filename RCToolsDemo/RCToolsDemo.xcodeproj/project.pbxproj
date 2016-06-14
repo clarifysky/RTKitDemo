@@ -33,6 +33,7 @@
 		CD4661DA1BBA100B00FDFBDC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4661D91BBA100B00FDFBDC /* FirstViewController.swift */; };
 		CD4661DC1BBA101600FDFBDC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4661DB1BBA101600FDFBDC /* SecondViewController.swift */; };
 		CD4661DE1BBA102000FDFBDC /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4661DD1BBA102000FDFBDC /* ThirdViewController.swift */; };
+		CD47E28A1CFD2E3400081EF8 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD47E2891CFD2E3400081EF8 /* ChartViewController.swift */; };
 		CD4BB2371BAA6D2300072773 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BB2361BAA6D2300072773 /* AppDelegate.swift */; };
 		CD4BB2391BAA6D2300072773 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BB2381BAA6D2300072773 /* ViewController.swift */; };
 		CD4BB23C1BAA6D2300072773 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD4BB23A1BAA6D2300072773 /* Main.storyboard */; };
@@ -78,6 +79,7 @@
 		CDCD516F1CE19A790000A86B /* RTAudioPlayback.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCD516E1CE19A790000A86B /* RTAudioPlayback.swift */; };
 		CDCD51711CE1BBF90000A86B /* AudioSingleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCD51701CE1BBF90000A86B /* AudioSingleViewController.swift */; };
 		CDCD51731CE1C7330000A86B /* RTAudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCD51721CE1C7330000A86B /* RTAudioManager.swift */; };
+		CDD4AB031CFEB82E00CB771C /* ExcelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD4AB021CFEB82E00CB771C /* ExcelViewController.swift */; };
 		CDD515A01BE306F200C5765C /* ZeroGapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD5159F1BE306F200C5765C /* ZeroGapViewController.swift */; };
 		CDD515A31BE3074200C5765C /* Controls.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD515A21BE3074200C5765C /* Controls.storyboard */; };
 		CDD515A51BE307CF00C5765C /* ControlsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD515A41BE307CF00C5765C /* ControlsTableViewController.swift */; };
@@ -177,6 +179,7 @@
 		CD4661D91BBA100B00FDFBDC /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		CD4661DB1BBA101600FDFBDC /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		CD4661DD1BBA102000FDFBDC /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		CD47E2891CFD2E3400081EF8 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		CD4BB2311BAA6D2300072773 /* RCToolsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCToolsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD4BB2351BAA6D2300072773 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD4BB2361BAA6D2300072773 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -232,6 +235,7 @@
 		CDCD516E1CE19A790000A86B /* RTAudioPlayback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTAudioPlayback.swift; sourceTree = "<group>"; };
 		CDCD51701CE1BBF90000A86B /* AudioSingleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSingleViewController.swift; sourceTree = "<group>"; };
 		CDCD51721CE1C7330000A86B /* RTAudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTAudioManager.swift; sourceTree = "<group>"; };
+		CDD4AB021CFEB82E00CB771C /* ExcelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcelViewController.swift; sourceTree = "<group>"; };
 		CDD5159F1BE306F200C5765C /* ZeroGapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZeroGapViewController.swift; sourceTree = "<group>"; };
 		CDD515A21BE3074200C5765C /* Controls.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Controls.storyboard; sourceTree = "<group>"; };
 		CDD515A41BE307CF00C5765C /* ControlsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsTableViewController.swift; sourceTree = "<group>"; };
@@ -318,6 +322,7 @@
 		189B6DA21BCF32C30083C02B /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				CDD4AB011CFEB82000CB771C /* Office */,
 				E63317A31C867593008980DC /* Chat */,
 				189B6DA31BCF32D50083C02B /* ParagraphViewController.swift */,
 				18A9BB681BD5D93C00532575 /* DictionaryViewController.swift */,
@@ -551,6 +556,7 @@
 			children = (
 				CD5C7DCB1CC654CE00DB4448 /* AnimationCircleViewController.swift */,
 				CDCB3E8B1CFBF061008CA765 /* ScrollCatViewController.swift */,
+				CD47E2891CFD2E3400081EF8 /* ChartViewController.swift */,
 			);
 			name = LayerAnimation;
 			sourceTree = "<group>";
@@ -572,6 +578,14 @@
 				CDCD51721CE1C7330000A86B /* RTAudioManager.swift */,
 			);
 			name = Streamer;
+			sourceTree = "<group>";
+		};
+		CDD4AB011CFEB82000CB771C /* Office */ = {
+			isa = PBXGroup;
+			children = (
+				CDD4AB021CFEB82E00CB771C /* ExcelViewController.swift */,
+			);
+			name = Office;
 			sourceTree = "<group>";
 		};
 		CDD515A11BE3072C00C5765C /* Controls */ = {
@@ -957,6 +971,7 @@
 				18E5C74A1BD740AB0095D216 /* GlimmerViewController.swift in Sources */,
 				CD8E90F11C103D6E00BF50EA /* BadgeViewController.swift in Sources */,
 				CDCD51641CE1847C0000A86B /* AFSoundPlayback.m in Sources */,
+				CDD4AB031CFEB82E00CB771C /* ExcelViewController.swift in Sources */,
 				E63317AC1C867A3D008980DC /* ChatMessage.swift in Sources */,
 				E69049011C474EBE006C5314 /* DynamicBehaviorViewController.swift in Sources */,
 				CDB90D051BEC35D10090D802 /* BezierPathViewController.swift in Sources */,
@@ -979,6 +994,7 @@
 				1838BEF11BDA204F005D7D8B /* GalleryDetailViewController.swift in Sources */,
 				CD4661DC1BBA101600FDFBDC /* SecondViewController.swift in Sources */,
 				E62CC7AD1C4F218500E8E84F /* TextFieldViewController.swift in Sources */,
+				CD47E28A1CFD2E3400081EF8 /* ChartViewController.swift in Sources */,
 				E64CBF531CED732500157626 /* MenuCustomCellViewController.swift in Sources */,
 				CD4BB2591BAA70B000072773 /* WindowMaskViewController.swift in Sources */,
 				CDCB3E8C1CFBF061008CA765 /* ScrollCatViewController.swift in Sources */,

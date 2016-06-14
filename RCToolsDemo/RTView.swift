@@ -483,12 +483,14 @@ extension UINavigationBar {
 
 extension UIColor {
     
-    class func colorWithRGB(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) -> UIColor {
+    /// Use 0 to 1.0 to set the value for RGB.
+    class func colorWithRGB(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat = 1.0) -> UIColor {
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
     
-    class func colorWithRGB(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
-        return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+    /// Use 0 to 255 to set the value for RGB.
+    class func colorBigRGB(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat = 1.0) -> UIColor {
+        return UIColor(red: red / 255, green: green / 255, blue: blue / 255, alpha: alpha)
     }
     
     /// Get the uiimage as you specified color.

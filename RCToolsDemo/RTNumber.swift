@@ -31,4 +31,19 @@ class RTNumber {
     class func statusBarHeight() -> CGFloat {
         return UIApplication.sharedApplication().statusBarFrame.height
     }
+    
+    /// Compute two controlPoint based on startPoint and endPoint. This is usually used for UIBezierPath.
+    class func controlPoint(startPoint: CGPoint, endPoint: CGPoint) -> (CGPoint, CGPoint) {
+        let xDistance = (endPoint.x-startPoint.x)
+        
+        // control point 1
+        let controlPoint1Y = startPoint.y
+        let controlPoint1 = CGPointMake(startPoint.x + xDistance/2, controlPoint1Y)
+        
+        // control point 2
+        let controlPoint2Y = endPoint.y
+        let controlPoint2 = CGPointMake(controlPoint1.x, controlPoint2Y)
+        
+        return (controlPoint1, controlPoint2)
+    }
 }

@@ -34,8 +34,14 @@ class SnapViewController: UIViewController {
         self.animator = UIDynamicAnimator(referenceView: self.view)
         
         self.snapBehavior = UISnapBehavior(item: self.redView!, snapToPoint: self.redView!.center)
+        self.snapBehavior?.damping = 0.2
+        
+//        let itemBehavior = UIDynamicItemBehavior()
+//        itemBehavior.addItem(self.redView!)
+//        itemBehavior.allowsRotation = false
         
         self.animator?.addBehavior(self.snapBehavior!)
+//        self.animator?.addBehavior(itemBehavior)
     }
     
     
