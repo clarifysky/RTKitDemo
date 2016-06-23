@@ -85,6 +85,7 @@
 		CDD515A51BE307CF00C5765C /* ControlsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD515A41BE307CF00C5765C /* ControlsTableViewController.swift */; };
 		CDD515A81BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */; };
 		CDE315831BAD3F8100D2C6AF /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE315821BAD3F8100D2C6AF /* MaskViewController.swift */; };
+		CDE33F441D1B85EC008CB7CE /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE33F431D1B85EC008CB7CE /* ImageCollectionViewCell.swift */; };
 		CDF1158F1CC719240007547D /* TextTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF1158E1CC719240007547D /* TextTableViewController.swift */; };
 		CDF4EB7B1CD2F5B6006E713D /* PushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4EB7A1CD2F5B6006E713D /* PushViewController.swift */; };
 		E62B4D6B1C9263B70092F14F /* RTAudioStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62B4D6A1C9263B70092F14F /* RTAudioStream.swift */; };
@@ -241,6 +242,7 @@
 		CDD515A41BE307CF00C5765C /* ControlsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsTableViewController.swift; sourceTree = "<group>"; };
 		CDD515A71BE30E9800C5765C /* ZeriGapCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZeriGapCollectionViewLayout.swift; sourceTree = "<group>"; };
 		CDE315821BAD3F8100D2C6AF /* MaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
+		CDE33F431D1B85EC008CB7CE /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		CDEA9CDD1CF82E070096ACF9 /* test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = test.playground; sourceTree = "<group>"; };
 		CDF1158E1CC719240007547D /* TextTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTableViewController.swift; sourceTree = "<group>"; };
 		CDF4EB7A1CD2F5B6006E713D /* PushViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushViewController.swift; sourceTree = "<group>"; };
@@ -554,9 +556,9 @@
 		CDCB3E8A1CFBEFD5008CA765 /* LayerAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				CDE33F401D1B85BB008CB7CE /* Chart */,
 				CD5C7DCB1CC654CE00DB4448 /* AnimationCircleViewController.swift */,
 				CDCB3E8B1CFBF061008CA765 /* ScrollCatViewController.swift */,
-				CD47E2891CFD2E3400081EF8 /* ChartViewController.swift */,
 			);
 			name = LayerAnimation;
 			sourceTree = "<group>";
@@ -615,6 +617,31 @@
 				E64CBF561CED756A00157626 /* MenuButtonTableViewCell.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		CDE33F401D1B85BB008CB7CE /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				CDE33F421D1B85C7008CB7CE /* View */,
+				CDE33F411D1B85C1008CB7CE /* Controller */,
+			);
+			name = Chart;
+			sourceTree = "<group>";
+		};
+		CDE33F411D1B85C1008CB7CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD47E2891CFD2E3400081EF8 /* ChartViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CDE33F421D1B85C7008CB7CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CDE33F431D1B85EC008CB7CE /* ImageCollectionViewCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		CDF1158D1CC7190F0007547D /* Text */ = {
@@ -962,6 +989,7 @@
 				E695290D1C7EF7C00032FDDC /* AutoLayoutViewController.swift in Sources */,
 				189830A51BDDD60E00FFE854 /* ImagesCell.swift in Sources */,
 				CD4661DA1BBA100B00FDFBDC /* FirstViewController.swift in Sources */,
+				CDE33F441D1B85EC008CB7CE /* ImageCollectionViewCell.swift in Sources */,
 				CD08E1F81CD21C7300615692 /* SnapViewController.swift in Sources */,
 				CD5C7DC01CC64DEC00DB4448 /* RTAudio.swift in Sources */,
 				18A9BB6B1BD5D9D900532575 /* ComponentsTableViewController.swift in Sources */,
