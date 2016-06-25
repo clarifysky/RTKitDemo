@@ -41,6 +41,8 @@
 		CD4BB2411BAA6D2300072773 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD4BB23F1BAA6D2300072773 /* LaunchScreen.xib */; };
 		CD4BB24D1BAA6D2400072773 /* RCToolsDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BB24C1BAA6D2400072773 /* RCToolsDemoTests.swift */; };
 		CD4BB2591BAA70B000072773 /* WindowMaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4BB2581BAA70B000072773 /* WindowMaskViewController.swift */; };
+		CD56F6791D1CC5EE0034569C /* ChartLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56F6781D1CC5EE0034569C /* ChartLayer.swift */; };
+		CD56F67B1D1CD5840034569C /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56F67A1D1CD5840034569C /* ChartView.swift */; };
 		CD5C7DBF1CC64DEC00DB4448 /* RTAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5C7DB61CC64DEC00DB4448 /* RTAnimation.swift */; };
 		CD5C7DC01CC64DEC00DB4448 /* RTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5C7DB71CC64DEC00DB4448 /* RTAudio.swift */; };
 		CD5C7DC11CC64DEC00DB4448 /* RTFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5C7DB81CC64DEC00DB4448 /* RTFile.swift */; };
@@ -192,6 +194,8 @@
 		CD4BB24B1BAA6D2400072773 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD4BB24C1BAA6D2400072773 /* RCToolsDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCToolsDemoTests.swift; sourceTree = "<group>"; };
 		CD4BB2581BAA70B000072773 /* WindowMaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowMaskViewController.swift; sourceTree = "<group>"; };
+		CD56F6781D1CC5EE0034569C /* ChartLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartLayer.swift; sourceTree = "<group>"; };
+		CD56F67A1D1CD5840034569C /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		CD5C7DB61CC64DEC00DB4448 /* RTAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTAnimation.swift; sourceTree = "<group>"; };
 		CD5C7DB71CC64DEC00DB4448 /* RTAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTAudio.swift; sourceTree = "<group>"; };
 		CD5C7DB81CC64DEC00DB4448 /* RTFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTFile.swift; sourceTree = "<group>"; };
@@ -640,6 +644,8 @@
 			isa = PBXGroup;
 			children = (
 				CDE33F431D1B85EC008CB7CE /* ImageCollectionViewCell.swift */,
+				CD56F6781D1CC5EE0034569C /* ChartLayer.swift */,
+				CD56F67A1D1CD5840034569C /* ChartView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -989,6 +995,7 @@
 				E695290D1C7EF7C00032FDDC /* AutoLayoutViewController.swift in Sources */,
 				189830A51BDDD60E00FFE854 /* ImagesCell.swift in Sources */,
 				CD4661DA1BBA100B00FDFBDC /* FirstViewController.swift in Sources */,
+				CD56F6791D1CC5EE0034569C /* ChartLayer.swift in Sources */,
 				CDE33F441D1B85EC008CB7CE /* ImageCollectionViewCell.swift in Sources */,
 				CD08E1F81CD21C7300615692 /* SnapViewController.swift in Sources */,
 				CD5C7DC01CC64DEC00DB4448 /* RTAudio.swift in Sources */,
@@ -1057,6 +1064,7 @@
 				CD7FCDEA1BC6433200A126A6 /* FourthViewController.swift in Sources */,
 				1838BEED1BD9CFAB005D7D8B /* GalleryBrowserViewController.swift in Sources */,
 				CD2D80741C1A75A300E49AED /* LabelViewController.swift in Sources */,
+				CD56F67B1D1CD5840034569C /* ChartView.swift in Sources */,
 				CDE315831BAD3F8100D2C6AF /* MaskViewController.swift in Sources */,
 				CDBAC6E01BB5328200ADB568 /* ContainerViewController.swift in Sources */,
 				CD5C7DC51CC64DEC00DB4448 /* RTTimer.swift in Sources */,

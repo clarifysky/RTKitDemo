@@ -19,274 +19,202 @@ class ChartViewController: UIViewController {
         [10, 12, 25, 22, 16, 19],
         [19, 16, 10, 18, 65, 48]
     ]
-    /// Group made of points, used for represent multiple curve line image.
-    private var pointsGroup: [[CGPoint]] = [[CGPoint]]()
-    /// Group of bezier path, used for drawing lines on different canvas.
-    private var pathsGroup: [UIBezierPath] = [UIBezierPath]()
-    /// Group of canvas, used to draw bezier path on it.
-//    private var canvasesGroup: [UIView] = [UIView]()
-    private var pathLayersGroup: [CAShapeLayer] = [CAShapeLayer]()
-    /// The max point across several parts.
-    private var maxPoint: CGFloat = 0
+//    private var offsetX: CGFloat = 0 {
+//        willSet {
+//            if !self.automaticSwitch {
+//                // decrease part
+//                if self.currentScreenIndex > 0 {
+//                    if newValue < self.offsetX || newValue == 0 {
+//                        self.currentScreenIndex -= 1
+//                        // Trigger redraw curve line here.
+//                        self.redrawChart()
+//                    }
+//                }
+//                // increase part
+//                if self.currentScreenIndex < self.dataGroup.count - 1 {
+//                    // X of contentOffset is at most the whole width of one screen.
+//                    if newValue > self.offsetX || newValue == self.scrollView!.width {
+//                        self.currentScreenIndex += 1
+//                        // Trigger redraw curve line here.
+//                        self.redrawChart()
+//                    }
+//                }
+//            }
+//            print("current index: \(self.currentScreenIndex)")
+//            print(">>>>>>>>offsetX at endDicelerating: \(self.offsetX)>>>>>>>\n")
+//        }
+//    }
+    /// Used to indicate that whether the scrollView is scrolled automatically or via program.
+    /// If the scrollView scrolls conform to program, this does not means that you should decrease/increse
+    /// the currentScreenIndex, otherwise, you should adjust the currentScreenIndex.
+//    private var automaticSwitch: Bool = false
+    /// Current index of screen.
+    private var currentScreenIndex: Int = 6
+    /// X of contentOffset at when scrollViewBeginDragging.
+    private var beginOffsetX: CGFloat = 0
+    /// X of contentOffset at when scrollViewDidDecelerating.
+    private var endOffsetX: CGFloat = 0
     
-    
-    private var unitHeight: CGFloat = 0
-    private var unitWidth: CGFloat = 0
-    /// Current index which changes with scrollView's scrolling.
-    private var currentIndex: Int = 4
-    private static var collectionSize = CGSizeZero
-    
-    private var collectionView: UICollectionView?
+    private var scrollView: UIScrollView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
         // Disable automatically adjust scroll view insets when use navigationBar.
         self.automaticallyAdjustsScrollViewInsets = false
-        ChartViewController.collectionSize = CGSizeMake(self.view.width, 300)
         
-        self.prepare()
-        self.attachCollection()
-        self.scrollToCurrentIndex()
+        self.attachScroll()
+        
+        // Set the default offsetX
+//        self.directSetOffsetX(self.view.width)
+        self.scrollToSpecificIndex(1)
+        self.beginOffsetX = self.view.width
+        self.endOffsetX = self.view.width
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    private func attachCollection() {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = ChartViewController.collectionSize
-        flowLayout.minimumLineSpacing = 0
-        flowLayout.minimumInteritemSpacing = 0
-        flowLayout.scrollDirection = .Horizontal
-        self.collectionView = UICollectionView(frame: CGRectMake(0, 100, ChartViewController.collectionSize.width, ChartViewController.collectionSize.height), collectionViewLayout: flowLayout)
-        self.collectionView?.backgroundColor = UIColor.redColor()
-        self.collectionView?.delegate = self
-        self.collectionView?.dataSource = self
-        self.collectionView?.registerClass(ImageCollectionViewCell.self, forCellWithReuseIdentifier: "imageCell")
-        self.view.addSubview(self.collectionView!)
-    }
-    
-    private func prepare() {
-        self.prepareMaxPoint()
-        self.prepareUnits(maxPoint, pointNumber: 6)
-        self.prepareMaterials()
-        self.drawPaths()
+    private func attachScroll() {
+        self.scrollView = UIScrollView(frame: CGRectMake(0, 100, self.view.width, 300))
+        self.scrollView?.delegate = self
+        self.scrollView?.pagingEnabled = true
+        self.view.addSubview(scrollView!)
         
-        print("maxPoint: \(self.maxPoint)")
-        print("unit: \(self.unitWidth), \(self.unitHeight)")
-        print("pointsGroup: \(self.pointsGroup)")
-        print("pathsGroup: \(self.pathsGroup)")
-        print("layers: \(self.pathLayersGroup)")
-//        print("canvasesGroup: \(self.canvasesGroup)")
+        let pluckedData = self.pluckData()
+        let chartView = ChartView( dataGroup: pluckedData, unitSize: CGSizeMake(self.scrollView!.width, self.scrollView!.height))
+        self.scrollView?.contentSize = chartView.frame.size
+        self.scrollView?.addSubview(chartView)
+        
+        print("-count of pluckedData: \(pluckedData.count)")
     }
     
-    
-    private func prepareMaxPoint() {
-        if self.currentIndex == 0 {
-            if self.dataGroup.count > 1 {
-                // maxPoint
-                let tmpArr = [self.dataGroup[0].maxElement()!, self.dataGroup[1].maxElement()!]
-                self.maxPoint = tmpArr.maxElement()!
+    private func pluckData() -> [[CGFloat]] {
+        var tmp = [[CGFloat]]()
+        if self.dataGroup.count > 0 {
+            if self.currentScreenIndex == 0 {
+                if self.dataGroup.count > 1 {
+                    tmp.append(self.dataGroup[0])
+                    tmp.append(self.dataGroup[1])
+                } else {
+                    tmp.append(self.dataGroup[0])
+                }
+            } else if self.currentScreenIndex == self.dataGroup.count - 1 {
+                if self.dataGroup.count > 1 {
+                    tmp.append(self.dataGroup[self.currentScreenIndex - 1])
+                    tmp.append(self.dataGroup[self.currentScreenIndex])
+                }
             } else {
-                // maxPoint
-                self.maxPoint = self.dataGroup[0].maxElement()!
+                tmp.append(self.dataGroup[self.currentScreenIndex - 1])
+                tmp.append(self.dataGroup[self.currentScreenIndex])
+                tmp.append(self.dataGroup[self.currentScreenIndex + 1])
             }
-        } else if self.currentIndex == self.dataGroup.count - 1 {
-            // As count of dataGroup bigger than zero, count of dataGroup here must bigger than 1,
-            // because if the count of dataGroup is 1, it will execute "if self.currentIndex == 0" block
-            // first, and will not step into this block.
-            
-            // maxPoint
-            let tmpArr = [self.dataGroup[self.currentIndex - 1].maxElement()!, self.dataGroup[self.currentIndex].maxElement()!]
-            self.maxPoint = tmpArr.maxElement()!
-        } else {
-            // When program step into here, the count of dataGroup must bigger than 2, because if the count is 2 or less,
-            // program will step into blocks above first, and this block will not be executed.
-            
-            // maxPoint
-            let tmpArr = [self.dataGroup[self.currentIndex - 1].maxElement()!, self.dataGroup[self.currentIndex].maxElement()!, self.dataGroup[self.currentIndex + 1].maxElement()!]
-            self.maxPoint = tmpArr.maxElement()!
-        }
-    }
-    
-    private func prepareMaterials() {
-        if self.currentIndex == 0 {
-            if self.dataGroup.count > 1 {
-                // pointsGroup
-                pointsGroup.append(self.preparePoints(self.dataGroup[0]))
-                pointsGroup.append(self.preparePoints(self.dataGroup[1]))
-                
-                // paths
-                pathsGroup.append(self.preparePath(self.pointsGroup[0][0]))
-                pathsGroup.append(self.preparePath(self.pointsGroup[1][0]))
-                
-                // canvases
-//                canvasesGroup.append(self.prepareCanvas())
-//                canvasesGroup.append(self.prepareCanvas())
-            } else {
-                // pointsGroup
-                pointsGroup.append(self.preparePoints(self.dataGroup[0]))
-                
-                // paths
-                pathsGroup.append(self.preparePath(self.pointsGroup[0][0]))
-                
-                // canvases
-//                canvasesGroup.append(self.prepareCanvas())
-            }
-        } else if self.currentIndex == self.dataGroup.count - 1 {
-            // As count of dataGroup bigger than zero, count of dataGroup here must bigger than 1,
-            // because if the count of dataGroup is 1, it will execute "if self.currentIndex == 0" block
-            // first, and will not step into this block.
-            
-            // pointsGroup
-            pointsGroup.append(self.preparePoints(self.dataGroup[self.currentIndex - 1]))
-            pointsGroup.append(self.preparePoints(self.dataGroup[self.currentIndex]))
-            
-            // paths
-            pathsGroup.append(self.preparePath(self.pointsGroup[0][0]))
-            pathsGroup.append(self.preparePath(self.pointsGroup[1][0]))
-            
-            // canvases
-//            canvasesGroup.append(self.prepareCanvas())
-//            canvasesGroup.append(self.prepareCanvas())
-        } else {
-            // When program step into here, the count of dataGroup must bigger than 2, because if the count is 2 or less,
-            // program will step into blocks above first, and this block will not be executed.
-            
-            // pointsGroup
-            pointsGroup.append(self.preparePoints(self.dataGroup[self.currentIndex - 1]))
-            pointsGroup.append(self.preparePoints(self.dataGroup[self.currentIndex]))
-            pointsGroup.append(self.preparePoints(self.dataGroup[self.currentIndex + 1]))
-            
-            // paths
-            pathsGroup.append(self.preparePath(self.pointsGroup[0][0]))
-            pathsGroup.append(self.preparePath(self.pointsGroup[1][0]))
-            pathsGroup.append(self.preparePath(self.pointsGroup[2][0]))
-            
-            // canvases
-//            canvasesGroup.append(self.prepareCanvas())
-//            canvasesGroup.append(self.prepareCanvas())
-//            canvasesGroup.append(self.prepareCanvas())
-        }
-    }
-    
-    /// Prepare the canvas for drawing curve line.
-    private func prepareCanvas() -> UIView {
-        let canvas = UIView(frame: CGRectMake(0, 0, ChartViewController.collectionSize.width, ChartViewController.collectionSize.height))
-        canvas.backgroundColor = UIColor.orangeColor()
-        return canvas
-    }
-    
-    /// Compute the minimum width/height value used for compute the points.
-    private func prepareUnits(maxPoint: CGFloat, pointNumber: CGFloat) {
-        self.unitWidth = ChartViewController.collectionSize.width / pointNumber
-        self.unitHeight = ChartViewController.collectionSize.height / maxPoint
-    }
-    
-    
-    /// Compute all the points on curve line based on units, this is just for one screen.
-    private func preparePoints(data: [CGFloat]) -> [CGPoint] {
-        var tmp = [CGPoint]()
-        for i in 0 ..< data.count {
-            tmp.append(CGPointMake(CGFloat(i) * self.unitWidth, data[i] * self.unitHeight))
         }
         return tmp
     }
     
-    /// Prepare bezier path for different part of image.
-    private func preparePath(firstPoint: CGPoint) -> UIBezierPath {
-        let path = UIBezierPath()
-        path.moveToPoint(firstPoint)
-        return path
-    }
     
-    private func substractTail() {
-        self.pointsGroup.removeLast()
-        self.pathsGroup.removeLast()
-//        self.canvasesGroup.removeLast()
-        self.pathLayersGroup.removeLast()
-    }
-    
-    private func subtractHead() {
-        self.pointsGroup.removeFirst()
-        self.pathsGroup.removeFirst()
-//        self.canvasesGroup.removeFirst()
-        self.pathLayersGroup.removeFirst()
-    }
-    
-    /// Draw paths on canvas
-    private func drawPaths() {
-        for i in 0..<self.pointsGroup.count {
-            self.drawOne(self.pointsGroup[i], path: self.pathsGroup[i])
-        }
-    }
-    
-    private func drawOne(points: [CGPoint], path: UIBezierPath) {
-        for i in 1 ..< points.count {
-            let (controlPoint1, controlPoint2) = RTNumber.controlPoint(points[i - 1], endPoint: points[i])
-            path.addCurveToPoint(points[i], controlPoint1: controlPoint1, controlPoint2: controlPoint2)
-        }
-        let layerPath = CAShapeLayer()
-        layerPath.path = path.CGPath
-        layerPath.fillColor = nil
-        layerPath.strokeColor = UIColor.blueColor().CGColor
-        layerPath.lineWidth = 5.0
-        layerPath.lineCap = kCALineCapRound
-        self.pathLayersGroup.append(layerPath)
-//        canvas.layer.addSublayer(layerPath)
-    }
-    
-    
-    private func scrollToCurrentIndex() {
+    private func scrollToSpecificIndex(index: Int) {
+        print("-scroll to index: \(index)")
         dispatch_async(dispatch_get_main_queue(), {
-            var index = 0
-            if self.currentIndex == 0 {
-            } else if self.currentIndex == self.dataGroup.count - 1 {
-                // As count of dataGroup bigger than zero, count of dataGroup here must bigger than 1,
-                // because if the count of dataGroup is 1, it will execute "if self.currentIndex == 0" block
-                // first, and will not step into this block.
-                
-                if self.pointsGroup.count == 2 {
-                    index = 2
-                }
-            } else {
-                // When program step into here, the count of dataGroup must bigger than 2, because if the count is 2 or less,
-                // program will step into blocks above first, and this block will not be executed.
-                
-                if self.pointsGroup.count == 3 {
-                    index = 1
-                }
-            }
+//            // Set automaticSwitch to true when you begin to scroll the scrollView via program.
+//            self.automaticSwitch = true
+//            // And afater the scrollView scrolled, set automaticSwitch to false.
+//            defer {
+//                self.automaticSwitch = false
+//            }
             
-            let indexPath = NSIndexPath(forItem: index, inSection: 0)
-            self.collectionView?.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredHorizontally, animated: false)
+            self.scrollView?.scrollRectToVisible(CGRectMake(CGFloat(index) * self.scrollView!.width, 0, self.scrollView!.width, self.scrollView!.height), animated: false)
         })
     }
-
+    
+    private func getIndexOfScroll() -> Int {
+        var currentScrollIndex = 0
+        if self.dataGroup.count > 0 {
+            if self.currentScreenIndex == 0 {
+                currentScrollIndex = 0
+            } else if self.currentScreenIndex == self.dataGroup.count - 1 {
+                currentScrollIndex = 1
+            } else {
+                currentScrollIndex = 1
+            }
+        }
+        return currentScrollIndex
+    }
+    
+    private func redrawChart() {
+        for view in self.scrollView!.subviews {
+            view.removeFromSuperview()
+        }
+        
+        let pluckedData = self.pluckData()
+        let chartView = ChartView(dataGroup: pluckedData, unitSize: CGSizeMake(self.scrollView!.width, self.scrollView!.height))
+        chartView.layer.opacity = 0.0
+        self.scrollView?.contentSize = chartView.frame.size
+        self.scrollView?.addSubview(chartView)
+        self.scrollToSpecificIndex(self.getIndexOfScroll())
+        chartView.layer.opacity = 1.0
+        
+        print("-count of pluckedData: \(pluckedData.count)")
+        
+//        if self.currentScreenIndex == self.dataGroup.count - 1 {
+//            self.directSetOffsetX(self.scrollView!.contentSize.width - self.scrollView!.width)
+//        }
+    }
+    
+    
+//    private func directSetOffsetX(value: CGFloat) {
+//        self.automaticSwitch = true
+//        self.offsetX = value
+//        self.automaticSwitch = false
+//    }
 }
 
 extension ChartViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        let offset = scrollView.contentOffset
-        print(offset)
-    }
-}
-
-extension ChartViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        print("viewWillBeginDragging contentOffset: \(scrollView.contentOffset)")
+        self.beginOffsetX = scrollView.contentOffset.x
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.pointsGroup.count
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("imageCell", forIndexPath: indexPath) as! ImageCollectionViewCell
-        cell.reAttachLayer(self.pathLayersGroup[indexPath.item])
-        return cell
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        print("viewDidEndDecelerating contentOffset: \(scrollView.contentOffset)")
+        self.endOffsetX = scrollView.contentOffset.x
+        
+        if self.endOffsetX > self.beginOffsetX {
+            print("to left")
+            if self.currentScreenIndex < self.dataGroup.count - 1 {
+                self.currentScreenIndex += 1
+                self.redrawChart()
+            }
+            
+        }
+        if self.endOffsetX < self.beginOffsetX {
+            print("to right")
+            if self.currentScreenIndex > 0 {
+                self.currentScreenIndex -= 1
+                self.redrawChart()
+         
+            }
+        }
+        print("current index: \(self.currentScreenIndex)")
+        
+        
+//        // The last screen
+//        if self.currentScreenIndex == self.dataGroup.count - 1 {
+//            self.directSetOffsetX(self.scrollView!.width)
+//            return
+//        }
+//        
+//        // The first screen
+//        if self.currentScreenIndex == 0 {
+//            self.directSetOffsetX(0)
+//            return
+//        }
+//        
+//        if scrollView.contentOffset.x >= 0 && scrollView.contentOffset.x <= scrollView.contentSize.width - scrollView.width {
+//            self.offsetX = scrollView.contentOffset.x
+//        }
     }
 }

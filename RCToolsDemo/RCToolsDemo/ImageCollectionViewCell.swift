@@ -25,6 +25,14 @@ class ImageCollectionViewCell: UICollectionViewCell {
             }
         }
         self.canvas?.layer.addSublayer(pathLayer)
+//        let dotLayer = ChartLayer()
+//        dotLayer.backgroundColor = UIColor.orangeColor().CGColor
+//        dotLayer.bounds = self.bounds
+//        dotLayer.anchorPoint = CGPointZero
+//        dotLayer.position = CGPointZero
+//        // Trigger the drawInContext function to draw dots.
+//        dotLayer.setNeedsDisplay()
+//        self.canvas?.layer.addSublayer(dotLayer)
     }
     
     required init?(coder aDecoder: NSCoder) {
