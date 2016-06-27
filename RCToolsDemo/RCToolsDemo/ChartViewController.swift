@@ -67,7 +67,7 @@ class ChartViewController: UIViewController {
         
         // Set the default offsetX
 //        self.directSetOffsetX(self.view.width)
-        self.scrollToSpecificIndex(1)
+//        self.scrollToSpecificIndex(1)
         self.beginOffsetX = self.view.width
         self.endOffsetX = self.view.width
     }
@@ -85,6 +85,7 @@ class ChartViewController: UIViewController {
         let pluckedData = self.pluckData()
         let chartView = ChartView( dataGroup: pluckedData, unitSize: CGSizeMake(self.scrollView!.width, self.scrollView!.height))
         self.scrollView?.contentSize = chartView.frame.size
+        self.scrollToSpecificIndex(1)
         self.scrollView?.addSubview(chartView)
         
         print("-count of pluckedData: \(pluckedData.count)")
@@ -117,16 +118,12 @@ class ChartViewController: UIViewController {
     
     private func scrollToSpecificIndex(index: Int) {
         print("-scroll to index: \(index)")
-        dispatch_async(dispatch_get_main_queue(), {
-//            // Set automaticSwitch to true when you begin to scroll the scrollView via program.
-//            self.automaticSwitch = true
-//            // And afater the scrollView scrolled, set automaticSwitch to false.
-//            defer {
-//                self.automaticSwitch = false
-//            }
-            
-            self.scrollView?.scrollRectToVisible(CGRectMake(CGFloat(index) * self.scrollView!.width, 0, self.scrollView!.width, self.scrollView!.height), animated: false)
-        })
+//        dispatch_async(dispatch_get_main_queue(), {
+        
+//            self.scrollView?.scrollRectToVisible(CGRectMake(CGFloat(index) * self.scrollView!.width, 0, self.scrollView!.width, self.scrollView!.height), animated: false)
+//        })
+        
+        self.scrollView?.contentOffset = CGPointMake(CGFloat(index) * self.scrollView!.width, 0)
     }
     
     private func getIndexOfScroll() -> Int {
