@@ -112,12 +112,28 @@ extension UIView {
         self.layer.addSublayer(shapeLayer)
     }
     
+    /// Use this private struct to store the extended properties. This will not pollute the namespace.
+    private struct AssociatedKeys {
+        static var Badge: UILabel?
+    }
+    
+    /// Use this extended property to prepare for add a custome view to navigationBar
+    var badge: UILabel? {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.Badge) as? UILabel
+        }
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.Badge, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    
     /// Attach a red dot on the view. You may specify the number which will be shown in the red dot.
     ///
     /// - parameter number: The number which will be show in the red dot. 0 means nothing will be shown, 
     ///   in this case, the badge may be a very small dot.
     /// - parameter position: The position of badge.
-    func badge(number: Int = 0, position: BadgePosition = .TopRight) -> UILabel {
+    func badge(number: Int = 0, position: BadgePosition = .TopRight) {
         var size = CGSizeMake(10, 10)
         var text = String(number)
         
@@ -174,7 +190,7 @@ extension UIView {
         badge.layer.cornerRadius = size.height / 2
         badge.clipsToBounds = true
         self.addSubview(badge)
-        return badge
+        self.badge = badge
     }
     
     
